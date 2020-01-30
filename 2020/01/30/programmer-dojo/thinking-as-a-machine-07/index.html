@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://yoursite.com').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="（本文不适合初学者阅读，目前只是为了方便培训的时候预习而写，也不适合无后续服务的人阅读）现在，我们把上一篇的应用变成网络版。这个时候，你至少有了两个应用，一个客户端应用，一个服务端应用。到这一刻，我们就算具有了一个系统。 当我们有一个系统的时候，我们需要一种框架来简化思考我们的应用。这里又需要我们再次展示我们的概念性思考能力，这时我会采用Linux的模型来思考这个问题，所以应用程序一般我会分为三层">
+<meta property="og:type" content="article">
+<meta property="og:title" content="像机器一样思考（七） —— 跨应用思考">
+<meta property="og:url" content="http://yoursite.com/2020/01/30/programmer-dojo/thinking-as-a-machine-07/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="（本文不适合初学者阅读，目前只是为了方便培训的时候预习而写，也不适合无后续服务的人阅读）现在，我们把上一篇的应用变成网络版。这个时候，你至少有了两个应用，一个客户端应用，一个服务端应用。到这一刻，我们就算具有了一个系统。 当我们有一个系统的时候，我们需要一种框架来简化思考我们的应用。这里又需要我们再次展示我们的概念性思考能力，这时我会采用Linux的模型来思考这个问题，所以应用程序一般我会分为三层">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-07/pic-01.png">
+<meta property="og:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-07/pic-02.png">
+<meta property="article:published_time" content="2020-01-30T04:00:18.880Z">
+<meta property="article:modified_time" content="2020-01-30T04:00:18.880Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-07/pic-01.png">
+
+<link rel="canonical" href="http://yoursite.com/2020/01/30/programmer-dojo/thinking-as-a-machine-07/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>像机器一样思考（七） —— 跨应用思考 | Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/30/programmer-dojo/thinking-as-a-machine-07/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          像机器一样思考（七） —— 跨应用思考
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-01-30 04:00:18" itemprop="dateCreated datePublished" datetime="2020-01-30T04:00:18+00:00">2020-01-30</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>（本文不适合初学者阅读，目前只是为了方便培训的时候预习而写，也不适合无后续服务的人阅读）<br>现在，我们把上一篇的应用变成网络版。这个时候，你至少有了两个应用，一个客户端应用，一个服务端应用。到这一刻，我们就算具有了一个系统。</p>
+<p>当我们有一个系统的时候，我们需要一种框架来简化思考我们的应用。这里又需要我们再次展示我们的概念性思考能力，这时我会采用Linux的模型来思考这个问题，所以应用程序一般我会分为三层：</p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-07/pic-01.png" alt="layer-of-application"></p>
+<p>core层是我的核心逻辑，核心的计算部分放在这里。（Linux里是Kernel，不过Kernel这词比较偏门，咱们这教程的目标是为了尽量降低门槛，还是用core吧）<br>shell层是我链接核心层和用户的地方，你可以简单理解为解析用户输入，包装核心层的计算结果，变成用户看到的输出。Shell层还有一个作用，当我们有多个应用的时候，彼此之间的shell层是互相交互的，Core层是互相不知道彼此的存在的。<br>config层比较难理解，从工程的角度，我们的Core层和Shell层，都不应该控制彼此的生命周期，它们所有的依赖都应该是外部配置的，它们只依赖抽象的接口而不是具体实现。config层就是这一层配置，在Linux的Shell里对应的就是环境变量这个概念。</p>
+<p>引入这些概念有什么好处呢？如果用这些概念来解释我们的应用，可以支撑非常大的架构的思考。</p>
+<p>我们想象一下，系统随着演进而变大，出现原本的小东西也会变的非常庞大。比如上一篇main函数里的几行代码，随着系统变大，相应的Router也不可能自己写了，Router和Command的关系自然也是在文件里配置的，慢慢的我们就开始需要一个IOC容器。Service本身会变得很复杂，彼此之间可能会有关系，而且甚至可能是别的应用提供的Service。如果我们再使用应用框架里的概念，那么思考也好，交流也好，都会变得很低效。所以我们才引出了config，shell，core这三个概念来简化应用的内部，这样就可以思考大量的应用之间的关系是应该是一个什么样的架构了，不过这个方向是一个更复杂的问题，这里就不展开了。</p>
+<p>回到我们的系统上，在一个刚刚出现了前后端概念的系统里，我们的新概念们能帮助我们理解架构的演进，下面就基于这些概念带着大家推演一遍现代常用的一些软件框架是因为哪些力量驱动出来的。</p>
+<h2 id="Core的重新定义"><a href="#Core的重新定义" class="headerlink" title="Core的重新定义"></a>Core的重新定义</h2><p>当我们把系统分为客户端和服务端的时候，那么客户端要做什么呢？服务端要做什么呢？</p>
+<p>往往客户端是需要更多的照顾用户体验，填平服务端的接口和用户体验之间的沟壑。</p>
+<p>服务端则要保证数据读写的性能，安全性和易于被客户端使用。</p>
+<p>从这两点来看，客户端应该考虑的是用户体验，而不是让用户体验为服务端扭曲。所以客户端的core层更多的是那层填平服务端接口和用户体验之间沟壑的那堆代码，而它给shell的接口应该是以shell好调用为导向的。</p>
+<p>那么怎么算是好用呢？</p>
+<h2 id="边界与无限"><a href="#边界与无限" class="headerlink" title="边界与无限"></a>边界与无限</h2><p>刚才谈到，在我们的边界处，好用是一个非常重要的需求。怎么算好用呢？最重要的是边界要找对，如果你过界了，做了事情也会被埋怨。当我们思考系统的时候，边界往往是不好找的。这就需要引入一个新的架构模式： MVC。</p>
+<p>所谓的MVC就是Model-View-Controller。一个常见系统，往往Model层负责核心基本元素和基本算法，View层负责展示和表达数据，Controller层负责调度和组合，把Model层和View层连接在一起。</p>
+<p>一般来讲，Model层通常是我们的Core，Controller层往往就是我们的shell，View层就是shell返回的数据。这个时候边界的思考就清楚了，谁是我们的model和model相关的核心计算，谁就是我们的core。谁是我们的Controller负责调度组合和内外相连，谁就是我们的shell。而我们的计算结果，也就是我们的View层，是会离开我们的应用供别人使用的，那它是我们的最外面的边界。我们思考边界只需要关注在View层，思考清楚我们的View是否在一个抽象层次上就可以了。</p>
+<p>但是，世界不是这么简单的分三层就可以结束了，世界是往复循环以致无穷的。所以我们的MVC也是循环迭代的，也就是说MVC中的某一层还可能再分MVC。那么是哪一层呢？View层。还记得我们第一篇讲得，数据和过程是不严格区分的，所以我们返回的数据，可以被解析为新的过程，新的过程再产生新的数据，从而往复循环以致无穷。</p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-07/pic-02.png" alt="MVC"></p>
+<p>所以可以认为服务端是原应用的Core层进化出来的。</p>
+<p>如果我们把View层进化下去，我们前面提到的客户端的Shell返回的数据，还会再划分，就会有新的组件层(Component)，模版层(Layout)，页面层(Page，也有人爱用Container)等等。</p>
+<p>随着出现了MVC，再进一步思考就会逐渐发现，其实core层不应该关心后端代码，它应该关心前端的领域对象，以用户眼中的模型为基础计算，而不是后端业务人员眼中的模型为基础来计算。所以他会把弥合后端和前端的工作交给shell层，而shell层会夹在三方面很难受，他一方面要对接后端，一方面要对接core，还有一方面要适配真正的前端模型。前端和后端的拉锯战就会出现，在这股力量的挤压之下，我们的BFF就会自然而然的出现，所谓的前后端分离也就是自然而然的事情了。</p>
+<h2 id="题外话"><a href="#题外话" class="headerlink" title="题外话"></a>题外话</h2><h3 id="题外话1"><a href="#题外话1" class="headerlink" title="题外话1"></a>题外话1</h3><p>对于有经验的同学要说一句：数据库不是核心，你的代码才是核心。数据库就是系统的另外一个应用而已，虽然数据库厂商希望你把核心放在它里面，但你不要被厂商的策略绑架了你的自由。</p>
+<h2 id="题外话2"><a href="#题外话2" class="headerlink" title="题外话2"></a>题外话2</h2><p>面向对象，有一位同学总是在给我纠结这个面向对象怎么画。其实之所以有此问并不是不知道怎么用强类型语言来画图，如我们第二篇所述，你换成类图也是一样的。主要的纠结点在于，那个函数放在哪个类里这个问题。</p>
+<p>之所以一直没讲，是因为面向对象是纯粹的人类思考问题的方式，它是非常不精确的，把哪个函数放在哪个类里这个事情是一门艺术而不是一门科学。当我们有一个Dog类的时候，有一个bark方法是非常明显的。当我们有一个货物类（Goods)的时候，算税应该是它的方法吗？当我们有一个数据库实体的时候，比如User，Item等等，那么存储算他的方法吗？如果我们做一个CRM系统，Client明显跟所有的业务都有关系，总不能Client这个类上有所有业务的方法吧？所以我们无论怎么放，都可能是有问题的，而且在变化来临前，我们没有什么客观的标准来判断当前的做法是否合理。</p>
+<p>如果只是画图来表达的话，其实我们的方块上，也表达出了哪个函数属于哪个类，这样已经便于有经验的人发现问题并解决问题了。只是没有任何客观的公式可以帮助大家轻松的解决问题。我们只能帮你这么多了，毕竟方法，从来也不是为弱者服务的。</p>
+<h2 id="题外话3"><a href="#题外话3" class="headerlink" title="题外话3"></a>题外话3</h2><p>你这个是不是六边形架构？<br>其实可以看作是六边形架构的一种变种，我只是比较讨厌六边形这个词，它太容易让人纠结为啥是六个边，不是八个？比如我叫八卦可不可以？所以我们也不要太纠结他叫什么，领会精神就好。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/01/30/programmer-dojo/thinking-as-a-machine-01/" rel="prev" title="像机器一样思考（一）—— 宏观的基础">
+      <i class="fa fa-chevron-left"></i> 像机器一样思考（一）—— 宏观的基础
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/01/30/programmer-dojo/thinking-as-a-machine-05/" rel="next" title="像机器一样思考（五）—— 第一个应用">
+      像机器一样思考（五）—— 第一个应用 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Core的重新定义"><span class="nav-number">1.</span> <span class="nav-text">Core的重新定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#边界与无限"><span class="nav-number">2.</span> <span class="nav-text">边界与无限</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题外话"><span class="nav-number">3.</span> <span class="nav-text">题外话</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题外话1"><span class="nav-number">3.1.</span> <span class="nav-text">题外话1</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题外话2"><span class="nav-number">4.</span> <span class="nav-text">题外话2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题外话3"><span class="nav-number">5.</span> <span class="nav-text">题外话3</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

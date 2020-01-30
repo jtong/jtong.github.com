@@ -165,7 +165,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/23/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/30/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -179,7 +179,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/01/23/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+            <a href="/2020/01/30/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
         </h1>
 
         <div class="post-meta">
@@ -189,7 +189,7 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2020-01-23 15:15:47" itemprop="dateCreated datePublished" datetime="2020-01-23T15:15:47+00:00">2020-01-23</time>
+              <time title="Created: 2020-01-30 04:00:18" itemprop="dateCreated datePublished" datetime="2020-01-30T04:00:18+00:00">2020-01-30</time>
             </span>
 
           
@@ -216,6 +216,736 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/30/programmer-dojo/thinking-as-a-machine-03/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/30/programmer-dojo/thinking-as-a-machine-03/" class="post-title-link" itemprop="url">像机器一样思考（三）—— 穷尽就是力量</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-01-30 04:00:18" itemprop="dateCreated datePublished" datetime="2020-01-30T04:00:18+00:00">2020-01-30</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>经过前两篇的内容学习，我相信大家已经差不多学会了这个思考模型。本篇的重点是用它来解决更复杂的问题。当我们开始解决一些稍微复杂点的问题的时候，我们会发现差不多的态度是不行的，我们需要严谨的态度进行缜密的思考才能真正发挥出这个思考模型的力量。</p>
+<p>慢慢你会发现，这个思考模型本身不会让你思维缜密，而思维缜密了才能用好这个思考模型。它带来的最大的好处，是让你自己开始看到自己思维的欠缺，从而不再是个思维世界的盲人。</p>
+<h2 id="穷尽"><a href="#穷尽" class="headerlink" title="穷尽"></a>穷尽</h2><p>那么，我们开始做点复杂的题目。也没复杂多少，我们扩展一下上一篇的题目，算学生的成绩单：</p>
+<p>打印所有人的成绩单。已知输入的格式是</p>
+<blockquote>
+<p>[“学号”, “学号”, “学号”]<br>比如：<br>[“TWA20160101”,  “TWA20160102”, “TWA20160103”]</p>
+</blockquote>
+<p>我们有一个全局函数可以给我们提供所有的学生的成绩：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function loadAllScore()&#123;</span><br><span class="line">    return [&#123;</span><br><span class="line">        name: &quot;张三&quot;,</span><br><span class="line">        id: &quot;TWA20160101&quot;,</span><br><span class="line">        chinese: &quot;95&quot;,</span><br><span class="line">        english: &quot;80&quot;,</span><br><span class="line">        math: &quot;95&quot;,</span><br><span class="line">        programming: &quot;80&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    ....</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>要求打印出成绩单类似于：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">成绩单</span><br><span class="line">姓名|数学|语文|英语|编程|平均分|总分 </span><br><span class="line">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line">张三|75|95|80|80|82.5|330</span><br><span class="line">李四|85|80|70|90|81.25|325</span><br><span class="line">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line">全班总分平均数：xxx</span><br><span class="line">全班总分中位数：xxx</span><br></pre></td></tr></table></figure>
+
+<p>仅对这个题目进行划分，我们一定觉得很简单，对吧。就仿照着之前的写呗：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">#1 生成成绩单view model</span><br><span class="line">输入：</span><br><span class="line">  studentIds: [String]</span><br><span class="line">输出：</span><br><span class="line">  scoreSheet: &#123;</span><br><span class="line">    studentScores:[&#123;</span><br><span class="line">        name: String,</span><br><span class="line">        chinese: String,</span><br><span class="line">        english: String,</span><br><span class="line">        math: String,</span><br><span class="line">        programming: String,</span><br><span class="line">        average: String,</span><br><span class="line">        summary: String</span><br><span class="line">    &#125;]</span><br><span class="line">    summary: &#123;</span><br><span class="line">      totalAverage: Number,</span><br><span class="line">      totalMidden: Number</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">#2 打印成绩单</span><br><span class="line">输入：</span><br><span class="line">  scoreSheet</span><br><span class="line">输出：</span><br><span class="line">  result: String</span><br></pre></td></tr></table></figure>
+
+<p>我相信很多人都是这么想的，然而不幸的告诉这么想的同学，这种写法是错误的。原因其实也很简单，请问，#1输出里的chinese等成绩是怎么得到的呢？没有来源吧？你说你调了<code>loadAllScore</code>函数？那为什么不写在输入里呢？</p>
+<p>所以说，我们遗漏了一些输入。回到我们开始的标题上：穷尽。</p>
+<p>可能有很多人听说过一个分析问题的基本原则：完全穷尽，各自独立。很多人听到这个时候，会很困惑：穷尽什么？独立什么？经过我们这些练习，我相信在编程领域，你们这个困惑会小很多。</p>
+<p>所谓各自独立，说的就是在我们划分任务的过程中，每一个任务都对应一个代码块或一个函数，这些代码块和函数，是互相不包含的（不是不依赖，这是翻译的问题，各自独立的独立指的是Exclusive不是Independent）。</p>
+<p>所谓的完全穷尽，说的是我们需要穷尽这个代码块或函数里所有的输入和输出。不能遗漏任何一个输入，任何一个输出。我们的每一项，它的属性，也不能有遗漏，我不能说分析<code>studentScores</code>只想到部分属性，比如说：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">studentScores:[&#123;</span><br><span class="line">        chinese: String,</span><br><span class="line">        english: String,</span><br><span class="line">        summary: String</span><br><span class="line">    &#125;]</span><br></pre></td></tr></table></figure>
+
+<p>这样是不行的。如果我们不严于律己穷尽所有的数据项，我们就会在写代码的时候遇到各种问题。能否穷尽与否，也看出来你思维的缜密与否。</p>
+<p>是不是开始感觉到麻烦了，刚开始做的时候是有些慢的，但我们坚持穷尽这个好习惯，就会渐渐的感受到自己能力的成长。如果你穷尽了所有的输入输出，那么各种可能遇到的问题就像是如来佛手里的孙猴子，无论有什么变数也尽在你掌握之中了。</p>
+<p>那么如果我们穷尽输入输出的话，我们这个题目真正的任务应该怎么分解呢？可以写成这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">#1 获得学生成绩</span><br><span class="line">输入：</span><br><span class="line">    studentIds: [String]</span><br><span class="line">    studentInfo: [&#123;</span><br><span class="line">        id: String,</span><br><span class="line">        name: String,</span><br><span class="line">        chinese: String,</span><br><span class="line">        english: String,</span><br><span class="line">        math: String,</span><br><span class="line">        programming: String,</span><br><span class="line">    &#125;]</span><br><span class="line">输出：</span><br><span class="line">    studentScores:[&#123;</span><br><span class="line">        name: String</span><br><span class="line">        chinese: String,</span><br><span class="line">        english: String,</span><br><span class="line">        math: String,</span><br><span class="line">        programming: String,</span><br><span class="line">        average: String,</span><br><span class="line">        summary: String</span><br><span class="line">    &#125;]</span><br><span class="line"></span><br><span class="line">#2 计算总计</span><br><span class="line">输入：</span><br><span class="line">    studentScores</span><br><span class="line">输出：</span><br><span class="line">    summary: &#123;</span><br><span class="line">      totalAverage: Number,</span><br><span class="line">      totalMidden: Number</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">#3 打印成绩单</span><br><span class="line">输入：</span><br><span class="line">    studentScores</span><br><span class="line">    summary</span><br><span class="line">输出：</span><br><span class="line">    result: String</span><br></pre></td></tr></table></figure>
+
+<p>可能你会奇怪，为什么会分成3步呢？或者说，我们该怎么判断分几步呢？这其实没有一个标准答案，我建议初学者尽量步子小一点，多分几步，经验丰富的人就可以步子大一点。不过有一个反直觉的经验可以分享给大家，你步子大了，开发速度不见得快，因为人是会犯错的。</p>
+<p>这个题是写出来了，但是我们还是不太清楚怎么穷尽对吧。说是穷尽输入输出，到底输入输出都有多少大类呢？这个也是可以穷尽的。</p>
+<p>输入总共有下面几大类：</p>
+<ol>
+<li>参数</li>
+<li>读取全局变量</li>
+<li>调用全局函数后得到的返回值</li>
+<li>读取局部作用域变量（比如this）</li>
+<li>调用局部函数后得到的返回值</li>
+<li>hard code的数据</li>
+</ol>
+<p>输出总共有下面几大类：</p>
+<ol>
+<li>返回值</li>
+<li>修改全局变量</li>
+<li>调用全局函数时传的参数</li>
+<li>修改局部作用域变量（比如this）</li>
+<li>调用局部函数时传的参数</li>
+</ol>
+<h2 id="来去"><a href="#来去" class="headerlink" title="来去"></a>来去</h2><p>听起来不错，不过从哪来，到哪去，还是要写清楚的，我们的studentInfo从哪里来？我们的result又到哪里去了？加上这个来去，我们最终的版本是长这个样子的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">#1 获得学生成绩</span><br><span class="line">输入：</span><br><span class="line">    studentIds: [String]</span><br><span class="line">    studentInfo: [&#123;</span><br><span class="line">        id: String,</span><br><span class="line">        name: String,</span><br><span class="line">        chinese: String,</span><br><span class="line">        english: String,</span><br><span class="line">        math: String,</span><br><span class="line">        programming: String,</span><br><span class="line">    &#125;]: loadAllScore()</span><br><span class="line">输出：</span><br><span class="line">    studentScores:[&#123;</span><br><span class="line">        name: String,</span><br><span class="line">        chinese: String,</span><br><span class="line">        english: String,</span><br><span class="line">        math: String,</span><br><span class="line">        programming: String,</span><br><span class="line">        average: String,</span><br><span class="line">        summary: String</span><br><span class="line">    &#125;]</span><br><span class="line"></span><br><span class="line">#2 计算总计</span><br><span class="line">输入：</span><br><span class="line">    studentScores</span><br><span class="line">输出：</span><br><span class="line">    summary: &#123;</span><br><span class="line">      totalAverage: Number,</span><br><span class="line">      totalMidden: Number</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">#3 打印成绩单</span><br><span class="line">输入：</span><br><span class="line">    studentScores</span><br><span class="line">    summary</span><br><span class="line">输出：</span><br><span class="line">    result: String: console.log()</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><p>引入加分策略<br>少数民族 +10分<br>体育特长 +20分<br>艺术特长 +15分</p>
+<h1 id="题外话"><a href="#题外话" class="headerlink" title="题外话"></a>题外话</h1><p>好像输入和输出的可能性太多了，这很容易让人乱啊。<br>是这样的，所以为什么到了函数式编程我们需要强调纯函数，只有一个输入来源和一个输出去处，一般来讲就是输入只有参数，输出只有返回值。所以你看，如果你把一个领域都穷尽掉，你也会自己发明出那些靠谱的实践，换句话说，如果你能在用这套思维模型的过程中逐渐发现跟各种最佳实践都很容易配合使用，那就对了。（其实也不是什么配合使用，因为它跟代码是等价的，所以容易写代码的方法就容易用它，这是当然的。）</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/30/programmer-dojo/thinking-as-a-machine-04/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/30/programmer-dojo/thinking-as-a-machine-04/" class="post-title-link" itemprop="url">像机器一样思考（四）—— 一图抵千言</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-01-30 04:00:18" itemprop="dateCreated datePublished" datetime="2020-01-30T04:00:18+00:00">2020-01-30</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>【旧文搬家】<br>当我们把一个完整的功能拆解为一个个输入输出穷尽，互相独立的任务后，它是容易转化为代码了，可是这种方式并不容易思考规模更大的问题（光从哪来到哪去就够我们绕的）。把我们的大脑看成一台电脑，我们就是那种内存很低的电脑，问题规模一大，我们就会死机，然后就只能重启了。具体表现为我们思考时会觉得晕。每次晕的时候可能都重启了一下:)。</p>
+<p>怎么办呢？其实也很简单，内存不够硬盘来凑。对我们的大脑来说，最常见的“硬盘”就是纸。而正如电脑的硬盘传输速度总是不如内存的，加了硬盘计算效率不一定快。我们需要一种对传输友好的编码方式，这种方式就是画图。</p>
+<h2 id="画图的规则"><a href="#画图的规则" class="headerlink" title="画图的规则"></a>画图的规则</h2><p>我们的画图方法受时序图启发而发明，具体的规则如下：</p>
+<ol>
+<li>本图基本元素由方块和带箭头的线组成</li>
+<li>一个方块只代表一个函数或一个代码块，通常是函数，方块中可以写字，可以表达函数是属于哪个类或哪个实例等信息。</li>
+<li>指向方块的线代表该函数的输入，背离方块的线代表函数的输出。</li>
+<li>数据流动的时间轴遵守先从左到右，再从上到下的顺序。</li>
+<li>每一对输入输出（输入在上，输出在下）加一个方块，表达了一次函数调用。</li>
+</ol>
+<p>举例：<br>比如下列代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function c()&#123;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function b()&#123;</span><br><span class="line">    c();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function a()&#123;</span><br><span class="line">    b();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">a();</span><br></pre></td></tr></table></figure>
+
+<p>画成图是这个样子的</p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-04/pic-01.png" alt=" function call"></p>
+<p>在这个图上我们可以清晰的看出来，函数a调用了函数b，函数b调用了函数c。而函数a自己，是在最顶层调用的，也就是所谓的程序入口。<br>整张图是从左往右表示时间顺序。</p>
+<p>什么情况下既有从左到右，也有从上到下呢？比如下面这个代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function b()&#123;</span><br><span class="line">    &#x2F;&#x2F; b codes</span><br><span class="line">&#125;</span><br><span class="line">function c()&#123;</span><br><span class="line">    &#x2F;&#x2F; c codes</span><br><span class="line">&#125;</span><br><span class="line">function a()&#123;</span><br><span class="line">    b();</span><br><span class="line">    &#x2F;&#x2F;a codes;</span><br><span class="line">    c();</span><br><span class="line">    &#x2F;&#x2F;a codes;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>函数a先调用了函数b，然后再执行一段a里面的代码，再调了函数c，然后再执行了一段a里面的代码，然后返回。</p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-04/pic-02.png" alt=" a call b+c "></p>
+<h2 id="正常的使用方式"><a href="#正常的使用方式" class="headerlink" title="正常的使用方式"></a>正常的使用方式</h2><p>我们正常使用这个实践的时候，这个过程是反过来的，我们可能先看画出了上面这张图。不过这回，我们要画的认真一点，为了后面可以导出任务列表，我需要加上标号，如下图：</p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-04/pic-03.png" alt="(a-b)+(a-c) with detail"></p>
+<p>然后从这张图里按照标号导出任务列表，如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#1 函数a</span><br><span class="line">输入：</span><br><span class="line">    paramX: TypaX</span><br><span class="line">输出：</span><br><span class="line">    bValue: TypeA</span><br><span class="line"></span><br><span class="line">#2 函数b</span><br><span class="line">输入：</span><br><span class="line">    paramY: TypeY</span><br><span class="line">输出：</span><br><span class="line">    cValue: TypeB</span><br><span class="line"></span><br><span class="line">#3 函数c</span><br><span class="line">输入： </span><br><span class="line">    paramZ: TypeZ</span><br><span class="line">输出：</span><br><span class="line">    aValue: TypeC</span><br></pre></td></tr></table></figure>
+
+<p>然而这里有个问题，对于<code>函数b</code>和<code>函数c</code>来说，输入输出倒是很正确，对于<code>函数a</code>来说，难道<code>函数b</code>和<code>函数c</code>的返回值不是它的输入吗？相应的，<code>函数b</code>和<code>函数c</code>的参数也是它的输出。</p>
+<p>所以真正完善的IO是这样的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">#1 函数a</span><br><span class="line">输入：</span><br><span class="line">    paramX: TypaX</span><br><span class="line">    cValue: TypeB: 函数b</span><br><span class="line">    aValue: TypeC: 函数c</span><br><span class="line">输出：</span><br><span class="line">    bValue: TypeA</span><br><span class="line">    paramY: TypeY: 函数b</span><br><span class="line">    paramZ: TypeZ: 函数c</span><br><span class="line"></span><br><span class="line">#2 函数b</span><br><span class="line">输入：</span><br><span class="line">    paramY: TypeY</span><br><span class="line">输出：</span><br><span class="line">    cValue: TypeB</span><br><span class="line"></span><br><span class="line">#3 函数c</span><br><span class="line">输入： </span><br><span class="line">    paramZ: TypeZ</span><br><span class="line">输出：</span><br><span class="line">    aValue: TypeC</span><br></pre></td></tr></table></figure>
+
+<p>写出的代码大概如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function b()&#123;</span><br><span class="line">    &#x2F;&#x2F; b codes</span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br><span class="line">function c()&#123;</span><br><span class="line">    &#x2F;&#x2F; c codes</span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br><span class="line">function a()&#123;</span><br><span class="line">    let bValue &#x3D; b(paramX);</span><br><span class="line">    &#x2F;&#x2F;a codes;</span><br><span class="line">    let cValue &#x3D; c(paramZ);</span><br><span class="line">    &#x2F;&#x2F;a codes;</span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在在真正的工作中，<code>函数b</code>和<code>函数c</code>这样的函数是非常少的，大部分都是<code>函数a</code>这样既被调也调别人的函数。如果每一个都按照这样去切分，恐怕就不是一个高效的方法了，即便列出来也很乱。不但不能帮助思考，反而会阻碍思考。</p>
+<p>当按照模块的角度去拆分task不work的时候，我们就要按照测试的角度来切分task了，这个思维的切换是TDD的核心。我们需要按照测试的视角来切分任务，从一个函数的实现视角转为一个函数的调用视角。</p>
+<p>这样做的好处有三个：</p>
+<ol>
+<li>封装复杂性，当我们按照模块去拆分的时候，如前文所说，复杂性会变高，思考负担会加大。而按照测试的视角来切分呢，复杂性当然不会消失，但是被封装了，方便我们在分析的时候减少思考负担。</li>
+<li>跳出盒子外来看盒子的视角。我们在画前面的图的时候，实际上是在我们要实现的这个程序内在看，完全没有使用者的视角，也就是所谓的在盒子内，。当我们站在测试的视角看的时候，我们就跳出了盒子外，他更容易让我们发现哪里可能设计上有问题，比如设计出的接口是不是好用。</li>
+<li>在ThoughtWorks，我们有一个观点：叫做任务不是步骤。当我们按步骤来考虑问题的时候，对怎么算做完这个问题的答案往往是模糊的（往往只落在行为上，而不是结果上）。当我们只考虑函数实现的时候，也会有类似的问题，因为一个数据类型包含的情况太多了，想到某种类型的数据我们就会停止思考当前问题转而去想其他问题，于是我们很容易漏掉一些情况，以测试角度看待任务会让我们更容易看清楚我们的工作是不是真的做完了。</li>
+</ol>
+<p>最棒的是，我们可以照着任务列表写出测试</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">it(&quot;test case 1 for function b&quot;, () &#x3D;&gt;&#123;</span><br><span class="line">    let paramX &#x3D; &#x2F;&#x2F; TypeX的测试数据</span><br><span class="line">    </span><br><span class="line">    let actualBValue &#x3D; b(paramX); &#x2F;&#x2F; 调用b函数的实际返回值</span><br><span class="line">    </span><br><span class="line">    let exceptedBValue &#x3D; &#x2F;&#x2F; 调用b函数的期望的返回值</span><br><span class="line">    expect(actualBValue).is(expectedBValue); &#x2F;&#x2F;断言</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 以此类推...</span><br></pre></td></tr></table></figure>
+
+<p>所以，我们是在以测试驱动的方式做任务划分，你可以叫它测试驱动的任务切分。</p>
+<p>如果要映射到测试，我们的任务列表就缺了一些东西，那就是所谓的测试用例。因为同一个函数可能有不同的测试用例，所以加上用例我们的任务列表应该长成这个样子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#1 场景一</span><br><span class="line">输入：</span><br><span class="line">    paramX: TypaX</span><br><span class="line">输出：</span><br><span class="line">    bValue: TypeA</span><br><span class="line">测试用例:</span><br><span class="line">    用例1：</span><br><span class="line">        inputValue1</span><br><span class="line">        ----</span><br><span class="line">        outputValue1</span><br><span class="line">    用例2：</span><br><span class="line">        inputValue2</span><br><span class="line">        ----</span><br><span class="line">        outputValue2</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">&#x2F;&#x2F; 以此类推...</span><br></pre></td></tr></table></figure>
+
+<p>我们看到因为输入输出的顺序已经定好了，为了书写的速度，我们就省略了名字。如果你觉得不舒服也可以写上名字。如果你觉得这样太浪费时间，你可以把每组用例用一句话描述。毕竟一切为了实用嘛。</p>
+<p>是不是感觉后面讲的很抽象啊，不知道具体怎么做啊？不要着急，后面有例子。</p>
+<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><ol>
+<li>请把上一篇的任务列表，画成图</li>
+<li>试着按照测试用例的方式画，没有思路可以阅读完第五篇和第六篇再来画。</li>
+</ol>
+<h2 id="题外话"><a href="#题外话" class="headerlink" title="题外话"></a>题外话</h2><h3 id="题外话-1"><a href="#题外话-1" class="headerlink" title="题外话-1"></a>题外话-1</h3><p>视角的切换对于软件开发来说是至关重要的一个能力。为了说明这个的价值，我们甚至发明了一个概念——数字化人才</p>
+<p>然而大多数人都不具备，所以对于大多数人来说，具备这个能力，最起码的好处就是变成了一种稀缺性人才，对于获得高薪是有帮助的。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/30/programmer-dojo/thinking-as-a-machine-05/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/30/programmer-dojo/thinking-as-a-machine-05/" class="post-title-link" itemprop="url">像机器一样思考（五）—— 第一个应用</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-01-30 04:00:18" itemprop="dateCreated datePublished" datetime="2020-01-30T04:00:18+00:00">2020-01-30</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>经过前面四篇，我们已经具备了最基本的思考编程的能力。我们开始做一个真正的应用吧。</p>
+<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><p>我们现在做一个应用，该应用是一个命令行应用。当程序启动的时候，我们会看到一个命令行的主界面：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 添加学生</span><br><span class="line">2. 生成成绩单</span><br><span class="line">3. 退出</span><br><span class="line">请输入你的选择（1～3）：</span><br></pre></td></tr></table></figure>
+
+<p>如果我们输入1，那么界面就会变成：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">请输入学生信息（格式：姓名, 学号, 民族, 班级, 学科: 成绩, ...），按回车提交：</span><br></pre></td></tr></table></figure>
+
+<p>如果输入格式不正确，就返回：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">请按正确的格式输入（格式：姓名, 学号, 学科: 成绩, ...）：</span><br></pre></td></tr></table></figure>
+
+<p>如果输入格式正确就会返回</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">学生xxx的成绩被添加</span><br></pre></td></tr></table></figure>
+
+<p>然后打印</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 添加学生</span><br><span class="line">2. 生成成绩单</span><br><span class="line">3. 退出</span><br><span class="line">请输入你的选择（1～3）：</span><br></pre></td></tr></table></figure>
+<p>等于回到了主界面。<br>如果我们在主界面输入了2，那么界面就会变成：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">请输入要打印的学生的学号（格式： 学号, 学号,...），按回车提交：</span><br></pre></td></tr></table></figure>
+
+<p>如果我们输入的不正确，就会打印：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">请按正确的格式输入要打印的学生的学号（格式： 学号, 学号,...），按回车提交：</span><br></pre></td></tr></table></figure>
+
+<p>如果输入的格式正确，则会打印成绩单并回到主界面。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">成绩单</span><br><span class="line">姓名|数学|语文|英语|编程|平均分|总分 </span><br><span class="line">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line">张三|75|95|80|80|82.5|330</span><br><span class="line">李四|85|80|70|90|81.25|325</span><br><span class="line">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line">全班总分平均数：xxx</span><br><span class="line">全班总分中位数：xxx</span><br></pre></td></tr></table></figure>
+
+<p>如果我们输入的学号不存在，该学号在计算时就会被忽略。</p>
+<h2 id="讲解"><a href="#讲解" class="headerlink" title="讲解"></a>讲解</h2><p>这个题目比之前的复杂一点，我们可以先按照功能简单列一下任务列表。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#1 打印主菜单</span><br><span class="line">#2 添加学生成绩</span><br><span class="line">#3 生成成绩单</span><br><span class="line">#4 退出</span><br></pre></td></tr></table></figure>
+
+<p>然而这个列表是跟我们的程序不等价的。我们还是应该列出跟程序等价的任务列表。为了便于表达，我们就需要画图。我们先不考虑面向对象，直接面向过程的划分，我们画出来的图大概是下面这个样子：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5773421-7ecadb5b3b6d20e1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>也许你觉得这个做法并不够好，我也这么觉得，那我们可以重构这个图，画出一种更好的解法：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5773421-6f771b667427b66d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>可以看出，这两种做法，在图形上看并没有明显的区别，但是命名上暴露出了思路的不同，后者明显减少了程序对外输入输出的次数。所以不要随便命名。<br>但如果没有上面那个图，我们是看不出来buildReport这个函数他打印了还是没打印，这就需要我们有一套约定俗成的用语规范，从用语规范中可以看出来我们到底做了什么。</p>
+<h2 id="课后练习"><a href="#课后练习" class="headerlink" title="课后练习"></a>课后练习</h2><ol>
+<li>针对两张图，分别列出所有的任务。</li>
+<li>在脑中模拟一下，如果测试先行的方式写代码，两种实现的时间花费各会是多少。按照任务列表逐项估出时间，并比较两种实现的时间差异。</li>
+</ol>
+<h2 id="题外话-1"><a href="#题外话-1" class="headerlink" title="题外话 - 1"></a>题外话 - 1</h2><p>对于接触本文章的编程初学者，我需要多说几句：我们可以看到，其实一个真正的应用也是由一些简单函数构成的，那就说明编程思想和技巧并不受限于应用的表象。前端、后端、应用、系统之类的名词，往往是从分工的角度来讲的，如果从个人发展的角度来讲，不要拿这些名词限制自己。这也是我们这个系列只讲一些简单应用的缘故，抽象来讲思路是一样的。</p>
+<h2 id="题外话-2"><a href="#题外话-2" class="headerlink" title="题外话 - 2"></a>题外话 - 2</h2><p>到这里，你应该能感觉到我们这些题目，其实是一个个思维训练，对于这个思维训练，最重要的事情有三点：</p>
+<ol>
+<li>语文问题（用词精确，前后一致）</li>
+<li>接口问题（完全穷尽）</li>
+<li>每个函数之间互相不知道对方的内在实现（各自独立）<br>能做好这三点，代码就能完胜行业里的大多数人：）</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/30/programmer-dojo/thinking-as-a-machine-07/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/30/programmer-dojo/thinking-as-a-machine-07/" class="post-title-link" itemprop="url">像机器一样思考（七） —— 跨应用思考</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-01-30 04:00:18" itemprop="dateCreated datePublished" datetime="2020-01-30T04:00:18+00:00">2020-01-30</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>（本文不适合初学者阅读，目前只是为了方便培训的时候预习而写，也不适合无后续服务的人阅读）<br>现在，我们把上一篇的应用变成网络版。这个时候，你至少有了两个应用，一个客户端应用，一个服务端应用。到这一刻，我们就算具有了一个系统。</p>
+<p>当我们有一个系统的时候，我们需要一种框架来简化思考我们的应用。这里又需要我们再次展示我们的概念性思考能力，这时我会采用Linux的模型来思考这个问题，所以应用程序一般我会分为三层：</p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-07/pic-01.png" alt="layer-of-application"></p>
+<p>core层是我的核心逻辑，核心的计算部分放在这里。（Linux里是Kernel，不过Kernel这词比较偏门，咱们这教程的目标是为了尽量降低门槛，还是用core吧）<br>shell层是我链接核心层和用户的地方，你可以简单理解为解析用户输入，包装核心层的计算结果，变成用户看到的输出。Shell层还有一个作用，当我们有多个应用的时候，彼此之间的shell层是互相交互的，Core层是互相不知道彼此的存在的。<br>config层比较难理解，从工程的角度，我们的Core层和Shell层，都不应该控制彼此的生命周期，它们所有的依赖都应该是外部配置的，它们只依赖抽象的接口而不是具体实现。config层就是这一层配置，在Linux的Shell里对应的就是环境变量这个概念。</p>
+<p>引入这些概念有什么好处呢？如果用这些概念来解释我们的应用，可以支撑非常大的架构的思考。</p>
+<p>我们想象一下，系统随着演进而变大，出现原本的小东西也会变的非常庞大。比如上一篇main函数里的几行代码，随着系统变大，相应的Router也不可能自己写了，Router和Command的关系自然也是在文件里配置的，慢慢的我们就开始需要一个IOC容器。Service本身会变得很复杂，彼此之间可能会有关系，而且甚至可能是别的应用提供的Service。如果我们再使用应用框架里的概念，那么思考也好，交流也好，都会变得很低效。所以我们才引出了config，shell，core这三个概念来简化应用的内部，这样就可以思考大量的应用之间的关系是应该是一个什么样的架构了，不过这个方向是一个更复杂的问题，这里就不展开了。</p>
+<p>回到我们的系统上，在一个刚刚出现了前后端概念的系统里，我们的新概念们能帮助我们理解架构的演进，下面就基于这些概念带着大家推演一遍现代常用的一些软件框架是因为哪些力量驱动出来的。</p>
+<h2 id="Core的重新定义"><a href="#Core的重新定义" class="headerlink" title="Core的重新定义"></a>Core的重新定义</h2><p>当我们把系统分为客户端和服务端的时候，那么客户端要做什么呢？服务端要做什么呢？</p>
+<p>往往客户端是需要更多的照顾用户体验，填平服务端的接口和用户体验之间的沟壑。</p>
+<p>服务端则要保证数据读写的性能，安全性和易于被客户端使用。</p>
+<p>从这两点来看，客户端应该考虑的是用户体验，而不是让用户体验为服务端扭曲。所以客户端的core层更多的是那层填平服务端接口和用户体验之间沟壑的那堆代码，而它给shell的接口应该是以shell好调用为导向的。</p>
+<p>那么怎么算是好用呢？</p>
+<h2 id="边界与无限"><a href="#边界与无限" class="headerlink" title="边界与无限"></a>边界与无限</h2><p>刚才谈到，在我们的边界处，好用是一个非常重要的需求。怎么算好用呢？最重要的是边界要找对，如果你过界了，做了事情也会被埋怨。当我们思考系统的时候，边界往往是不好找的。这就需要引入一个新的架构模式： MVC。</p>
+<p>所谓的MVC就是Model-View-Controller。一个常见系统，往往Model层负责核心基本元素和基本算法，View层负责展示和表达数据，Controller层负责调度和组合，把Model层和View层连接在一起。</p>
+<p>一般来讲，Model层通常是我们的Core，Controller层往往就是我们的shell，View层就是shell返回的数据。这个时候边界的思考就清楚了，谁是我们的model和model相关的核心计算，谁就是我们的core。谁是我们的Controller负责调度组合和内外相连，谁就是我们的shell。而我们的计算结果，也就是我们的View层，是会离开我们的应用供别人使用的，那它是我们的最外面的边界。我们思考边界只需要关注在View层，思考清楚我们的View是否在一个抽象层次上就可以了。</p>
+<p>但是，世界不是这么简单的分三层就可以结束了，世界是往复循环以致无穷的。所以我们的MVC也是循环迭代的，也就是说MVC中的某一层还可能再分MVC。那么是哪一层呢？View层。还记得我们第一篇讲得，数据和过程是不严格区分的，所以我们返回的数据，可以被解析为新的过程，新的过程再产生新的数据，从而往复循环以致无穷。</p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-07/pic-02.png" alt="MVC"></p>
+<p>所以可以认为服务端是原应用的Core层进化出来的。</p>
+<p>如果我们把View层进化下去，我们前面提到的客户端的Shell返回的数据，还会再划分，就会有新的组件层(Component)，模版层(Layout)，页面层(Page，也有人爱用Container)等等。</p>
+<p>随着出现了MVC，再进一步思考就会逐渐发现，其实core层不应该关心后端代码，它应该关心前端的领域对象，以用户眼中的模型为基础计算，而不是后端业务人员眼中的模型为基础来计算。所以他会把弥合后端和前端的工作交给shell层，而shell层会夹在三方面很难受，他一方面要对接后端，一方面要对接core，还有一方面要适配真正的前端模型。前端和后端的拉锯战就会出现，在这股力量的挤压之下，我们的BFF就会自然而然的出现，所谓的前后端分离也就是自然而然的事情了。</p>
+<h2 id="题外话"><a href="#题外话" class="headerlink" title="题外话"></a>题外话</h2><h3 id="题外话1"><a href="#题外话1" class="headerlink" title="题外话1"></a>题外话1</h3><p>对于有经验的同学要说一句：数据库不是核心，你的代码才是核心。数据库就是系统的另外一个应用而已，虽然数据库厂商希望你把核心放在它里面，但你不要被厂商的策略绑架了你的自由。</p>
+<h2 id="题外话2"><a href="#题外话2" class="headerlink" title="题外话2"></a>题外话2</h2><p>面向对象，有一位同学总是在给我纠结这个面向对象怎么画。其实之所以有此问并不是不知道怎么用强类型语言来画图，如我们第二篇所述，你换成类图也是一样的。主要的纠结点在于，那个函数放在哪个类里这个问题。</p>
+<p>之所以一直没讲，是因为面向对象是纯粹的人类思考问题的方式，它是非常不精确的，把哪个函数放在哪个类里这个事情是一门艺术而不是一门科学。当我们有一个Dog类的时候，有一个bark方法是非常明显的。当我们有一个货物类（Goods)的时候，算税应该是它的方法吗？当我们有一个数据库实体的时候，比如User，Item等等，那么存储算他的方法吗？如果我们做一个CRM系统，Client明显跟所有的业务都有关系，总不能Client这个类上有所有业务的方法吧？所以我们无论怎么放，都可能是有问题的，而且在变化来临前，我们没有什么客观的标准来判断当前的做法是否合理。</p>
+<p>如果只是画图来表达的话，其实我们的方块上，也表达出了哪个函数属于哪个类，这样已经便于有经验的人发现问题并解决问题了。只是没有任何客观的公式可以帮助大家轻松的解决问题。我们只能帮你这么多了，毕竟方法，从来也不是为弱者服务的。</p>
+<h2 id="题外话3"><a href="#题外话3" class="headerlink" title="题外话3"></a>题外话3</h2><p>你这个是不是六边形架构？<br>其实可以看作是六边形架构的一种变种，我只是比较讨厌六边形这个词，它太容易让人纠结为啥是六个边，不是八个？比如我叫八卦可不可以？所以我们也不要太纠结他叫什么，领会精神就好。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/30/programmer-dojo/thinking-as-a-machine-01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/30/programmer-dojo/thinking-as-a-machine-01/" class="post-title-link" itemprop="url">像机器一样思考（一）—— 宏观的基础</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-01-30 04:00:18" itemprop="dateCreated datePublished" datetime="2020-01-30T04:00:18+00:00">2020-01-30</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>【旧文搬家】<br>本文的起源是因为思考一个问题，什么样的人适合做程序员。<br>我曾经苦恼得思考着这个问题，直到我在SICP上看到了答案。说的白话一点就是，能像机器一样思考的人就适合做程序员。<br>那么计算机这台机器是怎么思考的呢？这里是我的答案：</p>
+<p>我们所有的计算机，都是下面这个模型，江湖人称“冯・诺伊曼体系”<br><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-01/pic-01.png" alt="冯・诺伊曼体系"></p>
+<p>从这个模型上我们看到了什么吗？嗯，可能太多噪音了，看的不够清楚，我给你们再抽象一层：<br><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-01/pic-02.png" alt="输入、处理、输出"></p>
+<p>现在清楚了吧，计算机在中间，两边是输出输出。所有的问题都从输入和输出的角度去思考，这就是计算机这台机器的思考方式。也就是说你能做到这样思考，你就会像机器一样思考了。</p>
+<p>很简单吧，但是新的问题又产生了，处理自然要处理输入产生输出了。输入，输出是些什么呢？这就要在微观层面理解机器是怎么思考的，这一部分叫，机器在加工什么？</p>
+<p>SICP中又说了，非形式的讲，我们只在处理两种东西，数据和过程，他们还不是严格区分的。<br>先不管不严格区分那半句，我们回看我们的模型，中间处理的部分其实就是过程，输入和输出其实就是数据。（在冯诺伊曼体系里，数据和过程被称之为数据和指令）那说到数据，我们有一门学科叫做数据结构，它很好的表达了什么是数据。我们还有面向对象，类型系统之类的知识，他们都会帮助我们很好的定义数据。</p>
+<p>各位看官估计心里犯嘀咕了，扯了这么多，还是无法想象怎么就算像机器一样思考了啊？不急，下面我们拿几个例子来学习一下。</p>
+<p>我们来写一个加法函数，接受两个参数作为加数和被加数，返回一个和，这个太简单了，几乎任何一个程序员都可以在几秒钟内写完。拆成机器的思维是什么样呢？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">加法函数</span><br><span class="line">输入： </span><br><span class="line">  a</span><br><span class="line">  b</span><br><span class="line">输出:</span><br><span class="line">  result</span><br></pre></td></tr></table></figure>
+<p>大概就长这样，输入是a和b，输出是一个结果，我们起名叫result。它到底表达了个啥样的代码呢？大概长这样：（本文所有的代码都会采用javascript描述，但是不代表本文内容只适合描述前端开发）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function add(a, b) &#123;</span><br><span class="line">    return a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>咦？result哪去了？在你调用的地方可能会有一行代码 <code>var result = add(1,2);</code><br>这个表达方式不仅仅可以用来描述函数定义，用来描述表达式也是可以的。比如，如果我们把前面的输入输出思维描述改为<code>加法表达式</code>。你会发现其实这段描述“编译”成代码大概长这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var result &#x3D; a + b;</span><br></pre></td></tr></table></figure>
+<p>所以不仅仅可以用来描述函数定义，还可以描述代码块。</p>
+<p>但是到这里就结束了吗？感觉好像对数据的表述不够细致啊。确实，我们忘了加类型了。不加类型这描述简直万灵丹么，反正俩参数一个返回值的都能用，这不行，我们还得把类型加上看着才清楚点。加上类型就变成了这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">加法函数</span><br><span class="line">输入： </span><br><span class="line">  a: Number</span><br><span class="line">  b: Number</span><br><span class="line">输出:</span><br><span class="line">  result: Number</span><br></pre></td></tr></table></figure>
+
+<p>这看着就好多了，是不是比刚才理解上文所讲的像机器一样思考了呢？好吧，你可能会说，这玩意有啥用啊，我有分析的这个空，我代码都写完了啊。不急，我们接着往后看。</p>
+<p>刚才那个题目有点太简单了，我们做一个稍微复杂的。比如下面这个：写一个函数，可以选出一个由数字组成的集合当中所有的偶数的最大值。</p>
+<p>这回一步做出来可能就有点难了，没关系，我们可以成两步：</p>
+<ol>
+<li>选出集合中的偶数</li>
+<li>选出偶数中的最大值<br>这两步呢，按照我们之前的格式写一下，大概是下面这个样子：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#1 选出集合中的偶数</span><br><span class="line">输入： </span><br><span class="line">  inputArray </span><br><span class="line">输出：</span><br><span class="line">  evenArray</span><br><span class="line"> </span><br><span class="line">#2 选出偶数中的最大值</span><br><span class="line">输入：</span><br><span class="line">  evenArray</span><br><span class="line">输出:</span><br><span class="line">  max:Number</span><br></pre></td></tr></table></figure>
+<p>哎呀，突然发觉不知道该怎么描述集合呢。Javascript里就用数组就好了，但是还是不知道怎么描述数组啊。这个其实很简单，这不是一个由数字组成的数组吗？我们只要写成<code>[Number]</code>就可以了。因为我们的一个好习惯是一个集合里不要放两种类型的元素，所以就这么写就好了。那么加上去的话，大概就长这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#1 选出集合中的偶数</span><br><span class="line">输入： </span><br><span class="line">  inputArray: [Number] </span><br><span class="line">输出：</span><br><span class="line">  evenArray: [Number]</span><br><span class="line"> </span><br><span class="line">#2 选出偶数中的最大值</span><br><span class="line">输入：</span><br><span class="line">  evenArray</span><br><span class="line">输出:</span><br><span class="line">  max: Number</span><br></pre></td></tr></table></figure>
+
+<p>咦，第二步的evenArray没有写类型。嗯，因为evenArray是第一步的输出，我就把它省了，相信大家也能看明白。<br>耐着性子看到这里，你估计已经发现了，我还是没有回答你这个思维方式有什么用这个问题。我很想忽悠着你再做一道题，不过估计你坚持不完就会转身离开了。那我们就这两道题试着讲一讲。</p>
+<p>第一道题，我们只是展示了这个思维，第二道题，我们才开始使用到它的威力。尽管这道题也不复杂，但是思考过程还是展示了：</p>
+<ol>
+<li>分解问题</li>
+<li>找到子问题之间的关联（通过输入输出关联起来）</li>
+<li>找到问题的边界，明确假设与结果</li>
+</ol>
+<p>上述三点看着简单，却是思维清楚与否的关键。我们管这个能力叫Analytical Thinking。</p>
+<p>思维清楚带来的收益是什么？这些步骤可以直接转化为工作的任务列表，而且可测试。这样分解出来的任务列表，完成效率是极高的。我们曾经做过实验，按这个思路分解过的人，比没有分解过的人，完成效率可以高3倍以上，而且前者只学了一周的编程。<br>一个完全不会写程序的人，只要学会了这个思维，就可以开始编程之旅了，而且威力非常巨大。</p>
+<p>听起来好简单啊，有那么神吗？不是编程的人都应该会吗？然而并不是的，很多人思考编程这件事情是靠感觉的。<br>我前几天面了40多个外包公司外派来的人，只有5个人，可以按照输入输出来对问题进行分解。所以我觉得我还是有必要写点东西来讲讲这个。</p>
+<p>除了对初学者有益之外，对Team  Lead也是有益的。当你觉得你遇到的人没sense的时候，你可以试着让他们这么表达一下程序。一般就会发现一些问题。</p>
+<h2 id="题外话"><a href="#题外话" class="headerlink" title="题外话"></a>题外话</h2><p>题外话－1：<br>    我们像机器一样思考，不就都变成机器了吗？嗯，其实不是的。所谓我们像机器一样思考，那机器这种思考方式又是从哪里来的呢？机器的思考模型是一个叫“图灵机”的计算模型，而图灵机则是图灵祖师爷模拟人思考而发明出来的。所以，其实不存在什么像机器一样思考，只不过是学会一种人类的思考方式而已。<br>    考虑到图灵只能以自己和自己周围的天才科学家的作为人类的具体实例来抽象图灵机，所以我们学习的其实不是什么机器的思考方式，而是天才的思考方式，这篇文章其实应该叫《像天才一样思考》。</p>
+<p>题外话－2:<br>    这个不就是面向过程编程吗？如果的思考仅仅停在这里，那就是面向过程编程了。如果我们接着想下去，当数据复杂到一定程度的时候，我们会自然的引入封装，于是面向对象诞生了。回到数据与过程不严格区分那半句，当我们试图模糊数据和过程的界限，将过程像数据一样纳入输入输出的范畴，我们就走上了函数式编程之路。</p>
+<p>题外话－3:<br>    有人觉得练习不够吗？请留言，如果感兴趣的人多，我就加紧写更多练习的解析。</p>
+<h2 id="相关文章："><a href="#相关文章：" class="headerlink" title="相关文章："></a>相关文章：</h2><p><a href="https://www.jianshu.com/p/15ccf03ef37c" target="_blank" rel="noopener">像机器一样思考（二）—— 数据的细节</a><br><a href="https://www.jianshu.com/p/1cca5bf85f29" target="_blank" rel="noopener">像机器一样思考（三）—— 穷尽就是力量</a><br><a href="https://www.jianshu.com/p/37a862c43481" target="_blank" rel="noopener">像机器一样思考（四）—— 一图抵千言</a><br><a href="https://www.jianshu.com/p/1dd0190b8aac" target="_blank" rel="noopener">像机器一样思考（五）—— 第一个应用</a><br><a href="https://www.jianshu.com/p/f7a4f0f851c6" target="_blank" rel="noopener">像机器一样思考（六） —— 脑中的重构</a><br><a href="https://www.jianshu.com/p/12738a1b0365" target="_blank" rel="noopener">像机器一样思考（七） —— 跨应用思考</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/30/programmer-dojo/thinking-as-a-machine-02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/30/programmer-dojo/thinking-as-a-machine-02/" class="post-title-link" itemprop="url">像机器一样思考（二）—— 数据的细节</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-01-30 04:00:18" itemprop="dateCreated datePublished" datetime="2020-01-30T04:00:18+00:00">2020-01-30</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>与很多人想的不同，同理心是一件强大的控制工具，你有多理解你要控制的对象，你就多容易控制它。所以我们学习像机器一样思考并不是为了变成机器，而是为了更好的控制机器为我们服务。从这一篇开始，我们进一步讲解这种思考模型的细节。</p>
+<p>随着对细节的深入，我们会发现，我们会越来越看不清楚机器的思维和人的思维的疆界。仿佛这之间的区别是很小的，有时候你不知道是因为人这么思考所以这么设计的机器，还是机器这么思考所以我们需要迁就它。</p>
+<p>同时，可能你会感到一些些麻烦和思维上的束缚，但总之请记住，一切不得不接受的束缚，都是为了更大的自由。Rails之父DHH曾经说过：</p>
+<blockquote>
+<p>约束是你的朋友。</p>
+</blockquote>
+<p>这很反直觉，然而随着你编程的经验增多，你会体会到这句话是多么的正确。</p>
+<h2 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h2><p>编程语言分为静态类型（比如Java，C#，Scala）和动态类型（比如JavaScript，Ruby，Python）两种。但不管是静态类型还是动态类型，你不可否认类型总是在那里的，哪怕你不显式的表达出来，也绕不开它的存在，你思考的时候必须思考它。</p>
+<p>在<a href="https://www.jianshu.com/p/c86329151cba" target="_blank" rel="noopener">上一篇</a>里，我们有一个例子用到了类型：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">加法函数</span><br><span class="line">输入： </span><br><span class="line">  a: Number</span><br><span class="line">  b: Number</span><br><span class="line">输出:</span><br><span class="line">  result: Number</span><br></pre></td></tr></table></figure>
+<p>在这一个例子里，我们用到了一种类型：Number。表明我们的参数只能是数字。假如在强类型的语言里，如果我们传进去的参数类型不是数字，就会报错。假如在弱类型的语言里，我们传进去的参数类型不是数字倒是不会报错，但是如果我们使用<code>&gt;</code>或<code>-</code>之类的运算符对其进行运算的时候，可能就会报错。所以强弱类型的语言无非是出错的时机不同，为了保证我们程序的正确性，不管你用哪种，都摆脱不了要思考数据的类型问题。</p>
+<p>仅仅是一个个体数据的时候，考虑类型还是容易考虑的。当我们有一组数据的时候呢？比如上一篇里我们还有这样一个例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#1 选出集合中的偶数</span><br><span class="line">输入： </span><br><span class="line">  inputArray: [Number] </span><br><span class="line">输出：</span><br><span class="line">  evenArray: [Number]</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子里，inputArray的类型到底是什么呢？是<code>数字</code>呢？还是<code>数组</code>呢？还是<code>只有数字的数组</code>呢？泛泛的说，inputArray的类型是<code>数组</code>，而精确地讲，inputArray的类型是<code>只有数字的数组</code>。为什么需要精确的指定，只有数字呢？这其实是从实用角度出发，如果我们一个数组里面放各式各样类型的数据，我们就会越来越想不清楚而头脑陷入混乱，在写代码的时候也是每当用到一种类型的数据就要加一个if，就容易漏掉一些情况而引入bug。所以为了我们自己好，还是一个数组里只放一种数据类型吧。</p>
+<p>在一些强类型语言（比如Java）里，为了保证这一点，他们还使用了所谓的泛型。有一种常用的情况就是跟我们这个情况类似，大概长成这样：<code>List&lt;Integer&gt;</code>。我们就会了解，当涉及到集合的时候，为了防止滥用，人们不惜动用语法。</p>
+<p>以上就是我们上一篇用到的类型相关的知识，在这一篇里，我们会走的更深入。</p>
+<h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><p>在上一篇里，我们的类型还是一个黑盒，在这一篇里，我们要引入结构。每一种语言都有一些基本类型，但是用来描述这个世界的数据，基本结构是不够的。所以每个语言又都提供了一种方法，让我们可以以基本数据类型为“积木”，通过结构化的方式来自定义类型。在大多数语言里，我们使用类来做这件事，但是不管你用什么，最后表达的信息都是类似的。</p>
+<p>举例来说，当我们想要表达一个数字的类型时，我们用Number，我们想表达一个字符串的类型时，我们用String。那当我们想表达一个人，这个人有一个姓名属性是String类型的，有一个年龄属性是Number类型的时候。我们需要创造出一个这样的类型，我们就可以这样写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  name: String,</span><br><span class="line">  age: Number</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在这里，我就用到了一种结构来表达了人的类型，大家可以看到我用的方式是借鉴了<a href="http://www.json.org/" target="_blank" rel="noopener">JSON</a>的表达方式，只是把本应该写值的部分换成了类型。这是一种便于在纸上书写的表达方式，我们在日常工作中进行沟通的时候，随手拿过一张纸，很容易写清楚我想表达的结构。</p>
+<p>而最重要的是，它可以简单的表达出很深层的结构，比如我们想要定义一个人这个人有一个孩子，孩子当然也是一个人，也有相同的属性，那我们可以这么写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  name: String,</span><br><span class="line">  age: Number,</span><br><span class="line">  child: &#123;</span><br><span class="line">    name: String,</span><br><span class="line">    age: Number</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当然我们可能会说了，万一不止一个孩子呢？好，这就引入了自定义类型中的数组怎么表达的问题。其实可能大家已经发现了，自定义类型它也是一种类型，它存在的位置就是原来写String，Number的地方，那么问题的答案就很符合直觉了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  name: String,</span><br><span class="line">  age: Number,</span><br><span class="line">  children: [&#123;</span><br><span class="line">    name: String,</span><br><span class="line">    age: Number</span><br><span class="line">  &#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>看起来跟<code>[Number]</code>很像吧？那么对应一个具体的Javascript对象，代码是怎么写的呢？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">let zhangsan &#x3D; &#123;</span><br><span class="line">  name: &quot;张三&quot;,</span><br><span class="line">  age: 38,</span><br><span class="line">  children: [&#123;</span><br><span class="line">    name: &quot;李四&quot;,</span><br><span class="line">    age: 10</span><br><span class="line">  &#125;,&#123;</span><br><span class="line">    name: &quot;王五&quot;,</span><br><span class="line">    age: 5</span><br><span class="line">  &#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>前文的结构，描述的就是这个代码里的对象的结构。前文的结构是为了限制我们的数据定义，然而有了这个限制，我们就可以思考更复杂的问题。</p>
+<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><p>废话不多说，我们还是老规矩，做个练习看看怎么用。</p>
+<p>打印某人的成绩单。已知输入的格式是</p>
+<blockquote>
+<p>[“姓名”, “语文成绩”, “英语成绩”, “数学成绩”, “编程成绩”]<br>比如： [“张三”,  “95”, “80”, “75”, “80”]</p>
+</blockquote>
+<p>要求打印出成绩单：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">成绩单</span><br><span class="line">姓名：张三</span><br><span class="line">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line">数学：75</span><br><span class="line">语文：95</span><br><span class="line">英语：80</span><br><span class="line">编程：80</span><br><span class="line">***************</span><br><span class="line">平均分：82.5</span><br><span class="line">总分：330</span><br><span class="line">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br></pre></td></tr></table></figure>
+
+<p>如果对这个题目进行任务划分，我会分成两步：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#1 转换为ViewModel</span><br><span class="line">输入： </span><br><span class="line">  scoresArray: [String] </span><br><span class="line">输出：</span><br><span class="line">  scoreSheet: &#123;</span><br><span class="line">    name: String,</span><br><span class="line">    chinese: String,</span><br><span class="line">    english: String,</span><br><span class="line">    math: String,</span><br><span class="line">    programming: String,</span><br><span class="line">    average: String,</span><br><span class="line">    summary: String</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">#2 打印成绩单</span><br><span class="line">输入：</span><br><span class="line">    scoreSheet</span><br><span class="line">输出：    </span><br><span class="line">    result: String</span><br></pre></td></tr></table></figure>
+
+<p>这两步我干了什么呢：</p>
+<p>第一步，我把字符串数组转换为了一个具体的对象类型，它有六个属性，分别对应着我们要打印的成绩单上的六个数据：语文，英语，数学，编程，平均分和总分。<br>第二步，我把对象转成了一个字符串，打印了出来。</p>
+<p>你可能会很奇怪了，打印没有返回值啊？为什么写在输出里？好问题，且听我下回分解～</p>
+<h2 id="照例，题外话环节。"><a href="#照例，题外话环节。" class="headerlink" title="照例，题外话环节。"></a>照例，题外话环节。</h2><p>题外话1: 为什么我们不直接用数组就拼这个字符串呢？一方面，我是在演示结构的使用，另一方面，这是一个小技巧，我们最后打印的这一部分字符串的部分，被称之为表现层（就是表现在人眼前的那一部分），在表现层你最后使用的数据的结构，尽量跟你的表现层的结构一致，这样出bug的几率最低。</p>
+<p>题外话2: 这是在js里，如果我们采用强类型语言，这些结构该怎么定义呢？其实很简单嘛，比如那个人的类型结构：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Person &#123;</span><br><span class="line">  name: String,</span><br><span class="line">  age: Number,</span><br><span class="line">  children: [Person]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>done。</p>
+<p>题外话3： 那我们用<a href="http://www.ibm.com/developerworks/cn/rational/rationaledge/content/feb05/bell/" target="_blank" rel="noopener">类图</a>可不可以呢？当然也可以，只是要画框子很容易在写属性的时候发现画小了，而且当你画更深层关系的时候就比较麻烦。</p>
+<p>//TODO: 这里需要写几个对照例子</p>
+<h2 id="课后作业"><a href="#课后作业" class="headerlink" title="课后作业"></a>课后作业</h2><p>打印所有人的成绩单。已知输入的格式是</p>
+<blockquote>
+<p>[<br>[“姓名”, “语文成绩”, “英语成绩”, “数学成绩”, “编程成绩”],<br>…<br>]</p>
+</blockquote>
+<p>比如： </p>
+<blockquote>
+<p>［<br>[“张三”,  “95”, “80”, “75”, “80”],<br>[“李四”,  “80”, “70”, “85”, “90”]<br>]</p>
+</blockquote>
+<p>要求打印出成绩单：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">成绩单</span><br><span class="line">姓名|数学|语文|英语|编程|平均分|总分 </span><br><span class="line">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line">张三|75|95|80|80|82.5|330</span><br><span class="line">李四|85|80|70|90|81.25|325</span><br><span class="line">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line">全班总平均分：xxx</span><br><span class="line">全班总分中位数：xxx</span><br></pre></td></tr></table></figure>
+
+<p>请列出本题的任务</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/30/programmer-dojo/thinking-as-a-machine-06/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/30/programmer-dojo/thinking-as-a-machine-06/" class="post-title-link" itemprop="url">像机器一样思考（六）—— 脑中的重构</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-01-30 04:00:18" itemprop="dateCreated datePublished" datetime="2020-01-30T04:00:18+00:00">2020-01-30</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>上一篇里，我们实现了一个小应用，而且用两种设计。本文将给出更多的设计实现以继续探讨设计问题。</p>
+<p>我们会看到，即便是纸上的图，也可以进行重构。由于纸是我们大脑的延伸，也可以称之为脑中的重构。而这种重构的结果由于并不是真正的代码，所以即便重构错了方向，设计不合理，抛弃也非常简单，相对于改代码而言，几乎没有成本。</p>
+<h2 id="简单的改进"><a href="#简单的改进" class="headerlink" title="简单的改进"></a>简单的改进</h2><p>第一步我们先做得简单一点，上一节我们停在这张图上：</p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-01.png" alt="image1"></p>
+<p>我们可能会觉得上一节的图有点啰嗦，比如buildStudentInfoPromptString和buildStudentSeqencePromptString两个函数，甚至generateReport都啰嗦了。那我就可以重构一下，去掉这些啰嗦的内容，变成下图：</p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-02.png" alt="image2"></p>
+<p>上面的改进可能我们不太满意，我们试着走另一个方向，从整个程序的角度来减少输入输出。我们前面说了，每个函数的输入输出种类越少越好，那么在我们这个题目里，推到极致就是每个函数不自己处理打印和读取，所有的打印和读取都放到一处。不但不打印和读取，还不调用其他函数，那么就会变得像下面这张图：</p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-03.png" alt="image3"></p>
+<h2 id="概念性思考"><a href="#概念性思考" class="headerlink" title="概念性思考"></a>概念性思考</h2><p>上面这个实现在过程层面已经实现了只在一个函数中打印和读取用户输入。然而这个最大的函数却很臃肿，除了不干具体的活，这个系统中所有的逻辑它都知道。这种全知全能的函数，如果有更多层级，更多菜单的应用，这个函数很容易就臃肿到不能维护的地步。</p>
+<p>那么我们就来想一下，有没有一种设计，在层级更多的时候表现的更好。这个时候我们需要一种思考能力，我们称之为概念性思考。<br>概念性思考一般分为四步：</p>
+<ol>
+<li>看到复杂场景背后的核心本质</li>
+<li>识别到两个不相关的情景的相似之处</li>
+<li>用比喻或类比来解释场景</li>
+<li>用一个框架去解决问题</li>
+</ol>
+<p>那么我们按照这四步走，当前的复杂场景就是这个应用，看起来每次输出之后，还会有下一次输出之前的提示，好像每次的提示，输入，输入后的打印三个是一组的，其实完全可以把输入后的打印和下一步的提示看作一次处理，也就变成了根据用户一次输入进行一种计算，将计算的结果转化为一次输出。这也就是它背后的核心本质。</p>
+<p>简化成这种核心本质后，有没有一种已经存在的类似情景呢？我们通过观察很容易可以看出，一个简单的Web应用和一个命令行应用没什么区别，当然是没有ajax的传统web应用。用户每做一次请求，然后得到一个响应，这个响应会渲染成一个页面。</p>
+<p>如果这两个东西有些相似性的话，那么什么是一次请求到一次响应的结束呢？在这个应用里，输入完字符串之后，敲击回车就是一次请求。当敲击回车后到下一次看到要求输入时为止就是一次响应。</p>
+<p>在我们这个应用里举一个具体的例子来类比一下，在主界面输入1，并敲击回车，为一次请求；从敲击回车后，经历诸如下列的文字被打印出来的阶段：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">请输入学生信息（格式：姓名, 学号, 民族, 班级, 学科: 成绩, ...），按回车提交：</span><br></pre></td></tr></table></figure>
+
+<p>一直到变成可以进行下一次输入的状态为止，为一次响应。其余的情况以此类推都可以类似的理解为请求和响应。</p>
+<p>那么有没有现成的一个web开发的框架可以照搬来处理这个命令行应用呢？那可以选择的就多了，各种经典的WebMVC框架都可以。当然照搬任何一个WebMVC框架的话的话可能会比较啰嗦，反而降低效率，我们可以在理解它们的概念的前提之下仿造一个，这就是下一节的内容了。</p>
+<p>至此，我把我在这件事情上进行概念性思考的过程展示给了大家。做一个优秀的程序员，分析性思考和概念性思考是两大关键思考能力，希望每个读者都可以通过这一系列教程理解这两种能力，从而在工作中进行刻意练习直到掌握这两种能力。</p>
+<h2 id="我们的框架"><a href="#我们的框架" class="headerlink" title="我们的框架"></a>我们的框架</h2><p>有些话要说在前面，这个题目比较简单，但我给出的解决方案是可以处理更多层级，更多菜单的，只是如果我给出的题目太过复杂的话，大家可能连读完需求的耐心都没有，更不要提理解解决方案了。所以我们算是用了一个复杂的方案来解决一个简单的题目，中间的差距请大家自行想象，这个方案在更多层级和更多菜单时，才会真正显现威力。</p>
+<p>言归正传，在我们的这个框架里，我们的过程方面有三个概念：Router，Command和Service。<br>Router负责当每一个用户输入进来的时候，它知道去找哪一个具体的响应者，这个响应者就是我们的Command。<br>Router通过简单的输入解析，找到具体的Command，Command负责处理各种具体的用户输入解析，但是有一些核心的计算，比如说添加学生信息，我们定义为Service。Command会调用Service函数和将Service计算结果翻译为用户友好的输出。当Command处理完一切，就会返回结果，结果就会统一的输出。Command一般不直接输出到用户接口，这样就会便于测试，就像我们所有的WebMVC框架一样。管理这些输入输出的是我们的main函数，它还会负责把我们的Router，Command配置在一起，像极了WebMVC里的配置文件。</p>
+<p>过程方面分析完了，在数据方面，我们只需要把Service和Command之间的通讯，Command和最外层之间的通讯抽象出一些概念就可以了，比如Service和Command之间的数据可以叫Response，Command和最外层之间的数据可以叫View。</p>
+<p>所以综上，我们可以开始画图了，但是这个画图呢比较难画在一张图上，所以我们就把一次“请求”和一次“响应”画成一张图，这也是一种可视化的技巧，当我们把一件事画成多张图的时候，我们的大脑会自己把这些图联系到一起，并不需要我们在图上表示出，他们是有关系的。</p>
+<p>总之，这个应用可以画成的图如下所示：</p>
+<p>应用启动：</p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-04.png" alt="application-example-home"></p>
+<p>去界面1：<br><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-05.png" alt="application-example-goto-add"></p>
+<p>添加学生成绩：<br><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-06.png" alt="application-example-add"></p>
+<p>去界面2：<br><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-07.png" alt="application-example-goto-print"></p>
+<p>打印学生成绩：<br><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-08.png" alt="application-example-print"></p>
+<p>退出：<br><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-09.png" alt="application-example"></p>
+<p>将上述图片翻译成Task的时候，就会用到Response和View。</p>
+<h2 id="课后练习"><a href="#课后练习" class="headerlink" title="课后练习"></a>课后练习</h2><ol>
+<li>列出所有的任务</li>
+<li>改进需求1: 请引入加分策略，参照第二篇</li>
+<li>改进需求2: 请把每次添加学生信息输出到文件，每次打印成绩单时，从文件读取。画出图和任务列表。</li>
+</ol>
+<h2 id="题外话－1"><a href="#题外话－1" class="headerlink" title="题外话－1"></a>题外话－1</h2><p>问：一个用户输入到一个用户输出算一张图的话，这个命令行程序还好说，正常应用里的拖拽怎么办呢？<br>答： 首先，拖拽的时间是可以切分成时间片的。对于每一类时间片，其实我们可以画一张图。（当然，你会嫌烦，有这功夫不如做出来了）其次，如果我们拖拽的话，整个过程其实只在前面出现效果而已，没有任何数据往后发送，只有拖拽结束那一刻，才会有严肃的数据产生。所以我们一般不关注效果部分，因为他不触达核心，所以即便想的不全，改起来也不困难。所以完全可以先做再改。</p>
+<h2 id="题外话－2"><a href="#题外话－2" class="headerlink" title="题外话－2"></a>题外话－2</h2><p>为什么这么划分图？<br>除了像request和response之外，之所以这么划分，还因为这是一个个的业务场景。我们在前面的几节里，使用的思维主要是结构化思维，就是把一个整体的分解为多个模块的思路。而在这里面，我们使用的是场景化思维，每一张图实际上都是一个业务场景。需求的场景化是非常重要的一种思维，这会有助于我们把业务、组织和软件进行有机的设计。</p>
 
       
     </div>
@@ -298,7 +1028,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

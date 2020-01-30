@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://yoursite.com').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="上一篇里，我们实现了一个小应用，而且用两种设计。本文将给出更多的设计实现以继续探讨设计问题。 我们会看到，即便是纸上的图，也可以进行重构。由于纸是我们大脑的延伸，也可以称之为脑中的重构。而这种重构的结果由于并不是真正的代码，所以即便重构错了方向，设计不合理，抛弃也非常简单，相对于改代码而言，几乎没有成本。 简单的改进第一步我们先做得简单一点，上一节我们停在这张图上：  我们可能会觉得上一节的图有点">
+<meta property="og:type" content="article">
+<meta property="og:title" content="像机器一样思考（六）—— 脑中的重构">
+<meta property="og:url" content="http://yoursite.com/2020/01/30/programmer-dojo/thinking-as-a-machine-06/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="上一篇里，我们实现了一个小应用，而且用两种设计。本文将给出更多的设计实现以继续探讨设计问题。 我们会看到，即便是纸上的图，也可以进行重构。由于纸是我们大脑的延伸，也可以称之为脑中的重构。而这种重构的结果由于并不是真正的代码，所以即便重构错了方向，设计不合理，抛弃也非常简单，相对于改代码而言，几乎没有成本。 简单的改进第一步我们先做得简单一点，上一节我们停在这张图上：  我们可能会觉得上一节的图有点">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-01.png">
+<meta property="og:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-02.png">
+<meta property="og:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-03.png">
+<meta property="og:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-04.png">
+<meta property="og:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-05.png">
+<meta property="og:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-06.png">
+<meta property="og:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-07.png">
+<meta property="og:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-08.png">
+<meta property="og:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-09.png">
+<meta property="article:published_time" content="2020-01-30T04:00:18.880Z">
+<meta property="article:modified_time" content="2020-01-30T04:00:18.880Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-01.png">
+
+<link rel="canonical" href="http://yoursite.com/2020/01/30/programmer-dojo/thinking-as-a-machine-06/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>像机器一样思考（六）—— 脑中的重构 | Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/30/programmer-dojo/thinking-as-a-machine-06/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          像机器一样思考（六）—— 脑中的重构
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-01-30 04:00:18" itemprop="dateCreated datePublished" datetime="2020-01-30T04:00:18+00:00">2020-01-30</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>上一篇里，我们实现了一个小应用，而且用两种设计。本文将给出更多的设计实现以继续探讨设计问题。</p>
+<p>我们会看到，即便是纸上的图，也可以进行重构。由于纸是我们大脑的延伸，也可以称之为脑中的重构。而这种重构的结果由于并不是真正的代码，所以即便重构错了方向，设计不合理，抛弃也非常简单，相对于改代码而言，几乎没有成本。</p>
+<h2 id="简单的改进"><a href="#简单的改进" class="headerlink" title="简单的改进"></a>简单的改进</h2><p>第一步我们先做得简单一点，上一节我们停在这张图上：</p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-01.png" alt="image1"></p>
+<p>我们可能会觉得上一节的图有点啰嗦，比如buildStudentInfoPromptString和buildStudentSeqencePromptString两个函数，甚至generateReport都啰嗦了。那我就可以重构一下，去掉这些啰嗦的内容，变成下图：</p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-02.png" alt="image2"></p>
+<p>上面的改进可能我们不太满意，我们试着走另一个方向，从整个程序的角度来减少输入输出。我们前面说了，每个函数的输入输出种类越少越好，那么在我们这个题目里，推到极致就是每个函数不自己处理打印和读取，所有的打印和读取都放到一处。不但不打印和读取，还不调用其他函数，那么就会变得像下面这张图：</p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-03.png" alt="image3"></p>
+<h2 id="概念性思考"><a href="#概念性思考" class="headerlink" title="概念性思考"></a>概念性思考</h2><p>上面这个实现在过程层面已经实现了只在一个函数中打印和读取用户输入。然而这个最大的函数却很臃肿，除了不干具体的活，这个系统中所有的逻辑它都知道。这种全知全能的函数，如果有更多层级，更多菜单的应用，这个函数很容易就臃肿到不能维护的地步。</p>
+<p>那么我们就来想一下，有没有一种设计，在层级更多的时候表现的更好。这个时候我们需要一种思考能力，我们称之为概念性思考。<br>概念性思考一般分为四步：</p>
+<ol>
+<li>看到复杂场景背后的核心本质</li>
+<li>识别到两个不相关的情景的相似之处</li>
+<li>用比喻或类比来解释场景</li>
+<li>用一个框架去解决问题</li>
+</ol>
+<p>那么我们按照这四步走，当前的复杂场景就是这个应用，看起来每次输出之后，还会有下一次输出之前的提示，好像每次的提示，输入，输入后的打印三个是一组的，其实完全可以把输入后的打印和下一步的提示看作一次处理，也就变成了根据用户一次输入进行一种计算，将计算的结果转化为一次输出。这也就是它背后的核心本质。</p>
+<p>简化成这种核心本质后，有没有一种已经存在的类似情景呢？我们通过观察很容易可以看出，一个简单的Web应用和一个命令行应用没什么区别，当然是没有ajax的传统web应用。用户每做一次请求，然后得到一个响应，这个响应会渲染成一个页面。</p>
+<p>如果这两个东西有些相似性的话，那么什么是一次请求到一次响应的结束呢？在这个应用里，输入完字符串之后，敲击回车就是一次请求。当敲击回车后到下一次看到要求输入时为止就是一次响应。</p>
+<p>在我们这个应用里举一个具体的例子来类比一下，在主界面输入1，并敲击回车，为一次请求；从敲击回车后，经历诸如下列的文字被打印出来的阶段：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">请输入学生信息（格式：姓名, 学号, 民族, 班级, 学科: 成绩, ...），按回车提交：</span><br></pre></td></tr></table></figure>
+
+<p>一直到变成可以进行下一次输入的状态为止，为一次响应。其余的情况以此类推都可以类似的理解为请求和响应。</p>
+<p>那么有没有现成的一个web开发的框架可以照搬来处理这个命令行应用呢？那可以选择的就多了，各种经典的WebMVC框架都可以。当然照搬任何一个WebMVC框架的话的话可能会比较啰嗦，反而降低效率，我们可以在理解它们的概念的前提之下仿造一个，这就是下一节的内容了。</p>
+<p>至此，我把我在这件事情上进行概念性思考的过程展示给了大家。做一个优秀的程序员，分析性思考和概念性思考是两大关键思考能力，希望每个读者都可以通过这一系列教程理解这两种能力，从而在工作中进行刻意练习直到掌握这两种能力。</p>
+<h2 id="我们的框架"><a href="#我们的框架" class="headerlink" title="我们的框架"></a>我们的框架</h2><p>有些话要说在前面，这个题目比较简单，但我给出的解决方案是可以处理更多层级，更多菜单的，只是如果我给出的题目太过复杂的话，大家可能连读完需求的耐心都没有，更不要提理解解决方案了。所以我们算是用了一个复杂的方案来解决一个简单的题目，中间的差距请大家自行想象，这个方案在更多层级和更多菜单时，才会真正显现威力。</p>
+<p>言归正传，在我们的这个框架里，我们的过程方面有三个概念：Router，Command和Service。<br>Router负责当每一个用户输入进来的时候，它知道去找哪一个具体的响应者，这个响应者就是我们的Command。<br>Router通过简单的输入解析，找到具体的Command，Command负责处理各种具体的用户输入解析，但是有一些核心的计算，比如说添加学生信息，我们定义为Service。Command会调用Service函数和将Service计算结果翻译为用户友好的输出。当Command处理完一切，就会返回结果，结果就会统一的输出。Command一般不直接输出到用户接口，这样就会便于测试，就像我们所有的WebMVC框架一样。管理这些输入输出的是我们的main函数，它还会负责把我们的Router，Command配置在一起，像极了WebMVC里的配置文件。</p>
+<p>过程方面分析完了，在数据方面，我们只需要把Service和Command之间的通讯，Command和最外层之间的通讯抽象出一些概念就可以了，比如Service和Command之间的数据可以叫Response，Command和最外层之间的数据可以叫View。</p>
+<p>所以综上，我们可以开始画图了，但是这个画图呢比较难画在一张图上，所以我们就把一次“请求”和一次“响应”画成一张图，这也是一种可视化的技巧，当我们把一件事画成多张图的时候，我们的大脑会自己把这些图联系到一起，并不需要我们在图上表示出，他们是有关系的。</p>
+<p>总之，这个应用可以画成的图如下所示：</p>
+<p>应用启动：</p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-04.png" alt="application-example-home"></p>
+<p>去界面1：<br><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-05.png" alt="application-example-goto-add"></p>
+<p>添加学生成绩：<br><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-06.png" alt="application-example-add"></p>
+<p>去界面2：<br><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-07.png" alt="application-example-goto-print"></p>
+<p>打印学生成绩：<br><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-08.png" alt="application-example-print"></p>
+<p>退出：<br><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-09.png" alt="application-example"></p>
+<p>将上述图片翻译成Task的时候，就会用到Response和View。</p>
+<h2 id="课后练习"><a href="#课后练习" class="headerlink" title="课后练习"></a>课后练习</h2><ol>
+<li>列出所有的任务</li>
+<li>改进需求1: 请引入加分策略，参照第二篇</li>
+<li>改进需求2: 请把每次添加学生信息输出到文件，每次打印成绩单时，从文件读取。画出图和任务列表。</li>
+</ol>
+<h2 id="题外话－1"><a href="#题外话－1" class="headerlink" title="题外话－1"></a>题外话－1</h2><p>问：一个用户输入到一个用户输出算一张图的话，这个命令行程序还好说，正常应用里的拖拽怎么办呢？<br>答： 首先，拖拽的时间是可以切分成时间片的。对于每一类时间片，其实我们可以画一张图。（当然，你会嫌烦，有这功夫不如做出来了）其次，如果我们拖拽的话，整个过程其实只在前面出现效果而已，没有任何数据往后发送，只有拖拽结束那一刻，才会有严肃的数据产生。所以我们一般不关注效果部分，因为他不触达核心，所以即便想的不全，改起来也不困难。所以完全可以先做再改。</p>
+<h2 id="题外话－2"><a href="#题外话－2" class="headerlink" title="题外话－2"></a>题外话－2</h2><p>为什么这么划分图？<br>除了像request和response之外，之所以这么划分，还因为这是一个个的业务场景。我们在前面的几节里，使用的思维主要是结构化思维，就是把一个整体的分解为多个模块的思路。而在这里面，我们使用的是场景化思维，每一张图实际上都是一个业务场景。需求的场景化是非常重要的一种思维，这会有助于我们把业务、组织和软件进行有机的设计。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2020/01/30/programmer-dojo/thinking-as-a-machine-02/" rel="next" title="像机器一样思考（二）—— 数据的细节">
+      像机器一样思考（二）—— 数据的细节 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简单的改进"><span class="nav-number">1.</span> <span class="nav-text">简单的改进</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#概念性思考"><span class="nav-number">2.</span> <span class="nav-text">概念性思考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我们的框架"><span class="nav-number">3.</span> <span class="nav-text">我们的框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#课后练习"><span class="nav-number">4.</span> <span class="nav-text">课后练习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题外话－1"><span class="nav-number">5.</span> <span class="nav-text">题外话－1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题外话－2"><span class="nav-number">6.</span> <span class="nav-text">题外话－2</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

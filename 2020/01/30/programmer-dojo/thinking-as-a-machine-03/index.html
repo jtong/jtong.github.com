@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://yoursite.com').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="经过前两篇的内容学习，我相信大家已经差不多学会了这个思考模型。本篇的重点是用它来解决更复杂的问题。当我们开始解决一些稍微复杂点的问题的时候，我们会发现差不多的态度是不行的，我们需要严谨的态度进行缜密的思考才能真正发挥出这个思考模型的力量。 慢慢你会发现，这个思考模型本身不会让你思维缜密，而思维缜密了才能用好这个思考模型。它带来的最大的好处，是让你自己开始看到自己思维的欠缺，从而不再是个思维世界的盲">
+<meta property="og:type" content="article">
+<meta property="og:title" content="像机器一样思考（三）—— 穷尽就是力量">
+<meta property="og:url" content="http://yoursite.com/2020/01/30/programmer-dojo/thinking-as-a-machine-03/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="经过前两篇的内容学习，我相信大家已经差不多学会了这个思考模型。本篇的重点是用它来解决更复杂的问题。当我们开始解决一些稍微复杂点的问题的时候，我们会发现差不多的态度是不行的，我们需要严谨的态度进行缜密的思考才能真正发挥出这个思考模型的力量。 慢慢你会发现，这个思考模型本身不会让你思维缜密，而思维缜密了才能用好这个思考模型。它带来的最大的好处，是让你自己开始看到自己思维的欠缺，从而不再是个思维世界的盲">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-01-30T04:00:18.880Z">
+<meta property="article:modified_time" content="2020-01-30T04:00:18.880Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/01/30/programmer-dojo/thinking-as-a-machine-03/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>像机器一样思考（三）—— 穷尽就是力量 | Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/30/programmer-dojo/thinking-as-a-machine-03/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          像机器一样思考（三）—— 穷尽就是力量
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-01-30 04:00:18" itemprop="dateCreated datePublished" datetime="2020-01-30T04:00:18+00:00">2020-01-30</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>经过前两篇的内容学习，我相信大家已经差不多学会了这个思考模型。本篇的重点是用它来解决更复杂的问题。当我们开始解决一些稍微复杂点的问题的时候，我们会发现差不多的态度是不行的，我们需要严谨的态度进行缜密的思考才能真正发挥出这个思考模型的力量。</p>
+<p>慢慢你会发现，这个思考模型本身不会让你思维缜密，而思维缜密了才能用好这个思考模型。它带来的最大的好处，是让你自己开始看到自己思维的欠缺，从而不再是个思维世界的盲人。</p>
+<h2 id="穷尽"><a href="#穷尽" class="headerlink" title="穷尽"></a>穷尽</h2><p>那么，我们开始做点复杂的题目。也没复杂多少，我们扩展一下上一篇的题目，算学生的成绩单：</p>
+<p>打印所有人的成绩单。已知输入的格式是</p>
+<blockquote>
+<p>[“学号”, “学号”, “学号”]<br>比如：<br>[“TWA20160101”,  “TWA20160102”, “TWA20160103”]</p>
+</blockquote>
+<p>我们有一个全局函数可以给我们提供所有的学生的成绩：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function loadAllScore()&#123;</span><br><span class="line">    return [&#123;</span><br><span class="line">        name: &quot;张三&quot;,</span><br><span class="line">        id: &quot;TWA20160101&quot;,</span><br><span class="line">        chinese: &quot;95&quot;,</span><br><span class="line">        english: &quot;80&quot;,</span><br><span class="line">        math: &quot;95&quot;,</span><br><span class="line">        programming: &quot;80&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    ....</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>要求打印出成绩单类似于：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">成绩单</span><br><span class="line">姓名|数学|语文|英语|编程|平均分|总分 </span><br><span class="line">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line">张三|75|95|80|80|82.5|330</span><br><span class="line">李四|85|80|70|90|81.25|325</span><br><span class="line">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line">全班总分平均数：xxx</span><br><span class="line">全班总分中位数：xxx</span><br></pre></td></tr></table></figure>
+
+<p>仅对这个题目进行划分，我们一定觉得很简单，对吧。就仿照着之前的写呗：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">#1 生成成绩单view model</span><br><span class="line">输入：</span><br><span class="line">  studentIds: [String]</span><br><span class="line">输出：</span><br><span class="line">  scoreSheet: &#123;</span><br><span class="line">    studentScores:[&#123;</span><br><span class="line">        name: String,</span><br><span class="line">        chinese: String,</span><br><span class="line">        english: String,</span><br><span class="line">        math: String,</span><br><span class="line">        programming: String,</span><br><span class="line">        average: String,</span><br><span class="line">        summary: String</span><br><span class="line">    &#125;]</span><br><span class="line">    summary: &#123;</span><br><span class="line">      totalAverage: Number,</span><br><span class="line">      totalMidden: Number</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">#2 打印成绩单</span><br><span class="line">输入：</span><br><span class="line">  scoreSheet</span><br><span class="line">输出：</span><br><span class="line">  result: String</span><br></pre></td></tr></table></figure>
+
+<p>我相信很多人都是这么想的，然而不幸的告诉这么想的同学，这种写法是错误的。原因其实也很简单，请问，#1输出里的chinese等成绩是怎么得到的呢？没有来源吧？你说你调了<code>loadAllScore</code>函数？那为什么不写在输入里呢？</p>
+<p>所以说，我们遗漏了一些输入。回到我们开始的标题上：穷尽。</p>
+<p>可能有很多人听说过一个分析问题的基本原则：完全穷尽，各自独立。很多人听到这个时候，会很困惑：穷尽什么？独立什么？经过我们这些练习，我相信在编程领域，你们这个困惑会小很多。</p>
+<p>所谓各自独立，说的就是在我们划分任务的过程中，每一个任务都对应一个代码块或一个函数，这些代码块和函数，是互相不包含的（不是不依赖，这是翻译的问题，各自独立的独立指的是Exclusive不是Independent）。</p>
+<p>所谓的完全穷尽，说的是我们需要穷尽这个代码块或函数里所有的输入和输出。不能遗漏任何一个输入，任何一个输出。我们的每一项，它的属性，也不能有遗漏，我不能说分析<code>studentScores</code>只想到部分属性，比如说：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">studentScores:[&#123;</span><br><span class="line">        chinese: String,</span><br><span class="line">        english: String,</span><br><span class="line">        summary: String</span><br><span class="line">    &#125;]</span><br></pre></td></tr></table></figure>
+
+<p>这样是不行的。如果我们不严于律己穷尽所有的数据项，我们就会在写代码的时候遇到各种问题。能否穷尽与否，也看出来你思维的缜密与否。</p>
+<p>是不是开始感觉到麻烦了，刚开始做的时候是有些慢的，但我们坚持穷尽这个好习惯，就会渐渐的感受到自己能力的成长。如果你穷尽了所有的输入输出，那么各种可能遇到的问题就像是如来佛手里的孙猴子，无论有什么变数也尽在你掌握之中了。</p>
+<p>那么如果我们穷尽输入输出的话，我们这个题目真正的任务应该怎么分解呢？可以写成这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">#1 获得学生成绩</span><br><span class="line">输入：</span><br><span class="line">    studentIds: [String]</span><br><span class="line">    studentInfo: [&#123;</span><br><span class="line">        id: String,</span><br><span class="line">        name: String,</span><br><span class="line">        chinese: String,</span><br><span class="line">        english: String,</span><br><span class="line">        math: String,</span><br><span class="line">        programming: String,</span><br><span class="line">    &#125;]</span><br><span class="line">输出：</span><br><span class="line">    studentScores:[&#123;</span><br><span class="line">        name: String</span><br><span class="line">        chinese: String,</span><br><span class="line">        english: String,</span><br><span class="line">        math: String,</span><br><span class="line">        programming: String,</span><br><span class="line">        average: String,</span><br><span class="line">        summary: String</span><br><span class="line">    &#125;]</span><br><span class="line"></span><br><span class="line">#2 计算总计</span><br><span class="line">输入：</span><br><span class="line">    studentScores</span><br><span class="line">输出：</span><br><span class="line">    summary: &#123;</span><br><span class="line">      totalAverage: Number,</span><br><span class="line">      totalMidden: Number</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">#3 打印成绩单</span><br><span class="line">输入：</span><br><span class="line">    studentScores</span><br><span class="line">    summary</span><br><span class="line">输出：</span><br><span class="line">    result: String</span><br></pre></td></tr></table></figure>
+
+<p>可能你会奇怪，为什么会分成3步呢？或者说，我们该怎么判断分几步呢？这其实没有一个标准答案，我建议初学者尽量步子小一点，多分几步，经验丰富的人就可以步子大一点。不过有一个反直觉的经验可以分享给大家，你步子大了，开发速度不见得快，因为人是会犯错的。</p>
+<p>这个题是写出来了，但是我们还是不太清楚怎么穷尽对吧。说是穷尽输入输出，到底输入输出都有多少大类呢？这个也是可以穷尽的。</p>
+<p>输入总共有下面几大类：</p>
+<ol>
+<li>参数</li>
+<li>读取全局变量</li>
+<li>调用全局函数后得到的返回值</li>
+<li>读取局部作用域变量（比如this）</li>
+<li>调用局部函数后得到的返回值</li>
+<li>hard code的数据</li>
+</ol>
+<p>输出总共有下面几大类：</p>
+<ol>
+<li>返回值</li>
+<li>修改全局变量</li>
+<li>调用全局函数时传的参数</li>
+<li>修改局部作用域变量（比如this）</li>
+<li>调用局部函数时传的参数</li>
+</ol>
+<h2 id="来去"><a href="#来去" class="headerlink" title="来去"></a>来去</h2><p>听起来不错，不过从哪来，到哪去，还是要写清楚的，我们的studentInfo从哪里来？我们的result又到哪里去了？加上这个来去，我们最终的版本是长这个样子的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">#1 获得学生成绩</span><br><span class="line">输入：</span><br><span class="line">    studentIds: [String]</span><br><span class="line">    studentInfo: [&#123;</span><br><span class="line">        id: String,</span><br><span class="line">        name: String,</span><br><span class="line">        chinese: String,</span><br><span class="line">        english: String,</span><br><span class="line">        math: String,</span><br><span class="line">        programming: String,</span><br><span class="line">    &#125;]: loadAllScore()</span><br><span class="line">输出：</span><br><span class="line">    studentScores:[&#123;</span><br><span class="line">        name: String,</span><br><span class="line">        chinese: String,</span><br><span class="line">        english: String,</span><br><span class="line">        math: String,</span><br><span class="line">        programming: String,</span><br><span class="line">        average: String,</span><br><span class="line">        summary: String</span><br><span class="line">    &#125;]</span><br><span class="line"></span><br><span class="line">#2 计算总计</span><br><span class="line">输入：</span><br><span class="line">    studentScores</span><br><span class="line">输出：</span><br><span class="line">    summary: &#123;</span><br><span class="line">      totalAverage: Number,</span><br><span class="line">      totalMidden: Number</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">#3 打印成绩单</span><br><span class="line">输入：</span><br><span class="line">    studentScores</span><br><span class="line">    summary</span><br><span class="line">输出：</span><br><span class="line">    result: String: console.log()</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><p>引入加分策略<br>少数民族 +10分<br>体育特长 +20分<br>艺术特长 +15分</p>
+<h1 id="题外话"><a href="#题外话" class="headerlink" title="题外话"></a>题外话</h1><p>好像输入和输出的可能性太多了，这很容易让人乱啊。<br>是这样的，所以为什么到了函数式编程我们需要强调纯函数，只有一个输入来源和一个输出去处，一般来讲就是输入只有参数，输出只有返回值。所以你看，如果你把一个领域都穷尽掉，你也会自己发明出那些靠谱的实践，换句话说，如果你能在用这套思维模型的过程中逐渐发现跟各种最佳实践都很容易配合使用，那就对了。（其实也不是什么配合使用，因为它跟代码是等价的，所以容易写代码的方法就容易用它，这是当然的。）</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/01/30/programmer-dojo/thinking-as-a-machine-04/" rel="prev" title="像机器一样思考（四）—— 一图抵千言">
+      <i class="fa fa-chevron-left"></i> 像机器一样思考（四）—— 一图抵千言
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/01/30/hello-world/" rel="next" title="Hello World">
+      Hello World <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#穷尽"><span class="nav-number">1.</span> <span class="nav-text">穷尽</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#来去"><span class="nav-number">2.</span> <span class="nav-text">来去</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#练习"><span class="nav-number">3.</span> <span class="nav-text">练习</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#题外话"><span class="nav-number"></span> <span class="nav-text">题外话</span></a></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
