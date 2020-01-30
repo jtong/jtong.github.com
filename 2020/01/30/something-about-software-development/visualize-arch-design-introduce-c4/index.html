@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://yoursite.com').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="好多年前，徐昊说过的一句话给了我很大启发，他说“纸上的不是架构，每个人脑子里的才是”。这句话告诉我们，即便是天天工作在一个团队里的人，对架构的认识也可能是不一样的。每个人嘴上说的是类似的话，但心里想象的画面仍然是不一样的。在我多年的工作中，我越来越认可这句话所揭示出的道理。软件开发是一个团队协作的工作，混乱的理解会造成架构的无意义腐化、技术债的无意识积累、维护成本的无价值上升。 最近听到一句话，“">
+<meta property="og:type" content="article">
+<meta property="og:title" content="可视化架构设计——C4介绍">
+<meta property="og:url" content="http://yoursite.com/2020/01/30/something-about-software-development/visualize-arch-design-introduce-c4/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="好多年前，徐昊说过的一句话给了我很大启发，他说“纸上的不是架构，每个人脑子里的才是”。这句话告诉我们，即便是天天工作在一个团队里的人，对架构的认识也可能是不一样的。每个人嘴上说的是类似的话，但心里想象的画面仍然是不一样的。在我多年的工作中，我越来越认可这句话所揭示出的道理。软件开发是一个团队协作的工作，混乱的理解会造成架构的无意义腐化、技术债的无意识积累、维护成本的无价值上升。 最近听到一句话，“">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-01.png">
+<meta property="og:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-02.png">
+<meta property="og:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-03.png">
+<meta property="og:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-04.png">
+<meta property="og:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-05.png">
+<meta property="og:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-06.png">
+<meta property="og:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-07.png">
+<meta property="og:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-08.png">
+<meta property="og:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-09.png">
+<meta property="og:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-10.png">
+<meta property="og:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-11.png">
+<meta property="og:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-12.png">
+<meta property="og:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-13.png">
+<meta property="article:published_time" content="2020-01-30T07:56:49.307Z">
+<meta property="article:modified_time" content="2020-01-30T07:56:49.307Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-01.png">
+
+<link rel="canonical" href="http://yoursite.com/2020/01/30/something-about-software-development/visualize-arch-design-introduce-c4/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>可视化架构设计——C4介绍 | Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/30/something-about-software-development/visualize-arch-design-introduce-c4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          可视化架构设计——C4介绍
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-01-30 07:56:49" itemprop="dateCreated datePublished" datetime="2020-01-30T07:56:49+00:00">2020-01-30</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>好多年前，徐昊说过的一句话给了我很大启发，他说“纸上的不是架构，每个人脑子里的才是”。这句话告诉我们，即便是天天工作在一个团队里的人，对架构的认识也可能是不一样的。每个人嘴上说的是类似的话，但心里想象的画面仍然是不一样的。在我多年的工作中，我越来越认可这句话所揭示出的道理。软件开发是一个团队协作的工作，混乱的理解会造成架构的无意义腐化、技术债的无意识积累、维护成本的无价值上升。</p>
+<p>最近听到一句话，“那些精妙的方案之所以落不了地，是因为设计上没有兼容人类的愚蠢”。话糙理不糙，虽然最终人们选择的方案的思想都是十年前甚至几十年前就已经存在的，然而在技术升级到足以“兼容”人类的愚蠢之前，这些思想只能在学术的故纸堆里睡大觉。然而话糙确实也会有一个问题，将一个思想性问题转化成了一个情绪性问题。人们容易把一些糟心的事情归因到人类的愚蠢，宣泄了自己的不满情绪后就停止思考了。作为知识工作者，我们的思维不能停步，我们需要思考到底人类有哪些愚蠢，分别用什么方法去避免或者“兼容”。</p>
+<p>可以肯定彼此明明对自己开发的软件有不一样的认识却天天在一起讨论问题并试图把软件做好是一件愚蠢的事情，为了兼容这种愚蠢我们需要采用可视化的方法。</p>
+<p>为什么需要可视化呢，主要还是语言不靠谱。人类语言真的是太随意了，只要你想，你可以说你见过一个方形的圆，并为此与别人辩论。但是无论如何你也画不出来一个方形的圆，这就是我们需要可视化的原因。</p>
+<p>今天我们介绍一个工具，叫做<a href="https://c4model.com/" target="_blank" rel="noopener">C4 model</a>，这是我近几年见到的一个比较难得跟我的认知有大量共鸣的工具。</p>
+<p>该工具的作者在多年的咨询中经常发现，很多个人画出来的架构图都是不一样的，但也不是说他们谁画错了，而是每个人的抽象层次不一样。抽象层次这种东西，说起来好像存在，但真要说清楚还挺难，于是作者类比地图，提出了缩放的概念。（两年前我在教学生的时候提过同样的概念）如下图：</p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-01.png" alt="国家级"></p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-02.png" alt="省级"></p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-03.png" alt="市级"></p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-04.png" alt="道路级"></p>
+<p>上面的四张地图就是想说明，当我们看待真实世界的“架构图”的时候，也是要不停的缩放，在每一个层次刻意忽略一些细节才能表达好当前抽象层次的信息。所以他类比着把架构也提出了四个抽象层次：</p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-05.png" alt="image.png"></p>
+<p>从上到下依次是系统System、容器Container、组件Component和代码Code。（咦，那为什么叫C4呢，因为系统的图叫System Context，系统上下文图。为了凑四个C也是够拼的。）</p>
+<p>基于这四个层次的抽象，C4模型由4张核心图和3张附属图组成，分别用于描述不同的场景，下面我们一一介绍一下。</p>
+<h2 id="四张核心图"><a href="#四张核心图" class="headerlink" title="四张核心图"></a>四张核心图</h2><h3 id="系统上下文图"><a href="#系统上下文图" class="headerlink" title="系统上下文图"></a>系统上下文图</h3><p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-06.png" alt="image.png"><br>如上图所示，这个图表达的是你所开发的系统和它的用户以及它所依赖的系统之间的关系。从这个图上我们已经看出来C4图形的几个关键图形：</p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-07.png" alt="image.png"></p>
+<p>C4说穿了就是几个要素：关系——带箭头的线、元素——方块和角色、关系描述——线上的文字、元素的描述——方块和角色里的文字、元素的标记——方块和角色的颜色、虚线框（在C4里面虚线框的表达力被极大的限制了，我觉得可以给虚线框更大的扩展空间）</p>
+<p>通过在不同的抽象层次上，重新定义方块和虚线框的含义来限制我们只能在一个抽象层次上表达，从而避免在表达的时候产生抽象层次混乱的问题。</p>
+<p>那么在系统上下文图里，方块指代的是软件系统，蓝色的表示我们聚焦的系统，也就是我开发的系统（也可能是我分析的系统，取决于我是谁），灰色表示我们直接依赖的系统，虚线框表示的是企业的边界。通过这些图形化的元素表达我们可以看出来各个系统彼此之间的关系。</p>
+<h3 id="容器图"><a href="#容器图" class="headerlink" title="容器图"></a>容器图</h3><p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-08.png" alt="image.png"></p>
+<p>当我们放大一个系统，就会看到容器，如上图所示，C4模型认为系统是由容器组成的。容器是我个人认为，C4模型最大的创举，尤其是在这个单体架构快速崩塌的时代。所谓容器，既不是Docker的容器，也不是JavaEE里的容器，是借用了进程模型，每一个容器都是指有自己独立的进程空间的一种存在。不管是在服务器上的单独进程空间，还是在浏览器里的单独进程空间，只要是单独的进程空间就可以看作一个容器。当然如果你容器化做得好，Docker的Container和这个Container可以一一对应。有了这个概念的存在我们就可以更清晰的去表达我们的架构，而不是总是用一些模糊的东西。</p>
+<h3 id="组件图"><a href="#组件图" class="headerlink" title="组件图"></a>组件图</h3><p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-09.png" alt="image.png"></p>
+<p>当我们放大一个容器，我们就会看到组件，如上图所示。组件在这里面很好的把接口和它的实现类打包成一个概念来表达关系。我个人觉得有时候一些存在于代码中，但又不是接口的某些东西，比如Service、Controller、Repository之类也可以用组件图来表达，如果你学了一些没有明确抽象层次的架构知识或者一些单体时代的遗留经验的时候，你可以画出来一些组件图，来印证自己的理解，如下图，我画的我对DDD战术设计里面的一些概念的理解：</p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-10.png" alt="image.png"></p>
+<p>比起模糊的，堆砌在一起文字，这种表达要清晰的很多，哪怕我的理解是不对的，也容易指出和讨论。</p>
+<h3 id="代码图"><a href="#代码图" class="headerlink" title="代码图"></a>代码图</h3><p>代码图没什么可说的，就是UML里的类图之类很细节的图。一般是不画的，都是代码生成出来。除非非常重要的且还没有写出代码的组件才画代码图。</p>
+<p>以上就是C4的核心图，我们可以看到四种不同的抽象层次的定义会让我们更容易固定住我们讨论的层次，这点上我觉得C4是非常有价值的。</p>
+<h2 id="三张扩展图"><a href="#三张扩展图" class="headerlink" title="三张扩展图"></a>三张扩展图</h2><p>架构设计设计要考虑的维度很多，仅四张核心图是不够的，所以作者又提供了三张扩展图，可以让我们关注更多的维度。</p>
+<h3 id="系统景观图"><a href="#系统景观图" class="headerlink" title="系统景观图"></a>系统景观图</h3><p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-11.png" alt="image.png"></p>
+<p>看得出来，系统景观图是比上下文图更丰富的系统级别的表达。不像上下文图只关注聚焦系统和它的直接关系，连一些间接相关的系统都会标示出来，那些系统的用户以及用户之间的关系也会标示出来，只是内部的用户会用灰色标记。</p>
+<p>这个图有什么用呢？在我们分析一个企业的时候，我们需要一个工具帮助我们把一家公司给挖个底掉，做到完全穷尽，才能看到企业的全景图从而理解局部的正确定位以做好局部设计为全局优化服务。之前我试过以四色建模的红卡、事件风暴的事件两种工具教人去掌握这种能力，当学员是程序员的时候都无法快速掌握这种顺藤摸瓜的分析技巧，毕竟跟程序员的思维还是有些差异的。但是我用了系统景观图之后，学员毫不费力的就掌握了这种分析能力。所以我后来都是用这个图来教程序员探索企业的数字化全景图，效果极好，推荐给大家。</p>
+<h3 id="动态图"><a href="#动态图" class="headerlink" title="动态图"></a>动态图</h3><p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-12.png" alt="image.png"></p>
+<p>动态图不同于其他图都是表达静态关系的，它是用来表达动态关系的，也就是不同的元素之间是如何调用来完成一个业务的。所以动态图不仅仅在一个层面上可以工作，它在系统级、容器级和组件级都可以画，表达的目标是不一样的。</p>
+<p>我之前曾经写过名为《像机器一样思考》的一系列文章，里面我也发明了类似的图，不同于他的关系线上标注的是调用的方法、函数，我更关注的是数据，使用效果也很好。</p>
+<p>什么时候是用动态图呢？举个小例子，我之前做一个内部的小系统，只有一个有经验的工程师带着10多个毕业生，我便要求他们在开始工作之前都画出动态图来，交由有经验的工程师去评估他们的思路是否正确，如果有问题，就在开始之前就扼杀掉了烂设计。不管是毕业生还是初级工程师，改代码的能力都比写代码的能力要差很多，所以将烂设计扼杀在实现之前还是有帮助的。</p>
+<h3 id="部署图"><a href="#部署图" class="headerlink" title="部署图"></a>部署图</h3><p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-13.png" alt="image.png"></p>
+<p>前面的几张图都是站在开发的角度思考，但是一个没有充分思考过部署的架构很容易变成一个运维的灾难。所以作者提供了一个部署图。考虑到DevOps运动如火如荼，这个图可以变成很好的Dev和Ops之间沟通的桥梁。我们在实操中发现，Dev和Ops关注点的不同、语言的不一致，在这张图上表现得非常清楚。</p>
+<p>图上最大的的实线框不同于虚线框，它表达的是数据中心，当你开始考虑异地载备的时候它就有了意义。数据的同步、实例的数量都会影响你部署图的内容。部署图基本都是容器级的，它会很好的表达出来容器到底部署了几个实例，部署在什么样的操作系统上，一个节点部署了几个容器之类，我们在实际使用中，发现需要考虑的信息太多，自己就抽象出了类似于亚马逊上实例规格的Small、Large之类的术语来表达机器配置，增进了开发和运维之间的交流准确性。</p>
+<h2 id="为什么C4值得推荐"><a href="#为什么C4值得推荐" class="headerlink" title="为什么C4值得推荐"></a>为什么C4值得推荐</h2><p>够直观，对于程序员来说容易理解，容易使用。<br>我们在开头的时候说过，只有每个人脑子里的才是架构图，那么如果我们使用一个工具，工具本身的理解就很容易出错，那就陷入理解的死循环了。经过很多不同工具的教授尝试，C4模型是最容易理解，最容易使用的工具。可能它的概念是复用了程序员已有的一些认知模型，教给程序员后，都可以迅速的使用起来，并问出一些高质量的问题。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在思维的世界里，我们都是盲人，很多东西我们以为自己知道，实际上画出来之后，才发现自己很多东西没想到，很多想的是乱的，同时别人也才可以给我们反馈。</p>
+<p>有了上面的这个工具，我们就可以开始可视化的架构设计之路了，但路上还有一个心魔需要战胜。我们的文化里出错是一件很丢人的事情，所以我们喜欢用一些模糊的描述避免被别人挑战，而可视化是让我们精确的描述出我们的理解，来欢迎别人的挑战。这一个坎不太容易跨过去，但是一旦跨过去了，大家形成了正向的互动之后，我们的进步速度会变得很快，从而把封闭的人远远的甩在后面，获得组织级的成长推力。我自己就在跟别人的交流之后获得了更深入的洞见，本文已经分享了一些，还有一些内容<a href="https://www.jianshu.com/p/f16aae86713a" target="_blank" rel="noopener">下一篇文章</a>再跟大家分享。</p>
+<p>图片来源：<br><a href="https://c4model.com/" target="_blank" rel="noopener">https://c4model.com/</a></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/01/30/tech-leadership/first-scene-of-software-development/" rel="prev" title="软件开发工作的第一现场">
+      <i class="fa fa-chevron-left"></i> 软件开发工作的第一现场
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/01/30/programmer-dojo/thinking-as-a-machine-06/" rel="next" title="像机器一样思考（六）—— 脑中的重构">
+      像机器一样思考（六）—— 脑中的重构 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#四张核心图"><span class="nav-number">1.</span> <span class="nav-text">四张核心图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#系统上下文图"><span class="nav-number">1.1.</span> <span class="nav-text">系统上下文图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#容器图"><span class="nav-number">1.2.</span> <span class="nav-text">容器图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组件图"><span class="nav-number">1.3.</span> <span class="nav-text">组件图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码图"><span class="nav-number">1.4.</span> <span class="nav-text">代码图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三张扩展图"><span class="nav-number">2.</span> <span class="nav-text">三张扩展图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#系统景观图"><span class="nav-number">2.1.</span> <span class="nav-text">系统景观图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态图"><span class="nav-number">2.2.</span> <span class="nav-text">动态图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署图"><span class="nav-number">2.3.</span> <span class="nav-text">部署图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么C4值得推荐"><span class="nav-number">3.</span> <span class="nav-text">为什么C4值得推荐</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

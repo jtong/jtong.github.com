@@ -165,7 +165,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/30/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/30/something-about-software-development/user-centered-software-development/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -179,7 +179,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/01/30/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+            <a href="/2020/01/30/something-about-software-development/user-centered-software-development/" class="post-title-link" itemprop="url">以用户为中心的软件开发</a>
         </h1>
 
         <div class="post-meta">
@@ -189,7 +189,7 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2020-01-30 04:00:18" itemprop="dateCreated datePublished" datetime="2020-01-30T04:00:18+00:00">2020-01-30</time>
+              <time title="Created: 2020-01-30 07:56:49" itemprop="dateCreated datePublished" datetime="2020-01-30T07:56:49+00:00">2020-01-30</time>
             </span>
 
           
@@ -203,19 +203,506 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+          <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>今天这个时代迭代开发已经成为常识，甚至政治正确，随便谁就能给你扯两句mvp。敏捷也从一个开发的名词变成了管理名词，迭代、测试、反馈这类名词满天飞。</p>
+<p>人人都在说这些术语，仿佛他们真的就懂怎么做软件了。起码，觉得自己真的懂怎么创新了。然而经不起细聊，一旦深入下去聊一个mvp，聊聊他的迭代计划。就会发现露馅了，张嘴闭嘴谈的都是功能。这个迭代要交付几个功能，这个mvp多了什么功能？他的竞争对手都有哪些功能？却很少听到用户。人人都在喊，以用户为中心。口号喊得震天响，但你看他们的行为模式，他们的语言中，并没有用户的身影，更像只是在否定别人、固执己见的时候拿这个来当借口。</p>
+<p>我时常觉得这个事情不太对劲。但是也没有想到更好的方法。敏捷中使用的故事卡比功能的视角要好一点。因为在故事卡里，你要写下用户的价值。但是，我一直也不知道这个价值是从哪儿来的。是先开枪后画靶子我们想做某个功能了，所以硬安的一些价值，还是真的存在的？价值的单位应该是什么呢？没有单位的东西就无法管理。无法管理，也就无法优化。我们交付的价值是越来越多吗？还是交付的不如以前了？用什么来判断？</p>
+<p>回答不了这些问题，不管输赢都是有点不明不白的。这些问题的核心问题就是价值的单位应该是什么？怎么算一个价值？一直没想清楚这些问题，直到我看了我们公司设计团队的一个框架MERLIN，又在《创新的窘境》作者的新书《与运气竞争》里看到了理论依据，这个问题在我这里才算是告一段落。我明白了，以用户为中心的软件开发大概应该怎么做。</p>
+<h2 id="方法核心"><a href="#方法核心" class="headerlink" title="方法核心"></a>方法核心</h2><p>如果我们想以用户为中心进行软件开发。那么我们的分析方法应该是围绕着用户展开的。</p>
+<p>这个方向倒是不新鲜，一直以来我们在inception的时候做用需求分析时我们的方法就是围绕着用户展开的，一个典型的分析过程，如下图所示。</p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/user-centered-software-development/pic-01.jpg" alt="用户旅途"></p>
+<p>我们会在上面画一条轴，标示出用户旅途。这是用户在使用软件的时候的，他的一个全过程。然后在对应的时间点上，标记出我们的功能。这样我们的功能就不是平白出来的。每一个都联系了用户价值。相对于一般人会更容易理解功能，在ThoughtWorks，我们更多标记的是用户故事。比起功能，用户故事增加了有关价值的线索，因为用户故事首先就是要写出价值。</p>
+<p>一直以来我觉得这个图还是不够给力。首先，从用户旅途上的点，到功能的映射这一步，简直是个magic move。对未来的读者来说，并不能很好的传递为什么是这样的一个功能，而不是别的功能？毕竟实现一个用户的价值方法有很多。于是后续在执行的过程当中，难免会僵化行事。</p>
+<p>其次，上面的旅途，还可以再抽象和封装。简言之，旅途本身也应该是有抽象层次的。一个旅途上的一个点，可能也是一段新的旅途。</p>
+<p>所以现在我觉得，一个更系统的做法应该是这样的，首先做服务设计：</p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/user-centered-software-development/pic-02.jpg" alt="更宏观的用户旅途"></p>
+<p>系统化的分析用户的行为，过程中与企业有哪些触点，在这些触点上，借用《与运气竞争》里的思维框架来讲，用户“雇佣”企业的产品到底是来做什么的，也就是动机有哪些。</p>
+<p>然后将这些点再进一步细化，采用故事的模式：<br><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/user-centered-software-development/pic-03.jpg" alt="故事板"></p>
+<p>图上的一行会讲一个故事，就像电影分镜或者漫画一样，来表达用户使用的故事，真正的故事，而不是用户故事那种东西，我们叫这个东西故事板。<br>在故事板上，我们描绘了一个故事，这个故事里，用户获得了一种体验。一个故事对应一个体验。在基本需求都已经得到满足的今天，体验是新的最有价值的事情，以体验为中心才是以用户为中心。故事板恰好给了我们一个非常符合人类认知习惯的方式来描述什么是一个体验。也就回答了开头的问题，什么是价值的单位。</p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/user-centered-software-development/pic-04.jpg" alt="故事板与用户故事的关系"></p>
+<p>当我们定义出了价值的单位，就可以从这一单位的价值里面映射出故事卡，来进行开发过程的管理：</p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/user-centered-software-development/pic-05.jpg" alt="故事板是MVP的细分"></p>
+<p>这里就是我们的重点，我们将来交付的软件、交付的服务、我们交付的一个MVP本质上是交付给了用户一组体验。MVP的迭代则应该是更多的体验或某些旧体验的升级（也就是同一个动机，换了一个不同的故事来满足）。</p>
+<p>最终我们把用户的价值很好的表达了出来，并且找到了用户体验的基本单位——故事板，由于故事板也可以转化为用户故事，结合早已经存在的各种敏捷开发方法，也就可以对体验的交付进行度量和管理，达到以用户为中心进行软件开发。</p>
+<h2 id="尾声"><a href="#尾声" class="headerlink" title="尾声"></a>尾声</h2><p>很早之前我就觉得MVP是TDD思想在产品策略上的延伸，TDD一个很重要的价值就是避免自嗨从而消除浪费。程序员有时候会因为自嗨写出来好多用不到的功能和设计，这些都是浪费。但是程序员能减少的浪费很有限，最终的最终还是要从需求的源头——用户层面来减少浪费才能真的做好。所谓顾客就是上帝，软件开发中用户就是上帝，这句话的意思不是说用户说什么你就做什么，而是说你只有贴近用户，才能得到上帝的启示，现场有神明，就是这么个道理。</p>
+<p>有了MVP之后，就像开发有了测试驱动。我们就可以避免很多过度设计。但是MVP作为测试，粒度太大了，不好分析，不好写断言，不能得到精细的反馈。这里我们把它分解到故事板层面，就可以得到精确的测试目标，也就可以做真正精细的测试，真正做到以用户为中心。</p>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+      
+    </div>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
 
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/30/deliberate-practice-for-digital-talent/challenge-of-cultivating-programmer/">
 
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/30/deliberate-practice-for-digital-talent/challenge-of-cultivating-programmer/" class="post-title-link" itemprop="url">软件开发人员培养的挑战</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-01-30 07:56:49" itemprop="dateCreated datePublished" datetime="2020-01-30T07:56:49+00:00">2020-01-30</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>（作者这些年一直在从事这个主题的工作，本文是这些年工作的一个总结。另外作者是一个比较守旧的人，所以软件行业、IT行业、互联网行业、数字行业等等，在作者眼中都是一个意思，起码在能力角度并无区别，所以作者并不认为这里面提到的什么东西只适合与IT行业不适合于互联网等等。）</p>
+<p>软件开发人员的培养，先说一下解决这个大问题的方法论，首先要理清楚问题域，从问题出发。那么头脑风暴一下，随便选一个问题作为出发点：我们培养的人是在从事什么？答案当然也很简单，从事软件开发。这个问题本身简单到了没什么意义，把一个复杂的问题抽象为了一个简单到没用的问题，如果我们进一步思考（此处省略不知道多少步），就会发现关键的问题应该是，软件开发到底是一项什么工作？</p>
+<p>只有清晰的定义了这项工作，才能很好的定义出从事这项工作的人有哪些工作场景，然后才能定义出为了胜任这些工作场景，他们应该具备哪些能力，定义出这些能力胜任时的表现，然后才能谈得到培养，同时还要考虑通过什么方式能衡量这些能力胜任时的表现和他们实际工作表现的差距，以评估培养的效果，指导培养方式的迭代改进。</p>
+<p>以上就是我们的方法论，所以作者才会来从事这项工作，因为我不是不相信任何外行能够很好的定义出这里面的内容的。</p>
+<p>那么我们从头开始，回到问题：软件开发到底是一项什么样的工作，这个问题有太多的维度，我们仅从能力的角度开思考这个问题，也就是说如果完不成只可能是能力问题，没有其他问题干扰。从这点切入，这个问题可以等价的看成，抛掉所有角色来看，假设存在一个可以干所有角色的事情的人，并且他的时间是无限的，而且他的智力水平是一个中等偏上的人（考虑到大学毕业生仅占中国总人口的5%左右，这个设定还是偏保守了），那么对他来说，开发一款软件是一个怎样的工作呢？</p>
+<p>抛掉知识层面的部分，从能力角度，我定义如下：</p>
+<ul>
+<li>把你的业务问题转化为数学问题，让它的规则逻辑自洽，然后用代码实现</li>
+<li>如果它的规则过于复杂，人力不能判断逻辑是否自洽，进行抽象，寄希望于抽象之后逻辑自洽</li>
+<li>如果抽象之后依然过于复杂，不能判断逻辑自洽；或如果进一步抽象将变成过度抽象，从而无法判断是否可以落地，那就切分。寄希望于在一个问题子域中，解决方案可以逻辑自洽，不同的问题子域的方案之间可以映射以合作解决大的问题域</li>
+</ul>
+<p>上述三大假设中，仅有人的智力水平中等偏上这一点，是完全成立的。时间无限肯定不可能，但它并不影响对能力的定义，只是影响工期，最多加入一个对时间管理、优先级选择的能力的要求，而这个能力是通用能力，已有解决方案。一个可以干所有角色的事情的人有限成立，因为从能力角度是可以做到的，在软件开发的早期确实大量存在这样的人，我们曾经称之为软件英雄的人大都如此，即便是今天，这样的人也不是不存在。但是在如今这个时代，却不能以这个为目标来发展人，主要导致这个结果的原因是对效率的追求，有限的时间匹配无限的工作量，势必要把人分成多个角色来工作以追求效率，所以这个方向是绝大多数企业无法接受的。不过这里面有个矛盾点，想要把我们定义的三种工作做好，跨角色的能力也就是按照传统软件英雄的角色去培养能力是不可避免的，否则能力的发展是有天花板的。好在就算你不刻意的发展他们这些能力，这些能力也会随着工作年限的增加自然获得，只是效率不高而已，由于大多数企业还没有精力考虑突破天花板的效率问题，所以这个问题我们按下不表，以后我们再深入聊。从这个角度来讲，上述的工作内容是可以成立的，起码我这么认为。</p>
+<p>那这样的工作对人提出了怎样的要求呢？在回答这个问题之前，我们还要对问题域进行进一步的思考，那就是人的发展本身有怎样的限制，同时软件行业本身有什么特点结合上人的限制会进一步加剧这个问题的复杂性？</p>
+<p>我人的发展认为主要有三大限制：</p>
+<ol>
+<li>人的易错性。即便是做过很多遍的事情，也不能保证每次都做的不出错。如果每次还稍微有点区别，就更难保证了。</li>
+<li>学习需要很长时间。技术知识也好，业务知识也好，本身都是需要被学习才能掌握，而人的学习速度是很慢的，要花大量的时间。不想机器，只要加载了程序，下一秒就可以工作了，而且绝不出错。</li>
+<li>个体间无法快速复制。一个人学会没啥用，别人不会就是不会，好容易培养出一个老手，再复制他/她又要花费几乎等量的时间。不像机器可以快速复制给很多机器，每台都不会有错误。</li>
+</ol>
+<p>那么软件行业本身什么特点又进一步加剧这个复杂性呢？</p>
+<ol>
+<li>软件不遵守差不多原则，做出来的东西必须严格符合逻辑，否则就会出错。而这种严格符合逻辑的产品却是要靠有易错性质的人来构建。</li>
+<li>软件系统的分层掩盖了它的复杂性，导致软件的知识在空间维度上是海量的，对于学习是很大的挑战。只要是涉及到纯机器的部分，人们总会封装的去理解，以为挺简单的，然而创新又总是贯穿很多层，所以上层的很多想法到实现的时候，总是很复杂。这就加剧了不同角色间、管理者与被管理者间，老手与新手间的磨合成本</li>
+<li>软件行业的快速发展，导致所学的知识在时间维度上是快速变化的。据说是受摩尔定律影响，我们软件开发人员的世界基本上是极其不稳定的。每隔一段时间，我们依赖的类库、框架就会升级，我们掌握的知识和技能就会在一定程度上过时，这进一步加剧了学习的挑战。</li>
+</ol>
+<p>以上的复杂性叠加上人的不足，使得软件开发人员的培养是一个极其困难的问题。理解了这样一个复杂的背景，我们才好思考，软件开发对于人提出了怎样的要求，以及如何培养人来胜任这样的要求。</p>
+<p>to be continued……</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/30/deliberate-practice-for-digital-talent/dojo-over-method/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/30/deliberate-practice-for-digital-talent/dojo-over-method/" class="post-title-link" itemprop="url">道场胜于道法</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-01-30 07:56:49" itemprop="dateCreated datePublished" datetime="2020-01-30T07:56:49+00:00">2020-01-30</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="能力建设的鬼打墙"><a href="#能力建设的鬼打墙" class="headerlink" title="能力建设的鬼打墙"></a>能力建设的鬼打墙</h2><p>我们为了变强，会订阅很多公众号，牛人博客，收藏很多视频，看很多文章。做了很多松鼠的行为，然而最终大多数人并没有变强。<br>我去看了很多学校，大多数学生面临的成长问题与十几年前并无太大区别。<br>我去看了很多家公司，大多数公司面临的能力问题跟十几年前并无太大区别。<br>十几年前，我们买一台电脑都贵得要死，现在跟一台手机差不多钱了。<br>十几年前，我们想学编程连个像样的教程都没有，现在互联网上的教程不要太多。<br>为什么会这样呢？<br>因为信息的多少，并不是学成才的关键。很多人可能知道我又要说刻意练习了，可是按照刻意练习理论，要练一万小时才能成才。但我们从业者练了不止一万小时了吧，每天996，3年就该1万小时了吧，为啥能力还是个问题呢？<br>因为工作的关系，我不得不思考这个问题，思考的久了，我自己有个理论。我在想，刻意练习把问题过分简化了，学习过程可不是那么简单的，大面上讲，我觉得刻意练习理论是工作的，只是过于粗糙，需要精细化的考虑一下，仔细思考一下刻意练习的背后到底是一个怎样的过程。</p>
+<h2 id="刻意练习的元模型"><a href="#刻意练习的元模型" class="headerlink" title="刻意练习的元模型"></a>刻意练习的元模型</h2><p>经过对自己的学习过程进行反观内视，加上跟很多人的交流，我大概抽取了一个闭环的元模型。<br><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/dojo-is-more-important-than-method/pic-01.png" alt="image.png"></p>
+<p>我发现首先要有问题供学习者思考，我称之为我思，有些问题比较简单，直接可以思考，有些问题比较难，需要先学习一些基础知识才能理解问题本身，后者就是读书的原因之一。</p>
+<p>理解问题之后，就要开始解决问题，毕竟企业里的能力建设都是要解决问题的，必须学以致用。为了能学以致用，那自然就需要练习，但练习不一定是非要专门的练习题，只要将所学知识应用，也算是练习了。练习需要有反馈，知道你做的对还是不对。</p>
+<p>经过练习之后，需要对整个过程进行反思、总结，产出经验和洞见。有数据供反思时分析和有反思的习惯是很重要的，我发现傻做的人很多，反思的人很少，真的是大家都在泥坑里，只有少数人会仰望星空。</p>
+<h3 id="成才三要素之一——环走通"><a href="#成才三要素之一——环走通" class="headerlink" title="成才三要素之一——环走通"></a>成才三要素之一——环走通</h3><p>按这个环来分析，如果想要成才，首先环要走通。<br>我思的瓶颈在于认知障，所以还是比较简单的，扩大知识面就好了。<br>我做的瓶颈才是最麻烦的，要走通这个环，最难以达成的瓶颈的其实是我做的环节，在互联网时代，你想获得知识已经很容易了，只要你想，你总能找到可以用的知识。<br>但是学到了知识能不能实践其实是关键，你学了大量高并发的知识，但是你工作环境下没有高并发的环境供你练习，你也学不会。你想学软件开发的方法学，却在一个简单机械重复的环境下天天垒那种过些日子就没用处的代码，并不会有所提升。<br>这就是我为什么开始说，道场胜于道法，你没有一个练习场，你学到的知识都卡在第一环节了。<br>然而一个合格的道场本身并不是那么容易具备的，这个我们在后面慢慢讲。</p>
+<p>那么在我反思这个环节上，首先你要有反思的习惯，这个是比较反人性的，所以具备的人本就不多。即便你具备了，一个人的认知又容易受自己的偏见蒙蔽，容易看不清事物的全貌。需要老师的启发式引导，同学的研讨印证。一个具备好的老师同学的环境其实是道场的一部分，你所处的环境里根本没人跟你聊这些，你很容易陷到自己的认知瓶颈里很久都不得突破。</p>
+<p>其次要有数据供自己反思，不过只要有了这个习惯和意识，数据什么的好搞，比如编程的话，可以参考我的《编程的精进之法》。</p>
+<h3 id="成才三要素之二——提高频率"><a href="#成才三要素之二——提高频率" class="headerlink" title="成才三要素之二——提高频率"></a>成才三要素之二——提高频率</h3><p>一旦环走通之后，频率就是我们接下来要面临的问题。<br>一些简单的内容可以通过设计针对性的练习来提升<br>能进行针对性练习的环境就是我们最好的道场，而现实并不是这样的。<br>我当年练习投篮的时候，就发现，如果是自己一个人练的话，不但要投还要捡球。这单位时间内能练习投篮的频率就降低了。<br>等你把投篮练的差不多了，发现在比赛中能投进和练习时能投进有不一样。<br>这对这两种，你要建立两个环境，互相不能偏废，我称之为专项训练的环境和综合训练的环境。<br>在我们教学生编程的时候，就采用了这两种不同的环境，我们会设置一些非常小的练习，针对性的练习结构化编程、集合的处理、数据结构的设计和数据的转换。<br>然后会设计大作业进行这些技能的组合使用，这个时候需求到具体技术的映射是模糊的。<br>最后会设计项目，团队协作做项目，这个时候需求本身也是模糊的，团队成员之间的配合也需要锻炼。<br>前两种都属于专项训练，分别练习的是专项的技术和专项技术的组合，最后一个属于综合训练，锻炼在模糊不确定性下使用确定性的技术来完成需求的能力。</p>
+<p>这些良好设计的环境都是为我们和我们的客户的校招新员工设计的，普通员工的日常工作中难以具备这样的环境。<br>那么只需要考虑一件事就好了，我们的日常工作中有多少机会来进行练习。如何改造我们的工作环境来，使之成为个体提升的环境是关键。传说中，少林寺的和尚吃饭睡觉都在练功其实就是在讲这个简单的道理：提高频率必须从环境改造下手。</p>
+<h3 id="成才三要素之三——降低废品率"><a href="#成才三要素之三——降低废品率" class="headerlink" title="成才三要素之三——降低废品率"></a>成才三要素之三——降低废品率</h3><p>解决了闭环、频率问题之后，还有一个不得不面对的因素：废品率。<br>在练习过程当中，并不是所有的练习都是有价值的，大量的练习都是无效的，甚至有些是错误的，在反思阶段会产生反模式。<br>随着闭环次数的增多，熟练度就会提升，不但正确的做法的熟练度会上升，错误做法的熟练度也会上升，如果反思阶段思考的不足，还会得到一些既不是正确做法也不是错误做法的纯粹的无效做法的熟练度。<br>这些熟练度都是问题，都是成长过程中的废品，而如何降低废品率，是高段位竞争者之间的胜负手。<br>这个的获得可以靠反思的时候总结，也可以靠阅读实践者的文章书籍。<br>比如如果纯自己摸索可能最后总会获得大泥球的架构，但是如果阅读了DDD之类的文章书籍就能知道可以靠上下文和聚合的方式进行解耦。<br>但是这种实践者写的书籍不像具体的知识那样好懂，通常都是非常抽象的。没有懂行的人指导或研讨，跟看天书也差不多。有时跨过了理解这个坎，又会发现现实环境不允许你进行试验。不管工作流程还是协作方式，从根本上限制了问题的根本解决。（不然问题早就解决了）</p>
+<h2 id="道场建设的窘境"><a href="#道场建设的窘境" class="headerlink" title="道场建设的窘境"></a>道场建设的窘境</h2><p>在分析了刻意练习的原模型之后，我们会发现，在今天这个时代，能力建设最大的瓶颈是道场，如何将道场建设起来，比学习知识重要的多，好的练习、好的环境、好的同学比其他的都要重要。</p>
+<p>而现实中，最大的道场就是实际工作环境。所以不管能力建设在开始看起来多么人畜无害，由于涉及到工作环境的改造，最终都会影响到组织的改造和调整。想想也是合理的，按照康威定律，什么样的组织架构需要什么样的软件架构匹配，什么样的软件架构需要什么样的能力匹配，如果旧的环境能够提供足够的练习场，那么能力建设根本就不是个问题，既然能力建设是个问题了，那么在能力建设的需求下，现有组织架构必然是要进行改进的。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/30/deliberate-practice-for-digital-talent/presepective-of-requirement/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/30/deliberate-practice-for-digital-talent/presepective-of-requirement/" class="post-title-link" itemprop="url">需求的视角</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-01-30 07:56:49" itemprop="dateCreated datePublished" datetime="2020-01-30T07:56:49+00:00">2020-01-30</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="楔子"><a href="#楔子" class="headerlink" title="楔子"></a>楔子</h2><p>在我培养学生的时候，我发现一个很有趣的现象，有些人可以非常好的理解需求，并且能发现需求当中的逻辑矛盾，给出非常好的反馈。更多的人，只是听了需求，然后没有任何反应，去做的时候呢，才发现有问题。最可怕的是，明明需求有问题，做的时候他也没发现问题，最后做出来的功能是有bug的。</p>
+<p>想起我吐槽一个学生，让你扫马路，你就把土扫到路两边，只管中间干净。跟你说两边也要干净你就把两边的扫到中间，说两边和中间都得干净就在两边和中间的间隔处推上细细的一条垃圾线。</p>
+<p>吐槽虽然可以让人很爽，但不能解决问题，只是享受了优越感。作为以能力建设为己任的培养者，这种优越感反而是一种打脸，毕竟学员能做到才是我的成功，他做不到我能做到有啥好优越的呢，让他做到才是我应该追求的优越感。所以我就陷入了深深的思索，到底怎么能让学员把需求理解清楚呢？看着他们，我开始反观内视我自己，我是如何做到的呢？</p>
+<p>首先我想到，这个是个场景思考的问题，虽说思考用户场景，很多公司是PO、BA或产品经理的工作，但所谓好的程序员要能顶上半个产品经理，既然我们说是数字人才，每个人都要能理解软件的使用场景才行。我自己就是会拿到需求后，在脑子里重新构建场景。然而道理说起来简单，做起来并不简单，不管我强调多少次，要关注场景，结果也不会好，会的立刻恍然大悟（那种恍然大悟是一种原来我这种做法还有名字的感觉……），大部分不会的人还是那样……</p>
+<h2 id="跳出盒子外"><a href="#跳出盒子外" class="headerlink" title="跳出盒子外"></a>跳出盒子外</h2><p>进过长期的观察，我发现他们是在盒子内思考，而跳不出盒子外。</p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/presepective-of-requirement/pic-01.png" alt="跳到盒子的外面，才能发现场景"></p>
+<p>什么是盒子内思考呢？比如一支白板笔。</p>
+<p>如果我在白板笔的盒子内看的话。我就会看到笔帽，笔芯和笔管。我可能会关注，笔芯是海绵的，笔帽和笔管是塑料的，不是金属的。这样思考就有一个问题等我考虑到颜料的时候，我就不知道应该采用什么样的原料。就必须要问一个问题，这个白板笔是用来干嘛用？因为如果我在盒子里看白板这个东西，对我是没有任何含义的。</p>
+<p>那盒子外就很好理解了，同样是描述一支白板笔，我要考虑他，写出来的东西好不好擦。写出来的字迹是否清晰可见？粗细是否适中？能用多长时间？成本是多少是，买一个新的还是加墨水儿更合适？一旦跳到盒子外，我还要考虑多角色比如制造商，分销商，销售终端，买家不同角色看他的视角。小小一支笔，也不是那么简单的。</p>
+<p>回归软件开发的上下文，盒子内就是功能视角，比如：学习平台要有写成长日志的功能。盒子外则是业务视角，比如：学员参加了学习后，每天要写成长日志，总结当日所学，练习总结能力，助教要给他们进行检查和反馈。比起前者，后者很容易想到，既然是练习总结能力，是不是应该有模板和范文？</p>
+<p>我常试好多的方法，试图让初学者可以跳出盒子外，大部分都没啥效果，不要说初学者不会，很多工作过多年的人也有这类问题，也学不会。也曾一度让我怀疑，这是一种天赋，好在不想对天赋低头的心，最终还是找到了一种实操性很好的方法。</p>
+<h2 id="故事线"><a href="#故事线" class="headerlink" title="故事线"></a>故事线</h2><p>我会要求学生画一种图。我们管它叫故事线，是一种场景思维的辅助工具。</p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/presepective-of-requirement/pic-02.png" alt="故事线"></p>
+<p>这个工具是这样的用的，每当你要做一个功能，就画一条故事线，在故事线里面，首先你要定义故事起点。这个故事的起点是一个业务动机。比如说一个系统可以创建用户，那么这个创建用户的业务动机是什么呢？我问出去的时候，学生们就会开始思考，想到了说创建用户的业务动机是有一个新人入职了。</p>
+<p>有了业务动机，别人才会使用你的系统，否则你的系统只是你的自嗨而已。不要说学生了，很多工作多年的人在设计系统的时候，依然不思考这个问题。有了动机，你也可以去对比各种不同的解决方案，去想有没有更好的解决方案？比如在我们这个例子里，动机就是有人入职了要创建用户，但那么有人入职了之后，谁会来这个系统里面创建用户呢？这就涉及到方案的不同。可能我们定义的角色是hr。也可能我们这是一家小公司，反正就是那么几个人，最后就跟一个系统管理员说一声，他登上来录进去就好了，对于一家小公司来说，这也可以接受，所以你就会发现，这两个都是可行的方案。</p>
+<p>我们在实践中发现，有了业务动机这个概念之后，大家就会对场景有更多的思考，也能协作着来对比方案而不是瞎吵架了。</p>
+<p>故事线的后面就比较好画了。我们就画他在这个系统里面为了满足他的业务动机，他需要一步一步怎么做的。注意只画成功路径，过程中遇到的异常，先不要考虑。这对很多人来说，也是一个很难做到的事情。</p>
+<p>在故事线的最后，需要画出来说，这个故事结束了之后，那么最终，业务的下一个起点是什么？</p>
+<p>还是以创建用户为例，当我们为用户创建完了之后，我们的下一步是什么呢？下一步可以试试，发个邮件给用户，也可以是，把用户名密码拷给，我们的新员工本人或者他的经理。</p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/presepective-of-requirement/pic-03.png" alt="学生做的一个案例"></p>
+<h2 id="小节"><a href="#小节" class="headerlink" title="小节"></a>小节</h2><p>如前所述，很多人是没有场景思维的，他想问题只能想到这个盒子内，而跳不到盒子外去关注使用它的场景。对于这种情况，我们就算明确的指出，他没有场景化思维，大部分情况下是不会有任何的作用的，大部分人依然没有场景化思维。他就像我《数字人才的刻“意”练习——开篇》里讲到的画画需要关注线条一样，我们需要告诉大家，应该关注在什么地方才会具有场景化思维。那么在这种情况下，我们只需要给他一个非常好的辅助工具，他就真的可以做到跳到盒子外。故事线就是这样一个工具。实践中发现，哪怕是毕业生，几次练习之后也可以快速掌握这种思维方式，更不要说有多年工作经验的程序员。</p>
+<p>虽然在我们项目中是有所谓的业务分析师的，但是优秀的程序员一定会在脑子里重建这些场景。如果程序员不能以这样的方式画出来的话，那么程序员做开发的时候也会出现一些问题，比如没有想全，做出来的程序有问题的情况。所以教给程序员自己这么思考问题是非常重要的，在理解完业务分析师传达的需求之后，可以在脑子里把这条线画出来，非常有价值。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/30/deliberate-practice-for-digital-talent/talk-about-digital-talent/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/30/deliberate-practice-for-digital-talent/talk-about-digital-talent/" class="post-title-link" itemprop="url">聊聊数字人才</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-01-30 07:56:49" itemprop="dateCreated datePublished" datetime="2020-01-30T07:56:49+00:00">2020-01-30</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><em>本来是开篇的一部分，结果越写越长，索性就单发了一篇</em></p>
+<h2 id="什么是数字人才"><a href="#什么是数字人才" class="headerlink" title="什么是数字人才"></a>什么是数字人才</h2><p>这些年，很多企业都在搞数字化转型，也都非常缺这方面的人才，所以纷纷提出了数字人才的说法。最近似乎都上升到了国家战略的样子：</p>
+<blockquote>
+<p>（七）强化数字人才教育。深化教育改革，建立健全高等院校、中等职业学校学科专业动态调整机制，加快推进面向数字经济的新工科建设，积极发展数字领域新兴专业，促进计算机科学、数据分析与其他专业学科间的交叉融合，扩大互联网、物联网、大数据、云计算、人工智能等数字人才培养规模。进一步扩大和落实高校专业设置自主权，鼓励高校根据经济社会发展需要和自身办学能力，加大数字领域相关专业人才培养。加强数字人才教育师资力量培养培训，推动实现基础教育、职业教育、高等教育普遍开展数字知识和技能教育，逐步建立健全多层次、多类型数字人才培养体系。加大职业教育数字化资源共建共享力度，加快建设适应数字经济发展的职业教育相关专业教学标准体系，进一步优化中等职业学校信息化相关专业设置。（教育部牵头，发展改革委、人力资源社会保障部按职责分工负责）</p>
+</blockquote>
+<p>摘自： <a href="http://www.gov.cn/xinwen/2018-09/26/content_5325444.htm" target="_blank" rel="noopener">http://www.gov.cn/xinwen/2018-09/26/content_5325444.htm</a></p>
+<p>那到底什么是数字人才呢？其实全世界也没有一个明确的定义，但简单粗暴的说，围绕软件开发的各种角色就算是数字人才。这个定义可以算是满足充分条件的，是否必要就见仁见智了。那我这里就是借用了数字人才这个词来表达，软件的构造者这么一个角色。</p>
+<p>废了那么大劲就是说软件开发，那为啥我不说程序员呢？因为角色会限制我们的视野，一旦我说了程序员这个角色，我们就会把自己定义在编码这个视角上，什么需求啊、软件设计啊、组织流程啊，跟我没啥关系，这也恰恰是很多人在职业发展后期遇到瓶颈的原因，怪不得别人，全是自己画地为牢。</p>
+<h2 id="数字人才的特点"><a href="#数字人才的特点" class="headerlink" title="数字人才的特点"></a>数字人才的特点</h2><p>软件开发是一个复杂工作，而且是一个复杂的知识工作。复杂就复杂了，这好理解，为啥强调知识工作呢？知识工作有两个特点：</p>
+<ol>
+<li><p>所有的工作不是正交的，分工不能切的很完美。</p>
+</li>
+<li><p>效率提升的关键点不是在于对how的回答，而是在于对what的回答。</p>
+</li>
+</ol>
+<p>第一点说的是什么呢？在体力工作者的上下文里，我们是拆成流程来工作的，每个环节的人不需要懂上个环节的知识，做好自己这个环节就好了，你想象一下流水线上的工人，彼此其实只要做好自己的事情就好了，不懂上下游的知识和技能也无所谓。这就是所谓的正交，彼此不需要了解，不了解也互不干扰工作。但知识工作不一样，知识工作固然也是拆成流程来做的，但是知识工作里有个极为重要的动作叫反馈，就是下游接收到上游信息的时候，要告诉上游自己理解了没有、上游的信息哪里是落不了地的等等，尤其在复杂知识工作上下文里，反馈可以说是最重要的事情，没有之一。你想要反馈，你就必须至少需要懂得上游的一个环节的人的部分心智模型，否则反馈也反馈不到点子上。注意，是至少，通常你需要懂得要超过一个环节，因为反馈往往不只跨一个环节，如下图所示：</p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/talk-about-digital-talent/pic-01.png" alt="知识工作者协作信息流"></p>
+<p>如果仅仅是第一点，还不是什么大不了的事情，毕竟大家一起工作，时间久了总能了解自己的上游环节的心智模型，互联网行业里都有好的程序员相当于半个产品经理的说法，问题在于第二点。我们做工作如果只追求按部就班，那就慢慢被竞争对手干掉了，每个企业都是要追求效率提升的。要提升效率就得回答一个问题，到底知识工作者的效率是怎么提升的，所以才有这个第二点，也是彼得德鲁克的观点：知识工作者的效率提升在于对what回答，而不是对how的回答。</p>
+<p>什么是对how的回答呢？也就是说在每个环节提问怎么做才能提升效率，每个环节的输入和输出都是固定的，也就是待完成的事情的定义是确定的，只要在这个限制下改变做事的方法，而不用改变事情本身的定义。</p>
+<p>而知识工作者的效率提升是一个纵观全局后的颠覆性优化，也就是所谓的颠覆性创新。这个颠覆性往是通过跨环节跨角色来产生的，比如最早敏捷里的技术实践，把测试引入了开发环节，把构建也引入了开发环节，而管理实践也是把验收提前，改变了对交付的定义，后来的DevOps则强调打破Dev和Ops的壁垒，都带来了极大的效率提升。一旦跨了环节跨了角色，那么输入输出都会变，事情本身的定义也就变了，我们需要经常拷问自己到底解决的问题是什么，改变了要解决的问题的定义，所以称之为对what的回答。</p>
+<p>一旦问题的定义发生了变化，进而我们甚至要反复拷问自己到底什么是效率，比如，我们的效率到底指的是有100个需求，我们以最短的时间做完了，还是说用户或客户当有一个需求出现，我们可以用最短的时间满足它呢？一旦效率的定义发生变化，整个生产体系都会产生颠覆性变化，也就是我前面提到的颠覆性优化，而且因为这些颠覆性优化往往是局部劣化却达到了整体优化，有时连旧的评价体系都给颠覆掉了，导致按照旧的评价体系来看，新的方法可能还是很糟糕的，在看不到全局的人眼中看来，只会看到颠覆性看不到优化从而产生抵触，这都是正常的。可以说，如果没有抵触发生，都算不上颠覆性优化。</p>
+<p>由于知识工作自身的这些特点，软件开发又比一般的知识工作还要复杂，我们觉得数字人才必须是一种多视角人才，这其中至少有三大类视角：商业视角、技术视角和用户视角：</p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/talk-about-digital-talent/pic-02.jpg" alt="描绘软件的三个视角"></p>
+<p>所以这个系列文章不会只讲某一种角色的视角，我希望通过这系列文章培养出多视角的人才，所以在标题中淡化了某一种角色的强调，尽管出于我的技术出身，难免技术部分会重一些，最后写出来的数字人才的技术部分的刻意练习会多一些，不过我想也是对读者有价值的。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/30/deliberate-practice-for-digital-talent/what-worth-to-be-recited/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/30/deliberate-practice-for-digital-talent/what-worth-to-be-recited/" class="post-title-link" itemprop="url">什么值得背</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-01-30 07:56:49" itemprop="dateCreated datePublished" datetime="2020-01-30T07:56:49+00:00">2020-01-30</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="一个蹒跚学步场景的启发"><a href="#一个蹒跚学步场景的启发" class="headerlink" title="一个蹒跚学步场景的启发"></a>一个蹒跚学步场景的启发</h2><p>我们家娃最近在学钱的加减，几元几角减去几元几角等于多少这种问题。在这之前，她已经学会了加减法借位等基本数学知识，但做钱的加减还是不行。</p>
+<p>个位的元角减去个位的元角没问题，比如7元8角减去5元9角这种没问题。但是这个10元5角减去8元6角这种题目，他就不会借位了，因为她理解的借位只会像一位数借位，10元这个不是个位数，所以总是算错。</p>
+<p>我给她讲道理呢，她就说：听不懂……</p>
+<p>这就尴尬了，怎么讲他都不会，那就用我的老招数呗，刻意练习，我自己出了几道类似新题，让她练，还是经常算错。有趣的是，也不是每次都不对，有点六脉神剑时灵时不灵的感觉。仔细观察了一下发现呢，竟然是做过的她背过了一部分表象，比如10元减8元要借位怎么借她背过了，但出的新题里，有的题借位有的题不借位，所以就时而对时而错，不过这道理给小孩子讲了没用……</p>
+<p>这种场景我在教毕业生学写程序时候也遇到过，有些学员多做几道题自己就悟出来了，好像开窍了一样；有些学员就背过一些表象，于是就六脉神剑时灵时不灵了。因为编程比元角计算可复杂多了，所以一直也不知道怎么破这个局。</p>
+<p>如今这个场景又出现我眼前，以一种噪音更少的方式出现了，我依然不能通过多做同类题目的方式解决，这说明这个方向是彻头彻尾错误的。</p>
+<p>最后我没招了，我说，来，我把我怎么解题的说一遍，你背下来。我其实也不知道为啥我要这样干，就是个脑子里突然闪过的想法，纯粹死马当活马医吧。</p>
+<p>于是我就说，10元5角减8元6角这个题我是怎么解的呢，我们的计算规则是元减元，角减角，但因为5角减不了6角，所以要跟10元借一位，借完之后呢，10元就变成了9元，5角就变成了15角，然后15角减6角得到9角，9元减8元得到了1元，所以最后答案是1元9角。</p>
+<p>我就让她背，背的时候，她就在借位环节问问题了，我也解答了问题，全部过程能背下来之后，她就好像突然开窍了一样，换几个题都会了。</p>
+<h2 id="背后的“原因”"><a href="#背后的“原因”" class="headerlink" title="背后的“原因”"></a>背后的“原因”</h2><p>这神奇结果让我很意外，赶紧分析了一下，为什么给这个实践会起作用。我感觉，大约的原因是，初学者由于领域知识的缺乏，他对于自己为什么不会这事是缺乏语言描述的。甚至于她到底哪个点不会都说不出来。说不出来就是在瞎做，算不得刻意练习，刻意练习非常强调针对性的专项训练，知识工作者真正需要锻炼的是大脑里思考问题的方式，只是做题，如果思路不对的话（比如中间某几步是蒙的），那真正欠缺乏锻炼的部分根本没锻炼到。但找到这个点很难，因为问题往往是隐藏在思考过程中的。</p>
+<p>之前的实践恰恰可以针对这个问题产生影响，我给这个实践起了一个名字，叫背诵解题思路。这两个词拆开正好就是我们这个实践的两个关键点，一就是背诵，如果我们只是听一遍解题思路，会出现听起来很有道理觉得自己学到了东西但实际什么都没带走的情况，跟不明觉厉也没差多少。大家都可以自己测试一下，听起来很清楚的道理自己背一遍总会在某个地方卡壳，那个地方可能就是我们需要锻炼的点。</p>
+<p>另一个关键点就是解题思路，这就贴合了我们的标题，什么值得背。我们在谈到教学总会比较迷信所谓循循善诱，觉得死记硬背是不好的（都市传说，背诵会扼杀创造力）。但其实记忆是一切的基础，只是要明确，我们记忆的目的是为了什么？最终的最终是为了应用，为了改造世界。我们经常背一些知识点，定理定律规则，这些东西都是死的，不能改造世界，而较少被人关注的解题思路，尤其是高手的解题思路才是改造世界的出路。人跟人思考的过程差异之大是令人乍舌的，有时即使看起来很简单的题，你看一下高手的解题思路，都会发现很大差别。各行各业的高手都是类似的，之前看过科比的一档节目，叫细节，看完之后才知道，运动员在运动场上处理的信息量有多大。</p>
+<h2 id="对程序员的价值"><a href="#对程序员的价值" class="headerlink" title="对程序员的价值"></a>对程序员的价值</h2><p>这个实践对于我们程序员有什么价值呢？在编程中，有很多问题是没有标准答案的，比如任务分解、比如软件设计等，前面说的需要学生开窍的场景其实都属此类。虽然没有标准答案，但是我们又想提高自己，就只能去学习高手的解题思路。其实，很多工程实践已经是把高手的做事方式讲给我们听了，但做的时候他们脑子里是怎么想的呢？这只有在自己做的时候自己摸索。而这个自己摸索的过程通常效率是很低的，会有很多只得其形不得其神的情况。这对团队中带人的人，像我这样需要教人工程实践的人都要面临的一个困境，很难大规模的培养出优秀的程序员。究其原因可能有很多，但魔鬼一定是隐藏在细节里，现在我觉得背诵解题思路可能是一个解。怎么解呢？</p>
+<p>举个例子，工程实践中，tdd是最难学的一个，tdd就是高手的做事方式。最近在参与熊节的tdd练功房，有位同学就第一道最简单的题写了自己的解法：<br><a href="https://www.jianshu.com/p/13d7a0a0e5be" target="_blank" rel="noopener">https://www.jianshu.com/p/13d7a0a0e5be</a></p>
+<p>这个解法到了后面有点过度设计，但本题练的是编程的手艺，所以重点在过程中的细节，那一个个细小的步骤，我敢说是很多程序员会忽略的。</p>
+<p>再举个例子，面向对象封装继承多态，最难的就是封装。我们最近出了一道重构的题目给某公司，在重构的过程中要把分散的基本数据类型的数据封装成对象。分散的数据如下所示：</p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/what-worth-to-be-recited/pic-01.png" alt="充满坏味道的代码"> </p>
+<p>这个能力其实是最难锻炼的，上面这些数据谁跟谁应该封装在一起，谁跟谁不应该。这也属于没有标准答案的问题。作业结果也证明了这一点。怎么办呢？同样，可以试着背一下高手的解题思路。（想知道这个题的思路吗？等我后面的文章，没错这里是广告）</p>
+<p>综上，对于一些实践类的内容，总是会出现不管怎么练也不开窍的情况，比如如何高效的TDD，比如软件设计。这个时候，大家可以试试让被教授的人背诵一下解题思路，说不定会有效果。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/30/programmer-dojo/marsrover-tdd/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/30/programmer-dojo/marsrover-tdd/" class="post-title-link" itemprop="url">练功房MarsRover讲解（初稿）</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-01-30 07:56:49" itemprop="dateCreated datePublished" datetime="2020-01-30T07:56:49+00:00">2020-01-30</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="聊聊集成"><a href="#聊聊集成" class="headerlink" title="聊聊集成"></a>聊聊集成</h2><p>从业务域角度看集成，首先要定义什么是单元，传递一个命令就是单元，。</p>
+<p>那么，在这个领域里，我们的测试应该有多少个呢？</p>
+<p>首先，要看我们有多少个变化因子，marsrover面向的四个不同方向状态在接受三个命令时的处理是不一样的。所以四乘三共有12个case。这些都是单元测试。测试的是单个命令的场景。</p>
+<p>接着需要考虑场景之间的联动，也是一种集成测试。那你可能需要发带有几个命令的字符串，看看结果是不是对的。</p>
+<p>happy path完了，再考虑一下异常分支，没发送命令是一个case，发送了不支持的命令也是一个case。后者好像没说要怎么处理呢，记得澄清。本文就不深入聊这些细节了。</p>
+<p>另外，由于本题没有提出最大长度问题，这个我们可以先不测，但是这个是个技术原因必须限制的数字，毕竟单批量发送还是不限制不行的。根据我们上一篇，在实际工作中一定要探讨这个问题，并明确在规格上发布给使用者，不要脑补，如过业务方确实无所谓，就由我们提出一个数字，双方都认可了，放在一个地方。</p>
+<p>而在方案域，集成则有不同的含义。不同的设计也会需要不同的集成测试。</p>
+<p>先说分层，我会把与外面交互的部分划为一层，也就是把“0 0 N”和“MLRR”之类解析成领域概念的为一层。</p>
+<p>解析完之后处理核心业务逻辑的部分再分一层，靠main或XXController之类的调度。</p>
+<p>那么这两层的集成呢就是方案域的集成测试了。不过这个时候，你会发现，解析的部分单独测，解析出来的结果执行的部分单独测，最后他们集成起来的部分只需要mock测试测一个用例就好了。</p>
+<p>不但测试简单了，扩展其实也会简单，这样我们将来如果命令发生变化比如，开始这么写命令 “M2 L R”也就是移动的时候加入了数字控制移动多少格，为了好解析，我们加入了空格来分隔。这种变化对于执行的来说，并无感知，因为这个变化悲伤层负责解析的部分已经隔离掉了。</p>
+<h2 id="聊聊设计"><a href="#聊聊设计" class="headerlink" title="聊聊设计"></a>聊聊设计</h2><p>这个题一开始，很多人肯定是一大串if来解决3个command的if和四个方向的if。</p>
+<p>写完之后呢，就会开始重构，重构成什么样子的就都有了，比如下面这个：</p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/marsrover-tdd/pic-01.jpg" alt="image.jpeg"></p>
+<p>这个重构完，通常if就没有了。</p>
+<p>但是有很明显的循环依赖，所有人都能改MarsRover，这封装性也太差了。那我们提取一个数据传输对象来提升一下封装性吧，像下面这样：</p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/marsrover-tdd/pic-02.jpg" alt="image.jpeg"></p>
+<p>这么做循环依赖貌似少了，封装性也提高了，但Direction和RoverStatus还是有个循环依赖，进一步消除一下试试：</p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/marsrover-tdd/pic-03.jpg" alt="image.jpeg"></p>
+<p>终于，所有的循环依赖都干掉了，但这图看着好复杂啊而且有个问题，那就是Command和DIrection严重耦合，Direction的三个方法明显是Command的延伸，每加一个Command，Direction脱不了也要加个方法。这个设计肯定是不好的。我们可以发现DirectionValue实际上是可以不知道Move的相关概念的，方向之间自然的有左右关系，所以可以改造成这样的设计：</p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/marsrover-tdd/pic-04.jpg" alt="image.jpeg"></p>
+<p>每个DirectionValue都有一个index，左转可以通过+3然后%4的方式完成，右转可以通过+1然后%4的方式完成，不需要外面的其他概念，实现也很简单。</p>
+<p>这下貌似清静了，但实际上Move这个Command里面有四个if还是不好消掉，如果因此搞四个新的子类，会有点啰嗦。这个时候如果采用函数式的方式，把DirectionValue的四个值和对应的移动算法用一个Map封装起来，其实就比较简单了。</p>
+<p>这个题做到这，可以加入一些新需求，比如：</p>
+<p>新需求1，加一个新指令，如果接受到B指令，那么久会进入倒车状态，这个时候M跟正向的时候是反的。注意，指令的操作虽然反了，但是朝向不能变。比如朝北的M之后，y坐标是减了，但是朝向必须还是北。</p>
+<p>新需求2，有一个雷达功能，执行完判断一下自己是不是掉沟里了，如果掉沟里了，就再map上打个记号X（只是表达这个意思，不一定非要是字符串X），后面的rover会忽略走向这个记号的命令（当火星车掉到沟里时，调用init方法创建一辆新的火星车，但旧的火星车还要在沟里，不能消失）。判断无法动的方式目前先用随机数吧，正好练练mock。</p>
+<p>新需求3，地图有不同的地形，有的地形能触发无法移动，有的不能。掉沟里是火星车自己在地图上打的标记，不同地形是火星车在来到火星时就知道的地图信息（考虑，X标在哪？真实的地图上吗？真实的世界的映射的地图，和标记了X的地图应该是个什么关系？）</p>
+<p>新需求4，车也有状态，有的状态，车会忽略一些指令，比如左转坏了，会忽略左转指令</p>
+<p>新需求5，车还分类型，比如Bus，占两格，他的坐标是车头的坐标，但是它左拐时周边必须有可以拐的空间（右侧两格都不能是X），否则会忽略掉指令。</p>
+<p>Bus可能会在拐弯时坏掉，</p>
+<p>引入卡车，卡车占两格，不同于Bus的是，卡车如果车头处没有坏掉，可以接受特殊指令来脱钩车头，其他车接受这个指令无反应。</p>
 
       
     </div>
@@ -259,7 +746,7 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2020-01-30 04:00:18" itemprop="dateCreated datePublished" datetime="2020-01-30T04:00:18+00:00">2020-01-30</time>
+              <time title="Created: 2020-01-30 07:56:49" itemprop="dateCreated datePublished" datetime="2020-01-30T07:56:49+00:00">2020-01-30</time>
             </span>
 
           
@@ -370,7 +857,7 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2020-01-30 04:00:18" itemprop="dateCreated datePublished" datetime="2020-01-30T04:00:18+00:00">2020-01-30</time>
+              <time title="Created: 2020-01-30 07:56:49" itemprop="dateCreated datePublished" datetime="2020-01-30T07:56:49+00:00">2020-01-30</time>
             </span>
 
           
@@ -483,7 +970,7 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2020-01-30 04:00:18" itemprop="dateCreated datePublished" datetime="2020-01-30T04:00:18+00:00">2020-01-30</time>
+              <time title="Created: 2020-01-30 07:56:49" itemprop="dateCreated datePublished" datetime="2020-01-30T07:56:49+00:00">2020-01-30</time>
             </span>
 
           
@@ -556,414 +1043,12 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/30/programmer-dojo/thinking-as-a-machine-07/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/30/programmer-dojo/thinking-as-a-machine-07/" class="post-title-link" itemprop="url">像机器一样思考（七） —— 跨应用思考</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-01-30 04:00:18" itemprop="dateCreated datePublished" datetime="2020-01-30T04:00:18+00:00">2020-01-30</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>（本文不适合初学者阅读，目前只是为了方便培训的时候预习而写，也不适合无后续服务的人阅读）<br>现在，我们把上一篇的应用变成网络版。这个时候，你至少有了两个应用，一个客户端应用，一个服务端应用。到这一刻，我们就算具有了一个系统。</p>
-<p>当我们有一个系统的时候，我们需要一种框架来简化思考我们的应用。这里又需要我们再次展示我们的概念性思考能力，这时我会采用Linux的模型来思考这个问题，所以应用程序一般我会分为三层：</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-07/pic-01.png" alt="layer-of-application"></p>
-<p>core层是我的核心逻辑，核心的计算部分放在这里。（Linux里是Kernel，不过Kernel这词比较偏门，咱们这教程的目标是为了尽量降低门槛，还是用core吧）<br>shell层是我链接核心层和用户的地方，你可以简单理解为解析用户输入，包装核心层的计算结果，变成用户看到的输出。Shell层还有一个作用，当我们有多个应用的时候，彼此之间的shell层是互相交互的，Core层是互相不知道彼此的存在的。<br>config层比较难理解，从工程的角度，我们的Core层和Shell层，都不应该控制彼此的生命周期，它们所有的依赖都应该是外部配置的，它们只依赖抽象的接口而不是具体实现。config层就是这一层配置，在Linux的Shell里对应的就是环境变量这个概念。</p>
-<p>引入这些概念有什么好处呢？如果用这些概念来解释我们的应用，可以支撑非常大的架构的思考。</p>
-<p>我们想象一下，系统随着演进而变大，出现原本的小东西也会变的非常庞大。比如上一篇main函数里的几行代码，随着系统变大，相应的Router也不可能自己写了，Router和Command的关系自然也是在文件里配置的，慢慢的我们就开始需要一个IOC容器。Service本身会变得很复杂，彼此之间可能会有关系，而且甚至可能是别的应用提供的Service。如果我们再使用应用框架里的概念，那么思考也好，交流也好，都会变得很低效。所以我们才引出了config，shell，core这三个概念来简化应用的内部，这样就可以思考大量的应用之间的关系是应该是一个什么样的架构了，不过这个方向是一个更复杂的问题，这里就不展开了。</p>
-<p>回到我们的系统上，在一个刚刚出现了前后端概念的系统里，我们的新概念们能帮助我们理解架构的演进，下面就基于这些概念带着大家推演一遍现代常用的一些软件框架是因为哪些力量驱动出来的。</p>
-<h2 id="Core的重新定义"><a href="#Core的重新定义" class="headerlink" title="Core的重新定义"></a>Core的重新定义</h2><p>当我们把系统分为客户端和服务端的时候，那么客户端要做什么呢？服务端要做什么呢？</p>
-<p>往往客户端是需要更多的照顾用户体验，填平服务端的接口和用户体验之间的沟壑。</p>
-<p>服务端则要保证数据读写的性能，安全性和易于被客户端使用。</p>
-<p>从这两点来看，客户端应该考虑的是用户体验，而不是让用户体验为服务端扭曲。所以客户端的core层更多的是那层填平服务端接口和用户体验之间沟壑的那堆代码，而它给shell的接口应该是以shell好调用为导向的。</p>
-<p>那么怎么算是好用呢？</p>
-<h2 id="边界与无限"><a href="#边界与无限" class="headerlink" title="边界与无限"></a>边界与无限</h2><p>刚才谈到，在我们的边界处，好用是一个非常重要的需求。怎么算好用呢？最重要的是边界要找对，如果你过界了，做了事情也会被埋怨。当我们思考系统的时候，边界往往是不好找的。这就需要引入一个新的架构模式： MVC。</p>
-<p>所谓的MVC就是Model-View-Controller。一个常见系统，往往Model层负责核心基本元素和基本算法，View层负责展示和表达数据，Controller层负责调度和组合，把Model层和View层连接在一起。</p>
-<p>一般来讲，Model层通常是我们的Core，Controller层往往就是我们的shell，View层就是shell返回的数据。这个时候边界的思考就清楚了，谁是我们的model和model相关的核心计算，谁就是我们的core。谁是我们的Controller负责调度组合和内外相连，谁就是我们的shell。而我们的计算结果，也就是我们的View层，是会离开我们的应用供别人使用的，那它是我们的最外面的边界。我们思考边界只需要关注在View层，思考清楚我们的View是否在一个抽象层次上就可以了。</p>
-<p>但是，世界不是这么简单的分三层就可以结束了，世界是往复循环以致无穷的。所以我们的MVC也是循环迭代的，也就是说MVC中的某一层还可能再分MVC。那么是哪一层呢？View层。还记得我们第一篇讲得，数据和过程是不严格区分的，所以我们返回的数据，可以被解析为新的过程，新的过程再产生新的数据，从而往复循环以致无穷。</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-07/pic-02.png" alt="MVC"></p>
-<p>所以可以认为服务端是原应用的Core层进化出来的。</p>
-<p>如果我们把View层进化下去，我们前面提到的客户端的Shell返回的数据，还会再划分，就会有新的组件层(Component)，模版层(Layout)，页面层(Page，也有人爱用Container)等等。</p>
-<p>随着出现了MVC，再进一步思考就会逐渐发现，其实core层不应该关心后端代码，它应该关心前端的领域对象，以用户眼中的模型为基础计算，而不是后端业务人员眼中的模型为基础来计算。所以他会把弥合后端和前端的工作交给shell层，而shell层会夹在三方面很难受，他一方面要对接后端，一方面要对接core，还有一方面要适配真正的前端模型。前端和后端的拉锯战就会出现，在这股力量的挤压之下，我们的BFF就会自然而然的出现，所谓的前后端分离也就是自然而然的事情了。</p>
-<h2 id="题外话"><a href="#题外话" class="headerlink" title="题外话"></a>题外话</h2><h3 id="题外话1"><a href="#题外话1" class="headerlink" title="题外话1"></a>题外话1</h3><p>对于有经验的同学要说一句：数据库不是核心，你的代码才是核心。数据库就是系统的另外一个应用而已，虽然数据库厂商希望你把核心放在它里面，但你不要被厂商的策略绑架了你的自由。</p>
-<h2 id="题外话2"><a href="#题外话2" class="headerlink" title="题外话2"></a>题外话2</h2><p>面向对象，有一位同学总是在给我纠结这个面向对象怎么画。其实之所以有此问并不是不知道怎么用强类型语言来画图，如我们第二篇所述，你换成类图也是一样的。主要的纠结点在于，那个函数放在哪个类里这个问题。</p>
-<p>之所以一直没讲，是因为面向对象是纯粹的人类思考问题的方式，它是非常不精确的，把哪个函数放在哪个类里这个事情是一门艺术而不是一门科学。当我们有一个Dog类的时候，有一个bark方法是非常明显的。当我们有一个货物类（Goods)的时候，算税应该是它的方法吗？当我们有一个数据库实体的时候，比如User，Item等等，那么存储算他的方法吗？如果我们做一个CRM系统，Client明显跟所有的业务都有关系，总不能Client这个类上有所有业务的方法吧？所以我们无论怎么放，都可能是有问题的，而且在变化来临前，我们没有什么客观的标准来判断当前的做法是否合理。</p>
-<p>如果只是画图来表达的话，其实我们的方块上，也表达出了哪个函数属于哪个类，这样已经便于有经验的人发现问题并解决问题了。只是没有任何客观的公式可以帮助大家轻松的解决问题。我们只能帮你这么多了，毕竟方法，从来也不是为弱者服务的。</p>
-<h2 id="题外话3"><a href="#题外话3" class="headerlink" title="题外话3"></a>题外话3</h2><p>你这个是不是六边形架构？<br>其实可以看作是六边形架构的一种变种，我只是比较讨厌六边形这个词，它太容易让人纠结为啥是六个边，不是八个？比如我叫八卦可不可以？所以我们也不要太纠结他叫什么，领会精神就好。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/30/programmer-dojo/thinking-as-a-machine-01/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/30/programmer-dojo/thinking-as-a-machine-01/" class="post-title-link" itemprop="url">像机器一样思考（一）—— 宏观的基础</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-01-30 04:00:18" itemprop="dateCreated datePublished" datetime="2020-01-30T04:00:18+00:00">2020-01-30</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>【旧文搬家】<br>本文的起源是因为思考一个问题，什么样的人适合做程序员。<br>我曾经苦恼得思考着这个问题，直到我在SICP上看到了答案。说的白话一点就是，能像机器一样思考的人就适合做程序员。<br>那么计算机这台机器是怎么思考的呢？这里是我的答案：</p>
-<p>我们所有的计算机，都是下面这个模型，江湖人称“冯・诺伊曼体系”<br><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-01/pic-01.png" alt="冯・诺伊曼体系"></p>
-<p>从这个模型上我们看到了什么吗？嗯，可能太多噪音了，看的不够清楚，我给你们再抽象一层：<br><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-01/pic-02.png" alt="输入、处理、输出"></p>
-<p>现在清楚了吧，计算机在中间，两边是输出输出。所有的问题都从输入和输出的角度去思考，这就是计算机这台机器的思考方式。也就是说你能做到这样思考，你就会像机器一样思考了。</p>
-<p>很简单吧，但是新的问题又产生了，处理自然要处理输入产生输出了。输入，输出是些什么呢？这就要在微观层面理解机器是怎么思考的，这一部分叫，机器在加工什么？</p>
-<p>SICP中又说了，非形式的讲，我们只在处理两种东西，数据和过程，他们还不是严格区分的。<br>先不管不严格区分那半句，我们回看我们的模型，中间处理的部分其实就是过程，输入和输出其实就是数据。（在冯诺伊曼体系里，数据和过程被称之为数据和指令）那说到数据，我们有一门学科叫做数据结构，它很好的表达了什么是数据。我们还有面向对象，类型系统之类的知识，他们都会帮助我们很好的定义数据。</p>
-<p>各位看官估计心里犯嘀咕了，扯了这么多，还是无法想象怎么就算像机器一样思考了啊？不急，下面我们拿几个例子来学习一下。</p>
-<p>我们来写一个加法函数，接受两个参数作为加数和被加数，返回一个和，这个太简单了，几乎任何一个程序员都可以在几秒钟内写完。拆成机器的思维是什么样呢？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">加法函数</span><br><span class="line">输入： </span><br><span class="line">  a</span><br><span class="line">  b</span><br><span class="line">输出:</span><br><span class="line">  result</span><br></pre></td></tr></table></figure>
-<p>大概就长这样，输入是a和b，输出是一个结果，我们起名叫result。它到底表达了个啥样的代码呢？大概长这样：（本文所有的代码都会采用javascript描述，但是不代表本文内容只适合描述前端开发）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function add(a, b) &#123;</span><br><span class="line">    return a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>咦？result哪去了？在你调用的地方可能会有一行代码 <code>var result = add(1,2);</code><br>这个表达方式不仅仅可以用来描述函数定义，用来描述表达式也是可以的。比如，如果我们把前面的输入输出思维描述改为<code>加法表达式</code>。你会发现其实这段描述“编译”成代码大概长这样：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var result &#x3D; a + b;</span><br></pre></td></tr></table></figure>
-<p>所以不仅仅可以用来描述函数定义，还可以描述代码块。</p>
-<p>但是到这里就结束了吗？感觉好像对数据的表述不够细致啊。确实，我们忘了加类型了。不加类型这描述简直万灵丹么，反正俩参数一个返回值的都能用，这不行，我们还得把类型加上看着才清楚点。加上类型就变成了这样：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">加法函数</span><br><span class="line">输入： </span><br><span class="line">  a: Number</span><br><span class="line">  b: Number</span><br><span class="line">输出:</span><br><span class="line">  result: Number</span><br></pre></td></tr></table></figure>
-
-<p>这看着就好多了，是不是比刚才理解上文所讲的像机器一样思考了呢？好吧，你可能会说，这玩意有啥用啊，我有分析的这个空，我代码都写完了啊。不急，我们接着往后看。</p>
-<p>刚才那个题目有点太简单了，我们做一个稍微复杂的。比如下面这个：写一个函数，可以选出一个由数字组成的集合当中所有的偶数的最大值。</p>
-<p>这回一步做出来可能就有点难了，没关系，我们可以成两步：</p>
-<ol>
-<li>选出集合中的偶数</li>
-<li>选出偶数中的最大值<br>这两步呢，按照我们之前的格式写一下，大概是下面这个样子：</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#1 选出集合中的偶数</span><br><span class="line">输入： </span><br><span class="line">  inputArray </span><br><span class="line">输出：</span><br><span class="line">  evenArray</span><br><span class="line"> </span><br><span class="line">#2 选出偶数中的最大值</span><br><span class="line">输入：</span><br><span class="line">  evenArray</span><br><span class="line">输出:</span><br><span class="line">  max:Number</span><br></pre></td></tr></table></figure>
-<p>哎呀，突然发觉不知道该怎么描述集合呢。Javascript里就用数组就好了，但是还是不知道怎么描述数组啊。这个其实很简单，这不是一个由数字组成的数组吗？我们只要写成<code>[Number]</code>就可以了。因为我们的一个好习惯是一个集合里不要放两种类型的元素，所以就这么写就好了。那么加上去的话，大概就长这样：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#1 选出集合中的偶数</span><br><span class="line">输入： </span><br><span class="line">  inputArray: [Number] </span><br><span class="line">输出：</span><br><span class="line">  evenArray: [Number]</span><br><span class="line"> </span><br><span class="line">#2 选出偶数中的最大值</span><br><span class="line">输入：</span><br><span class="line">  evenArray</span><br><span class="line">输出:</span><br><span class="line">  max: Number</span><br></pre></td></tr></table></figure>
-
-<p>咦，第二步的evenArray没有写类型。嗯，因为evenArray是第一步的输出，我就把它省了，相信大家也能看明白。<br>耐着性子看到这里，你估计已经发现了，我还是没有回答你这个思维方式有什么用这个问题。我很想忽悠着你再做一道题，不过估计你坚持不完就会转身离开了。那我们就这两道题试着讲一讲。</p>
-<p>第一道题，我们只是展示了这个思维，第二道题，我们才开始使用到它的威力。尽管这道题也不复杂，但是思考过程还是展示了：</p>
-<ol>
-<li>分解问题</li>
-<li>找到子问题之间的关联（通过输入输出关联起来）</li>
-<li>找到问题的边界，明确假设与结果</li>
-</ol>
-<p>上述三点看着简单，却是思维清楚与否的关键。我们管这个能力叫Analytical Thinking。</p>
-<p>思维清楚带来的收益是什么？这些步骤可以直接转化为工作的任务列表，而且可测试。这样分解出来的任务列表，完成效率是极高的。我们曾经做过实验，按这个思路分解过的人，比没有分解过的人，完成效率可以高3倍以上，而且前者只学了一周的编程。<br>一个完全不会写程序的人，只要学会了这个思维，就可以开始编程之旅了，而且威力非常巨大。</p>
-<p>听起来好简单啊，有那么神吗？不是编程的人都应该会吗？然而并不是的，很多人思考编程这件事情是靠感觉的。<br>我前几天面了40多个外包公司外派来的人，只有5个人，可以按照输入输出来对问题进行分解。所以我觉得我还是有必要写点东西来讲讲这个。</p>
-<p>除了对初学者有益之外，对Team  Lead也是有益的。当你觉得你遇到的人没sense的时候，你可以试着让他们这么表达一下程序。一般就会发现一些问题。</p>
-<h2 id="题外话"><a href="#题外话" class="headerlink" title="题外话"></a>题外话</h2><p>题外话－1：<br>    我们像机器一样思考，不就都变成机器了吗？嗯，其实不是的。所谓我们像机器一样思考，那机器这种思考方式又是从哪里来的呢？机器的思考模型是一个叫“图灵机”的计算模型，而图灵机则是图灵祖师爷模拟人思考而发明出来的。所以，其实不存在什么像机器一样思考，只不过是学会一种人类的思考方式而已。<br>    考虑到图灵只能以自己和自己周围的天才科学家的作为人类的具体实例来抽象图灵机，所以我们学习的其实不是什么机器的思考方式，而是天才的思考方式，这篇文章其实应该叫《像天才一样思考》。</p>
-<p>题外话－2:<br>    这个不就是面向过程编程吗？如果的思考仅仅停在这里，那就是面向过程编程了。如果我们接着想下去，当数据复杂到一定程度的时候，我们会自然的引入封装，于是面向对象诞生了。回到数据与过程不严格区分那半句，当我们试图模糊数据和过程的界限，将过程像数据一样纳入输入输出的范畴，我们就走上了函数式编程之路。</p>
-<p>题外话－3:<br>    有人觉得练习不够吗？请留言，如果感兴趣的人多，我就加紧写更多练习的解析。</p>
-<h2 id="相关文章："><a href="#相关文章：" class="headerlink" title="相关文章："></a>相关文章：</h2><p><a href="https://www.jianshu.com/p/15ccf03ef37c" target="_blank" rel="noopener">像机器一样思考（二）—— 数据的细节</a><br><a href="https://www.jianshu.com/p/1cca5bf85f29" target="_blank" rel="noopener">像机器一样思考（三）—— 穷尽就是力量</a><br><a href="https://www.jianshu.com/p/37a862c43481" target="_blank" rel="noopener">像机器一样思考（四）—— 一图抵千言</a><br><a href="https://www.jianshu.com/p/1dd0190b8aac" target="_blank" rel="noopener">像机器一样思考（五）—— 第一个应用</a><br><a href="https://www.jianshu.com/p/f7a4f0f851c6" target="_blank" rel="noopener">像机器一样思考（六） —— 脑中的重构</a><br><a href="https://www.jianshu.com/p/12738a1b0365" target="_blank" rel="noopener">像机器一样思考（七） —— 跨应用思考</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/30/programmer-dojo/thinking-as-a-machine-02/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/30/programmer-dojo/thinking-as-a-machine-02/" class="post-title-link" itemprop="url">像机器一样思考（二）—— 数据的细节</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-01-30 04:00:18" itemprop="dateCreated datePublished" datetime="2020-01-30T04:00:18+00:00">2020-01-30</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>与很多人想的不同，同理心是一件强大的控制工具，你有多理解你要控制的对象，你就多容易控制它。所以我们学习像机器一样思考并不是为了变成机器，而是为了更好的控制机器为我们服务。从这一篇开始，我们进一步讲解这种思考模型的细节。</p>
-<p>随着对细节的深入，我们会发现，我们会越来越看不清楚机器的思维和人的思维的疆界。仿佛这之间的区别是很小的，有时候你不知道是因为人这么思考所以这么设计的机器，还是机器这么思考所以我们需要迁就它。</p>
-<p>同时，可能你会感到一些些麻烦和思维上的束缚，但总之请记住，一切不得不接受的束缚，都是为了更大的自由。Rails之父DHH曾经说过：</p>
-<blockquote>
-<p>约束是你的朋友。</p>
-</blockquote>
-<p>这很反直觉，然而随着你编程的经验增多，你会体会到这句话是多么的正确。</p>
-<h2 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h2><p>编程语言分为静态类型（比如Java，C#，Scala）和动态类型（比如JavaScript，Ruby，Python）两种。但不管是静态类型还是动态类型，你不可否认类型总是在那里的，哪怕你不显式的表达出来，也绕不开它的存在，你思考的时候必须思考它。</p>
-<p>在<a href="https://www.jianshu.com/p/c86329151cba" target="_blank" rel="noopener">上一篇</a>里，我们有一个例子用到了类型：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">加法函数</span><br><span class="line">输入： </span><br><span class="line">  a: Number</span><br><span class="line">  b: Number</span><br><span class="line">输出:</span><br><span class="line">  result: Number</span><br></pre></td></tr></table></figure>
-<p>在这一个例子里，我们用到了一种类型：Number。表明我们的参数只能是数字。假如在强类型的语言里，如果我们传进去的参数类型不是数字，就会报错。假如在弱类型的语言里，我们传进去的参数类型不是数字倒是不会报错，但是如果我们使用<code>&gt;</code>或<code>-</code>之类的运算符对其进行运算的时候，可能就会报错。所以强弱类型的语言无非是出错的时机不同，为了保证我们程序的正确性，不管你用哪种，都摆脱不了要思考数据的类型问题。</p>
-<p>仅仅是一个个体数据的时候，考虑类型还是容易考虑的。当我们有一组数据的时候呢？比如上一篇里我们还有这样一个例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#1 选出集合中的偶数</span><br><span class="line">输入： </span><br><span class="line">  inputArray: [Number] </span><br><span class="line">输出：</span><br><span class="line">  evenArray: [Number]</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-
-<p>在这个例子里，inputArray的类型到底是什么呢？是<code>数字</code>呢？还是<code>数组</code>呢？还是<code>只有数字的数组</code>呢？泛泛的说，inputArray的类型是<code>数组</code>，而精确地讲，inputArray的类型是<code>只有数字的数组</code>。为什么需要精确的指定，只有数字呢？这其实是从实用角度出发，如果我们一个数组里面放各式各样类型的数据，我们就会越来越想不清楚而头脑陷入混乱，在写代码的时候也是每当用到一种类型的数据就要加一个if，就容易漏掉一些情况而引入bug。所以为了我们自己好，还是一个数组里只放一种数据类型吧。</p>
-<p>在一些强类型语言（比如Java）里，为了保证这一点，他们还使用了所谓的泛型。有一种常用的情况就是跟我们这个情况类似，大概长成这样：<code>List&lt;Integer&gt;</code>。我们就会了解，当涉及到集合的时候，为了防止滥用，人们不惜动用语法。</p>
-<p>以上就是我们上一篇用到的类型相关的知识，在这一篇里，我们会走的更深入。</p>
-<h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><p>在上一篇里，我们的类型还是一个黑盒，在这一篇里，我们要引入结构。每一种语言都有一些基本类型，但是用来描述这个世界的数据，基本结构是不够的。所以每个语言又都提供了一种方法，让我们可以以基本数据类型为“积木”，通过结构化的方式来自定义类型。在大多数语言里，我们使用类来做这件事，但是不管你用什么，最后表达的信息都是类似的。</p>
-<p>举例来说，当我们想要表达一个数字的类型时，我们用Number，我们想表达一个字符串的类型时，我们用String。那当我们想表达一个人，这个人有一个姓名属性是String类型的，有一个年龄属性是Number类型的时候。我们需要创造出一个这样的类型，我们就可以这样写：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  name: String,</span><br><span class="line">  age: Number</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在这里，我就用到了一种结构来表达了人的类型，大家可以看到我用的方式是借鉴了<a href="http://www.json.org/" target="_blank" rel="noopener">JSON</a>的表达方式，只是把本应该写值的部分换成了类型。这是一种便于在纸上书写的表达方式，我们在日常工作中进行沟通的时候，随手拿过一张纸，很容易写清楚我想表达的结构。</p>
-<p>而最重要的是，它可以简单的表达出很深层的结构，比如我们想要定义一个人这个人有一个孩子，孩子当然也是一个人，也有相同的属性，那我们可以这么写：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  name: String,</span><br><span class="line">  age: Number,</span><br><span class="line">  child: &#123;</span><br><span class="line">    name: String,</span><br><span class="line">    age: Number</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>当然我们可能会说了，万一不止一个孩子呢？好，这就引入了自定义类型中的数组怎么表达的问题。其实可能大家已经发现了，自定义类型它也是一种类型，它存在的位置就是原来写String，Number的地方，那么问题的答案就很符合直觉了：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  name: String,</span><br><span class="line">  age: Number,</span><br><span class="line">  children: [&#123;</span><br><span class="line">    name: String,</span><br><span class="line">    age: Number</span><br><span class="line">  &#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>看起来跟<code>[Number]</code>很像吧？那么对应一个具体的Javascript对象，代码是怎么写的呢？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">let zhangsan &#x3D; &#123;</span><br><span class="line">  name: &quot;张三&quot;,</span><br><span class="line">  age: 38,</span><br><span class="line">  children: [&#123;</span><br><span class="line">    name: &quot;李四&quot;,</span><br><span class="line">    age: 10</span><br><span class="line">  &#125;,&#123;</span><br><span class="line">    name: &quot;王五&quot;,</span><br><span class="line">    age: 5</span><br><span class="line">  &#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>前文的结构，描述的就是这个代码里的对象的结构。前文的结构是为了限制我们的数据定义，然而有了这个限制，我们就可以思考更复杂的问题。</p>
-<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><p>废话不多说，我们还是老规矩，做个练习看看怎么用。</p>
-<p>打印某人的成绩单。已知输入的格式是</p>
-<blockquote>
-<p>[“姓名”, “语文成绩”, “英语成绩”, “数学成绩”, “编程成绩”]<br>比如： [“张三”,  “95”, “80”, “75”, “80”]</p>
-</blockquote>
-<p>要求打印出成绩单：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">成绩单</span><br><span class="line">姓名：张三</span><br><span class="line">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line">数学：75</span><br><span class="line">语文：95</span><br><span class="line">英语：80</span><br><span class="line">编程：80</span><br><span class="line">***************</span><br><span class="line">平均分：82.5</span><br><span class="line">总分：330</span><br><span class="line">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br></pre></td></tr></table></figure>
-
-<p>如果对这个题目进行任务划分，我会分成两步：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#1 转换为ViewModel</span><br><span class="line">输入： </span><br><span class="line">  scoresArray: [String] </span><br><span class="line">输出：</span><br><span class="line">  scoreSheet: &#123;</span><br><span class="line">    name: String,</span><br><span class="line">    chinese: String,</span><br><span class="line">    english: String,</span><br><span class="line">    math: String,</span><br><span class="line">    programming: String,</span><br><span class="line">    average: String,</span><br><span class="line">    summary: String</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">#2 打印成绩单</span><br><span class="line">输入：</span><br><span class="line">    scoreSheet</span><br><span class="line">输出：    </span><br><span class="line">    result: String</span><br></pre></td></tr></table></figure>
-
-<p>这两步我干了什么呢：</p>
-<p>第一步，我把字符串数组转换为了一个具体的对象类型，它有六个属性，分别对应着我们要打印的成绩单上的六个数据：语文，英语，数学，编程，平均分和总分。<br>第二步，我把对象转成了一个字符串，打印了出来。</p>
-<p>你可能会很奇怪了，打印没有返回值啊？为什么写在输出里？好问题，且听我下回分解～</p>
-<h2 id="照例，题外话环节。"><a href="#照例，题外话环节。" class="headerlink" title="照例，题外话环节。"></a>照例，题外话环节。</h2><p>题外话1: 为什么我们不直接用数组就拼这个字符串呢？一方面，我是在演示结构的使用，另一方面，这是一个小技巧，我们最后打印的这一部分字符串的部分，被称之为表现层（就是表现在人眼前的那一部分），在表现层你最后使用的数据的结构，尽量跟你的表现层的结构一致，这样出bug的几率最低。</p>
-<p>题外话2: 这是在js里，如果我们采用强类型语言，这些结构该怎么定义呢？其实很简单嘛，比如那个人的类型结构：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Person &#123;</span><br><span class="line">  name: String,</span><br><span class="line">  age: Number,</span><br><span class="line">  children: [Person]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>done。</p>
-<p>题外话3： 那我们用<a href="http://www.ibm.com/developerworks/cn/rational/rationaledge/content/feb05/bell/" target="_blank" rel="noopener">类图</a>可不可以呢？当然也可以，只是要画框子很容易在写属性的时候发现画小了，而且当你画更深层关系的时候就比较麻烦。</p>
-<p>//TODO: 这里需要写几个对照例子</p>
-<h2 id="课后作业"><a href="#课后作业" class="headerlink" title="课后作业"></a>课后作业</h2><p>打印所有人的成绩单。已知输入的格式是</p>
-<blockquote>
-<p>[<br>[“姓名”, “语文成绩”, “英语成绩”, “数学成绩”, “编程成绩”],<br>…<br>]</p>
-</blockquote>
-<p>比如： </p>
-<blockquote>
-<p>［<br>[“张三”,  “95”, “80”, “75”, “80”],<br>[“李四”,  “80”, “70”, “85”, “90”]<br>]</p>
-</blockquote>
-<p>要求打印出成绩单：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">成绩单</span><br><span class="line">姓名|数学|语文|英语|编程|平均分|总分 </span><br><span class="line">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line">张三|75|95|80|80|82.5|330</span><br><span class="line">李四|85|80|70|90|81.25|325</span><br><span class="line">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line">全班总平均分：xxx</span><br><span class="line">全班总分中位数：xxx</span><br></pre></td></tr></table></figure>
-
-<p>请列出本题的任务</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/30/programmer-dojo/thinking-as-a-machine-06/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/30/programmer-dojo/thinking-as-a-machine-06/" class="post-title-link" itemprop="url">像机器一样思考（六）—— 脑中的重构</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-01-30 04:00:18" itemprop="dateCreated datePublished" datetime="2020-01-30T04:00:18+00:00">2020-01-30</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>上一篇里，我们实现了一个小应用，而且用两种设计。本文将给出更多的设计实现以继续探讨设计问题。</p>
-<p>我们会看到，即便是纸上的图，也可以进行重构。由于纸是我们大脑的延伸，也可以称之为脑中的重构。而这种重构的结果由于并不是真正的代码，所以即便重构错了方向，设计不合理，抛弃也非常简单，相对于改代码而言，几乎没有成本。</p>
-<h2 id="简单的改进"><a href="#简单的改进" class="headerlink" title="简单的改进"></a>简单的改进</h2><p>第一步我们先做得简单一点，上一节我们停在这张图上：</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-01.png" alt="image1"></p>
-<p>我们可能会觉得上一节的图有点啰嗦，比如buildStudentInfoPromptString和buildStudentSeqencePromptString两个函数，甚至generateReport都啰嗦了。那我就可以重构一下，去掉这些啰嗦的内容，变成下图：</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-02.png" alt="image2"></p>
-<p>上面的改进可能我们不太满意，我们试着走另一个方向，从整个程序的角度来减少输入输出。我们前面说了，每个函数的输入输出种类越少越好，那么在我们这个题目里，推到极致就是每个函数不自己处理打印和读取，所有的打印和读取都放到一处。不但不打印和读取，还不调用其他函数，那么就会变得像下面这张图：</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-03.png" alt="image3"></p>
-<h2 id="概念性思考"><a href="#概念性思考" class="headerlink" title="概念性思考"></a>概念性思考</h2><p>上面这个实现在过程层面已经实现了只在一个函数中打印和读取用户输入。然而这个最大的函数却很臃肿，除了不干具体的活，这个系统中所有的逻辑它都知道。这种全知全能的函数，如果有更多层级，更多菜单的应用，这个函数很容易就臃肿到不能维护的地步。</p>
-<p>那么我们就来想一下，有没有一种设计，在层级更多的时候表现的更好。这个时候我们需要一种思考能力，我们称之为概念性思考。<br>概念性思考一般分为四步：</p>
-<ol>
-<li>看到复杂场景背后的核心本质</li>
-<li>识别到两个不相关的情景的相似之处</li>
-<li>用比喻或类比来解释场景</li>
-<li>用一个框架去解决问题</li>
-</ol>
-<p>那么我们按照这四步走，当前的复杂场景就是这个应用，看起来每次输出之后，还会有下一次输出之前的提示，好像每次的提示，输入，输入后的打印三个是一组的，其实完全可以把输入后的打印和下一步的提示看作一次处理，也就变成了根据用户一次输入进行一种计算，将计算的结果转化为一次输出。这也就是它背后的核心本质。</p>
-<p>简化成这种核心本质后，有没有一种已经存在的类似情景呢？我们通过观察很容易可以看出，一个简单的Web应用和一个命令行应用没什么区别，当然是没有ajax的传统web应用。用户每做一次请求，然后得到一个响应，这个响应会渲染成一个页面。</p>
-<p>如果这两个东西有些相似性的话，那么什么是一次请求到一次响应的结束呢？在这个应用里，输入完字符串之后，敲击回车就是一次请求。当敲击回车后到下一次看到要求输入时为止就是一次响应。</p>
-<p>在我们这个应用里举一个具体的例子来类比一下，在主界面输入1，并敲击回车，为一次请求；从敲击回车后，经历诸如下列的文字被打印出来的阶段：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">请输入学生信息（格式：姓名, 学号, 民族, 班级, 学科: 成绩, ...），按回车提交：</span><br></pre></td></tr></table></figure>
-
-<p>一直到变成可以进行下一次输入的状态为止，为一次响应。其余的情况以此类推都可以类似的理解为请求和响应。</p>
-<p>那么有没有现成的一个web开发的框架可以照搬来处理这个命令行应用呢？那可以选择的就多了，各种经典的WebMVC框架都可以。当然照搬任何一个WebMVC框架的话的话可能会比较啰嗦，反而降低效率，我们可以在理解它们的概念的前提之下仿造一个，这就是下一节的内容了。</p>
-<p>至此，我把我在这件事情上进行概念性思考的过程展示给了大家。做一个优秀的程序员，分析性思考和概念性思考是两大关键思考能力，希望每个读者都可以通过这一系列教程理解这两种能力，从而在工作中进行刻意练习直到掌握这两种能力。</p>
-<h2 id="我们的框架"><a href="#我们的框架" class="headerlink" title="我们的框架"></a>我们的框架</h2><p>有些话要说在前面，这个题目比较简单，但我给出的解决方案是可以处理更多层级，更多菜单的，只是如果我给出的题目太过复杂的话，大家可能连读完需求的耐心都没有，更不要提理解解决方案了。所以我们算是用了一个复杂的方案来解决一个简单的题目，中间的差距请大家自行想象，这个方案在更多层级和更多菜单时，才会真正显现威力。</p>
-<p>言归正传，在我们的这个框架里，我们的过程方面有三个概念：Router，Command和Service。<br>Router负责当每一个用户输入进来的时候，它知道去找哪一个具体的响应者，这个响应者就是我们的Command。<br>Router通过简单的输入解析，找到具体的Command，Command负责处理各种具体的用户输入解析，但是有一些核心的计算，比如说添加学生信息，我们定义为Service。Command会调用Service函数和将Service计算结果翻译为用户友好的输出。当Command处理完一切，就会返回结果，结果就会统一的输出。Command一般不直接输出到用户接口，这样就会便于测试，就像我们所有的WebMVC框架一样。管理这些输入输出的是我们的main函数，它还会负责把我们的Router，Command配置在一起，像极了WebMVC里的配置文件。</p>
-<p>过程方面分析完了，在数据方面，我们只需要把Service和Command之间的通讯，Command和最外层之间的通讯抽象出一些概念就可以了，比如Service和Command之间的数据可以叫Response，Command和最外层之间的数据可以叫View。</p>
-<p>所以综上，我们可以开始画图了，但是这个画图呢比较难画在一张图上，所以我们就把一次“请求”和一次“响应”画成一张图，这也是一种可视化的技巧，当我们把一件事画成多张图的时候，我们的大脑会自己把这些图联系到一起，并不需要我们在图上表示出，他们是有关系的。</p>
-<p>总之，这个应用可以画成的图如下所示：</p>
-<p>应用启动：</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-04.png" alt="application-example-home"></p>
-<p>去界面1：<br><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-05.png" alt="application-example-goto-add"></p>
-<p>添加学生成绩：<br><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-06.png" alt="application-example-add"></p>
-<p>去界面2：<br><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-07.png" alt="application-example-goto-print"></p>
-<p>打印学生成绩：<br><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-08.png" alt="application-example-print"></p>
-<p>退出：<br><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-09.png" alt="application-example"></p>
-<p>将上述图片翻译成Task的时候，就会用到Response和View。</p>
-<h2 id="课后练习"><a href="#课后练习" class="headerlink" title="课后练习"></a>课后练习</h2><ol>
-<li>列出所有的任务</li>
-<li>改进需求1: 请引入加分策略，参照第二篇</li>
-<li>改进需求2: 请把每次添加学生信息输出到文件，每次打印成绩单时，从文件读取。画出图和任务列表。</li>
-</ol>
-<h2 id="题外话－1"><a href="#题外话－1" class="headerlink" title="题外话－1"></a>题外话－1</h2><p>问：一个用户输入到一个用户输出算一张图的话，这个命令行程序还好说，正常应用里的拖拽怎么办呢？<br>答： 首先，拖拽的时间是可以切分成时间片的。对于每一类时间片，其实我们可以画一张图。（当然，你会嫌烦，有这功夫不如做出来了）其次，如果我们拖拽的话，整个过程其实只在前面出现效果而已，没有任何数据往后发送，只有拖拽结束那一刻，才会有严肃的数据产生。所以我们一般不关注效果部分，因为他不触达核心，所以即便想的不全，改起来也不困难。所以完全可以先做再改。</p>
-<h2 id="题外话－2"><a href="#题外话－2" class="headerlink" title="题外话－2"></a>题外话－2</h2><p>为什么这么划分图？<br>除了像request和response之外，之所以这么划分，还因为这是一个个的业务场景。我们在前面的几节里，使用的思维主要是结构化思维，就是把一个整体的分解为多个模块的思路。而在这里面，我们使用的是场景化思维，每一张图实际上都是一个业务场景。需求的场景化是非常重要的一种思维，这会有助于我们把业务、组织和软件进行有机的设计。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
 
 
 
@@ -1028,7 +1113,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">26</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
