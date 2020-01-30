@@ -115,10 +115,11 @@ PDCA是Plan-Do-Check-Action四个词的组合。这是著名的戴明环。讲�
 [像机器一样思考（七） —— 跨应用思考][7]
 
 
-  [1]: https://www.zybuluo.com/jtong/note/403738
-  [2]: https://www.zybuluo.com/jtong/note/471501
-  [3]: https://www.zybuluo.com/jtong/note/473123
-  [4]: https://www.zybuluo.com/jtong/note/774931
-  [5]: https://www.zybuluo.com/jtong/note/640178
-  [6]: https://www.zybuluo.com/jtong/note/641148
-  [7]: https://www.zybuluo.com/jtong/note/480426
+  [1]: https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-01/
+  [2]: https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-02/
+  [3]: https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-03/
+  [4]: https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-04/
+  [5]: https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-05/
+  [6]: https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-06/
+  [7]: https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-07/
+
