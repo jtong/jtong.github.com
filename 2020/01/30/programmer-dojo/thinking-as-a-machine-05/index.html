@@ -53,13 +53,13 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="经过前面四篇，我们已经具备了最基本的思考编程的能力。我们开始做一个真正的应用吧。 例题我们现在做一个应用，该应用是一个命令行应用。当程序启动的时候，我们会看到一个命令行的主界面： 12341. 添加学生2. 生成成绩单3. 退出请输入你的选择（1～3）：  如果我们输入1，那么界面就会变成： 1请输入学生信息（格式：姓名, 学号, 民族, 班级, 学科: 成绩, ...），按回车提交：  如果输入">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/5773421-7ecadb5b3b6d20e1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/5773421-6f771b667427b66d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="article:published_time" content="2020-01-30T07:56:49.307Z">
-<meta property="article:modified_time" content="2020-01-30T07:56:49.307Z">
+<meta property="og:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-05/pic-01.png">
+<meta property="og:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-05/pic-02.png">
+<meta property="article:published_time" content="2020-01-30T09:55:21.684Z">
+<meta property="article:modified_time" content="2020-01-30T09:55:21.684Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/5773421-7ecadb5b3b6d20e1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-05/pic-01.png">
 
 <link rel="canonical" href="http://yoursite.com/2020/01/30/programmer-dojo/thinking-as-a-machine-05/">
 
@@ -195,7 +195,7 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2020-01-30 07:56:49" itemprop="dateCreated datePublished" datetime="2020-01-30T07:56:49+00:00">2020-01-30</time>
+              <time title="Created: 2020-01-30 09:55:21" itemprop="dateCreated datePublished" datetime="2020-01-30T09:55:21+00:00">2020-01-30</time>
             </span>
 
           
@@ -238,9 +238,9 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#1 打印主菜单</span><br><span class="line">#2 添加学生成绩</span><br><span class="line">#3 生成成绩单</span><br><span class="line">#4 退出</span><br></pre></td></tr></table></figure>
 
 <p>然而这个列表是跟我们的程序不等价的。我们还是应该列出跟程序等价的任务列表。为了便于表达，我们就需要画图。我们先不考虑面向对象，直接面向过程的划分，我们画出来的图大概是下面这个样子：</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/5773421-7ecadb5b3b6d20e1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-05/pic-01.png" alt="image"></p>
 <p>也许你觉得这个做法并不够好，我也这么觉得，那我们可以重构这个图，画出一种更好的解法：</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/5773421-6f771b667427b66d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-05/pic-02.png" alt="image"></p>
 <p>可以看出，这两种做法，在图形上看并没有明显的区别，但是命名上暴露出了思路的不同，后者明显减少了程序对外输入输出的次数。所以不要随便命名。<br>但如果没有上面那个图，我们是看不出来buildReport这个函数他打印了还是没打印，这就需要我们有一套约定俗成的用语规范，从用语规范中可以看出来我们到底做了什么。</p>
 <h2 id="课后练习"><a href="#课后练习" class="headerlink" title="课后练习"></a>课后练习</h2><ol>
 <li>针对两张图，分别列出所有的任务。</li>

@@ -76,8 +76,8 @@
 <meta property="og:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-21.png">
 <meta property="og:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-22.png">
 <meta property="og:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-23.png">
-<meta property="article:published_time" content="2020-01-30T07:56:49.307Z">
-<meta property="article:modified_time" content="2020-01-30T07:56:49.307Z">
+<meta property="article:published_time" content="2020-01-30T09:55:21.684Z">
+<meta property="article:modified_time" content="2020-01-30T09:55:21.684Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-01.png">
@@ -216,7 +216,7 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2020-01-30 07:56:49" itemprop="dateCreated datePublished" datetime="2020-01-30T07:56:49+00:00">2020-01-30</time>
+              <time title="Created: 2020-01-30 09:55:21" itemprop="dateCreated datePublished" datetime="2020-01-30T09:55:21+00:00">2020-01-30</time>
             </span>
 
           
@@ -266,10 +266,10 @@
 </ol>
 </blockquote>
 <h2 id="方案域"><a href="#方案域" class="headerlink" title="方案域"></a>方案域</h2><p>方案域就是想想代码写完之后什么样，这就意味着会做一些设计。具体手法很多，复杂的我们找别的场景再讲，因为这个题比较简单，我们这里讲一个简单的，我称之为上下文图，我有4篇文章，重点讲这个：</p>
-<p><a href="https://www.jianshu.com/p/c86329151cba" target="_blank" rel="noopener">https://www.jianshu.com/p/c86329151cba</a></p>
-<p><a href="https://www.jianshu.com/p/15ccf03ef37c" target="_blank" rel="noopener">https://www.jianshu.com/p/15ccf03ef37c</a></p>
-<p><a href="https://www.jianshu.com/p/1cca5bf85f29" target="_blank" rel="noopener">https://www.jianshu.com/p/1cca5bf85f29</a></p>
-<p><a href="https://www.jianshu.com/p/37a862c43481" target="_blank" rel="noopener">https://www.jianshu.com/p/37a862c43481</a></p>
+<p><a href="https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-01/" target="_blank" rel="noopener">像机器一样思考（一）—— 宏观的基础</a></p>
+<p><a href="https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-02/" target="_blank" rel="noopener">像机器一样思考（二）—— 数据的细节</a></p>
+<p><a href="https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-03/" target="_blank" rel="noopener">像机器一样思考（三）—— 穷尽就是力量</a></p>
+<p><a href="https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-04/" target="_blank" rel="noopener">像机器一样思考（四）—— 一图抵千言</a></p>
 <p>第四篇文章画的就是上下文图了，这个是我们在简单题目当中常要求学生做的。（通过画这种图的方式，标记出你的程序，如果写完了，应该有多少块？每一块的输入是什么？输出是什么？）</p>
 <p>上下文图表达的是代码的静态关系。比如，如果我的代码要这么写：</p>
 <p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-01.png" alt="image.png"></p>
@@ -413,7 +413,7 @@
 <p>这事情要分两头看。你写的一种测试代码是一种类库的形式，用于辅助测试的编写。这种代码本身跟一般的程序没什么区别，所以你可以针对他单独测试。在这个题里面，我根据不同的条件生成输入数据，就是一个这样的类库一样的程序。另一种测试代码就是我们平常的测试用例了，这种测试用例，它和实现是互相验证的。所以我们在写这个的时候有一个对自己的约束，那就是写测试的时候绝对不写实现，写实现的时候也绝对不写测试，两者之间有一个非常明确的边界：执行测试。也就是说我如果写测试，执行完了测试之后，确保是我预期的结果，我再去改实现。反之我写了实现，如果执行完测试是我预期的结果，我再考虑去改测试。这样你写测试的时候实现就是你的验证。写实现的时候测试就是你的验证。主要在修改的时候作用更大一些。</p>
 <p>最后还有一个问题，我写了这老多的细粒度的测试，是不是我原来的那个测试就可以删掉了？我建议不要，一方面，他们可以当文档存在，另一方面你原来的测试相当于一些主干，而哪些细粒度的测试相当于各种细节分支，当我们未来再引入新的功能的时候，你可以先用主干测试来驱动新功能，然后用细节的测试来进行微调。</p>
 <p>写到这里，我用fizzbuzz能讲的道理也算讲完了，还有很多道理没讲到，下次换个题目试试。</p>
-<p>絮絮叨叨写了这么多，就是讲一个事，技术是由一万个细节组成的，哪怕一个这么简单的题目，也有如此多的点。之前写过一篇文章叫《<a href="https://www.jianshu.com/p/4ecce9ab83b9" target="_blank" rel="noopener">什么值得背</a>》，就是说了一个道理：高手的解题思路值得背。我也不敢说自己是什么高手，起码写了许多年代码，也就把自己的写代码的思维展示给大家，希望对有心人有所帮助。</p>
+<p>絮絮叨叨写了这么多，就是讲一个事，技术是由一万个细节组成的，哪怕一个这么简单的题目，也有如此多的点。之前写过一篇文章叫《<a href="https://jtong.github.io/2020/01/30/deliberate-practice-for-digital-talent/what-worth-to-be-recited/" target="_blank" rel="noopener">什么值得背</a>》，就是说了一个道理：高手的解题思路值得背。我也不敢说自己是什么高手，起码写了许多年代码，也就把自己的写代码的思维展示给大家，希望对有心人有所帮助。</p>
 
     </div>
 
