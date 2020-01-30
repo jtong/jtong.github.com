@@ -189,7 +189,7 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2020-01-30 09:55:21" itemprop="dateCreated datePublished" datetime="2020-01-30T09:55:21+00:00">2020-01-30</time>
+              <time title="Created: 2020-01-30 10:01:09" itemprop="dateCreated datePublished" datetime="2020-01-30T10:01:09+00:00">2020-01-30</time>
             </span>
 
           
@@ -247,6 +247,310 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/30/something-about-software-development/bad-smell-of-visualize-arch-design/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/30/something-about-software-development/bad-smell-of-visualize-arch-design/" class="post-title-link" itemprop="url">架构可视化的坏味道</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-01-30 10:01:09" itemprop="dateCreated datePublished" datetime="2020-01-30T10:01:09+00:00">2020-01-30</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="抽象的坏味道"><a href="#抽象的坏味道" class="headerlink" title="抽象的坏味道"></a>抽象的坏味道</h2><p><a href="https://jtong.github.io/2020/01/30/something-about-software-development/visualize-arch-design-introduce-c4/" target="_blank" rel="noopener">上文</a>说过，C4说穿了就是几个东西：关系-线、元素-方块和角色（角色不过是图形不同的方块）、关系表述-线上的文字、元素的描述-方块里的文字，虚线框（如前文所说，在C4里面虚线框的表达力被极大的限制了。）</p>
+<p>这些东西一点都不新，我们自己随便找个白板，无非也是用这几个东西来表达架构，它的优点在于引进了一些分层，使得我们思路不是特别混乱，容易给别人看懂我们的思路，也容易帮助自己整理思路。</p>
+<p>所以C4不能帮你做好架构设计，但是它能让你的设计中的问题暴露出来。被自己或其他人纠正。</p>
+<p>可视化的威力就在这里，但根据我的经验，即便你用上了C4也不见得就能表达清楚，不过好消息是，终于我们可以聊一些高级的表达问题了。</p>
+<p>可视化之后，我们能看到自己的表达问题，大概的问题有两个：抽象层次和抽象粒度。这个是表达方面永恒的问题，也就是软件设计永恒的问题，没有万灵丹，但是用上了可视化手段之后还是有机会让生活更美好一点的。</p>
+<p>这两个问题可能太抽象了，不容易意识到，那我们可以看图，从图上的具体表现来发现坏味道。一般会有几个迹象表明我们有可视化的坏味道：</p>
+<ol>
+<li>一张图上过分密密麻麻的线</li>
+<li>一张图上太过多元素（也就是方块）也是坏味道</li>
+<li>一张图上太少的元素，比如角色特别少</li>
+<li>每个图上文字表达不契合，有的太泛泛，有的太细节也是问题。</li>
+<li>无限制的画更多张图，基本上也就失去了使用图形化表达的意义。</li>
+</ol>
+<p>那么对应的手段就有：</p>
+<h2 id="合成更大的元素"><a href="#合成更大的元素" class="headerlink" title="合成更大的元素"></a>合成更大的元素</h2><p>当我们发现密密麻麻的线、太多的元素，闻到这个味道的时候。我们可以考虑是不是该把里面的一些元素合成更大的元素了。Component可以合成Container，Container可以合成System，这样就会分成更多的图，每张图就变得没那么多线和元素了。</p>
+<p>紧接着会面临下一个问题：怎么合成一个更大的系统，Container是明确的，所以Component合成Container不是问题，问题是Container怎么合成一个系统，为什么是这些Container合成这个系统，而不是另外几个？或者多加几个、减几个？</p>
+<p>这个问题没有标准答案，但是有一些其他的框架可以提供一些思考的维度。</p>
+<p>比如可以结合akf扩展立方来思考</p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/bad-smell-of-visualize-arch-design/pic-01.png" alt="akf扩展立方"></p>
+<p>X轴就比较容易，一方面看你的容器本身的描述来发现设计上是不是支持横向复制的，另一方面则是看你的部署图。<br>Z轴相对难一些，只是比较偏技术。比如当技术上有性能瓶颈，则需要注意这一个维度，有时不得不搞出一些特殊的容器出来，有时已经存在这些容器了，他们可能单独属于一个系统（类似于大数据分析的系统），或者一个系统的某一个局部（这就是我说的虚线框的表达力被限制的地方）。</p>
+<p>Y轴给人的感觉是最容易操作的，但实际上却是最难的做好的，Y轴的背后是业务，往往我们觉得就按业务切成多张图就好了么。这种想法就表现出我们其实很看轻理解业务的难度，于是也总是出问题的地方。如果你能跨过这个心理障碍，决定去认真做一下，那么也有一些工具可以帮助我们做好。</p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/bad-smell-of-visualize-arch-design/pic-02.jpg" alt="领域模型与架构设计"></p>
+<p>最经典的工具组合就是求助于DDD，结合康威定律和步速，考虑维护的团队、使用的角色、变化的节奏，这块展开就复杂了，有机会再聊。</p>
+<p>这里说一个最简单的做法。按照用户角色分。同一种角色，由于它的，公司里的职能，他的职责都是已经被定好的。天然在系统上就有一种隔离性。比如招聘专员、会计、出纳。他们使用的系统肯定是不一样。</p>
+<p>但说简单，其实也不简单。我见过一些图，上面的角色只有两个，内部用户和外部用户。而另一些图，细化到了persona的级别，或者把职级都放上去了。所以无论再简单的原则，最后都会掉进抽象的坑。</p>
+<h2 id="画一些共识图来忽略掉一些通用的元素"><a href="#画一些共识图来忽略掉一些通用的元素" class="headerlink" title="画一些共识图来忽略掉一些通用的元素"></a>画一些共识图来忽略掉一些通用的元素</h2><p>有时候合成了更大的元素，元素依然很多，线条依然很密。画多张图也不够切分的。这个时候我们可以求助于共识。</p>
+<p>人与人交流，彼此之间如果已经有一些共识存在就可以少废很多话，共识多到一定程度只需要确认一个眼神就完成交流了。所以毫无疑问做好共识管理，就可以大幅简化我们的架构图。</p>
+<p>所以在我们做架构可视化的时候，经常会先画一个技术共识图，比如以一个我们的能力建设的数字平台为例，我们就画了一个下面这样的技术共识图。：</p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/bad-smell-of-visualize-arch-design/pic-03.png" alt="技术共识图"></p>
+<p>然后在后面画具体的图的时候，我就可以省略掉一些共识的元素，像nginx和数据库就没有了，可以更关注在业务上，而不是技术上来画图。</p>
+<h2 id="通过制定主题，限制文字的抽象层次"><a href="#通过制定主题，限制文字的抽象层次" class="headerlink" title="通过制定主题，限制文字的抽象层次"></a>通过制定主题，限制文字的抽象层次</h2><p>其实上面的技术共识图就是类似的做法，只是用于技术方面，如果用于业务方面，我们可以用一些抽象的名词或动词来代替一类业务，比如下图：</p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/bad-smell-of-visualize-arch-design/pic-04.jpg" alt="数字平台系统景观图"></p>
+<p>上图是一个系统景观图。当前这个主题是希望，人们一眼看清楚这个系统里面的相关角色都在使用什么系统，并且他们关注什么，职责是什么。所以具体学什么，怎么学的，都不是那么重要。所以我们就用学习一词代表了一系列的业务。</p>
+<p>当主题确定的时候，很多纷杂的信息就没有了。一定要克制住自己，试图在一张图上，表达足够多信息的冲动。</p>
+<h2 id="只画重要的图，剩下的交流的时候再画。"><a href="#只画重要的图，剩下的交流的时候再画。" class="headerlink" title="只画重要的图，剩下的交流的时候再画。"></a>只画重要的图，剩下的交流的时候再画。</h2><p>除了像上面说的，不要试图在一张图上给他足够的信息。同时也，不要试图把所有的信息都表达出来。</p>
+<p>绝大多数的图可能只在交流具体业务的时候才画，推荐使用动态图。<br>这个手边没有例子，找到再说吧。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>即便有了C4这么，好用的可视化工具。我们依然会看到，自己会掉进抽象的坑。所以在使用的时候一定要注意坏味道，经常检察是不是犯了抽象层次和抽象力度的错，才能做好可视化。这件事上，没有谁能幸免，所以要时常自省，与诸君共勉。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/30/something-about-software-development/reuse-obsession/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/30/something-about-software-development/reuse-obsession/" class="post-title-link" itemprop="url">复用的着相</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-01-30 10:01:09" itemprop="dateCreated datePublished" datetime="2020-01-30T10:01:09+00:00">2020-01-30</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>着相是佛家用语，指的是执着于外相偏离了本质。<br>仙剑奇侠传中有一个故事。讲的是一个成精了的佛珠。想要让更多的人向佛，于是施法，让这些人失去了记忆，只想一心礼佛。使人向佛，本来是好事，但强人所难，脱离了本质，便是着了相，也可以说反而是入了魔。<br>这个小故事告诉我们，在认知的世界里，我们很容易被表象所欺骗，忽略了本质。为此，佛家发明了这么一个名词来专门指出这种现象。</p>
+<p>复用也是一样。复用本来是通过消除重复的方式。得到一系列可以复用的组件。从而在未来的开发工作中，更快速的响应需求变化，也就是所谓的提升响应力。<br>然而很多复用的结果，会造成代码是变少了，改起来却更难了。复用是增加了，可读性却下降了。考虑到软件开发是一个团队协作的工作，而我们这个行业的离职率又能到百分之二十之多。难以学习的代码确实是难以维护的，尽管你可以抱怨接手的人无能，但总之是降低了响应力，也就违背了复用的本质。<br>什么情况下会出现这样的场景呢？主要是因为视角的单一，只从自己单一的视角看到了重复而不是在做全局优化。这个说法可能稍微有些抽象，那我说几个相对具体的情况。</p>
+<h2 id="当我们只关注功能视角的时候"><a href="#当我们只关注功能视角的时候" class="headerlink" title="当我们只关注功能视角的时候"></a>当我们只关注功能视角的时候</h2><p>需求有很多的描述视角，可以只在功能角度描述，比如“网站要有任务卡，任务卡上有文字版学习内容，视频讲解、也有作业题。”也可以加入业务视角，比如“学生要报名特训营，才能参加特训营。学生进入特训营后，就看到了任务卡列表。学生在任务卡上阅读学习资料，阅读完学习资料后做题来验证他是否学到，做完后提交交由助教审阅。”当我们只看功能视角的时候，可能会忽视业务上的不同，变的在功能角度过分抽象，最后当业务变化的时候，反而响应速度比较弱。<br>一个简单的后台，我们看起来所有东西长得都一样，不过是列表页面，添加页面修改页面，再加点儿删除什么的功能。说穿了都是crud，干脆我把这事弄成一一个组件好了，每个页面只需要简单配置一下，就可以出来自己的一套，增删改查页面。<br>这种视角完全没有考虑到，不同的实体，它们其实所在的业务是不一样的，关心它们的人也是不一样的。最后，彼此的演化方向也总会出现一些不同，你把它定义成一种东西，对于我每做一个修改，都要背负着其他所有实体的特异性。于是就逐渐拖慢了我改变的速度，降低了响应能力。</p>
+<h2 id="无谓的自动化"><a href="#无谓的自动化" class="headerlink" title="无谓的自动化"></a>无谓的自动化</h2><p>有追求的程序员一定会考虑提升工作效率，通过一些自动化的手段来缩短流程，提高效率。不过有时候，这种追求也会有害。<br>在我们的系统里有一个面包屑功能，就是典型的“页面A / 页面B / 页面C”那种面包屑。团队成员提出，一个个页面写面包屑好烦啊，干脆做一个根据URL生成面包屑的功能吧。乍一看好像提高了效率，但实际上URL上的名词和你想显示在面包屑上的名字是可能出现不同的。<br>比如在我们的场景里，我们提供一个任务卡的预览功能，你的面包屑可能是“xx后台 / xx 训练营管理界面 / xx卡预览”，而学生正式使用任务卡的时候，他可能是 “ 学习中心 / xx 训练营 / xx卡 ”。而他们的url里可能都会出现’/programs/$pid/tasks/$tid’。同样的program、task翻译出来的文字完全不同。你为了支持这点不同，又要扩展一些额外功能来做这种区分，做来做去，可能还不如直接写来的方便，至多抽几个常量来简单的消除一下重复。</p>
+<h2 id="当我们只从代码上看重复性的时候"><a href="#当我们只从代码上看重复性的时候" class="headerlink" title="当我们只从代码上看重复性的时候"></a>当我们只从代码上看重复性的时候</h2><p>这个我就不举例子了，其实很多犯这个错误的人都是重构的支持者，不过学艺不太精。因为如果你仔细看的话，重构里好多怀味道都有一个跟他对立的怀味道，比如发散式变化和霰弹式修改。如果我们只看代码就会违背复用的本质——更好的响应变化。<br>这个跟我说的第一个场景，只关注功能视角是类似的问题，这个可能更具象一点，只关注代码。</p>
+<h2 id="无视上下文的时候"><a href="#无视上下文的时候" class="headerlink" title="无视上下文的时候"></a>无视上下文的时候</h2><p>这个可以看作是只有功能视角的一种情况，很多功能我们觉得有重复性，提升成一个概念，然而其实根本是两个东西，他们只是刚好叫一个名字。<br>比如过去很多软件里，是有一个统一的用户组概念，不管你在哪个业务上下文里，你都需要扩展这个用户组的概念来管理用户的权限。这个带来的结果就是用户组变得越来越臃肿，每次修改都要改一下别的组的功能。在我们的网校数字平台里，学生学习有学习小组，老师出题有出题小组，这两个小组业务完全不一样，这个时候如果都用统一的用户组来管理的话，那就势必会造成无谓的耦合，损害响应力。</p>
+<p>这些故事告诉我们，我们不是在真空里去做复用。我们做的软件都是有它的商业目的。我们的工程实践也都是为商业目的服务的。当我们说tech@core的时候，让我们说技术就是业务的时候。诚然，他给技术人员带来了更多的权利，然而权利越大，责任也越大。技术人员也需要跳出技术，具备更多的业务视角和体验视角。而不仅仅是沉浸在技术得自high当中。才能真正的发挥出各种实践的价值。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/30/deliberate-practice-for-digital-talent/deliberate-practice-for-digital-talent/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/30/deliberate-practice-for-digital-talent/deliberate-practice-for-digital-talent/" class="post-title-link" itemprop="url">数字人才的刻“意”练习——开篇</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-01-30 10:01:09" itemprop="dateCreated datePublished" datetime="2020-01-30T10:01:09+00:00">2020-01-30</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="系列背后的故事"><a href="#系列背后的故事" class="headerlink" title="系列背后的故事"></a>系列背后的故事</h2><p>不知道你有没有灵魂画手的体验。所谓灵魂画手，又叫手残党，当它们想画一个东西的时候，画出来的图大都是这样的：</p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/deliberate-practice-for-digital-talent/pic-01.png" alt="灵魂画作"></p>
+<p>反正我从小就有这种体验，非常不爽。我特别想能通过画画来表达东西，然而作为一名灵魂画手，一次次拿起画笔就是一次次的挑战不可能，直到最后让我意识到，确实不可能……</p>
+<p>那些图画仿佛有魔力，让我完全没办法画出来。我想有些事情还真是有天赋这种东西存在的。</p>
+<p>这个想法并没有让我更舒服，表面上让我对天赋这个词更加敬畏，但内心深处其实对它的厌恶也是与日俱增。然而不管我多么厌恶，我还是一名灵魂画手，一个手残党。我也只能继续认为有些事情还真的是有天赋这种东西存在的。</p>
+<p>我一直这么认为着，直到几年前我知道了一本书：《像艺术家一样思考》。我曾经的同事熊节学过那本书之后，经过一个多月的修炼，从手残党变成了可以画素描的人，写了一篇博客发出来：<a href="http://gigix.thoughtworkers.org/2013/6/7/how-i-learned-sketching/" target="_blank" rel="noopener">http://gigix.thoughtworkers.org/2013/6/7/how-i-learned-sketching/</a> ，看了之后令我羡慕万分，于是我也买来了那本书，照着练习。</p>
+<p>里面的教学法非常奇特，他让你把图画倒过来，照着画，号称五分钟的奇迹。也就是说，五分钟前你是手残党，五分钟后，你就能画画了。我在照着步骤练习了之后发现，奇迹真的发生了。</p>
+<p>一旦倒过来，我变的不再关注于整体造型，而是关注于线条，眼中那些有透视感的线条重新变成了平面上的线条，那些图画不再有魔力，变成了我这样的手残党也可以画出来的东西。那种体验，硬要打一个比方，可以说是麻瓜突然学会了魔法的感觉。</p>
+<p>而不同于熊节，我没有开始练习画画，反而开始思考思维方式这个东西。我意识到我可能找到了一种把天赋这种东西从神坛上拉到地上的可能性，所谓的天赋，也不过是自然规律被发现之前人类神化自然现象的迷信叙事罢了。只要找对了方法，人与人可能没有那么大的差别。</p>
+<p>“人跟人的差别”，我们这个行业里这种话题聊的格外多，往往是以挖苦工作中的某些“傻X”来开始的。在我们工作中，我们很容易上升到人的问题来进行讨论甚至处理。仔细打开我们的思维看一下，我们的潜意识里是认为应该存在某种天堑，决定了人和人的不同。我们认为工作和人之间存在某种匹配关系，某些人就应该做某种工作，某些人就不应该做，如果匹配错了，后天再怎么努力都是徒劳的。</p>
+<p>看过这本书后，我仿佛收到了某种感召，我开始以怀疑的眼光来看待这种归因于天赋的逃避主义论调，并且作为一个自认为资质普通的人，内心深处总有某种冲动，想要一个个的破掉这些说不清道不明的天堑。</p>
+<p>我开始假设，只要人们想且得法，经过刻意的练习，都可以学会那些看似不可思议的技能。我开始假设，有些技能，人们会觉得那是某种才能、是天赋，实际上只是技能，是可以通过练习获得的。</p>
+<p>这些假设开始去驱动我去学习一些东西，试验一些东西，慢慢我就走上了钻研培训教育的道路。这条路一走就是四年。（这一路走来比较出乎我意外的是，路上比我想象的要热闹一些，一路认识了很多有同样想法的人，有些人还是被同样一本书感召了，大家互相交流，一路上并不寂寞。）</p>
+<p>走到今天，已经有了不少的方法心得。我现在还在这条路上，一直走下去可能还能发现更多，为了防止狗熊掰棒子，把前面的忘掉，我还是要抓紧写下来，所以要开始这个系列了。</p>
+<h2 id="为什么给意加个引号？"><a href="#为什么给意加个引号？" class="headerlink" title="为什么给意加个引号？"></a>为什么给意加个引号？</h2><p>不是为了说反话，而是为了强调。刻意练习这个词给人看到的时候，人们经常是关注在”练习”两个字上的，仿佛只要只要逼着自己练就好了。自己不需要做出什么认知上的变化，只需要练习，量变自然会产生质变，练习者自己只需要坚持，其他什么都不需要操心。</p>
+<p>经过我的一些摸索，我发现重点在“意”。也就是注意力。所以我觉得刻意两个字特别好，里面体现出了注意力的重要性。我一路走来，发现每一种方法，都是一门注意力放置的艺术，就像画画你学会了把注意力放置在线条上，你突然就会了，而如果你没法把注意力放在线条上，你画细节的时候总是在想全局，总也画不出来。而这其实也只是又一遍证明了100年前美国心理学之父威廉詹姆士就提出的观点：”努力和注意力是一个心理事实的两个名字“。换句话说，所谓的不努力，只是不知道如何放置注意力，放置的不对就会很痛苦，也就看起来不努力。</p>
+<p>一个好的方法就是，定义出有哪些放置注意力的点，总结出来之后告诉人们，剩下的人们自己能搞定。虽然要想做好还需要做很多的训练，但只有知道了要把注意力放在哪之后，我们的练习才算得上刻意，否则只能算作随意练习。这个是被很多人所忽视的，也是我后面的文章会关注的，所以加个引号强调一下。</p>
+<p>就这样吧，虽然是开篇也不要一点干货都没有。总结一下，希望大家能学到：刻意练习的关键在于注意力的放置，否则就不是刻意练习，而是随意练习，下篇见。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/30/tech-leadership/growth-method-of-team/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/30/tech-leadership/growth-method-of-team/" class="post-title-link" itemprop="url">团队的精进之道</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-01-30 10:01:09" itemprop="dateCreated datePublished" datetime="2020-01-30T10:01:09+00:00">2020-01-30</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>【旧文搬家】</p>
+<p>之前写过一篇文章《编程的精进之法》，总结了ThoughtWorks中一点工作方法。现在看来，那篇文章其实应该叫个人精进之法。然而现在不是个人英雄的年代了，我们需要再深想一步，一个团队应该怎么办？</p>
+<p>当我们在带领一个团队的时候，我们想的总是，如何做好任务分配，平衡团队战斗能力，交付最好的结果。于是做的时候就会下意识的去简单、被动的因材分工，那么随着项目的进展，人员的流动，各种意外的发生使得我们在项目后期感到处处掣肘，于是只能加班以示诚意。</p>
+<p>我刚入行的时候，经历的各个项目都是如此，一直觉得这种事情就是天经地义的，直到认识了一个项目经理。该项目经理是个高人，他在项目开始的时候，问清楚每个人擅长的部分，然后让每个人去做自己不擅长的部分，不会？去找擅长的人帮忙。比如，张三说我以前做过用户权限管理，李四说我以前做过单据管理，王五说我以前做过工作流。（交代一下例子的上下文，那家公司主要就做一个大的领域，那个时候也不像现在前后端分这么清楚，项目经理有时候还要身兼Tech Lead）他就会说，好，张三去做工作流，王五去做单据管理，李四去做用户权限管理，遇到不会的，谁擅长什么你们都知道了啊，去问。</p>
+<p>虽然看起来有点乱来，但是他负责的项目从来没出过问题。后来我加入了ThoughtWorks才知道，听到一个口号：“把项目成功交付看作能力建设的副产品”，才知道这是这口号的一种朴素实现。<br>很多团队能力不强，团队的领导者就总是在向外寻找方法的帮助。寻找方法帮助其实没有错，但是寻找方法帮助的人，心态往往都是错的。当我们在向外诉求方法的时候，很多人的潜意识，是假设我们团队成员能力不变的情况下，通过一种魔法般的方法，就可以改变团队的绩效，这种思路在真实世界里是走不远的。</p>
+<p>在ThoughtWorks，我们认为，软件开发中的一切问题，根本上都是人的能力问题。如何发展每个成员才是问题的关键，因为成员如果没有进步，始终是治标不治本的。所以我们采用的一切实践，不管是以前曾采用的还是以后会采用的，核心目的都只有一个：发展人的能力。因此才有了那个听起来很耸动的口号：“把项目成功交付当成能力建设副产品”。</p>
+<p>如何发展人的能力？讲东西吗？不太靠谱，信息仅靠分享是没用的，我经常把刚讲过一遍的知识，让人复述；把结对时刚写完的代码全删掉让同伴重写一遍，能做到的人不多。记也记不住，做也做不到。</p>
+<p>就像我之前《然而培训并没有什么用》里说的，做练习？没时间，项目太忙了。而且，就算你有时间，我们拿出时间来做练习，你能保证到了跟练习不一样的场景下，团队成员们都能用好吗？把学会的知识在新场景下用好这件事，还是挺看天赋的。</p>
+<p>讲东西不靠谱，做练习没时间，那难怪大家不考虑能力建设了。不过，如果我们反过来想，这个问题就变得没那么难办了，既然没有时间做能力建设，那么也许一切活动都可以看作是能力建设。所以那个项目经理的招数虽然看起来比较乱来，但却是这个思路，我在项目开始的时候，不是着急去以最快的速度交付结果，而是通过任务分配，发展团队成员的能力。在一个较长的时期里平均来看，我们就是在以最快的速度交付结果。</p>
+<p>所以，回到我们的主题，就是团队的精进之道就是把交付过程中的一切活动都看作能力建设，把整个团队构造成促进每个成员成长的生态系统。</p>
+<p>说起来好像挺简单，我只要换个角度看就好了，然而如果想要做到并没有那么简单。这里面差异微妙而关键。</p>
+<p>比如以上一篇文章《软件开发的精进之法》讲到的方法为例。一个人要划任务，然后估时间，然后做的时候计时，根据实际结果进行反思。我们可以把这个方法做成非常邪恶的，仿佛流水线上工人的强制要求。我不关心你为什么超时，就通过这种方法来控制程序员，要求每个人都严格按照一个死板而僵化的步骤做一些简单重复的机械动作。也可以用这个方法来锻炼一个人的自我认知和发现知识漏洞等能力，促使他以最快的速度成长，等他成长起来马上给他更重要的任务，比如评估技术、评估项目、带新人、做架构等等。这两种结果的差异，背后就是领导者认识的差异，团队成员认识的差异。从这个认识的不同我们早在很多年前，就被一些大牛们观察到，作为敏捷宣言里的一句话表达了出来：“个体与交互 胜过 流程和工具”。</p>
+<p>团队里的流程和工具，是为了成就个体，促进交互，还是为了抹杀个体，消除交互，这个微小而关键的差异，是一切的本质。有多少团队学了ThoughtWorks的一些实践，搞了看板、开放工作空间、TDD、CI，团队氛围依然压抑，成员之间交流不畅，个体成长不受尊重，领导与员工玩“猫和老鼠”。这样只学了形没有学到神的做法，最后的结果不会太好。</p>
+<p>与之相反的做法呢？在上一篇文章《软件开发的精进之法》的开篇曾经简单的提到，新时代的管理者比起老板，更像老师。师者，传道，授业，解惑。各位老师，你们准备好了么？</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/30/deliberate-practice-for-digital-talent/challenge-of-cultivating-programmer/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -271,7 +575,7 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2020-01-30 09:55:21" itemprop="dateCreated datePublished" datetime="2020-01-30T09:55:21+00:00">2020-01-30</time>
+              <time title="Created: 2020-01-30 10:01:09" itemprop="dateCreated datePublished" datetime="2020-01-30T10:01:09+00:00">2020-01-30</time>
             </span>
 
           
@@ -331,311 +635,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/30/deliberate-practice-for-digital-talent/dojo-over-method/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/30/deliberate-practice-for-digital-talent/dojo-over-method/" class="post-title-link" itemprop="url">道场胜于道法</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-01-30 09:55:21" itemprop="dateCreated datePublished" datetime="2020-01-30T09:55:21+00:00">2020-01-30</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="能力建设的鬼打墙"><a href="#能力建设的鬼打墙" class="headerlink" title="能力建设的鬼打墙"></a>能力建设的鬼打墙</h2><p>我们为了变强，会订阅很多公众号，牛人博客，收藏很多视频，看很多文章。做了很多松鼠的行为，然而最终大多数人并没有变强。<br>我去看了很多学校，大多数学生面临的成长问题与十几年前并无太大区别。<br>我去看了很多家公司，大多数公司面临的能力问题跟十几年前并无太大区别。<br>十几年前，我们买一台电脑都贵得要死，现在跟一台手机差不多钱了。<br>十几年前，我们想学编程连个像样的教程都没有，现在互联网上的教程不要太多。<br>为什么会这样呢？<br>因为信息的多少，并不是学成才的关键。很多人可能知道我又要说刻意练习了，可是按照刻意练习理论，要练一万小时才能成才。但我们从业者练了不止一万小时了吧，每天996，3年就该1万小时了吧，为啥能力还是个问题呢？<br>因为工作的关系，我不得不思考这个问题，思考的久了，我自己有个理论。我在想，刻意练习把问题过分简化了，学习过程可不是那么简单的，大面上讲，我觉得刻意练习理论是工作的，只是过于粗糙，需要精细化的考虑一下，仔细思考一下刻意练习的背后到底是一个怎样的过程。</p>
-<h2 id="刻意练习的元模型"><a href="#刻意练习的元模型" class="headerlink" title="刻意练习的元模型"></a>刻意练习的元模型</h2><p>经过对自己的学习过程进行反观内视，加上跟很多人的交流，我大概抽取了一个闭环的元模型。<br><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/dojo-is-more-important-than-method/pic-01.png" alt="image.png"></p>
-<p>我发现首先要有问题供学习者思考，我称之为我思，有些问题比较简单，直接可以思考，有些问题比较难，需要先学习一些基础知识才能理解问题本身，后者就是读书的原因之一。</p>
-<p>理解问题之后，就要开始解决问题，毕竟企业里的能力建设都是要解决问题的，必须学以致用。为了能学以致用，那自然就需要练习，但练习不一定是非要专门的练习题，只要将所学知识应用，也算是练习了。练习需要有反馈，知道你做的对还是不对。</p>
-<p>经过练习之后，需要对整个过程进行反思、总结，产出经验和洞见。有数据供反思时分析和有反思的习惯是很重要的，我发现傻做的人很多，反思的人很少，真的是大家都在泥坑里，只有少数人会仰望星空。</p>
-<h3 id="成才三要素之一——环走通"><a href="#成才三要素之一——环走通" class="headerlink" title="成才三要素之一——环走通"></a>成才三要素之一——环走通</h3><p>按这个环来分析，如果想要成才，首先环要走通。<br>我思的瓶颈在于认知障，所以还是比较简单的，扩大知识面就好了。<br>我做的瓶颈才是最麻烦的，要走通这个环，最难以达成的瓶颈的其实是我做的环节，在互联网时代，你想获得知识已经很容易了，只要你想，你总能找到可以用的知识。<br>但是学到了知识能不能实践其实是关键，你学了大量高并发的知识，但是你工作环境下没有高并发的环境供你练习，你也学不会。你想学软件开发的方法学，却在一个简单机械重复的环境下天天垒那种过些日子就没用处的代码，并不会有所提升。<br>这就是我为什么开始说，道场胜于道法，你没有一个练习场，你学到的知识都卡在第一环节了。<br>然而一个合格的道场本身并不是那么容易具备的，这个我们在后面慢慢讲。</p>
-<p>那么在我反思这个环节上，首先你要有反思的习惯，这个是比较反人性的，所以具备的人本就不多。即便你具备了，一个人的认知又容易受自己的偏见蒙蔽，容易看不清事物的全貌。需要老师的启发式引导，同学的研讨印证。一个具备好的老师同学的环境其实是道场的一部分，你所处的环境里根本没人跟你聊这些，你很容易陷到自己的认知瓶颈里很久都不得突破。</p>
-<p>其次要有数据供自己反思，不过只要有了这个习惯和意识，数据什么的好搞，比如编程的话，可以参考我的《编程的精进之法》。</p>
-<h3 id="成才三要素之二——提高频率"><a href="#成才三要素之二——提高频率" class="headerlink" title="成才三要素之二——提高频率"></a>成才三要素之二——提高频率</h3><p>一旦环走通之后，频率就是我们接下来要面临的问题。<br>一些简单的内容可以通过设计针对性的练习来提升<br>能进行针对性练习的环境就是我们最好的道场，而现实并不是这样的。<br>我当年练习投篮的时候，就发现，如果是自己一个人练的话，不但要投还要捡球。这单位时间内能练习投篮的频率就降低了。<br>等你把投篮练的差不多了，发现在比赛中能投进和练习时能投进有不一样。<br>这对这两种，你要建立两个环境，互相不能偏废，我称之为专项训练的环境和综合训练的环境。<br>在我们教学生编程的时候，就采用了这两种不同的环境，我们会设置一些非常小的练习，针对性的练习结构化编程、集合的处理、数据结构的设计和数据的转换。<br>然后会设计大作业进行这些技能的组合使用，这个时候需求到具体技术的映射是模糊的。<br>最后会设计项目，团队协作做项目，这个时候需求本身也是模糊的，团队成员之间的配合也需要锻炼。<br>前两种都属于专项训练，分别练习的是专项的技术和专项技术的组合，最后一个属于综合训练，锻炼在模糊不确定性下使用确定性的技术来完成需求的能力。</p>
-<p>这些良好设计的环境都是为我们和我们的客户的校招新员工设计的，普通员工的日常工作中难以具备这样的环境。<br>那么只需要考虑一件事就好了，我们的日常工作中有多少机会来进行练习。如何改造我们的工作环境来，使之成为个体提升的环境是关键。传说中，少林寺的和尚吃饭睡觉都在练功其实就是在讲这个简单的道理：提高频率必须从环境改造下手。</p>
-<h3 id="成才三要素之三——降低废品率"><a href="#成才三要素之三——降低废品率" class="headerlink" title="成才三要素之三——降低废品率"></a>成才三要素之三——降低废品率</h3><p>解决了闭环、频率问题之后，还有一个不得不面对的因素：废品率。<br>在练习过程当中，并不是所有的练习都是有价值的，大量的练习都是无效的，甚至有些是错误的，在反思阶段会产生反模式。<br>随着闭环次数的增多，熟练度就会提升，不但正确的做法的熟练度会上升，错误做法的熟练度也会上升，如果反思阶段思考的不足，还会得到一些既不是正确做法也不是错误做法的纯粹的无效做法的熟练度。<br>这些熟练度都是问题，都是成长过程中的废品，而如何降低废品率，是高段位竞争者之间的胜负手。<br>这个的获得可以靠反思的时候总结，也可以靠阅读实践者的文章书籍。<br>比如如果纯自己摸索可能最后总会获得大泥球的架构，但是如果阅读了DDD之类的文章书籍就能知道可以靠上下文和聚合的方式进行解耦。<br>但是这种实践者写的书籍不像具体的知识那样好懂，通常都是非常抽象的。没有懂行的人指导或研讨，跟看天书也差不多。有时跨过了理解这个坎，又会发现现实环境不允许你进行试验。不管工作流程还是协作方式，从根本上限制了问题的根本解决。（不然问题早就解决了）</p>
-<h2 id="道场建设的窘境"><a href="#道场建设的窘境" class="headerlink" title="道场建设的窘境"></a>道场建设的窘境</h2><p>在分析了刻意练习的原模型之后，我们会发现，在今天这个时代，能力建设最大的瓶颈是道场，如何将道场建设起来，比学习知识重要的多，好的练习、好的环境、好的同学比其他的都要重要。</p>
-<p>而现实中，最大的道场就是实际工作环境。所以不管能力建设在开始看起来多么人畜无害，由于涉及到工作环境的改造，最终都会影响到组织的改造和调整。想想也是合理的，按照康威定律，什么样的组织架构需要什么样的软件架构匹配，什么样的软件架构需要什么样的能力匹配，如果旧的环境能够提供足够的练习场，那么能力建设根本就不是个问题，既然能力建设是个问题了，那么在能力建设的需求下，现有组织架构必然是要进行改进的。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/30/deliberate-practice-for-digital-talent/deliberate-practice-for-digital-talent/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/30/deliberate-practice-for-digital-talent/deliberate-practice-for-digital-talent/" class="post-title-link" itemprop="url">数字人才的刻“意”练习——开篇</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-01-30 09:55:21" itemprop="dateCreated datePublished" datetime="2020-01-30T09:55:21+00:00">2020-01-30</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="系列背后的故事"><a href="#系列背后的故事" class="headerlink" title="系列背后的故事"></a>系列背后的故事</h2><p>不知道你有没有灵魂画手的体验。所谓灵魂画手，又叫手残党，当它们想画一个东西的时候，画出来的图大都是这样的：</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/deliberate-practice-for-digital-talent/pic-01.png" alt="灵魂画作"></p>
-<p>反正我从小就有这种体验，非常不爽。我特别想能通过画画来表达东西，然而作为一名灵魂画手，一次次拿起画笔就是一次次的挑战不可能，直到最后让我意识到，确实不可能……</p>
-<p>那些图画仿佛有魔力，让我完全没办法画出来。我想有些事情还真是有天赋这种东西存在的。</p>
-<p>这个想法并没有让我更舒服，表面上让我对天赋这个词更加敬畏，但内心深处其实对它的厌恶也是与日俱增。然而不管我多么厌恶，我还是一名灵魂画手，一个手残党。我也只能继续认为有些事情还真的是有天赋这种东西存在的。</p>
-<p>我一直这么认为着，直到几年前我知道了一本书：《像艺术家一样思考》。我曾经的同事熊节学过那本书之后，经过一个多月的修炼，从手残党变成了可以画素描的人，写了一篇博客发出来：<a href="http://gigix.thoughtworkers.org/2013/6/7/how-i-learned-sketching/" target="_blank" rel="noopener">http://gigix.thoughtworkers.org/2013/6/7/how-i-learned-sketching/</a> ，看了之后令我羡慕万分，于是我也买来了那本书，照着练习。</p>
-<p>里面的教学法非常奇特，他让你把图画倒过来，照着画，号称五分钟的奇迹。也就是说，五分钟前你是手残党，五分钟后，你就能画画了。我在照着步骤练习了之后发现，奇迹真的发生了。</p>
-<p>一旦倒过来，我变的不再关注于整体造型，而是关注于线条，眼中那些有透视感的线条重新变成了平面上的线条，那些图画不再有魔力，变成了我这样的手残党也可以画出来的东西。那种体验，硬要打一个比方，可以说是麻瓜突然学会了魔法的感觉。</p>
-<p>而不同于熊节，我没有开始练习画画，反而开始思考思维方式这个东西。我意识到我可能找到了一种把天赋这种东西从神坛上拉到地上的可能性，所谓的天赋，也不过是自然规律被发现之前人类神化自然现象的迷信叙事罢了。只要找对了方法，人与人可能没有那么大的差别。</p>
-<p>“人跟人的差别”，我们这个行业里这种话题聊的格外多，往往是以挖苦工作中的某些“傻X”来开始的。在我们工作中，我们很容易上升到人的问题来进行讨论甚至处理。仔细打开我们的思维看一下，我们的潜意识里是认为应该存在某种天堑，决定了人和人的不同。我们认为工作和人之间存在某种匹配关系，某些人就应该做某种工作，某些人就不应该做，如果匹配错了，后天再怎么努力都是徒劳的。</p>
-<p>看过这本书后，我仿佛收到了某种感召，我开始以怀疑的眼光来看待这种归因于天赋的逃避主义论调，并且作为一个自认为资质普通的人，内心深处总有某种冲动，想要一个个的破掉这些说不清道不明的天堑。</p>
-<p>我开始假设，只要人们想且得法，经过刻意的练习，都可以学会那些看似不可思议的技能。我开始假设，有些技能，人们会觉得那是某种才能、是天赋，实际上只是技能，是可以通过练习获得的。</p>
-<p>这些假设开始去驱动我去学习一些东西，试验一些东西，慢慢我就走上了钻研培训教育的道路。这条路一走就是四年。（这一路走来比较出乎我意外的是，路上比我想象的要热闹一些，一路认识了很多有同样想法的人，有些人还是被同样一本书感召了，大家互相交流，一路上并不寂寞。）</p>
-<p>走到今天，已经有了不少的方法心得。我现在还在这条路上，一直走下去可能还能发现更多，为了防止狗熊掰棒子，把前面的忘掉，我还是要抓紧写下来，所以要开始这个系列了。</p>
-<h2 id="为什么给意加个引号？"><a href="#为什么给意加个引号？" class="headerlink" title="为什么给意加个引号？"></a>为什么给意加个引号？</h2><p>不是为了说反话，而是为了强调。刻意练习这个词给人看到的时候，人们经常是关注在”练习”两个字上的，仿佛只要只要逼着自己练就好了。自己不需要做出什么认知上的变化，只需要练习，量变自然会产生质变，练习者自己只需要坚持，其他什么都不需要操心。</p>
-<p>经过我的一些摸索，我发现重点在“意”。也就是注意力。所以我觉得刻意两个字特别好，里面体现出了注意力的重要性。我一路走来，发现每一种方法，都是一门注意力放置的艺术，就像画画你学会了把注意力放置在线条上，你突然就会了，而如果你没法把注意力放在线条上，你画细节的时候总是在想全局，总也画不出来。而这其实也只是又一遍证明了100年前美国心理学之父威廉詹姆士就提出的观点：”努力和注意力是一个心理事实的两个名字“。换句话说，所谓的不努力，只是不知道如何放置注意力，放置的不对就会很痛苦，也就看起来不努力。</p>
-<p>一个好的方法就是，定义出有哪些放置注意力的点，总结出来之后告诉人们，剩下的人们自己能搞定。虽然要想做好还需要做很多的训练，但只有知道了要把注意力放在哪之后，我们的练习才算得上刻意，否则只能算作随意练习。这个是被很多人所忽视的，也是我后面的文章会关注的，所以加个引号强调一下。</p>
-<p>就这样吧，虽然是开篇也不要一点干货都没有。总结一下，希望大家能学到：刻意练习的关键在于注意力的放置，否则就不是刻意练习，而是随意练习，下篇见。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/30/deliberate-practice-for-digital-talent/presepective-of-requirement/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/30/deliberate-practice-for-digital-talent/presepective-of-requirement/" class="post-title-link" itemprop="url">需求的视角</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-01-30 09:55:21" itemprop="dateCreated datePublished" datetime="2020-01-30T09:55:21+00:00">2020-01-30</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="楔子"><a href="#楔子" class="headerlink" title="楔子"></a>楔子</h2><p>在我培养学生的时候，我发现一个很有趣的现象，有些人可以非常好的理解需求，并且能发现需求当中的逻辑矛盾，给出非常好的反馈。更多的人，只是听了需求，然后没有任何反应，去做的时候呢，才发现有问题。最可怕的是，明明需求有问题，做的时候他也没发现问题，最后做出来的功能是有bug的。</p>
-<p>想起我吐槽一个学生，让你扫马路，你就把土扫到路两边，只管中间干净。跟你说两边也要干净你就把两边的扫到中间，说两边和中间都得干净就在两边和中间的间隔处推上细细的一条垃圾线。</p>
-<p>吐槽虽然可以让人很爽，但不能解决问题，只是享受了优越感。作为以能力建设为己任的培养者，这种优越感反而是一种打脸，毕竟学员能做到才是我的成功，他做不到我能做到有啥好优越的呢，让他做到才是我应该追求的优越感。所以我就陷入了深深的思索，到底怎么能让学员把需求理解清楚呢？看着他们，我开始反观内视我自己，我是如何做到的呢？</p>
-<p>首先我想到，这个是个场景思考的问题，虽说思考用户场景，很多公司是PO、BA或产品经理的工作，但所谓好的程序员要能顶上半个产品经理，既然我们说是数字人才，每个人都要能理解软件的使用场景才行。我自己就是会拿到需求后，在脑子里重新构建场景。然而道理说起来简单，做起来并不简单，不管我强调多少次，要关注场景，结果也不会好，会的立刻恍然大悟（那种恍然大悟是一种原来我这种做法还有名字的感觉……），大部分不会的人还是那样……</p>
-<h2 id="跳出盒子外"><a href="#跳出盒子外" class="headerlink" title="跳出盒子外"></a>跳出盒子外</h2><p>进过长期的观察，我发现他们是在盒子内思考，而跳不出盒子外。</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/presepective-of-requirement/pic-01.png" alt="跳到盒子的外面，才能发现场景"></p>
-<p>什么是盒子内思考呢？比如一支白板笔。</p>
-<p>如果我在白板笔的盒子内看的话。我就会看到笔帽，笔芯和笔管。我可能会关注，笔芯是海绵的，笔帽和笔管是塑料的，不是金属的。这样思考就有一个问题等我考虑到颜料的时候，我就不知道应该采用什么样的原料。就必须要问一个问题，这个白板笔是用来干嘛用？因为如果我在盒子里看白板这个东西，对我是没有任何含义的。</p>
-<p>那盒子外就很好理解了，同样是描述一支白板笔，我要考虑他，写出来的东西好不好擦。写出来的字迹是否清晰可见？粗细是否适中？能用多长时间？成本是多少是，买一个新的还是加墨水儿更合适？一旦跳到盒子外，我还要考虑多角色比如制造商，分销商，销售终端，买家不同角色看他的视角。小小一支笔，也不是那么简单的。</p>
-<p>回归软件开发的上下文，盒子内就是功能视角，比如：学习平台要有写成长日志的功能。盒子外则是业务视角，比如：学员参加了学习后，每天要写成长日志，总结当日所学，练习总结能力，助教要给他们进行检查和反馈。比起前者，后者很容易想到，既然是练习总结能力，是不是应该有模板和范文？</p>
-<p>我常试好多的方法，试图让初学者可以跳出盒子外，大部分都没啥效果，不要说初学者不会，很多工作过多年的人也有这类问题，也学不会。也曾一度让我怀疑，这是一种天赋，好在不想对天赋低头的心，最终还是找到了一种实操性很好的方法。</p>
-<h2 id="故事线"><a href="#故事线" class="headerlink" title="故事线"></a>故事线</h2><p>我会要求学生画一种图。我们管它叫故事线，是一种场景思维的辅助工具。</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/presepective-of-requirement/pic-02.png" alt="故事线"></p>
-<p>这个工具是这样的用的，每当你要做一个功能，就画一条故事线，在故事线里面，首先你要定义故事起点。这个故事的起点是一个业务动机。比如说一个系统可以创建用户，那么这个创建用户的业务动机是什么呢？我问出去的时候，学生们就会开始思考，想到了说创建用户的业务动机是有一个新人入职了。</p>
-<p>有了业务动机，别人才会使用你的系统，否则你的系统只是你的自嗨而已。不要说学生了，很多工作多年的人在设计系统的时候，依然不思考这个问题。有了动机，你也可以去对比各种不同的解决方案，去想有没有更好的解决方案？比如在我们这个例子里，动机就是有人入职了要创建用户，但那么有人入职了之后，谁会来这个系统里面创建用户呢？这就涉及到方案的不同。可能我们定义的角色是hr。也可能我们这是一家小公司，反正就是那么几个人，最后就跟一个系统管理员说一声，他登上来录进去就好了，对于一家小公司来说，这也可以接受，所以你就会发现，这两个都是可行的方案。</p>
-<p>我们在实践中发现，有了业务动机这个概念之后，大家就会对场景有更多的思考，也能协作着来对比方案而不是瞎吵架了。</p>
-<p>故事线的后面就比较好画了。我们就画他在这个系统里面为了满足他的业务动机，他需要一步一步怎么做的。注意只画成功路径，过程中遇到的异常，先不要考虑。这对很多人来说，也是一个很难做到的事情。</p>
-<p>在故事线的最后，需要画出来说，这个故事结束了之后，那么最终，业务的下一个起点是什么？</p>
-<p>还是以创建用户为例，当我们为用户创建完了之后，我们的下一步是什么呢？下一步可以试试，发个邮件给用户，也可以是，把用户名密码拷给，我们的新员工本人或者他的经理。</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/presepective-of-requirement/pic-03.png" alt="学生做的一个案例"></p>
-<h2 id="小节"><a href="#小节" class="headerlink" title="小节"></a>小节</h2><p>如前所述，很多人是没有场景思维的，他想问题只能想到这个盒子内，而跳不到盒子外去关注使用它的场景。对于这种情况，我们就算明确的指出，他没有场景化思维，大部分情况下是不会有任何的作用的，大部分人依然没有场景化思维。他就像我《数字人才的刻“意”练习——开篇》里讲到的画画需要关注线条一样，我们需要告诉大家，应该关注在什么地方才会具有场景化思维。那么在这种情况下，我们只需要给他一个非常好的辅助工具，他就真的可以做到跳到盒子外。故事线就是这样一个工具。实践中发现，哪怕是毕业生，几次练习之后也可以快速掌握这种思维方式，更不要说有多年工作经验的程序员。</p>
-<p>虽然在我们项目中是有所谓的业务分析师的，但是优秀的程序员一定会在脑子里重建这些场景。如果程序员不能以这样的方式画出来的话，那么程序员做开发的时候也会出现一些问题，比如没有想全，做出来的程序有问题的情况。所以教给程序员自己这么思考问题是非常重要的，在理解完业务分析师传达的需求之后，可以在脑子里把这条线画出来，非常有价值。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/30/deliberate-practice-for-digital-talent/talk-about-digital-talent/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/30/deliberate-practice-for-digital-talent/talk-about-digital-talent/" class="post-title-link" itemprop="url">聊聊数字人才</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-01-30 09:55:21" itemprop="dateCreated datePublished" datetime="2020-01-30T09:55:21+00:00">2020-01-30</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><em>本来是开篇的一部分，结果越写越长，索性就单发了一篇</em></p>
-<h2 id="什么是数字人才"><a href="#什么是数字人才" class="headerlink" title="什么是数字人才"></a>什么是数字人才</h2><p>这些年，很多企业都在搞数字化转型，也都非常缺这方面的人才，所以纷纷提出了数字人才的说法。最近似乎都上升到了国家战略的样子：</p>
-<blockquote>
-<p>（七）强化数字人才教育。深化教育改革，建立健全高等院校、中等职业学校学科专业动态调整机制，加快推进面向数字经济的新工科建设，积极发展数字领域新兴专业，促进计算机科学、数据分析与其他专业学科间的交叉融合，扩大互联网、物联网、大数据、云计算、人工智能等数字人才培养规模。进一步扩大和落实高校专业设置自主权，鼓励高校根据经济社会发展需要和自身办学能力，加大数字领域相关专业人才培养。加强数字人才教育师资力量培养培训，推动实现基础教育、职业教育、高等教育普遍开展数字知识和技能教育，逐步建立健全多层次、多类型数字人才培养体系。加大职业教育数字化资源共建共享力度，加快建设适应数字经济发展的职业教育相关专业教学标准体系，进一步优化中等职业学校信息化相关专业设置。（教育部牵头，发展改革委、人力资源社会保障部按职责分工负责）</p>
-</blockquote>
-<p>摘自： <a href="http://www.gov.cn/xinwen/2018-09/26/content_5325444.htm" target="_blank" rel="noopener">http://www.gov.cn/xinwen/2018-09/26/content_5325444.htm</a></p>
-<p>那到底什么是数字人才呢？其实全世界也没有一个明确的定义，但简单粗暴的说，围绕软件开发的各种角色就算是数字人才。这个定义可以算是满足充分条件的，是否必要就见仁见智了。那我这里就是借用了数字人才这个词来表达，软件的构造者这么一个角色。</p>
-<p>废了那么大劲就是说软件开发，那为啥我不说程序员呢？因为角色会限制我们的视野，一旦我说了程序员这个角色，我们就会把自己定义在编码这个视角上，什么需求啊、软件设计啊、组织流程啊，跟我没啥关系，这也恰恰是很多人在职业发展后期遇到瓶颈的原因，怪不得别人，全是自己画地为牢。</p>
-<h2 id="数字人才的特点"><a href="#数字人才的特点" class="headerlink" title="数字人才的特点"></a>数字人才的特点</h2><p>软件开发是一个复杂工作，而且是一个复杂的知识工作。复杂就复杂了，这好理解，为啥强调知识工作呢？知识工作有两个特点：</p>
-<ol>
-<li><p>所有的工作不是正交的，分工不能切的很完美。</p>
-</li>
-<li><p>效率提升的关键点不是在于对how的回答，而是在于对what的回答。</p>
-</li>
-</ol>
-<p>第一点说的是什么呢？在体力工作者的上下文里，我们是拆成流程来工作的，每个环节的人不需要懂上个环节的知识，做好自己这个环节就好了，你想象一下流水线上的工人，彼此其实只要做好自己的事情就好了，不懂上下游的知识和技能也无所谓。这就是所谓的正交，彼此不需要了解，不了解也互不干扰工作。但知识工作不一样，知识工作固然也是拆成流程来做的，但是知识工作里有个极为重要的动作叫反馈，就是下游接收到上游信息的时候，要告诉上游自己理解了没有、上游的信息哪里是落不了地的等等，尤其在复杂知识工作上下文里，反馈可以说是最重要的事情，没有之一。你想要反馈，你就必须至少需要懂得上游的一个环节的人的部分心智模型，否则反馈也反馈不到点子上。注意，是至少，通常你需要懂得要超过一个环节，因为反馈往往不只跨一个环节，如下图所示：</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/talk-about-digital-talent/pic-01.png" alt="知识工作者协作信息流"></p>
-<p>如果仅仅是第一点，还不是什么大不了的事情，毕竟大家一起工作，时间久了总能了解自己的上游环节的心智模型，互联网行业里都有好的程序员相当于半个产品经理的说法，问题在于第二点。我们做工作如果只追求按部就班，那就慢慢被竞争对手干掉了，每个企业都是要追求效率提升的。要提升效率就得回答一个问题，到底知识工作者的效率是怎么提升的，所以才有这个第二点，也是彼得德鲁克的观点：知识工作者的效率提升在于对what回答，而不是对how的回答。</p>
-<p>什么是对how的回答呢？也就是说在每个环节提问怎么做才能提升效率，每个环节的输入和输出都是固定的，也就是待完成的事情的定义是确定的，只要在这个限制下改变做事的方法，而不用改变事情本身的定义。</p>
-<p>而知识工作者的效率提升是一个纵观全局后的颠覆性优化，也就是所谓的颠覆性创新。这个颠覆性往是通过跨环节跨角色来产生的，比如最早敏捷里的技术实践，把测试引入了开发环节，把构建也引入了开发环节，而管理实践也是把验收提前，改变了对交付的定义，后来的DevOps则强调打破Dev和Ops的壁垒，都带来了极大的效率提升。一旦跨了环节跨了角色，那么输入输出都会变，事情本身的定义也就变了，我们需要经常拷问自己到底解决的问题是什么，改变了要解决的问题的定义，所以称之为对what的回答。</p>
-<p>一旦问题的定义发生了变化，进而我们甚至要反复拷问自己到底什么是效率，比如，我们的效率到底指的是有100个需求，我们以最短的时间做完了，还是说用户或客户当有一个需求出现，我们可以用最短的时间满足它呢？一旦效率的定义发生变化，整个生产体系都会产生颠覆性变化，也就是我前面提到的颠覆性优化，而且因为这些颠覆性优化往往是局部劣化却达到了整体优化，有时连旧的评价体系都给颠覆掉了，导致按照旧的评价体系来看，新的方法可能还是很糟糕的，在看不到全局的人眼中看来，只会看到颠覆性看不到优化从而产生抵触，这都是正常的。可以说，如果没有抵触发生，都算不上颠覆性优化。</p>
-<p>由于知识工作自身的这些特点，软件开发又比一般的知识工作还要复杂，我们觉得数字人才必须是一种多视角人才，这其中至少有三大类视角：商业视角、技术视角和用户视角：</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/talk-about-digital-talent/pic-02.jpg" alt="描绘软件的三个视角"></p>
-<p>所以这个系列文章不会只讲某一种角色的视角，我希望通过这系列文章培养出多视角的人才，所以在标题中淡化了某一种角色的强调，尽管出于我的技术出身，难免技术部分会重一些，最后写出来的数字人才的技术部分的刻意练习会多一些，不过我想也是对读者有价值的。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/30/deliberate-practice-for-digital-talent/growth-method-of-programming/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -660,7 +659,7 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2020-01-30 09:55:21" itemprop="dateCreated datePublished" datetime="2020-01-30T09:55:21+00:00">2020-01-30</time>
+              <time title="Created: 2020-01-30 10:01:09" itemprop="dateCreated datePublished" datetime="2020-01-30T10:01:09+00:00">2020-01-30</time>
             </span>
 
           
@@ -727,7 +726,7 @@
 <p>对于花了太多时间在纠结上，这其实也是一种不熟练，是对设计知识和能力的不熟练。之前看的设计知识只能有一个大概的感觉，对于每个知识的边界、使用之后的发展、如何从一种设计过渡为另一种设计了解不清，从而害怕在那一刻犯错。实际上真正值得纠结的部分没有那么多，大多是自己吓自己，或者引入了过度设计。当然也有一种情况是暴露出了架构级的问题，比如我们对于应该提出的原则性规范没有提出，所以导致我们每个地方都要现想，大家可以想象没有RESTful之前设计Web API，我们可能真的是每一个API都现想的，有了它之后，我们的纠结时间就变少了。这种情况下，通过本方法，架构师也算是有了相应的数据支持，那么架构师也就有了发现问题的一种工具。</p>
 <h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>总的来说，任务列表法＋PDCA式工作法形成的组合方法，是一个通过逐渐提升个人能力以达到高效工作的方法。这两种方法单独拿出来用，都会由于各自的局限而有各自的天花板，只有有机的结合才能真正突破这个天花板。刚开始使用起来，对于很多人来说会有一些痛苦，这一点上我只能说，提升就是痛苦的，而新的习惯一旦养成，痛苦也就不翼而飞，所以美国心理学之父威廉詹姆士说，“我们需要在尽可能早的时候，让尽可能多的有用的动作变成自动的和习惯的……一段痛苦的艰难时期之后就是自由的时光”。当我们基础能力达到一个极高的效率之后，我们会发现我们争取自由的筹码会变得更多。</p>
 <h2 id="广告时间"><a href="#广告时间" class="headerlink" title="广告时间"></a>广告时间</h2><p>有人可能会觉得列出符合上文所述标准的任务列表比较难，欢迎阅读拙作《像机器一样思考》系列文章：</p>
-<p><a href="https://www.zybuluo.com/jtong/note/403738" target="_blank" rel="noopener">像机器一样思考（一）—— 宏观的基础</a><br><a href="https://www.zybuluo.com/jtong/note/471501" target="_blank" rel="noopener">像机器一样思考（二）—— 数据的细节</a><br><a href="https://www.zybuluo.com/jtong/note/473123" target="_blank" rel="noopener">像机器一样思考（三）—— 穷尽就是力量</a><br><a href="https://www.zybuluo.com/jtong/note/774931" target="_blank" rel="noopener">像机器一样思考（四）—— 一图抵千言</a><br><a href="https://www.zybuluo.com/jtong/note/640178" target="_blank" rel="noopener">像机器一样思考（五）—— 第一个应用</a><br><a href="https://www.zybuluo.com/jtong/note/641148" target="_blank" rel="noopener">像机器一样思考（六） —— 脑中的重构</a><br><a href="https://www.zybuluo.com/jtong/note/480426" target="_blank" rel="noopener">像机器一样思考（七） —— 跨应用思考</a></p>
+<p><a href="https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-01/" target="_blank" rel="noopener">像机器一样思考（一）—— 宏观的基础</a><br><a href="https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-02/" target="_blank" rel="noopener">像机器一样思考（二）—— 数据的细节</a><br><a href="https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-03/" target="_blank" rel="noopener">像机器一样思考（三）—— 穷尽就是力量</a><br><a href="https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-04/" target="_blank" rel="noopener">像机器一样思考（四）—— 一图抵千言</a><br><a href="https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-05/" target="_blank" rel="noopener">像机器一样思考（五）—— 第一个应用</a><br><a href="https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-06/" target="_blank" rel="noopener">像机器一样思考（六） —— 脑中的重构</a><br><a href="https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-07/" target="_blank" rel="noopener">像机器一样思考（七） —— 跨应用思考</a></p>
 
       
     </div>
@@ -771,7 +770,7 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2020-01-30 09:55:21" itemprop="dateCreated datePublished" datetime="2020-01-30T09:55:21+00:00">2020-01-30</time>
+              <time title="Created: 2020-01-30 10:01:09" itemprop="dateCreated datePublished" datetime="2020-01-30T10:01:09+00:00">2020-01-30</time>
             </span>
 
           
@@ -848,7 +847,7 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2020-01-30 09:55:21" itemprop="dateCreated datePublished" datetime="2020-01-30T09:55:21+00:00">2020-01-30</time>
+              <time title="Created: 2020-01-30 10:01:09" itemprop="dateCreated datePublished" datetime="2020-01-30T10:01:09+00:00">2020-01-30</time>
             </span>
 
           
@@ -948,7 +947,7 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2020-01-30 09:55:21" itemprop="dateCreated datePublished" datetime="2020-01-30T09:55:21+00:00">2020-01-30</time>
+              <time title="Created: 2020-01-30 10:01:09" itemprop="dateCreated datePublished" datetime="2020-01-30T10:01:09+00:00">2020-01-30</time>
             </span>
 
           
