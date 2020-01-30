@@ -107,7 +107,7 @@ title: 像机器一样思考（五）—— 第一个应用
 3. 每个函数之间互相不知道对方的内在实现（各自独立）
 能做好这三点，代码就能完胜行业里的大多数人：）
 
-  [1]: https://upload-images.jianshu.io/upload_images/5773421-7ecadb5b3b6d20e1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240
+  [1]: https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-05/pic-01.png
 
 
-  [2]:  https://upload-images.jianshu.io/upload_images/5773421-6f771b667427b66d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240
+  [2]:  https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-05/pic-02.png

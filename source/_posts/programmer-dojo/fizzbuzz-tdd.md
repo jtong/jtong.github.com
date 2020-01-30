@@ -59,13 +59,13 @@ FizzBuzz，是一个经典的TDD入门题目，麻雀虽小，五脏……勉强
 
 方案域就是想想代码写完之后什么样，这就意味着会做一些设计。具体手法很多，复杂的我们找别的场景再讲，因为这个题比较简单，我们这里讲一个简单的，我称之为上下文图，我有4篇文章，重点讲这个：
 
-[https://www.jianshu.com/p/c86329151cba](https://www.jianshu.com/p/c86329151cba)
+[像机器一样思考（一）—— 宏观的基础](https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-01/)
 
-[https://www.jianshu.com/p/15ccf03ef37c](https://www.jianshu.com/p/15ccf03ef37c)
+[像机器一样思考（二）—— 数据的细节](https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-02/)
 
-[https://www.jianshu.com/p/1cca5bf85f29](https://www.jianshu.com/p/1cca5bf85f29)
+[像机器一样思考（三）—— 穷尽就是力量](https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-03/)
 
-[https://www.jianshu.com/p/37a862c43481](https://www.jianshu.com/p/37a862c43481)
+[像机器一样思考（四）—— 一图抵千言](https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-04/)
 
 第四篇文章画的就是上下文图了，这个是我们在简单题目当中常要求学生做的。（通过画这种图的方式，标记出你的程序，如果写完了，应该有多少块？每一块的输入是什么？输出是什么？）
 
@@ -333,5 +333,5 @@ FizzBuzz，是一个经典的TDD入门题目，麻雀虽小，五脏……勉强
 
 写到这里，我用fizzbuzz能讲的道理也算讲完了，还有很多道理没讲到，下次换个题目试试。
 
-絮絮叨叨写了这么多，就是讲一个事，技术是由一万个细节组成的，哪怕一个这么简单的题目，也有如此多的点。之前写过一篇文章叫《[什么值得背](https://www.jianshu.com/p/4ecce9ab83b9)》，就是说了一个道理：高手的解题思路值得背。我也不敢说自己是什么高手，起码写了许多年代码，也就把自己的写代码的思维展示给大家，希望对有心人有所帮助。
+絮絮叨叨写了这么多，就是讲一个事，技术是由一万个细节组成的，哪怕一个这么简单的题目，也有如此多的点。之前写过一篇文章叫《[什么值得背](https://jtong.github.io/2020/01/30/deliberate-practice-for-digital-talent/what-worth-to-be-recited/)》，就是说了一个道理：高手的解题思路值得背。我也不敢说自己是什么高手，起码写了许多年代码，也就把自己的写代码的思维展示给大家，希望对有心人有所帮助。
 

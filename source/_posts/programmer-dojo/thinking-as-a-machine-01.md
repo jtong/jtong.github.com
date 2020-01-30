@@ -138,10 +138,10 @@ var result = a + b;
 [像机器一样思考（七） —— 跨应用思考][9]
 
 
-  [4]: https://www.jianshu.com/p/15ccf03ef37c
-  [5]: https://www.jianshu.com/p/1cca5bf85f29
-  [6]: https://www.jianshu.com/p/37a862c43481
-  [7]: https://www.jianshu.com/p/1dd0190b8aac
-  [8]: https://www.jianshu.com/p/f7a4f0f851c6
-  [9]: https://www.jianshu.com/p/12738a1b0365    
+  [4]: https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-02/
+  [5]: https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-03/
+  [6]: https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-04/
+  [7]: https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-05/
+  [8]: https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-06/
+  [9]: https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-07/
     

@@ -30,7 +30,7 @@ https://www.bilibili.com/video/av51228411
 
 如果我们按照像机器一样思考教的里面画好了任务后，按照上图的方式去实现，就叫像机器一样工作，实际上这个行业里大量的项目都是这么干的，真是悲哀。每个人领一个模块，最后拼成一个功能，绝大多数人都不知道端到端什么样给客户提供了价值没有。这种工业时代的做事方法最大的问题就是把人当成了机器，像上面那组图一样工作，然而人做事是从粗略到丰富的画面一点点变过来的，就像下面这张图：
 
-![image.png](https://upload-images.jianshu.io/upload_images/5773421-0f8e6199b863aec9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/working-as-a-human-being/pic-03.png)
 
 图片来源： [https://acejoy.com/2018/04/20/438/](https://acejoy.com/2018/04/20/438/)
 

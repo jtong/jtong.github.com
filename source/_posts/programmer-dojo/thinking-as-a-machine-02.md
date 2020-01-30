@@ -210,6 +210,6 @@ done。
 
 请列出本题的任务
 
-  [1]: https://www.jianshu.com/p/c86329151cba
+  [1]: https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-01/
   [2]: http://www.json.org/
   [3]: http://www.ibm.com/developerworks/cn/rational/rationaledge/content/feb05/bell/

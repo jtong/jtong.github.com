@@ -22,7 +22,7 @@ service负责业务逻辑，dao则是最下层负责与数据库交互。
 
 首先了解一下adapter、usecase和domain这三个大层，如下图（domain指的是最内核写着entities的部分，往外依次是use case，adapter，蓝色的部分就是实际的外部世界了）
 
-![image.png](https://upload-images.jianshu.io/upload_images/5773421-37fe39aa6cbaddcb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/ddd-clean-arch/pic-01.png)
 
 在最外面的controller那些属于adapter，它们主要负责表现层的渲染，跟外部程序的交互，比如响应HTTP请求。adapter自己也是分组的，有时候不同的协议接口都会算作不同的adapter，比如HTTP的API和RPC的API，通常用于一个服务以不同的方式对外提供服务；有时候场景不一样也算不同的，比如web api和web page会被我归成两个adapter，通常用于遗留系统里部分页面还是后端渲染的时候；有时候不同的技术也是不同的adapter，比如spring mvc和Jersey，通常用于技术迁移过程中；
 
