@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://yoursite.com').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="前言本篇开始针对前文《软件开发人员培养的挑战》提到的挑战试图进行解答。我们要明白，培养其实是个辅助学员学习知识的过程，那如前文所说，知识量很大又很容易更新换代，所以首先需要明确的一件事就是——什么值得学。根据我的经验需要学习的有两个关键内容：思维框架和具体知识。这两个东西其实很难分得清，或者说他们是迭代交替存在的，思维框架中有知识，知识中有思维框架。但是还是有必要对他们做一个区别介绍，毕竟如果不区">
+<meta property="og:type" content="article">
+<meta property="og:title" content="什么值得学">
+<meta property="og:url" content="http://yoursite.com/2020/01/29/deliberate-practice-for-digital-talent/what-worth-to-be-learn/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="前言本篇开始针对前文《软件开发人员培养的挑战》提到的挑战试图进行解答。我们要明白，培养其实是个辅助学员学习知识的过程，那如前文所说，知识量很大又很容易更新换代，所以首先需要明确的一件事就是——什么值得学。根据我的经验需要学习的有两个关键内容：思维框架和具体知识。这两个东西其实很难分得清，或者说他们是迭代交替存在的，思维框架中有知识，知识中有思维框架。但是还是有必要对他们做一个区别介绍，毕竟如果不区">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-01-29T09:28:00.000Z">
+<meta property="article:modified_time" content="2020-02-01T14:13:52.440Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/01/29/deliberate-practice-for-digital-talent/what-worth-to-be-learn/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>什么值得学 | Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/29/deliberate-practice-for-digital-talent/what-worth-to-be-learn/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          什么值得学
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-01-29 09:28:00" itemprop="dateCreated datePublished" datetime="2020-01-29T09:28:00+00:00">2020-01-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-02-01 14:13:52" itemprop="dateModified" datetime="2020-02-01T14:13:52+00:00">2020-02-01</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本篇开始针对前文<a href="https://jtong.github.io/2020/01/30/deliberate-practice-for-digital-talent/challenge-of-cultivating-programmer/" target="_blank" rel="noopener">《软件开发人员培养的挑战<br>》</a>提到的挑战试图进行解答。我们要明白，培养其实是个辅助学员学习知识的过程，那如前文所说，知识量很大又很容易更新换代，所以首先需要明确的一件事就是——什么值得学。根据我的经验需要学习的有两个关键内容：思维框架和具体知识。<br>这两个东西其实很难分得清，或者说他们是迭代交替存在的，思维框架中有知识，知识中有思维框架。但是还是有必要对他们做一个区别介绍，毕竟如果不区别，思考问题时容易搞错问题域。这种区分是为了更好的改造世界，而不是为了更好的解释世界，所以才会出现框架中有知识，知识中有框架的情况。不过在工程的领域，过分追求更完美的解释世界是没有太大必要的，因为工程师的职责不是解释和赞美世界的，工程师的职责是撸起袖子改造世界。</p>
+<p>下面我们一个一个介绍，先介绍思维框架后介绍知识。思维框架这种东西较少有文章详细介绍，所以这里我就说的深入一点。而知识部分网上的内容就很丰富了，我就大概讲讲关键点即可。</p>
+<h2 id="思维框架"><a href="#思维框架" class="headerlink" title="思维框架"></a>思维框架</h2><p>本文介绍的思维框架是通用于所有编程场景的思维模型，是用以解决问题的通用模型，基本上放在所有的编程场景下它都是适用的，但是属于大的框架，可以用以在编程中作为大的方向的指导方针，而不是一步步解决具体问题的框架。虽然听起来比较抽象，但思维框架本身也是非常重要的，因为我在过去的工作中发现，好多人是靠本能思考，没有思维框架的指导，这种情况下的很多人尤其是不太资深的人，都容易陷入无思路头脑一片空白的状况；或者不能还原来看其实复杂的程序也不过是简单程序的叠加，没有什么神秘的，一遇到问题就会过分戏剧化思考而无所适从的状况；有时也没有办法识别自己现在是卡在哪种情况 ，没有办法求助。所以先介绍比较大的思维框架我认为是比较重要的。</p>
+<p>如前文所述，软件开发是如下的工作：</p>
+<ul>
+<li>把你的业务问题转化为数学问题，让它的规则逻辑自洽，然后用代码实现</li>
+<li>如果它的规则过于复杂，人力不能判断逻辑是否自洽，进行抽象，寄希望于抽象之后逻辑自洽</li>
+<li>如果抽象之后依然过于复杂，不能判断逻辑自洽；或如果进一步抽象将变成过度抽象，从而无法判断是否可以落地，那就切分。寄希望于在一个问题子域中，解决方案可以逻辑自洽，不同的问题子域的方案之间可以映射以合作解决大的问题域</li>
+</ul>
+<p>那么上述三项工作，哪个最重要呢？很多人可能觉得第三个最重要，第二个次之，第一个最简单，也最不重要。但根据我多年工作经验来看，第一个是最要命的。第一个确实最简单，简单到跟篮球运动员的运球和投篮一样简单，然而最简单的事情不意味着大多数人都做得很好。从能力角度，最需要构建的能力，其实并不是什么高大上的能力，恰恰是最基本的能力。而这些最基本的能力是大多数人所不具备的。这就好像人人都在谈论上乘武学，然而大多数人马步都扎不牢。</p>
+<h3 id="思维框架第一级：输入输出"><a href="#思维框架第一级：输入输出" class="headerlink" title="思维框架第一级：输入输出"></a>思维框架第一级：输入输出</h3><p>由于软件开发是把业务问题转化为数学问题使之逻辑自洽。那么首先，软件要合逻辑，其基本表现是可预测，也就是可测试。也就是说，确定的输入，一定要得到确定的输出，不然就是玄学。那么软件开发人员首先具备的能力就是要能够把程序从输入输出的角度进行思考，把输入输出想清楚再开始工作，这件事情在软件行业竟然不是通识，也是很悲哀的，大量的人根本没想清楚就冲进去一顿乱搞。<br>由于软件本身的复杂性和人的易错性，可以把一个大的具体的处理过程，拆成一个个小的处理过程，分段验证以隔离人的错误是可测试性角度进一步的要求。举个例子：<br>        某段程序的职责是处理输入，得到一些数据，然后提交。这段逻辑中，最后有个函数叫commit。整段有两种实现，一种是commit之前先把处理后的数据结构化好，然后再传给commit进行提交。另一种就是直接在commit 内构建数据，然后提交。二者相比后者比起前者更具可测试性。中间处理过程，如果比较长，也分步切割，使得每一步都可以单独测试，就比只有一个大步，更具可测试性。</p>
+<p>也就是说能否拆解出更细粒度的具备可测试性的程序是保障程序合逻辑的基本要求。（这也是软件是否可信的关键点之一，如果无法细粒度的观测软件，那么软件的行为就是个黑盒，无论如何说不上可信。）</p>
+<p>这是很重要的思维模型，很多人思考软件都是凭本能，最后变成了王宝强的烧饼，必须他来做才能做出来（源自于泰囧里，王宝强饰演的角色说我的配方就是我来做，我来做就是我的配方）。从社会角度还是企业角度都不能承受这种风险，同时，对于初学者他还不具备做好的基础，凭本能只会一团乱，所以建立起输入输出的思维模型是重中之重。</p>
+<h3 id="思维框架第二级：抽象"><a href="#思维框架第二级：抽象" class="headerlink" title="思维框架第二级：抽象"></a>思维框架第二级：抽象</h3><p>输入输出思维模型，建立起来之后，我们会发现这个分析是没完没了的，很容易陷入细节，最后设计搞了半天却还没开始写代码。随着要构建的软件越来越复杂，这个时候我们需要抽象来加速我们的思维过程。也就是我们前面说的几点的软件开发到底是什么工作的第二点，也就是抽象。</p>
+<p>所谓抽象就是对实现细节的封装，计算机从底层到上层，实在是太复杂了，没有人可以同时思考这么多的细节，所以必须通过封装来完成对思维负担的降低。当我们抽象出一套概念后，我们基于这一套概念来思考，而不是基于概念的实现来思考。通过抽象封装，我们可以降低思考的复杂度，我们对这部分的思考就简化了，可以释放出来思考更复杂的业务。</p>
+<p>编程非形式的讲，处理两样东西：数据和过程。那么抽象自然是对两种东西的抽象：数据的抽象和过程的抽象。</p>
+<p>首先来讲是数据的抽象，数据的抽象就是把相关的数据封装在一起，给这一堆数据起个类型名，比如把username、email等封装一个数据类型叫User。这样的一个直接收益就是我们思考输入输出的时候可以思考得内容更多一些，因为通过数据的抽象封装了很多细节之后，我们需要思考的细节就变少了。与之相反的操作，在日常工作中，好多人都习惯用Map（有的语言是Dictionary）存取，避免起类型名，这是个反模式，因为起名字费劲而不起名字就是在放弃抽象，就是在放弃驾驭复杂问题甚至复杂方案。另一个问题。</p>
+<p>数据抽象是一种极其常见的手法，在面向对象里，我们管这个叫封装，即便是在面向过程或其他编程范式中，这个动作也是有的，比如面向过程里通常也都有结构体等方法来自定义类型。只是面向对象通常是把数据和过程封装在一起作为类。面向对象的这个做法恰恰揭示了数据封装的关键点，那就是数据的封装是跟过程相关的。面向对象的这个手法可能粗暴了一点，但是不管有没有这个手法，数据都是跟某些过程有比较强的相关性，跟有些过程有比较弱的相关性，其他绝大部分的过程完全没有关系。这种相关性是抽象的关键依据，然而大部分的人也都是不会识别和处理或者就只是凭借本能识别和处理。</p>
+<p>其次过程也需要抽象，首先前面说到的围绕自定义的类型进行相应操作的过程，本身这些过程就是很多细节，它会打开这个抽象的封装，然后进行一系列的计算，做这么多细碎的事情的过程自身必须有个名字，也就是过程名，这个过程名本身就是一种抽象。这种抽象使得我们不会去关注其中的细节便可以进行思考，于是可以驾驭的思维内容又可以再一次变多。当然前提是我们进行好的封装不会随意的破坏，这也是一种反模式，很多程序员对抽象是很无意识的，前面数据的封装没有意识，到过程里用的时候也没有意识，封装拆封没有任何规律，很随意，这代码写的就非常难以维护，思考的时候必然也是混乱的从而难以交流和配合。</p>
+<p>那么什么样才是有规律的呢，或者说好的做法呢？那最好的方式就是复用人类已有的思维规律——语言。一旦完成数据的抽象，并且围绕封装好的数据可以进行相应的操作的过程的抽象，我们就会获得一套语言体系：数据的抽象往往是名词，过程的抽象往往是动词。在过程中，数据被拆开封装进行计算，计算完后返回另一个封装好的抽象，交给另一个封装好的过程进行处理。围绕着这些名词和动词，还可能延伸出其他词性，比如排序可能传入一个表达正序还是倒序的数据抽象，这个数据抽象就算是副词。还会演化出连接子句的连词，比如过程的进一步抽象高阶过程。通过对语言体系的一一映射，我们就可以使用自己本来就已经极其熟练的思维技巧来驾驭极其复杂的问题及其解决方案，从而提升思维的效率的同时保障精确性甚至提升创造力。这也是跨界能力存在的背后机理。</p>
+<p>语言的描述是很重要的一种思维模式，不能用人类语言描述的东西基本上也没法用软件编写出来，人们能力所限不会描述是一回事，但是只要是能写出来的软件，必然是可以用语言描述的，毕竟计算机语言也是一门语言。</p>
+<p>当然整个过程也不会那么一帆风顺，有时候抽象之后的思考会有一些偏差，漏掉一些关键的细节从而导致落不了地。不同于其他工作，前文说到写代码这件事不遵从差不多原则，不能差不多就行，差一点整个程序也运转不了，所以它的抽象要求格外严格。有丝毫的偏差，这个抽象就是空中楼阁，或者变成技术债存在于代码中。由于软件的每一个版本之间不存在推倒重来，之前的每一个代码都是后续开发者必须背负的负担，哪怕删除一行也是需要一定成本的，有时候关键的技术债，消除的成本有的时候并不比重新造一个系统简单，而重新造一个系统也不能保证不再有此类技术债存在其中，所以开发者必须面对技术债带来的两难困境。这也是这个行业为什么痛恨PPT架构师的缘故。</p>
+<h3 id="思维框架第三级：边界"><a href="#思维框架第三级：边界" class="headerlink" title="思维框架第三级：边界"></a>思维框架第三级：边界</h3><p>数据和过程的基本抽象仅仅是入门，比起输入输出模型，相对来说就好一点，但是软件进一步复杂下去，就要开始看第三点了，也就是抽象层次问题和限界上下文问题。</p>
+<p>很多人学会了抽象，就像建立起一种可以解决世界上一切问题的统一抽象。这个实际上最后并不能解决编程的问题，因为你已经有一个可以解决编程世界里一切问题的统一抽象了：通用编程语言。你一直抽象到最后，只会得到另一套通用编程语言，于效率提高无益。学会一项技能，有节制的控制和使用是很关键的，所以我们需要理解边界对于解决问题的重大意义。</p>
+<p>前面说到，我们人脑是“内存”非常小的一种“计算设备”，而软件的细节太多了，从上层的抽象到底层的机器信号，这么多复杂的细节，如果都去思考，不用很长时间，大脑的“内存”就溢出了，根本思考不下去，所以我们需要抽象。而抽象并不一定能解决问题，问题的复杂化是没有止境的，往往抽象之后，逻辑依然复杂，信息量可能依然很大，大脑依然崩溃。</p>
+<p>所以我们需要建立抽象的分层来隔离掉细节和更底层的噪音，才能解放大脑来关注更重要的事情。</p>
+<p>这个技巧不仅仅是在从软件到底层的角度需要，复杂系统的架构的设计、业务逻辑的拆分、日常的任务分解都需要这个技巧，否则很难高效的完成工作，就算完成设计也是混乱的。举个例子：</p>
+<blockquote>
+<p>我们需要写一个parser解析命令行传入的若干参数。传递给程序的参数包含两个部分：</p>
+<ul>
+<li>flag: 是一个字符，在传入给程序时必须前置一个短横线，flag后可以有0个或1个value</li>
+<li>value: 跟在flag后的具体值</li>
+</ul>
+<p>parser能够接受一个schema来指定期望接受到的参数格式，其中schema会指定flag和value的&gt; 数量及类型。当程序将参数传递给parser后，parser会首先检查传入的参数是否符合schema的&gt; 要求。例如，程序希望的传入参数如下：</p>
+<p>-l -p 8080 -d /usr/logs</p>
+<p>那么对应的schema要求应为：</p>
+<ul>
+<li>参数可以有三种flag: l, p, d</li>
+<li>l是一个布尔标记不需要传入对应的value，当传入参数中有l时代表true，否则为false</li>
+<li>p的value类型为整数</li>
+<li>d的value类型为string</li>
+</ul>
+<p>假如schema支持的flag没有在参数中出现，那么其值为默认值。例如布尔值的默认值为false，&gt; 数值的默认值为0，字符串的默认值为””。</p>
+</blockquote>
+<p>在这种级别的需求面前，比起抓紧开始抽象概念，首先要做的就是分层。因为传入的是字符串，先把字符串变成结构化数据是一层。结构化后的数据再转化为抽象概念的自定义数据类型又是一层，校验自定义数据类型的实例的值是否合法是另一层。起码要分这几层，如果是更复杂的需求分的层次还会更多，比如后面还会有执行命令又是一层。通过分层使得每一层的抽象都是简单的，而不需要进行复杂的抽象，既降低了我们的设计难度也降低了我们的实现难度，最终也会减低我们的维护难度。</p>
+<p>这例子告诉我们在接到需求的时候，不要着急的考虑具体概念的抽象，先考虑分层。而这种意识，对与很多人是欠缺的，他们有时候没有这个意识去思考，有时候意识到了，不知道该怎么思考。</p>
+<p>其实思考这个事情的思路跟前面的思路一样，就是个语言问题。当我们把数据从字符串转成结构化数据为一层的时候，对于这一层来说，他知道的只有-,横线后的字符，空格，几个字符这些概念。它就干一件事，把字符串按照一个格式拆开，组成某种简单的无噪音的格式，交给下一层继续处理。并不需要知道boolean之类的类型，也不需要知道什么默认值，至于flag是否支持就更没有必要知道了。对于这一层来说，它知道的概念极少，做的事极简。这样它领域内的抽象就不会异常复杂。</p>
+<p>一个层次只用一组概念，互相作用。如无必要，勿增实体。这就是通过边界的划分来限制概念的爆炸性增长从而避免复杂化的技巧。</p>
+<p>这个技巧可以用于分层，也可以用于分块。分出来的不管是层还是模块，他们都遵从同一个原则，只有一组有限的概念，这种东西我们在语言中叫做一个上下文，在软件开发中，我们也叫它一个上下文。在一个叫ddd的开发方法里，它有一个叫限界上下文的概念就是此类东西。</p>
+<p>有时候，你不但分块，还会通过把问题分解道不同的时间维度上来解决，比如类似宏，采用编译时拼接来解决产品线问题。</p>
+<p>基本上软件设计就是在做上下文的切割，上下文的切割有很多典型的场景，我就不在这展开说了。一个恰当切割的上下文会最大限度的降低设计的难度、避免后续实施中的坑并且可以有效的控制需求扩展对架构的冲击。</p>
+<p>在这之外还有其他思维框架及对应的技巧，比如sicp中有个例子，由于是基于pair这个数据结构实现的list，tree等数据结构。所以一个可以递归遍历pair的函数就可以遍历所有的list、tree。也正是因为我们做了良好的设计，使得在一个层次上可使用的操作，跨越不同的层次依然可以使用。这会带来生产力的提升，毕竟一个函数的适用范围变大了。</p>
+<p>这种换个角度看问题的思维模式（list，tree其实都只是pair里放着另一个pair的数据而已）确实在很多时候是很精妙的设计。但这种技巧过于精巧并不是绝大多数人容易掌握的，自然也就不应该期望于绝大多数人掌握那种过于精巧的技巧来完成软件，毕竟软件开发是个团队工作，人也是来自于市场，受制于现实情况，我们不是在真空中做软件。</p>
+<h2 id="知识"><a href="#知识" class="headerlink" title="知识"></a>知识</h2><p>知识部分，前文说到我们是个可怕的行业，首先知识量大不说，还很容易过时。然而又不能不学。毕竟只有思维模型，不具备具体的知识，也只是坐而论道的高手，我们需要培养的是能撸起袖子实干的人才。</p>
+<p>这样的情况下，我们自然要对知识进行合理的分解，进行有策略的学习。识别哪些知识是初期必须的，在具备了初期的知识后，那些知识又是长期可以保值的，那些知识是会快速贬值的。不管对人来说还是对组织来说，投资快速贬值的知识是很危险的。</p>
+<p>作为初学者来说，一门语言的语法是必须要掌握的，然后就是一门语言的各种库。这些都是必要的，除了学会基本的东西外，主要是知道语言能干什么以及怎么干。</p>
+<p>ide也是要掌握的，在ide导入工程、更改依赖、执行、启动服务、调试以及日常的文件操作和编辑快捷键这些是比较关键的，其他的都算是细节。</p>
+<p>接着就是代码版本管理的工具，基本的提交、同步、拉分支、合并、解决冲突之类要会，当然这些IDE也都有相应操作。</p>
+<p>然后就是具体的编程框架了，没有编程框架的辅助，绝大部分人都没法从事具体的应用开发。所以编程框架的学习还是很重要的，有了编程框架才能更好的从事具体应用的开发。</p>
+<p>但是以上的学习中有会有巨大的坑，那就是我前面说到的，知识是会以极高的速度过时的。比如框架，不管前端框架还是后端框架，不知道有多少都消失在历史的烟海中了，还有多少人用得到如何用Struts框架来响应HTTP请求？有些语言的开发框架倒是没啥变化，然而整个语言整体退出某些开发领域的主流地位变得非常边缘了，像Rails尽管曾经风靡一时，你现在招Ruby程序员也不好招了。即便留存下来的，更当时的用法也有了不少的变化，现如今的Spring Boot跟当年的Spring对只学表面的人看来也是完全不同的东西了。</p>
+<p>还有人非常依赖图形界面，太依赖IDE，换了IDE就不会干了，这也是很糟糕的。基于图形界面的知识是贬值速度非常快的，不但IDE如此，其他各种工具都是如此，我之前面试了一个人，他对于他的知识只能用他擅长的软件界面来编码的，他回答怎么做开发都是画个大概的ui然后说自己怎么做。这种知识是极其容易贬值的，软件界面一变化他的知识就过时了，要重新学习。从win32到今天的windows都变了多少呢？更不要说其他的工具，更是变化的很随意。</p>
+<p>从工具角度讲，GUI（图形界面）类型的工具就不如CLI（命令行界面）类型的工具保值，</p>
+<p>虽然框架会变，然而背后的思想及其相关概念往往是比较稳定的，思想通常是不会过时的，只是实现方式会有变化。跟着这些框架、工具、学习思想及其相关概念还可以学习前文所提到的抽象能力边界、识别能力，甚至可以学到一些前面提到的高级的抽象技巧应用于将来复杂问题的解决。</p>
+<p>基于这些概念的工艺类的工程实践也是比较长久的。常见的TDD、CI等极限编程的工程实践外，基于不同的框架也会有相应的手法，比如React文档中就有一篇<a href="[https://reactjs.org/docs/thinking-in-react.html](https://reactjs.org/docs/thinking-in-react.html)">《Thinking in React》</a>，即便是脱离了React也是很有价值的前端工程实践。</p>
+<p>设计模式值不值得学。简单的答案是值得，其实模式化是一种很重要的东西，凡是能模式化写代码的地方都应该模式化，只有模式化的写代码才是专业的态度。毕竟我们的代码是要被多人维护的，你写代码一会一风格，不遵从行业的常用模式，换其他比较严肃的工业领域，说在犯罪也不是太过。模式化这个东西用于艺术创作固然可能不是好事，但是对于工程，这是很大的好事，毕竟它可以再挣提升提升效率同事却不损害质量。</p>
+<p>但是提到模式，只想到gof做的23种设计模式是有点狭隘的，只要是模式化的编程方式都是应该值得学习。</p>
+<p>比如说过程存在一些模式化的抽象，举个例子我们进行的一个培训里，我在一开始告诉了学员7种过程：map、filter、find、anyMatch、allMatch、Sum、split（当然除了split和map，都可以统一称之为reduce，这就有点过度抽象了，我就没提），我告诉大家我们后面的培训只需要复用这七种过程就能完成几乎所有的作业，同时由于这些操作是通用的，于是我们的实现方式也会比较模式化，希望大家体会。然而很多人后面做的时候，还是各种乱写，并不能把问题拆解然后抽象为这七种过程，通过它们的组合来解决，或者找不到他们中的最简组合来解决，这种思维也是要练的。</p>
+<p>很多编程范式也是值得学习的，比如OO、函数式编程等。编程范式通常天然便带有一些GoF设计模式，有的时候还会带有一些GoF设计模式之外的模式。模式很多，学习模式不是为了学习金科玉律，主要是学习先贤们思考问题解决问题的方式。</p>
+<h2 id="小节"><a href="#小节" class="headerlink" title="小节"></a>小节</h2><p>以上就是软件开发人员最需要学习的两大部分内容，希望对于致力于培养软件开发人员或想要自己培养自己成为软件开发人员的人有所帮助。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/01/23/programmer-dojo/ddd-clean-arch/" rel="prev" title="在DDD中采用Clean Arch的经验分享">
+      <i class="fa fa-chevron-left"></i> 在DDD中采用Clean Arch的经验分享
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/07/10/tech-leadership/first-scene-of-software-development/" rel="next" title="软件开发工作的第一现场">
+      软件开发工作的第一现场 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思维框架"><span class="nav-number">2.</span> <span class="nav-text">思维框架</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#思维框架第一级：输入输出"><span class="nav-number">2.1.</span> <span class="nav-text">思维框架第一级：输入输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思维框架第二级：抽象"><span class="nav-number">2.2.</span> <span class="nav-text">思维框架第二级：抽象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思维框架第三级：边界"><span class="nav-number">2.3.</span> <span class="nav-text">思维框架第三级：边界</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#知识"><span class="nav-number">3.</span> <span class="nav-text">知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小节"><span class="nav-number">4.</span> <span class="nav-text">小节</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

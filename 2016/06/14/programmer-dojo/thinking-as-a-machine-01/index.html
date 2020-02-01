@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://yoursite.com').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="【旧文搬家】本文的起源是因为思考一个问题，什么样的人适合做程序员。我曾经苦恼得思考着这个问题，直到我在SICP上看到了答案。说的白话一点就是，能像机器一样思考的人就适合做程序员。那么计算机这台机器是怎么思考的呢？这里是我的答案： 我们所有的计算机，都是下面这个模型，江湖人称“冯・诺伊曼体系” 从这个模型上我们看到了什么吗？嗯，可能太多噪音了，看的不够清楚，我给你们再抽象一层： 现在清楚了吧，计算机">
+<meta property="og:type" content="article">
+<meta property="og:title" content="像机器一样思考（一）—— 宏观的基础">
+<meta property="og:url" content="http://yoursite.com/2016/06/14/programmer-dojo/thinking-as-a-machine-01/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="【旧文搬家】本文的起源是因为思考一个问题，什么样的人适合做程序员。我曾经苦恼得思考着这个问题，直到我在SICP上看到了答案。说的白话一点就是，能像机器一样思考的人就适合做程序员。那么计算机这台机器是怎么思考的呢？这里是我的答案： 我们所有的计算机，都是下面这个模型，江湖人称“冯・诺伊曼体系” 从这个模型上我们看到了什么吗？嗯，可能太多噪音了，看的不够清楚，我给你们再抽象一层： 现在清楚了吧，计算机">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-01/pic-01.png">
+<meta property="og:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-01/pic-02.png">
+<meta property="article:published_time" content="2016-06-14T14:31:00.000Z">
+<meta property="article:modified_time" content="2020-02-01T14:13:52.440Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-01/pic-01.png">
+
+<link rel="canonical" href="http://yoursite.com/2016/06/14/programmer-dojo/thinking-as-a-machine-01/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>像机器一样思考（一）—— 宏观的基础 | Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/06/14/programmer-dojo/thinking-as-a-machine-01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          像机器一样思考（一）—— 宏观的基础
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2016-06-14 14:31:00" itemprop="dateCreated datePublished" datetime="2016-06-14T14:31:00+00:00">2016-06-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-02-01 14:13:52" itemprop="dateModified" datetime="2020-02-01T14:13:52+00:00">2020-02-01</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>【旧文搬家】<br>本文的起源是因为思考一个问题，什么样的人适合做程序员。<br>我曾经苦恼得思考着这个问题，直到我在SICP上看到了答案。说的白话一点就是，能像机器一样思考的人就适合做程序员。<br>那么计算机这台机器是怎么思考的呢？这里是我的答案：</p>
+<p>我们所有的计算机，都是下面这个模型，江湖人称“冯・诺伊曼体系”<br><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-01/pic-01.png" alt="冯・诺伊曼体系"></p>
+<p>从这个模型上我们看到了什么吗？嗯，可能太多噪音了，看的不够清楚，我给你们再抽象一层：<br><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-01/pic-02.png" alt="输入、处理、输出"></p>
+<p>现在清楚了吧，计算机在中间，两边是输出输出。所有的问题都从输入和输出的角度去思考，这就是计算机这台机器的思考方式。也就是说你能做到这样思考，你就会像机器一样思考了。</p>
+<p>很简单吧，但是新的问题又产生了，处理自然要处理输入产生输出了。输入，输出是些什么呢？这就要在微观层面理解机器是怎么思考的，这一部分叫，机器在加工什么？</p>
+<p>SICP中又说了，非形式的讲，我们只在处理两种东西，数据和过程，他们还不是严格区分的。<br>先不管不严格区分那半句，我们回看我们的模型，中间处理的部分其实就是过程，输入和输出其实就是数据。（在冯诺伊曼体系里，数据和过程被称之为数据和指令）那说到数据，我们有一门学科叫做数据结构，它很好的表达了什么是数据。我们还有面向对象，类型系统之类的知识，他们都会帮助我们很好的定义数据。</p>
+<p>各位看官估计心里犯嘀咕了，扯了这么多，还是无法想象怎么就算像机器一样思考了啊？不急，下面我们拿几个例子来学习一下。</p>
+<p>我们来写一个加法函数，接受两个参数作为加数和被加数，返回一个和，这个太简单了，几乎任何一个程序员都可以在几秒钟内写完。拆成机器的思维是什么样呢？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">加法函数</span><br><span class="line">输入： </span><br><span class="line">  a</span><br><span class="line">  b</span><br><span class="line">输出:</span><br><span class="line">  result</span><br></pre></td></tr></table></figure>
+<p>大概就长这样，输入是a和b，输出是一个结果，我们起名叫result。它到底表达了个啥样的代码呢？大概长这样：（本文所有的代码都会采用javascript描述，但是不代表本文内容只适合描述前端开发）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function add(a, b) &#123;</span><br><span class="line">    return a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>咦？result哪去了？在你调用的地方可能会有一行代码 <code>var result = add(1,2);</code><br>这个表达方式不仅仅可以用来描述函数定义，用来描述表达式也是可以的。比如，如果我们把前面的输入输出思维描述改为<code>加法表达式</code>。你会发现其实这段描述“编译”成代码大概长这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var result &#x3D; a + b;</span><br></pre></td></tr></table></figure>
+<p>所以不仅仅可以用来描述函数定义，还可以描述代码块。</p>
+<p>但是到这里就结束了吗？感觉好像对数据的表述不够细致啊。确实，我们忘了加类型了。不加类型这描述简直万灵丹么，反正俩参数一个返回值的都能用，这不行，我们还得把类型加上看着才清楚点。加上类型就变成了这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">加法函数</span><br><span class="line">输入： </span><br><span class="line">  a: Number</span><br><span class="line">  b: Number</span><br><span class="line">输出:</span><br><span class="line">  result: Number</span><br></pre></td></tr></table></figure>
+
+<p>这看着就好多了，是不是比刚才理解上文所讲的像机器一样思考了呢？好吧，你可能会说，这玩意有啥用啊，我有分析的这个空，我代码都写完了啊。不急，我们接着往后看。</p>
+<p>刚才那个题目有点太简单了，我们做一个稍微复杂的。比如下面这个：写一个函数，可以选出一个由数字组成的集合当中所有的偶数的最大值。</p>
+<p>这回一步做出来可能就有点难了，没关系，我们可以成两步：</p>
+<ol>
+<li>选出集合中的偶数</li>
+<li>选出偶数中的最大值<br>这两步呢，按照我们之前的格式写一下，大概是下面这个样子：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#1 选出集合中的偶数</span><br><span class="line">输入： </span><br><span class="line">  inputArray </span><br><span class="line">输出：</span><br><span class="line">  evenArray</span><br><span class="line"> </span><br><span class="line">#2 选出偶数中的最大值</span><br><span class="line">输入：</span><br><span class="line">  evenArray</span><br><span class="line">输出:</span><br><span class="line">  max:Number</span><br></pre></td></tr></table></figure>
+<p>哎呀，突然发觉不知道该怎么描述集合呢。Javascript里就用数组就好了，但是还是不知道怎么描述数组啊。这个其实很简单，这不是一个由数字组成的数组吗？我们只要写成<code>[Number]</code>就可以了。因为我们的一个好习惯是一个集合里不要放两种类型的元素，所以就这么写就好了。那么加上去的话，大概就长这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#1 选出集合中的偶数</span><br><span class="line">输入： </span><br><span class="line">  inputArray: [Number] </span><br><span class="line">输出：</span><br><span class="line">  evenArray: [Number]</span><br><span class="line"> </span><br><span class="line">#2 选出偶数中的最大值</span><br><span class="line">输入：</span><br><span class="line">  evenArray</span><br><span class="line">输出:</span><br><span class="line">  max: Number</span><br></pre></td></tr></table></figure>
+
+<p>咦，第二步的evenArray没有写类型。嗯，因为evenArray是第一步的输出，我就把它省了，相信大家也能看明白。<br>耐着性子看到这里，你估计已经发现了，我还是没有回答你这个思维方式有什么用这个问题。我很想忽悠着你再做一道题，不过估计你坚持不完就会转身离开了。那我们就这两道题试着讲一讲。</p>
+<p>第一道题，我们只是展示了这个思维，第二道题，我们才开始使用到它的威力。尽管这道题也不复杂，但是思考过程还是展示了：</p>
+<ol>
+<li>分解问题</li>
+<li>找到子问题之间的关联（通过输入输出关联起来）</li>
+<li>找到问题的边界，明确假设与结果</li>
+</ol>
+<p>上述三点看着简单，却是思维清楚与否的关键。我们管这个能力叫Analytical Thinking。</p>
+<p>思维清楚带来的收益是什么？这些步骤可以直接转化为工作的任务列表，而且可测试。这样分解出来的任务列表，完成效率是极高的。我们曾经做过实验，按这个思路分解过的人，比没有分解过的人，完成效率可以高3倍以上，而且前者只学了一周的编程。<br>一个完全不会写程序的人，只要学会了这个思维，就可以开始编程之旅了，而且威力非常巨大。</p>
+<p>听起来好简单啊，有那么神吗？不是编程的人都应该会吗？然而并不是的，很多人思考编程这件事情是靠感觉的。<br>我前几天面了40多个外包公司外派来的人，只有5个人，可以按照输入输出来对问题进行分解。所以我觉得我还是有必要写点东西来讲讲这个。</p>
+<p>除了对初学者有益之外，对Team  Lead也是有益的。当你觉得你遇到的人没sense的时候，你可以试着让他们这么表达一下程序。一般就会发现一些问题。</p>
+<h2 id="题外话"><a href="#题外话" class="headerlink" title="题外话"></a>题外话</h2><p>题外话－1：<br>    我们像机器一样思考，不就都变成机器了吗？嗯，其实不是的。所谓我们像机器一样思考，那机器这种思考方式又是从哪里来的呢？机器的思考模型是一个叫“图灵机”的计算模型，而图灵机则是图灵祖师爷模拟人思考而发明出来的。所以，其实不存在什么像机器一样思考，只不过是学会一种人类的思考方式而已。<br>    考虑到图灵只能以自己和自己周围的天才科学家的作为人类的具体实例来抽象图灵机，所以我们学习的其实不是什么机器的思考方式，而是天才的思考方式，这篇文章其实应该叫《像天才一样思考》。</p>
+<p>题外话－2:<br>    这个不就是面向过程编程吗？如果的思考仅仅停在这里，那就是面向过程编程了。如果我们接着想下去，当数据复杂到一定程度的时候，我们会自然的引入封装，于是面向对象诞生了。回到数据与过程不严格区分那半句，当我们试图模糊数据和过程的界限，将过程像数据一样纳入输入输出的范畴，我们就走上了函数式编程之路。</p>
+<p>题外话－3:<br>    有人觉得练习不够吗？请留言，如果感兴趣的人多，我就加紧写更多练习的解析。</p>
+<h2 id="相关文章："><a href="#相关文章：" class="headerlink" title="相关文章："></a>相关文章：</h2><p><a href="https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-02/" target="_blank" rel="noopener">像机器一样思考（二）—— 数据的细节</a><br><a href="https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-03/" target="_blank" rel="noopener">像机器一样思考（三）—— 穷尽就是力量</a><br><a href="https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-04/" target="_blank" rel="noopener">像机器一样思考（四）—— 一图抵千言</a><br><a href="https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-05/" target="_blank" rel="noopener">像机器一样思考（五）—— 第一个应用</a><br><a href="https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-06/" target="_blank" rel="noopener">像机器一样思考（六） —— 脑中的重构</a><br><a href="https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-07/" target="_blank" rel="noopener">像机器一样思考（七） —— 跨应用思考</a></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2016/06/25/something-about-software-development/visualize-arch-design-introduce-c4/" rel="next" title="可视化架构设计——C4介绍">
+      可视化架构设计——C4介绍 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题外话"><span class="nav-number">1.</span> <span class="nav-text">题外话</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关文章："><span class="nav-number">2.</span> <span class="nav-text">相关文章：</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

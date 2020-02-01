@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://yoursite.com').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="标题耸动吗？可能你会奇怪，我们不都是人吗？什么叫像人一样工作？ 这个问题啊，你还别不认，我们不像人一样工作已经有个把世纪了。这一切都是从工业时代开始的。 工业时代带来的一个问题就是劳动异化，劳动异化说的是，资本家从劳动者手里买走了劳动力，从而使得劳动者的劳动性质产生了某种变化，这种变化叫做被异化。异化会产生什么问题呢？问题在于劳动力被买走了，劳动的意义也被买走了，所以劳动者在劳动中除了定时领工资没">
+<meta property="og:type" content="article">
+<meta property="og:title" content="像人一样工作">
+<meta property="og:url" content="http://yoursite.com/2019/06/23/tech-leadership/working-as-a-human-being/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="标题耸动吗？可能你会奇怪，我们不都是人吗？什么叫像人一样工作？ 这个问题啊，你还别不认，我们不像人一样工作已经有个把世纪了。这一切都是从工业时代开始的。 工业时代带来的一个问题就是劳动异化，劳动异化说的是，资本家从劳动者手里买走了劳动力，从而使得劳动者的劳动性质产生了某种变化，这种变化叫做被异化。异化会产生什么问题呢？问题在于劳动力被买走了，劳动的意义也被买走了，所以劳动者在劳动中除了定时领工资没">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/working-as-a-human-being/pic-01-moden-times.gif">
+<meta property="og:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/working-as-a-human-being/pic-02.png">
+<meta property="og:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/working-as-a-human-being/pic-03.png">
+<meta property="article:published_time" content="2019-06-23T00:07:00.000Z">
+<meta property="article:modified_time" content="2020-02-01T14:13:52.440Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/working-as-a-human-being/pic-01-moden-times.gif">
+
+<link rel="canonical" href="http://yoursite.com/2019/06/23/tech-leadership/working-as-a-human-being/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>像人一样工作 | Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/23/tech-leadership/working-as-a-human-being/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          像人一样工作
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-06-23 00:07:00" itemprop="dateCreated datePublished" datetime="2019-06-23T00:07:00+00:00">2019-06-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-02-01 14:13:52" itemprop="dateModified" datetime="2020-02-01T14:13:52+00:00">2020-02-01</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>标题耸动吗？可能你会奇怪，我们不都是人吗？什么叫像人一样工作？</p>
+<p>这个问题啊，你还别不认，我们不像人一样工作已经有个把世纪了。这一切都是从工业时代开始的。</p>
+<p>工业时代带来的一个问题就是劳动异化，劳动异化说的是，资本家从劳动者手里买走了劳动力，从而使得劳动者的劳动性质产生了某种变化，这种变化叫做被异化。异化会产生什么问题呢？问题在于劳动力被买走了，劳动的意义也被买走了，所以劳动者在劳动中除了定时领工资没有任何意义，在生活中才有意义。没有意义感之后，人就不是人了，所以劳动者在劳动的时候不是人，是个机器，参考摩登时代：</p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/working-as-a-human-being/pic-01-moden-times.gif" alt="image.gif"></p>
+<p>资本家非常清楚这个道理，比如福特就曾经有句名言：我就想雇两只手，怎么来了个人呢？</p>
+<p>这个问题一直延续到了现在，对程序员也是一样的。不然也不会有前一阵的996.ICU运动，这就是数字时代的工人运动。马云说，他自己超时工作如何如何，这个话说的就没文化，您是资本家，您劳动充满了意义感，而其他人是被异化的劳动者，劳动过程中没有意义感，它能一样吗？</p>
+<p>我之前有几篇文章，讲了像机器一样思考的方式来思考软件和任务。而我们毕竟不是机器，理解机器并不是为了变成机器，何况我们也变不成机器。所以我们可以像机器一样思考，最终还是要像人一样工作。机器和人的差别在哪呢？回想一下当柯洁和李世石代表人类坐在机器面前，看着绝对不会犯错的机器，说出绝望的言论时，有没有让你觉察到我们跟机器的本质区别是我们会犯错这个关键约束条件？有些人可能不喜欢这个本质区别，但我觉得这没什么不好，这就好像苹果和梨，没有好坏之分，只是不同，工业时代把人变成机器，数字时代让人重新做人这是个好事。（尽管转变的过程中会有阵痛，但最终的结果也只能是这样，我坚信着。）</p>
+<p>既然我们是人，我们接受这个前提，我们就要采用人工作的方式，而不是机器的工作方式。</p>
+<p>机器工作的方式是什么样的呢？我们来看个动画：</p>
+<p><a href="https://www.bilibili.com/video/av51228411" target="_blank" rel="noopener">https://www.bilibili.com/video/av51228411</a></p>
+<p>这个问题在哪呢？在敏捷社区里有一副很有名的画，可以很好的说明人和机器的区别：</p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/working-as-a-human-being/pic-02.png" alt="image.png"></p>
+<p>看这个过程像不像前面机器公敌里的机器人作画的场面？</p>
+<p>如果我们按照像机器一样思考教的里面画好了任务后，按照上图的方式去实现，就叫像机器一样工作，实际上这个行业里大量的项目都是这么干的，真是悲哀。每个人领一个模块，最后拼成一个功能，绝大多数人都不知道端到端什么样给客户提供了价值没有。这种工业时代的做事方法最大的问题就是把人当成了机器，像上面那组图一样工作，然而人做事是从粗略到丰富的画面一点点变过来的，就像下面这张图：</p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/working-as-a-human-being/pic-03.png" alt="image.png"></p>
+<p>图片来源： <a href="https://acejoy.com/2018/04/20/438/" target="_blank" rel="noopener">https://acejoy.com/2018/04/20/438/</a></p>
+<p>可以看到第一张图里，每一步都做得很完美，但是不到最后一步，它不是一个完成的成品。观察一下打印机，就是这么工作的，哪怕过程中出了状况，中断了工作，已经完成的部分每一个细节都是完美的。</p>
+<p>而我们人是会犯错的，并不能做到像第一张图那样工作，反而是会采用第二张图那种方式。除了避免犯错，还有一个核心差异促使我们这么这么干，那就是机器是不知道疲劳和厌倦的，而人会，所以人在一个漫长的造物过程中，需要一种东西帮助自己持续获得前进的动力，那就是文章开头所说的意义感。</p>
+<p>意义感是个很个人的事情，每个人对意义的定义不同。但工作中的意义感又确实有一种模式化的方式获得，那就是创造闭环。尽管人和人有很多的差异，但是只要完成一个闭环，大多数人都会产生或多或少的意义感。第二张图里，每一步都是一个完成了闭环的输出物，第一张是草图，第二张是简单涂色的图，第三张是完成稿。每一步我们都觉得完成了些什么，每一步我们都会有一点意义感。</p>
+<p>作为一个人，我们需要这种东西，所以我们创造出了很多按照这种方式工作的方法，所谓的敏捷、所谓的迭代、所谓的冲刺、所谓的PDCA、所谓的TDD等等等等。一切的一切都在创造这种闭环，然后缩小闭环周期。而与之相反的各种工作方法却是在割裂闭环或拉长闭环周期，让大多数人都活在一段缺乏意义感的流程中或像鸵鸟把头埋到地里一样获得一种虚幻的安全感。天下方法千千万，这两种区别是本质区别，我们推广敏捷本质上是在追求前者的普及，与后者对抗，这是两种价值观、两种立场、两种社会算法的的对抗。</p>
+<p>当我们用TDD的方式写代码的时候，当我们用PDCA一点点的精进我们的匠艺的时候，当我们每次冲刺的交付物都得到用户反馈的时候，当我们努力缩小反馈环追求更小闭环的时候，不管外面是不是有一个邪恶的资本主义体系在控制着我们娱乐至死，我们真实的感受到了自己像人一样工作着，感受到了劳动的意义，那这就是值得去做的。</p>
+<p>那么这个值得去做的事情由谁来让它成为现实呢？我想来想去，只有团队的Leader，作为团队的领导者，你要去思考到底要求大家采用什么实践去做事的时候，除了想一想效率之外，也要想一想怎样的做法会让大家感受到意义，感受到像人一样在工作。在效率与意义之间的平衡，这是每个领导者的社会责任。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/06/22/deliberate-practice-for-digital-talent/what-worth-to-be-recited/" rel="prev" title="什么值得背">
+      <i class="fa fa-chevron-left"></i> 什么值得背
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/12/07/deliberate-practice-for-digital-talent/challenge-of-cultivating-programmer/" rel="next" title="软件开发人员培养的挑战">
+      软件开发人员培养的挑战 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

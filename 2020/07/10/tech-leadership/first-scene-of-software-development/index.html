@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://yoursite.com').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="【旧文搬家】我的同事王健最近写了一篇文章。名字叫《从汽车贴膜看专业团队》。看了之后感触良多。特别是现场管理，和全功能团队两点。 我有一个观点，说到专业性，传统行业比我们IT行业要强得多。从这篇文章，我们可以看出来，不管是管理人员的现场管理，还是全功能团队，也就是一线人员的全栈能力，传统行业都比我们要强一些。我相信有人就会有些不服了，不管什么现场管理，全功能团队我们也在做呀。 说的没有错，但是，你在">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软件开发工作的第一现场">
+<meta property="og:url" content="http://yoursite.com/2020/07/10/tech-leadership/first-scene-of-software-development/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="【旧文搬家】我的同事王健最近写了一篇文章。名字叫《从汽车贴膜看专业团队》。看了之后感触良多。特别是现场管理，和全功能团队两点。 我有一个观点，说到专业性，传统行业比我们IT行业要强得多。从这篇文章，我们可以看出来，不管是管理人员的现场管理，还是全功能团队，也就是一线人员的全栈能力，传统行业都比我们要强一些。我相信有人就会有些不服了，不管什么现场管理，全功能团队我们也在做呀。 说的没有错，但是，你在">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-07-10T14:38:00.000Z">
+<meta property="article:modified_time" content="2020-02-01T14:13:52.440Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/07/10/tech-leadership/first-scene-of-software-development/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>软件开发工作的第一现场 | Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/10/tech-leadership/first-scene-of-software-development/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          软件开发工作的第一现场
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-07-10 14:38:00" itemprop="dateCreated datePublished" datetime="2020-07-10T14:38:00+00:00">2020-07-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-02-01 14:13:52" itemprop="dateModified" datetime="2020-02-01T14:13:52+00:00">2020-02-01</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>【旧文搬家】<br>我的同事王健最近写了一篇文章。名字叫《从汽车贴膜看专业团队》。看了之后感触良多。特别是现场管理，和全功能团队两点。</p>
+<p>我有一个观点，说到专业性，传统行业比我们IT行业要强得多。从这篇文章，我们可以看出来，不管是管理人员的现场管理，还是全功能团队，也就是一线人员的全栈能力，传统行业都比我们要强一些。我相信有人就会有些不服了，不管什么现场管理，全功能团队我们也在做呀。</p>
+<p>说的没有错，但是，你在it行业里还真不容易找到这么专业的一个团队。而在传统行业里，这种水平的一个团队现在是越来越常见了。这是为什么呢？按说大家都是人，通常来讲，IT行业的人不是素质还高一点吗？我们这个行业的专业团队，不是应该更常见吗？虽然我们不一定要比你强，但是也不会比你弱得这么明显啊。</p>
+<p>这当然一方面是由于我们这个行业的工作比较复杂，不容易做到全栈，但我觉得更重要的是，it行业是属于知识工作，知识工作者的现场是非常的不明显，极难做到现场管理。<br>我们IT行业的管理者，不管是项目经理，产品经理，还是技术领导者，大家也是基本和团队坐在一起。但是坐在一起，并不意味着，就能够真的在现场。</p>
+<p>我们看到在那个贴膜团队里，团队领导只需要看一眼，发现有气泡，就知道质量有问题。也就是说，在传统行业进行现场管理的时候，问题都是非常直观的，非常容易发现。在软件行业想做到一点就难的多，几年前，我记得我的同事熊节也曾经写过一篇文章，文章的核心洞见就是软件开发的现场，在代码里。</p>
+<p>这个洞见指导思特沃克工作很多年 ，公司里有很多人提出过类似的观点，于是我们的很多方法就是建筑在这些类似的观点之上。</p>
+<p>然而，如果我们想要追求IT工作者开发效率的极限的话，这个洞见还不够极致。经过几年的工作，我发现，代码只是软件开发工作的第二现场，软件开发工作的第一现场，在语言里。<br>这里说的语言，不是，编程语言，也不是广义的人类语言，比如汉语、英语。指的是我们在从事软件开发工作中所使用的一系列术语，和相关的一系列呈现方式和沟通工具。借用一个技术术语，我们所说的语言是一套仅供软件开发所有相关人员使用的、组合的DSL，DSL全称：Domain specific language，中文名叫做：领域特定语言。</p>
+<p>DSL就DSL，还组合的DSL，为什么要说的这么拗口呢？什么叫组合的DSL?我们知道在软件开发的过程当中，需要各种不同的角色参与。每个角色有自己特定的领域，泛泛的讲可以分为三类：我们把产品经理和设计人员所使用的领域特定语言叫做设计语言，把开发和测试使用的语言叫做技术语言，把业务人员、组织管理者使用的语言，叫做业务语言。</p>
+<p>所以我们使用的这套，领域特定语言，是把这三类语言组合在一起而形成的一套语言。所以这就意味着我们这套语言非常容易充满歧义，造成每个角色自说自话却难以被发现。</p>
+<p>软件工程里的核心观点是一个问题发现的越晚，修正它的成本就越高。比代码更早的是沟通，比沟通更早的就是语言。我们用语言去描述沟通的错误，去描述代码中的错误，我们用什么来描述语言的错误呢？还是语言，这就使得整个工作困难重重，难以达成共识。所以我们更需要非常严肃的对待，软件开发工作的第一现场。</p>
+<p>之前一些方法试图建立纯粹的统一语言，所有人都说一套语言，这个方法已经被行业事实上放弃了，我们要承认，各自不同的语言有些部分可以简单统一成一种表达以消除歧义，有些部分只能结合。也就是说相关人员要懂多门语言这个现实是我们必须接受的，软件正在吞噬世界，语言只会越来越复杂。就像我们再努力消除污染，也不能幻想世界回到工业文明以前了。就算我们再努力的去建立统一语言，也不可能是一门简单的语言，只能是多门DSL的一个杂合体。</p>
+<p>不过由于历史的原因，在行业放弃的过程中，由于反对预先设计走的过了头，不谈建模，不谈标准化成了一种奇怪的政治正确，导致很多优秀的工具和方法被边缘化了。其实我们憎恨的只是预先设计造成的反馈速度变慢。连带着憎恨预先设计时代的一些工具，就有点上纲上线了。</p>
+<p>幸而最近几年，各种领域建模的设计方法又重新回归。最近大行其道的，领域驱动设计，就是在很严肃的，对待业务语言的设计和使用。而在前端领域，Design System试图解决前端开发和设计师之间的语言分歧问题。我个人在从事软件开发工程师的培养方面发现，很多传统的可视化工具，比如说UML。如果不以繁重的预先设计为目的，来使用这些工具，仅把它们用作提高沟通效率的工具，他们的威力是十分惊人的。</p>
+<p>以我本人的团队为例，我们使用ant design为基础，设计了我们的design system。使得我们可以在三天之内得到一个可以点击的软件原型，并在此基础上，进行各利益相关方之间的需求交流和反馈。在交流的过程当中，我们也刻意的统一了我们的语言。使得我们尽管是一个远程团队，但是当我们在交流的时候，很清楚的知道我们在对信息架构在哪一层进行反馈。这不但使得业务方可以反馈技术方，其实技术方也在引导业务方。语言的影响是双向的。</p>
+<p>在技术领域里，我们也选择了隔离性更好的技术架构，使得我们MVP的代码不会变成我们演进道路上必须长期背负的负累。而之所以在一篇聊“语言”的文章里提技术架构，是因为我们认为，真正的架构不是纸上的，却也不是代码里的，而是每个团队成员心里的架构。实施一个架构必然也是要进行大量沟通，也需要统一语言。</p>
+<p>而在交流业务的时候，我们刻意的划分了各种不同的子领域又在每个领域当中统一了名词。统一名词还是比较简单的，最难的是划分领域，我们为此投入了大量的工作，也犯了一些错误，但这些付出是值得的，这之后，我们的沟通变得非常流畅。</p>
+<p>具体的实践有机会再跟大家分享。我在这里仅仅聊一下沟通顺畅带来的价值。沟通顺畅的威力并不仅仅表现在沟通的时候可以很顺畅的传递信息，最重要的是当有团队成员对信息理解出现错误的时候，可以很容易的暴露和给予反馈。</p>
+<p>这个优势在IT行业至关重要。IT行业的人员流动率接近25%，这意味着每年我们团队中至少有1/4的人是新人。而即便我们想尽方法让我们的团队保持稳定，随着敏捷和精益创业的相关思想已经慢慢成为我们的工作常识，每个项目存在的时间都不会太长，从而使得IT团队是经常性的重组，有时是团队被打散，有时是同一个系统从一个团队交给了另一个团队。如果缺乏一种有效的反馈机制，那么无论是人员流动还是组织重组，所造成的切换成本都是一个可观的数字。尽管这个切换成本是无法消除的，但是尽量减少切换成本是我们每个专业人员应该追求的，尤其是团队中的技术领导者。</p>
+<p>技术领导者重音在领导，而不在技术。尤其在Tech@Core的今天，技术就是业务。优秀的技术领导者更不能把自己变成一个救火队员，只是被动的响应，尽管救火队员往往很容易被人所看到而获得一些关注和赞扬，但在我们中国的文化里，我们都知道还有更高一层的境界，这个境界存在于很多典故中，比如上医治未病，善战者无赫赫之功。同理，我们软件开发领域的技术领导者们也应该努力使大多数问题发生的基础消灭于无形，这就需要我们走出我们的舒适区，深入到软件开发的第一现场，进行现场管理才能达成。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/01/29/deliberate-practice-for-digital-talent/what-worth-to-be-learn/" rel="prev" title="什么值得学">
+      <i class="fa fa-chevron-left"></i> 什么值得学
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
