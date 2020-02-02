@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
-description: ''
-keywords:
-author: John Doe
-language: en
-timezone: ''
+title: 铜剑技校
+subtitle: '仝键的个人技术博客'
+description: '写写心得，写写教程，帮助更多人成为优秀的软件开发人员'
+keywords: programming, training, coding, java, agile, ddd, clean arch, extreme programming, xp, tdd, test, arch, design, learning, oo, visualization, refactoring, lean
+author: 仝键
+language: zh-CN
+timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://jtong.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
