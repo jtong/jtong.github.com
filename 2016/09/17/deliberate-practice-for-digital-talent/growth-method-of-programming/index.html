@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -19,7 +19,7 @@
 <script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    hostname: new URL('http://yoursite.com').hostname,
+    hostname: new URL('http://jtong.github.io').hostname,
     root: '/',
     scheme: 'Gemini',
     version: '7.7.0',
@@ -49,16 +49,34 @@
   <meta name="description" content="【旧文搬家】（作者注：阅读本文需要一定的编程经验和对一些敏捷实践，如TDD，有一定的了解） 编程，众所周知被定义为知识工作，所有的知识工作，从业者和门外汉都喜欢把它神秘化，将整个过程以不可知论的风格来解释。理由往往只是简单粗暴的讲诉一些体力工作时代形成的方法照搬到知识工作中来失败的故事，也毫无理论依据。偶有几个人写理论理由，写出来的理由跟癔症者的呓语也无甚差别。我个人是反对将知识工作神秘化的，我是">
 <meta property="og:type" content="article">
 <meta property="og:title" content="编程的精进之法">
-<meta property="og:url" content="http://yoursite.com/2016/09/18/deliberate-practice-for-digital-talent/growth-method-of-programming/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:url" content="http://jtong.github.io/2016/09/17/deliberate-practice-for-digital-talent/growth-method-of-programming/index.html">
+<meta property="og:site_name" content="铜剑技校">
 <meta property="og:description" content="【旧文搬家】（作者注：阅读本文需要一定的编程经验和对一些敏捷实践，如TDD，有一定的了解） 编程，众所周知被定义为知识工作，所有的知识工作，从业者和门外汉都喜欢把它神秘化，将整个过程以不可知论的风格来解释。理由往往只是简单粗暴的讲诉一些体力工作时代形成的方法照搬到知识工作中来失败的故事，也毫无理论依据。偶有几个人写理论理由，写出来的理由跟癔症者的呓语也无甚差别。我个人是反对将知识工作神秘化的，我是">
-<meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2016-09-18T02:34:00.000Z">
-<meta property="article:modified_time" content="2020-02-01T14:13:52.440Z">
-<meta property="article:author" content="John Doe">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2016-09-17T18:34:00.000Z">
+<meta property="article:modified_time" content="2020-02-02T02:35:23.383Z">
+<meta property="article:author" content="仝键">
+<meta property="article:tag" content="programming">
+<meta property="article:tag" content=" training">
+<meta property="article:tag" content=" coding">
+<meta property="article:tag" content=" java">
+<meta property="article:tag" content=" agile">
+<meta property="article:tag" content=" ddd">
+<meta property="article:tag" content=" clean arch">
+<meta property="article:tag" content=" extreme programming">
+<meta property="article:tag" content=" xp">
+<meta property="article:tag" content=" tdd">
+<meta property="article:tag" content=" test">
+<meta property="article:tag" content=" arch">
+<meta property="article:tag" content=" design">
+<meta property="article:tag" content=" learning">
+<meta property="article:tag" content=" oo">
+<meta property="article:tag" content=" visualization">
+<meta property="article:tag" content=" refactoring">
+<meta property="article:tag" content=" lean">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2016/09/18/deliberate-practice-for-digital-talent/growth-method-of-programming/">
+<link rel="canonical" href="http://jtong.github.io/2016/09/17/deliberate-practice-for-digital-talent/growth-method-of-programming/">
 
 
 <script id="page-configurations">
@@ -70,7 +88,7 @@
   };
 </script>
 
-  <title>编程的精进之法 | Hexo</title>
+  <title>编程的精进之法 | 铜剑技校</title>
   
 
 
@@ -114,14 +132,15 @@
     <div>
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
+        <span class="site-title">铜剑技校</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
+        <p class="site-subtitle">仝键的个人技术博客</p>
   </div>
 
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
+    <div class="toggle" aria-label="切换导航栏">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -135,12 +154,27 @@
   <ul id="menu" class="menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
 
   </li>
   </ul>
@@ -168,17 +202,17 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/09/18/deliberate-practice-for-digital-talent/growth-method-of-programming/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://jtong.github.io/2016/09/17/deliberate-practice-for-digital-talent/growth-method-of-programming/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
+      <meta itemprop="name" content="仝键">
+      <meta itemprop="description" content="写写心得，写写教程，帮助更多人成为优秀的软件开发人员">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="铜剑技校">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -190,16 +224,16 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
 
-              <time title="Created: 2016-09-18 02:34:00" itemprop="dateCreated datePublished" datetime="2016-09-18T02:34:00+00:00">2016-09-18</time>
+              <time title="创建时间：2016-09-18 02:34:00" itemprop="dateCreated datePublished" datetime="2016-09-18T02:34:00+08:00">2016-09-18</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-01 14:13:52" itemprop="dateModified" datetime="2020-02-01T14:13:52+00:00">2020-02-01</time>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-02 10:35:23" itemprop="dateModified" datetime="2020-02-02T10:35:23+08:00">2020-02-02</time>
               </span>
 
           
@@ -266,13 +300,30 @@
 <p>对于花了太多时间在纠结上，这其实也是一种不熟练，是对设计知识和能力的不熟练。之前看的设计知识只能有一个大概的感觉，对于每个知识的边界、使用之后的发展、如何从一种设计过渡为另一种设计了解不清，从而害怕在那一刻犯错。实际上真正值得纠结的部分没有那么多，大多是自己吓自己，或者引入了过度设计。当然也有一种情况是暴露出了架构级的问题，比如我们对于应该提出的原则性规范没有提出，所以导致我们每个地方都要现想，大家可以想象没有RESTful之前设计Web API，我们可能真的是每一个API都现想的，有了它之后，我们的纠结时间就变少了。这种情况下，通过本方法，架构师也算是有了相应的数据支持，那么架构师也就有了发现问题的一种工具。</p>
 <h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>总的来说，任务列表法＋PDCA式工作法形成的组合方法，是一个通过逐渐提升个人能力以达到高效工作的方法。这两种方法单独拿出来用，都会由于各自的局限而有各自的天花板，只有有机的结合才能真正突破这个天花板。刚开始使用起来，对于很多人来说会有一些痛苦，这一点上我只能说，提升就是痛苦的，而新的习惯一旦养成，痛苦也就不翼而飞，所以美国心理学之父威廉詹姆士说，“我们需要在尽可能早的时候，让尽可能多的有用的动作变成自动的和习惯的……一段痛苦的艰难时期之后就是自由的时光”。当我们基础能力达到一个极高的效率之后，我们会发现我们争取自由的筹码会变得更多。</p>
 <h2 id="广告时间"><a href="#广告时间" class="headerlink" title="广告时间"></a>广告时间</h2><p>有人可能会觉得列出符合上文所述标准的任务列表比较难，欢迎阅读拙作《像机器一样思考》系列文章：</p>
-<p><a href="https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-01/" target="_blank" rel="noopener">像机器一样思考（一）—— 宏观的基础</a><br><a href="https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-02/" target="_blank" rel="noopener">像机器一样思考（二）—— 数据的细节</a><br><a href="https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-03/" target="_blank" rel="noopener">像机器一样思考（三）—— 穷尽就是力量</a><br><a href="https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-04/" target="_blank" rel="noopener">像机器一样思考（四）—— 一图抵千言</a><br><a href="https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-05/" target="_blank" rel="noopener">像机器一样思考（五）—— 第一个应用</a><br><a href="https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-06/" target="_blank" rel="noopener">像机器一样思考（六） —— 脑中的重构</a><br><a href="https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-07/" target="_blank" rel="noopener">像机器一样思考（七） —— 跨应用思考</a></p>
+<p><a href="https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-01/">像机器一样思考（一）—— 宏观的基础</a><br><a href="https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-02/">像机器一样思考（二）—— 数据的细节</a><br><a href="https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-03/">像机器一样思考（三）—— 穷尽就是力量</a><br><a href="https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-04/">像机器一样思考（四）—— 一图抵千言</a><br><a href="https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-05/">像机器一样思考（五）—— 第一个应用</a><br><a href="https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-06/">像机器一样思考（六） —— 脑中的重构</a><br><a href="https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-07/">像机器一样思考（七） —— 跨应用思考</a></p>
 
     </div>
 
     
     
     
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>仝键
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://jtong.github.io/2016/09/17/deliberate-practice-for-digital-talent/growth-method-of-programming/" title="编程的精进之法">http://jtong.github.io/2016/09/17/deliberate-practice-for-digital-talent/growth-method-of-programming/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-ND</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
 
       <footer class="post-footer">
 
@@ -339,10 +390,10 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          Table of Contents
+          文章目录
         </li>
         <li class="sidebar-nav-overview">
-          Overview
+          站点概览
         </li>
       </ul>
 
@@ -354,8 +405,8 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">John Doe</p>
-  <div class="site-description" itemprop="description"></div>
+  <p class="site-author-name" itemprop="name">仝键</p>
+  <div class="site-description" itemprop="description">写写心得，写写教程，帮助更多人成为优秀的软件开发人员</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
@@ -363,11 +414,14 @@
           <a href="/archives/">
         
           <span class="site-state-item-count">26</span>
-          <span class="site-state-item-name">posts</span>
+          <span class="site-state-item-name">日志</span>
         </a>
       </div>
   </nav>
 </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-nd.svg" alt="Creative Commons"></a>
+  </div>
 
 
 
@@ -392,12 +446,12 @@
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">仝键</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.0
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.0
   </div>
 
         

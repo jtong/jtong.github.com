@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -19,7 +19,7 @@
 <script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    hostname: new URL('http://yoursite.com').hostname,
+    hostname: new URL('http://jtong.github.io').hostname,
     root: '/',
     scheme: 'Gemini',
     version: '7.7.0',
@@ -46,15 +46,35 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
+  <meta name="description" content="写写心得，写写教程，帮助更多人成为优秀的软件开发人员">
+<meta property="og:type" content="website">
+<meta property="og:title" content="铜剑技校">
+<meta property="og:url" content="http://jtong.github.io/index.html">
+<meta property="og:site_name" content="铜剑技校">
+<meta property="og:description" content="写写心得，写写教程，帮助更多人成为优秀的软件开发人员">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="仝键">
+<meta property="article:tag" content="programming">
+<meta property="article:tag" content=" training">
+<meta property="article:tag" content=" coding">
+<meta property="article:tag" content=" java">
+<meta property="article:tag" content=" agile">
+<meta property="article:tag" content=" ddd">
+<meta property="article:tag" content=" clean arch">
+<meta property="article:tag" content=" extreme programming">
+<meta property="article:tag" content=" xp">
+<meta property="article:tag" content=" tdd">
+<meta property="article:tag" content=" test">
+<meta property="article:tag" content=" arch">
+<meta property="article:tag" content=" design">
+<meta property="article:tag" content=" learning">
+<meta property="article:tag" content=" oo">
+<meta property="article:tag" content=" visualization">
+<meta property="article:tag" content=" refactoring">
+<meta property="article:tag" content=" lean">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/">
+<link rel="canonical" href="http://jtong.github.io/">
 
 
 <script id="page-configurations">
@@ -66,7 +86,7 @@
   };
 </script>
 
-  <title>Hexo</title>
+  <title>铜剑技校</title>
   
 
 
@@ -110,14 +130,15 @@
     <div>
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
+        <span class="site-title">铜剑技校</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
+        <p class="site-subtitle">仝键的个人技术博客</p>
   </div>
 
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
+    <div class="toggle" aria-label="切换导航栏">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -131,12 +152,27 @@
   <ul id="menu" class="menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
 
   </li>
   </ul>
@@ -164,100 +200,17 @@
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/10/tech-leadership/first-scene-of-software-development/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://jtong.github.io/2020/01/29/deliberate-practice-for-digital-talent/what-worth-to-be-learn/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
+      <meta itemprop="name" content="仝键">
+      <meta itemprop="description" content="写写心得，写写教程，帮助更多人成为优秀的软件开发人员">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/07/10/tech-leadership/first-scene-of-software-development/" class="post-title-link" itemprop="url">软件开发工作的第一现场</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-07-10 14:38:00" itemprop="dateCreated datePublished" datetime="2020-07-10T14:38:00+00:00">2020-07-10</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-01 14:13:52" itemprop="dateModified" datetime="2020-02-01T14:13:52+00:00">2020-02-01</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>【旧文搬家】<br>我的同事王健最近写了一篇文章。名字叫《从汽车贴膜看专业团队》。看了之后感触良多。特别是现场管理，和全功能团队两点。</p>
-<p>我有一个观点，说到专业性，传统行业比我们IT行业要强得多。从这篇文章，我们可以看出来，不管是管理人员的现场管理，还是全功能团队，也就是一线人员的全栈能力，传统行业都比我们要强一些。我相信有人就会有些不服了，不管什么现场管理，全功能团队我们也在做呀。</p>
-<p>说的没有错，但是，你在it行业里还真不容易找到这么专业的一个团队。而在传统行业里，这种水平的一个团队现在是越来越常见了。这是为什么呢？按说大家都是人，通常来讲，IT行业的人不是素质还高一点吗？我们这个行业的专业团队，不是应该更常见吗？虽然我们不一定要比你强，但是也不会比你弱得这么明显啊。</p>
-<p>这当然一方面是由于我们这个行业的工作比较复杂，不容易做到全栈，但我觉得更重要的是，it行业是属于知识工作，知识工作者的现场是非常的不明显，极难做到现场管理。<br>我们IT行业的管理者，不管是项目经理，产品经理，还是技术领导者，大家也是基本和团队坐在一起。但是坐在一起，并不意味着，就能够真的在现场。</p>
-<p>我们看到在那个贴膜团队里，团队领导只需要看一眼，发现有气泡，就知道质量有问题。也就是说，在传统行业进行现场管理的时候，问题都是非常直观的，非常容易发现。在软件行业想做到一点就难的多，几年前，我记得我的同事熊节也曾经写过一篇文章，文章的核心洞见就是软件开发的现场，在代码里。</p>
-<p>这个洞见指导思特沃克工作很多年 ，公司里有很多人提出过类似的观点，于是我们的很多方法就是建筑在这些类似的观点之上。</p>
-<p>然而，如果我们想要追求IT工作者开发效率的极限的话，这个洞见还不够极致。经过几年的工作，我发现，代码只是软件开发工作的第二现场，软件开发工作的第一现场，在语言里。<br>这里说的语言，不是，编程语言，也不是广义的人类语言，比如汉语、英语。指的是我们在从事软件开发工作中所使用的一系列术语，和相关的一系列呈现方式和沟通工具。借用一个技术术语，我们所说的语言是一套仅供软件开发所有相关人员使用的、组合的DSL，DSL全称：Domain specific language，中文名叫做：领域特定语言。</p>
-<p>DSL就DSL，还组合的DSL，为什么要说的这么拗口呢？什么叫组合的DSL?我们知道在软件开发的过程当中，需要各种不同的角色参与。每个角色有自己特定的领域，泛泛的讲可以分为三类：我们把产品经理和设计人员所使用的领域特定语言叫做设计语言，把开发和测试使用的语言叫做技术语言，把业务人员、组织管理者使用的语言，叫做业务语言。</p>
-<p>所以我们使用的这套，领域特定语言，是把这三类语言组合在一起而形成的一套语言。所以这就意味着我们这套语言非常容易充满歧义，造成每个角色自说自话却难以被发现。</p>
-<p>软件工程里的核心观点是一个问题发现的越晚，修正它的成本就越高。比代码更早的是沟通，比沟通更早的就是语言。我们用语言去描述沟通的错误，去描述代码中的错误，我们用什么来描述语言的错误呢？还是语言，这就使得整个工作困难重重，难以达成共识。所以我们更需要非常严肃的对待，软件开发工作的第一现场。</p>
-<p>之前一些方法试图建立纯粹的统一语言，所有人都说一套语言，这个方法已经被行业事实上放弃了，我们要承认，各自不同的语言有些部分可以简单统一成一种表达以消除歧义，有些部分只能结合。也就是说相关人员要懂多门语言这个现实是我们必须接受的，软件正在吞噬世界，语言只会越来越复杂。就像我们再努力消除污染，也不能幻想世界回到工业文明以前了。就算我们再努力的去建立统一语言，也不可能是一门简单的语言，只能是多门DSL的一个杂合体。</p>
-<p>不过由于历史的原因，在行业放弃的过程中，由于反对预先设计走的过了头，不谈建模，不谈标准化成了一种奇怪的政治正确，导致很多优秀的工具和方法被边缘化了。其实我们憎恨的只是预先设计造成的反馈速度变慢。连带着憎恨预先设计时代的一些工具，就有点上纲上线了。</p>
-<p>幸而最近几年，各种领域建模的设计方法又重新回归。最近大行其道的，领域驱动设计，就是在很严肃的，对待业务语言的设计和使用。而在前端领域，Design System试图解决前端开发和设计师之间的语言分歧问题。我个人在从事软件开发工程师的培养方面发现，很多传统的可视化工具，比如说UML。如果不以繁重的预先设计为目的，来使用这些工具，仅把它们用作提高沟通效率的工具，他们的威力是十分惊人的。</p>
-<p>以我本人的团队为例，我们使用ant design为基础，设计了我们的design system。使得我们可以在三天之内得到一个可以点击的软件原型，并在此基础上，进行各利益相关方之间的需求交流和反馈。在交流的过程当中，我们也刻意的统一了我们的语言。使得我们尽管是一个远程团队，但是当我们在交流的时候，很清楚的知道我们在对信息架构在哪一层进行反馈。这不但使得业务方可以反馈技术方，其实技术方也在引导业务方。语言的影响是双向的。</p>
-<p>在技术领域里，我们也选择了隔离性更好的技术架构，使得我们MVP的代码不会变成我们演进道路上必须长期背负的负累。而之所以在一篇聊“语言”的文章里提技术架构，是因为我们认为，真正的架构不是纸上的，却也不是代码里的，而是每个团队成员心里的架构。实施一个架构必然也是要进行大量沟通，也需要统一语言。</p>
-<p>而在交流业务的时候，我们刻意的划分了各种不同的子领域又在每个领域当中统一了名词。统一名词还是比较简单的，最难的是划分领域，我们为此投入了大量的工作，也犯了一些错误，但这些付出是值得的，这之后，我们的沟通变得非常流畅。</p>
-<p>具体的实践有机会再跟大家分享。我在这里仅仅聊一下沟通顺畅带来的价值。沟通顺畅的威力并不仅仅表现在沟通的时候可以很顺畅的传递信息，最重要的是当有团队成员对信息理解出现错误的时候，可以很容易的暴露和给予反馈。</p>
-<p>这个优势在IT行业至关重要。IT行业的人员流动率接近25%，这意味着每年我们团队中至少有1/4的人是新人。而即便我们想尽方法让我们的团队保持稳定，随着敏捷和精益创业的相关思想已经慢慢成为我们的工作常识，每个项目存在的时间都不会太长，从而使得IT团队是经常性的重组，有时是团队被打散，有时是同一个系统从一个团队交给了另一个团队。如果缺乏一种有效的反馈机制，那么无论是人员流动还是组织重组，所造成的切换成本都是一个可观的数字。尽管这个切换成本是无法消除的，但是尽量减少切换成本是我们每个专业人员应该追求的，尤其是团队中的技术领导者。</p>
-<p>技术领导者重音在领导，而不在技术。尤其在Tech@Core的今天，技术就是业务。优秀的技术领导者更不能把自己变成一个救火队员，只是被动的响应，尽管救火队员往往很容易被人所看到而获得一些关注和赞扬，但在我们中国的文化里，我们都知道还有更高一层的境界，这个境界存在于很多典故中，比如上医治未病，善战者无赫赫之功。同理，我们软件开发领域的技术领导者们也应该努力使大多数问题发生的基础消灭于无形，这就需要我们走出我们的舒适区，深入到软件开发的第一现场，进行现场管理才能达成。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/29/deliberate-practice-for-digital-talent/what-worth-to-be-learn/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="铜剑技校">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -270,16 +223,16 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
 
-              <time title="Created: 2020-01-29 09:28:00" itemprop="dateCreated datePublished" datetime="2020-01-29T09:28:00+00:00">2020-01-29</time>
+              <time title="创建时间：2020-01-29 09:28:00" itemprop="dateCreated datePublished" datetime="2020-01-29T09:28:00+08:00">2020-01-29</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-01 14:13:52" itemprop="dateModified" datetime="2020-02-01T14:13:52+00:00">2020-02-01</time>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-02 10:35:23" itemprop="dateModified" datetime="2020-02-02T10:35:23+08:00">2020-02-02</time>
               </span>
 
           
@@ -293,7 +246,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本篇开始针对前文<a href="https://jtong.github.io/2020/01/30/deliberate-practice-for-digital-talent/challenge-of-cultivating-programmer/" target="_blank" rel="noopener">《软件开发人员培养的挑战<br>》</a>提到的挑战试图进行解答。我们要明白，培养其实是个辅助学员学习知识的过程，那如前文所说，知识量很大又很容易更新换代，所以首先需要明确的一件事就是——什么值得学。根据我的经验需要学习的有两个关键内容：思维框架和具体知识。<br>这两个东西其实很难分得清，或者说他们是迭代交替存在的，思维框架中有知识，知识中有思维框架。但是还是有必要对他们做一个区别介绍，毕竟如果不区别，思考问题时容易搞错问题域。这种区分是为了更好的改造世界，而不是为了更好的解释世界，所以才会出现框架中有知识，知识中有框架的情况。不过在工程的领域，过分追求更完美的解释世界是没有太大必要的，因为工程师的职责不是解释和赞美世界的，工程师的职责是撸起袖子改造世界。</p>
+          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本篇开始针对前文<a href="https://jtong.github.io/2020/01/30/deliberate-practice-for-digital-talent/challenge-of-cultivating-programmer/">《软件开发人员培养的挑战<br>》</a>提到的挑战试图进行解答。我们要明白，培养其实是个辅助学员学习知识的过程，那如前文所说，知识量很大又很容易更新换代，所以首先需要明确的一件事就是——什么值得学。根据我的经验需要学习的有两个关键内容：思维框架和具体知识。<br>这两个东西其实很难分得清，或者说他们是迭代交替存在的，思维框架中有知识，知识中有思维框架。但是还是有必要对他们做一个区别介绍，毕竟如果不区别，思考问题时容易搞错问题域。这种区分是为了更好的改造世界，而不是为了更好的解释世界，所以才会出现框架中有知识，知识中有框架的情况。不过在工程的领域，过分追求更完美的解释世界是没有太大必要的，因为工程师的职责不是解释和赞美世界的，工程师的职责是撸起袖子改造世界。</p>
 <p>下面我们一个一个介绍，先介绍思维框架后介绍知识。思维框架这种东西较少有文章详细介绍，所以这里我就说的深入一点。而知识部分网上的内容就很丰富了，我就大概讲讲关键点即可。</p>
 <h2 id="思维框架"><a href="#思维框架" class="headerlink" title="思维框架"></a>思维框架</h2><p>本文介绍的思维框架是通用于所有编程场景的思维模型，是用以解决问题的通用模型，基本上放在所有的编程场景下它都是适用的，但是属于大的框架，可以用以在编程中作为大的方向的指导方针，而不是一步步解决具体问题的框架。虽然听起来比较抽象，但思维框架本身也是非常重要的，因为我在过去的工作中发现，好多人是靠本能思考，没有思维框架的指导，这种情况下的很多人尤其是不太资深的人，都容易陷入无思路头脑一片空白的状况；或者不能还原来看其实复杂的程序也不过是简单程序的叠加，没有什么神秘的，一遇到问题就会过分戏剧化思考而无所适从的状况；有时也没有办法识别自己现在是卡在哪种情况 ，没有办法求助。所以先介绍比较大的思维框架我认为是比较重要的。</p>
 <p>如前文所述，软件开发是如下的工作：</p>
@@ -380,22 +333,22 @@
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/23/programmer-dojo/ddd-clean-arch/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://jtong.github.io/2020/01/22/programmer-dojo/ddd-clean-arch/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
+      <meta itemprop="name" content="仝键">
+      <meta itemprop="description" content="写写心得，写写教程，帮助更多人成为优秀的软件开发人员">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="铜剑技校">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/01/23/programmer-dojo/ddd-clean-arch/" class="post-title-link" itemprop="url">在DDD中采用Clean Arch的经验分享</a>
+            <a href="/2020/01/22/programmer-dojo/ddd-clean-arch/" class="post-title-link" itemprop="url">在DDD中采用Clean Arch的经验分享</a>
         </h1>
 
         <div class="post-meta">
@@ -403,16 +356,16 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
 
-              <time title="Created: 2020-01-23 00:49:00" itemprop="dateCreated datePublished" datetime="2020-01-23T00:49:00+00:00">2020-01-23</time>
+              <time title="创建时间：2020-01-23 00:49:00" itemprop="dateCreated datePublished" datetime="2020-01-23T00:49:00+08:00">2020-01-23</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-01 14:13:52" itemprop="dateModified" datetime="2020-02-01T14:13:52+00:00">2020-02-01</time>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-02 10:35:23" itemprop="dateModified" datetime="2020-02-02T10:35:23+08:00">2020-02-02</time>
               </span>
 
           
@@ -537,22 +490,22 @@
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/14/programmer-dojo/marsrover-tdd/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://jtong.github.io/2020/01/13/programmer-dojo/marsrover-tdd/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
+      <meta itemprop="name" content="仝键">
+      <meta itemprop="description" content="写写心得，写写教程，帮助更多人成为优秀的软件开发人员">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="铜剑技校">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/01/14/programmer-dojo/marsrover-tdd/" class="post-title-link" itemprop="url">练功房MarsRover讲解（初稿）</a>
+            <a href="/2020/01/13/programmer-dojo/marsrover-tdd/" class="post-title-link" itemprop="url">练功房MarsRover讲解（初稿）</a>
         </h1>
 
         <div class="post-meta">
@@ -560,16 +513,16 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
 
-              <time title="Created: 2020-01-14 00:58:00" itemprop="dateCreated datePublished" datetime="2020-01-14T00:58:00+00:00">2020-01-14</time>
+              <time title="创建时间：2020-01-14 00:58:00" itemprop="dateCreated datePublished" datetime="2020-01-14T00:58:00+08:00">2020-01-14</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-01 14:13:52" itemprop="dateModified" datetime="2020-02-01T14:13:52+00:00">2020-02-01</time>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-02 10:35:23" itemprop="dateModified" datetime="2020-02-02T10:35:23+08:00">2020-02-02</time>
               </span>
 
           
@@ -632,17 +585,17 @@
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/02/programmer-dojo/fizzbuzz-tdd/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://jtong.github.io/2020/01/02/programmer-dojo/fizzbuzz-tdd/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
+      <meta itemprop="name" content="仝键">
+      <meta itemprop="description" content="写写心得，写写教程，帮助更多人成为优秀的软件开发人员">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="铜剑技校">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -655,16 +608,16 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
 
-              <time title="Created: 2020-01-02 15:04:00" itemprop="dateCreated datePublished" datetime="2020-01-02T15:04:00+00:00">2020-01-02</time>
+              <time title="创建时间：2020-01-02 15:04:00" itemprop="dateCreated datePublished" datetime="2020-01-02T15:04:00+08:00">2020-01-02</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-01 14:13:52" itemprop="dateModified" datetime="2020-02-01T14:13:52+00:00">2020-02-01</time>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-02 10:35:23" itemprop="dateModified" datetime="2020-02-02T10:35:23+08:00">2020-02-02</time>
               </span>
 
           
@@ -714,10 +667,10 @@
 </ol>
 </blockquote>
 <h2 id="方案域"><a href="#方案域" class="headerlink" title="方案域"></a>方案域</h2><p>方案域就是想想代码写完之后什么样，这就意味着会做一些设计。具体手法很多，复杂的我们找别的场景再讲，因为这个题比较简单，我们这里讲一个简单的，我称之为上下文图，我有4篇文章，重点讲这个：</p>
-<p><a href="https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-01/" target="_blank" rel="noopener">像机器一样思考（一）—— 宏观的基础</a></p>
-<p><a href="https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-02/" target="_blank" rel="noopener">像机器一样思考（二）—— 数据的细节</a></p>
-<p><a href="https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-03/" target="_blank" rel="noopener">像机器一样思考（三）—— 穷尽就是力量</a></p>
-<p><a href="https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-04/" target="_blank" rel="noopener">像机器一样思考（四）—— 一图抵千言</a></p>
+<p><a href="https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-01/">像机器一样思考（一）—— 宏观的基础</a></p>
+<p><a href="https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-02/">像机器一样思考（二）—— 数据的细节</a></p>
+<p><a href="https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-03/">像机器一样思考（三）—— 穷尽就是力量</a></p>
+<p><a href="https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-04/">像机器一样思考（四）—— 一图抵千言</a></p>
 <p>第四篇文章画的就是上下文图了，这个是我们在简单题目当中常要求学生做的。（通过画这种图的方式，标记出你的程序，如果写完了，应该有多少块？每一块的输入是什么？输出是什么？）</p>
 <p>上下文图表达的是代码的静态关系。比如，如果我的代码要这么写：</p>
 <p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-01.png" alt="image.png"></p>
@@ -861,7 +814,7 @@
 <p>这事情要分两头看。你写的一种测试代码是一种类库的形式，用于辅助测试的编写。这种代码本身跟一般的程序没什么区别，所以你可以针对他单独测试。在这个题里面，我根据不同的条件生成输入数据，就是一个这样的类库一样的程序。另一种测试代码就是我们平常的测试用例了，这种测试用例，它和实现是互相验证的。所以我们在写这个的时候有一个对自己的约束，那就是写测试的时候绝对不写实现，写实现的时候也绝对不写测试，两者之间有一个非常明确的边界：执行测试。也就是说我如果写测试，执行完了测试之后，确保是我预期的结果，我再去改实现。反之我写了实现，如果执行完测试是我预期的结果，我再考虑去改测试。这样你写测试的时候实现就是你的验证。写实现的时候测试就是你的验证。主要在修改的时候作用更大一些。</p>
 <p>最后还有一个问题，我写了这老多的细粒度的测试，是不是我原来的那个测试就可以删掉了？我建议不要，一方面，他们可以当文档存在，另一方面你原来的测试相当于一些主干，而哪些细粒度的测试相当于各种细节分支，当我们未来再引入新的功能的时候，你可以先用主干测试来驱动新功能，然后用细节的测试来进行微调。</p>
 <p>写到这里，我用fizzbuzz能讲的道理也算讲完了，还有很多道理没讲到，下次换个题目试试。</p>
-<p>絮絮叨叨写了这么多，就是讲一个事，技术是由一万个细节组成的，哪怕一个这么简单的题目，也有如此多的点。之前写过一篇文章叫《<a href="https://jtong.github.io/2020/01/30/deliberate-practice-for-digital-talent/what-worth-to-be-recited/" target="_blank" rel="noopener">什么值得背</a>》，就是说了一个道理：高手的解题思路值得背。我也不敢说自己是什么高手，起码写了许多年代码，也就把自己的写代码的思维展示给大家，希望对有心人有所帮助。</p>
+<p>絮絮叨叨写了这么多，就是讲一个事，技术是由一万个细节组成的，哪怕一个这么简单的题目，也有如此多的点。之前写过一篇文章叫《<a href="https://jtong.github.io/2020/01/30/deliberate-practice-for-digital-talent/what-worth-to-be-recited/">什么值得背</a>》，就是说了一个道理：高手的解题思路值得背。我也不敢说自己是什么高手，起码写了许多年代码，也就把自己的写代码的思维展示给大家，希望对有心人有所帮助。</p>
 
       
     </div>
@@ -880,17 +833,17 @@
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/07/deliberate-practice-for-digital-talent/challenge-of-cultivating-programmer/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://jtong.github.io/2019/12/07/deliberate-practice-for-digital-talent/challenge-of-cultivating-programmer/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
+      <meta itemprop="name" content="仝键">
+      <meta itemprop="description" content="写写心得，写写教程，帮助更多人成为优秀的软件开发人员">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="铜剑技校">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -903,16 +856,16 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
 
-              <time title="Created: 2019-12-07 22:26:00" itemprop="dateCreated datePublished" datetime="2019-12-07T22:26:00+00:00">2019-12-07</time>
+              <time title="创建时间：2019-12-07 22:26:00" itemprop="dateCreated datePublished" datetime="2019-12-07T22:26:00+08:00">2019-12-07</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-01 14:13:52" itemprop="dateModified" datetime="2020-02-01T14:13:52+00:00">2020-02-01</time>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-02 10:35:23" itemprop="dateModified" datetime="2020-02-02T10:35:23+08:00">2020-02-02</time>
               </span>
 
           
@@ -971,22 +924,22 @@
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/23/tech-leadership/working-as-a-human-being/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://jtong.github.io/2019/07/10/tech-leadership/first-scene-of-software-development/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
+      <meta itemprop="name" content="仝键">
+      <meta itemprop="description" content="写写心得，写写教程，帮助更多人成为优秀的软件开发人员">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="铜剑技校">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/06/23/tech-leadership/working-as-a-human-being/" class="post-title-link" itemprop="url">像人一样工作</a>
+            <a href="/2019/07/10/tech-leadership/first-scene-of-software-development/" class="post-title-link" itemprop="url">软件开发工作的第一现场</a>
         </h1>
 
         <div class="post-meta">
@@ -994,16 +947,99 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
 
-              <time title="Created: 2019-06-23 00:07:00" itemprop="dateCreated datePublished" datetime="2019-06-23T00:07:00+00:00">2019-06-23</time>
+              <time title="创建时间：2019-07-10 14:38:00" itemprop="dateCreated datePublished" datetime="2019-07-10T14:38:00+08:00">2019-07-10</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-01 14:13:52" itemprop="dateModified" datetime="2020-02-01T14:13:52+00:00">2020-02-01</time>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-02 10:35:23" itemprop="dateModified" datetime="2020-02-02T10:35:23+08:00">2020-02-02</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>【旧文搬家】<br>我的同事王健最近写了一篇文章。名字叫《从汽车贴膜看专业团队》。看了之后感触良多。特别是现场管理，和全功能团队两点。</p>
+<p>我有一个观点，说到专业性，传统行业比我们IT行业要强得多。从这篇文章，我们可以看出来，不管是管理人员的现场管理，还是全功能团队，也就是一线人员的全栈能力，传统行业都比我们要强一些。我相信有人就会有些不服了，不管什么现场管理，全功能团队我们也在做呀。</p>
+<p>说的没有错，但是，你在it行业里还真不容易找到这么专业的一个团队。而在传统行业里，这种水平的一个团队现在是越来越常见了。这是为什么呢？按说大家都是人，通常来讲，IT行业的人不是素质还高一点吗？我们这个行业的专业团队，不是应该更常见吗？虽然我们不一定要比你强，但是也不会比你弱得这么明显啊。</p>
+<p>这当然一方面是由于我们这个行业的工作比较复杂，不容易做到全栈，但我觉得更重要的是，it行业是属于知识工作，知识工作者的现场是非常的不明显，极难做到现场管理。<br>我们IT行业的管理者，不管是项目经理，产品经理，还是技术领导者，大家也是基本和团队坐在一起。但是坐在一起，并不意味着，就能够真的在现场。</p>
+<p>我们看到在那个贴膜团队里，团队领导只需要看一眼，发现有气泡，就知道质量有问题。也就是说，在传统行业进行现场管理的时候，问题都是非常直观的，非常容易发现。在软件行业想做到一点就难的多，几年前，我记得我的同事熊节也曾经写过一篇文章，文章的核心洞见就是软件开发的现场，在代码里。</p>
+<p>这个洞见指导思特沃克工作很多年 ，公司里有很多人提出过类似的观点，于是我们的很多方法就是建筑在这些类似的观点之上。</p>
+<p>然而，如果我们想要追求IT工作者开发效率的极限的话，这个洞见还不够极致。经过几年的工作，我发现，代码只是软件开发工作的第二现场，软件开发工作的第一现场，在语言里。<br>这里说的语言，不是，编程语言，也不是广义的人类语言，比如汉语、英语。指的是我们在从事软件开发工作中所使用的一系列术语，和相关的一系列呈现方式和沟通工具。借用一个技术术语，我们所说的语言是一套仅供软件开发所有相关人员使用的、组合的DSL，DSL全称：Domain specific language，中文名叫做：领域特定语言。</p>
+<p>DSL就DSL，还组合的DSL，为什么要说的这么拗口呢？什么叫组合的DSL?我们知道在软件开发的过程当中，需要各种不同的角色参与。每个角色有自己特定的领域，泛泛的讲可以分为三类：我们把产品经理和设计人员所使用的领域特定语言叫做设计语言，把开发和测试使用的语言叫做技术语言，把业务人员、组织管理者使用的语言，叫做业务语言。</p>
+<p>所以我们使用的这套，领域特定语言，是把这三类语言组合在一起而形成的一套语言。所以这就意味着我们这套语言非常容易充满歧义，造成每个角色自说自话却难以被发现。</p>
+<p>软件工程里的核心观点是一个问题发现的越晚，修正它的成本就越高。比代码更早的是沟通，比沟通更早的就是语言。我们用语言去描述沟通的错误，去描述代码中的错误，我们用什么来描述语言的错误呢？还是语言，这就使得整个工作困难重重，难以达成共识。所以我们更需要非常严肃的对待，软件开发工作的第一现场。</p>
+<p>之前一些方法试图建立纯粹的统一语言，所有人都说一套语言，这个方法已经被行业事实上放弃了，我们要承认，各自不同的语言有些部分可以简单统一成一种表达以消除歧义，有些部分只能结合。也就是说相关人员要懂多门语言这个现实是我们必须接受的，软件正在吞噬世界，语言只会越来越复杂。就像我们再努力消除污染，也不能幻想世界回到工业文明以前了。就算我们再努力的去建立统一语言，也不可能是一门简单的语言，只能是多门DSL的一个杂合体。</p>
+<p>不过由于历史的原因，在行业放弃的过程中，由于反对预先设计走的过了头，不谈建模，不谈标准化成了一种奇怪的政治正确，导致很多优秀的工具和方法被边缘化了。其实我们憎恨的只是预先设计造成的反馈速度变慢。连带着憎恨预先设计时代的一些工具，就有点上纲上线了。</p>
+<p>幸而最近几年，各种领域建模的设计方法又重新回归。最近大行其道的，领域驱动设计，就是在很严肃的，对待业务语言的设计和使用。而在前端领域，Design System试图解决前端开发和设计师之间的语言分歧问题。我个人在从事软件开发工程师的培养方面发现，很多传统的可视化工具，比如说UML。如果不以繁重的预先设计为目的，来使用这些工具，仅把它们用作提高沟通效率的工具，他们的威力是十分惊人的。</p>
+<p>以我本人的团队为例，我们使用ant design为基础，设计了我们的design system。使得我们可以在三天之内得到一个可以点击的软件原型，并在此基础上，进行各利益相关方之间的需求交流和反馈。在交流的过程当中，我们也刻意的统一了我们的语言。使得我们尽管是一个远程团队，但是当我们在交流的时候，很清楚的知道我们在对信息架构在哪一层进行反馈。这不但使得业务方可以反馈技术方，其实技术方也在引导业务方。语言的影响是双向的。</p>
+<p>在技术领域里，我们也选择了隔离性更好的技术架构，使得我们MVP的代码不会变成我们演进道路上必须长期背负的负累。而之所以在一篇聊“语言”的文章里提技术架构，是因为我们认为，真正的架构不是纸上的，却也不是代码里的，而是每个团队成员心里的架构。实施一个架构必然也是要进行大量沟通，也需要统一语言。</p>
+<p>而在交流业务的时候，我们刻意的划分了各种不同的子领域又在每个领域当中统一了名词。统一名词还是比较简单的，最难的是划分领域，我们为此投入了大量的工作，也犯了一些错误，但这些付出是值得的，这之后，我们的沟通变得非常流畅。</p>
+<p>具体的实践有机会再跟大家分享。我在这里仅仅聊一下沟通顺畅带来的价值。沟通顺畅的威力并不仅仅表现在沟通的时候可以很顺畅的传递信息，最重要的是当有团队成员对信息理解出现错误的时候，可以很容易的暴露和给予反馈。</p>
+<p>这个优势在IT行业至关重要。IT行业的人员流动率接近25%，这意味着每年我们团队中至少有1/4的人是新人。而即便我们想尽方法让我们的团队保持稳定，随着敏捷和精益创业的相关思想已经慢慢成为我们的工作常识，每个项目存在的时间都不会太长，从而使得IT团队是经常性的重组，有时是团队被打散，有时是同一个系统从一个团队交给了另一个团队。如果缺乏一种有效的反馈机制，那么无论是人员流动还是组织重组，所造成的切换成本都是一个可观的数字。尽管这个切换成本是无法消除的，但是尽量减少切换成本是我们每个专业人员应该追求的，尤其是团队中的技术领导者。</p>
+<p>技术领导者重音在领导，而不在技术。尤其在Tech@Core的今天，技术就是业务。优秀的技术领导者更不能把自己变成一个救火队员，只是被动的响应，尽管救火队员往往很容易被人所看到而获得一些关注和赞扬，但在我们中国的文化里，我们都知道还有更高一层的境界，这个境界存在于很多典故中，比如上医治未病，善战者无赫赫之功。同理，我们软件开发领域的技术领导者们也应该努力使大多数问题发生的基础消灭于无形，这就需要我们走出我们的舒适区，深入到软件开发的第一现场，进行现场管理才能达成。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://jtong.github.io/2019/06/22/tech-leadership/working-as-a-human-being/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="仝键">
+      <meta itemprop="description" content="写写心得，写写教程，帮助更多人成为优秀的软件开发人员">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="铜剑技校">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/22/tech-leadership/working-as-a-human-being/" class="post-title-link" itemprop="url">像人一样工作</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-06-23 00:07:00" itemprop="dateCreated datePublished" datetime="2019-06-23T00:07:00+08:00">2019-06-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-02 10:35:23" itemprop="dateModified" datetime="2020-02-02T10:35:23+08:00">2020-02-02</time>
               </span>
 
           
@@ -1057,17 +1093,17 @@
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/22/deliberate-practice-for-digital-talent/what-worth-to-be-recited/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://jtong.github.io/2019/06/22/deliberate-practice-for-digital-talent/what-worth-to-be-recited/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
+      <meta itemprop="name" content="仝键">
+      <meta itemprop="description" content="写写心得，写写教程，帮助更多人成为优秀的软件开发人员">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="铜剑技校">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -1080,16 +1116,16 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
 
-              <time title="Created: 2019-06-22 23:23:00" itemprop="dateCreated datePublished" datetime="2019-06-22T23:23:00+00:00">2019-06-22</time>
+              <time title="创建时间：2019-06-22 23:23:00" itemprop="dateCreated datePublished" datetime="2019-06-22T23:23:00+08:00">2019-06-22</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-01 14:13:52" itemprop="dateModified" datetime="2020-02-01T14:13:52+00:00">2020-02-01</time>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-02 10:35:23" itemprop="dateModified" datetime="2020-02-02T10:35:23+08:00">2020-02-02</time>
               </span>
 
           
@@ -1140,22 +1176,22 @@
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/11/deliberate-practice-for-digital-talent/dojo-over-method/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://jtong.github.io/2019/02/10/deliberate-practice-for-digital-talent/dojo-over-method/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
+      <meta itemprop="name" content="仝键">
+      <meta itemprop="description" content="写写心得，写写教程，帮助更多人成为优秀的软件开发人员">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="铜剑技校">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/02/11/deliberate-practice-for-digital-talent/dojo-over-method/" class="post-title-link" itemprop="url">道场胜于道法</a>
+            <a href="/2019/02/10/deliberate-practice-for-digital-talent/dojo-over-method/" class="post-title-link" itemprop="url">道场胜于道法</a>
         </h1>
 
         <div class="post-meta">
@@ -1163,16 +1199,16 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
 
-              <time title="Created: 2019-02-11 01:11:00" itemprop="dateCreated datePublished" datetime="2019-02-11T01:11:00+00:00">2019-02-11</time>
+              <time title="创建时间：2019-02-11 01:11:00" itemprop="dateCreated datePublished" datetime="2019-02-11T01:11:00+08:00">2019-02-11</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-01 14:13:52" itemprop="dateModified" datetime="2020-02-01T14:13:52+00:00">2020-02-01</time>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-02 10:35:23" itemprop="dateModified" datetime="2020-02-02T10:35:23+08:00">2020-02-02</time>
               </span>
 
           
@@ -1217,17 +1253,17 @@
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/17/deliberate-practice-for-digital-talent/two-behavior-pattern-and-three-axis/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://jtong.github.io/2018/12/17/deliberate-practice-for-digital-talent/two-behavior-pattern-and-three-axis/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
+      <meta itemprop="name" content="仝键">
+      <meta itemprop="description" content="写写心得，写写教程，帮助更多人成为优秀的软件开发人员">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="铜剑技校">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -1240,16 +1276,16 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
 
-              <time title="Created: 2018-12-17 19:59:00" itemprop="dateCreated datePublished" datetime="2018-12-17T19:59:00+00:00">2018-12-17</time>
+              <time title="创建时间：2018-12-17 19:59:00" itemprop="dateCreated datePublished" datetime="2018-12-17T19:59:00+08:00">2018-12-17</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-01 14:13:52" itemprop="dateModified" datetime="2020-02-01T14:13:52+00:00">2020-02-01</time>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-02 10:35:23" itemprop="dateModified" datetime="2020-02-02T10:35:23+08:00">2020-02-02</time>
               </span>
 
           
@@ -1263,7 +1299,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="絮絮叨叨的开场"><a href="#絮絮叨叨的开场" class="headerlink" title="絮絮叨叨的开场"></a>絮絮叨叨的开场</h2><p>上一篇<a href="https://jtong.github.io/2020/01/30/deliberate-practice-for-digital-talent/presepective-of-requirement/" target="_blank" rel="noopener">需求的视角</a>，我们介绍了一种可以让人回归场景的的小工具，避免在实现功能时的需求理解问题。但是在我们很好地理解了需求之后，在实现过程中，就会一帆风顺么？也不是的。</p>
+          <h2 id="絮絮叨叨的开场"><a href="#絮絮叨叨的开场" class="headerlink" title="絮絮叨叨的开场"></a>絮絮叨叨的开场</h2><p>上一篇<a href="https://jtong.github.io/2020/01/30/deliberate-practice-for-digital-talent/presepective-of-requirement/">需求的视角</a>，我们介绍了一种可以让人回归场景的的小工具，避免在实现功能时的需求理解问题。但是在我们很好地理解了需求之后，在实现过程中，就会一帆风顺么？也不是的。</p>
 <p>我们工作久了，就会发现有些人资质很好，有些人资质就很差。你会发现，有些人会考虑的比较有深度，有些人就不行。到底什么是深度呢？我不太能理解这个词，于是我继续观察。从外在看呢，我们会发现他们的行为表现有差别。我称之为工人的行为模式和工程师的行为模式。这两种行为模式在面对问题的时候差别尤为明显。</p>
 <p>一个工人行为模式的人，遇到问题的时候，采取的方式就是直接把做过的行为再做一遍，期望能有所不同。比如装个环境，遇到问题了，就把执行的命令再执行一遍。</p>
 <p>而工程师行为模式的人，遇到问题的时候，却什么都不着急做，往往是盯着出错的屏幕若有所思，片刻之后，突然说“哦，我知道了”，然后一下就把问题解决了，仿佛是在脑子里Debug。</p>
@@ -1281,7 +1317,7 @@
 <p>我的前同事李鹏是此中高手，他有一篇文章《<a href="https://www.jianshu.com/p/e4a8a48ee69c" target="_blank" rel="noopener">当我拿到一个前后端实现todolist的学习任务时，我应该怎么做？</a>》中，把任务分解（我们下一篇就讲这个）和demo法结合在一起，大家感兴趣可以看看。受他影响，我也做了一个小github组织，来放自己的demo：<a href="https://github.com/jtong-demos" target="_blank" rel="noopener">https://github.com/jtong-demos</a> 可惜最近几个月太忙就没时间更新了，不过也看出了另外一个优点，等我忙过这阵，想要捡起来的时候，这些demo会比网上的什么资料都快。</p>
 <h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><p>为了深入到另外两个轴去，阅读当然很重要，但是对于大多数人来说枯燥是最大的退却原因。所以我在之前带学生的时候，都要求他们输出，写博客。有输出，枯燥感就会下降一些。但是写文章本身也很累，而且很容易变成抄书，所以我们后来又找到了另外一个工具：概念图。</p>
 <p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/two-behavior-pattern-and-three-axis/pic-02.png" alt="概念图工具的概念图"></p>
-<p>可以用节点来表达组件，用线上的关系来表达组件之间的关系，非常适合表达系统和因果轴，可以更轻量的进行输出（具体怎么用，简书上一搜一大堆，我就不写了）。其实我之前介绍的<a href="https://jtong.github.io/2020/01/30/something-about-software-development/visualize-arch-design-introduce-c4/" target="_blank" rel="noopener">C4</a>，就可以看作是一种特殊的概念图。</p>
+<p>可以用节点来表达组件，用线上的关系来表达组件之间的关系，非常适合表达系统和因果轴，可以更轻量的进行输出（具体怎么用，简书上一搜一大堆，我就不写了）。其实我之前介绍的<a href="https://jtong.github.io/2020/01/30/something-about-software-development/visualize-arch-design-introduce-c4/">C4</a>，就可以看作是一种特殊的概念图。</p>
 <h2 id="小节"><a href="#小节" class="headerlink" title="小节"></a>小节</h2><p>如前所述，我们学习软件相关的知识，可以借用三轴分析法，从操作、系统和因果三个角度扩展自己的认知。只有这样才能成为专业人士，刻意的阅读、输出、写demo，这简单的几件事，能做到的人却很稀有，这也是为什么优秀的工程师非常稀有的缘故，我们公司的数据，一个业务分析师或者QA，只要聪明，进入公司，差不多1年就可以比较独当一面，而开发人员，大都需要三年。大多数人都喜欢走易走的路，而难走的路反而是人少的捷径，坚持做好这几个动作，就是提升自己的捷径。</p>
 
       
@@ -1302,7 +1338,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1346,10 +1382,10 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          Table of Contents
+          文章目录
         </li>
         <li class="sidebar-nav-overview">
-          Overview
+          站点概览
         </li>
       </ul>
 
@@ -1360,8 +1396,8 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">John Doe</p>
-  <div class="site-description" itemprop="description"></div>
+  <p class="site-author-name" itemprop="name">仝键</p>
+  <div class="site-description" itemprop="description">写写心得，写写教程，帮助更多人成为优秀的软件开发人员</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
@@ -1369,11 +1405,14 @@
           <a href="/archives/">
         
           <span class="site-state-item-count">26</span>
-          <span class="site-state-item-name">posts</span>
+          <span class="site-state-item-name">日志</span>
         </a>
       </div>
   </nav>
 </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-nd.svg" alt="Creative Commons"></a>
+  </div>
 
 
 
@@ -1398,12 +1437,12 @@
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">仝键</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.0
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.0
   </div>
 
         
