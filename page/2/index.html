@@ -201,6 +201,90 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://jtong.github.io/2018/12/17/deliberate-practice-for-digital-talent/two-behavior-pattern-and-three-axis/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="仝键">
+      <meta itemprop="description" content="写写心得，写写教程，希望能帮助更多人成为优秀的软件开发人员">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="铜剑技校">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/12/17/deliberate-practice-for-digital-talent/two-behavior-pattern-and-three-axis/" class="post-title-link" itemprop="url">两种行为模式与三根轴</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-12-17 19:59:00" itemprop="dateCreated datePublished" datetime="2018-12-17T19:59:00+08:00">2018-12-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-20 23:35:49" itemprop="dateModified" datetime="2020-07-20T23:35:49+08:00">2020-07-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="絮絮叨叨的开场"><a href="#絮絮叨叨的开场" class="headerlink" title="絮絮叨叨的开场"></a>絮絮叨叨的开场</h2><p>上一篇<a href="https://jtong.github.io/2020/01/30/deliberate-practice-for-digital-talent/presepective-of-requirement/">需求的视角</a>，我们介绍了一种可以让人回归场景的的小工具，避免在实现功能时的需求理解问题。但是在我们很好地理解了需求之后，在实现过程中，就会一帆风顺么？也不是的。</p>
+<p>我们工作久了，就会发现有些人资质很好，有些人资质就很差。你会发现，有些人会考虑的比较有深度，有些人就不行。到底什么是深度呢？我不太能理解这个词，于是我继续观察。从外在看呢，我们会发现他们的行为表现有差别。我称之为工人的行为模式和工程师的行为模式。这两种行为模式在面对问题的时候差别尤为明显。</p>
+<p>一个工人行为模式的人，遇到问题的时候，采取的方式就是直接把做过的行为再做一遍，期望能有所不同。比如装个环境，遇到问题了，就把执行的命令再执行一遍。</p>
+<p>而工程师行为模式的人，遇到问题的时候，却什么都不着急做，往往是盯着出错的屏幕若有所思，片刻之后，突然说“哦，我知道了”，然后一下就把问题解决了，仿佛是在脑子里Debug。</p>
+<p>我们打开看呢，你会发现他们的思考问题的维度是有差别的。我一直找不到一个好的模型来解释这种思维模式的差别，直到我在一本叫《创新算法》的书里面看到有个三轴分析的模型，可以较好的描述这个维度差别：</p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/two-behavior-pattern-and-three-axis/pic-01.png" alt="三轴分析"></p>
+<p>按照三轴分析的模型，我们思考一个机器，要从三个维度去思考，一是操作，就是人是怎么操作这个机器的；一是系统，就是这个系统都有哪些组件，这些组件都有什么关系；三就是因果，就是当人进行某种操作，到看到结果之间，一步步是怎么发生的，哪些组件起了作用，出了问题又是哪些组件没搭配对或者那个组件出故障了，或者操作本身是不是做错了。简单讲因果轴就是前两轴的动态关系。</p>
+<p>计算机虽然精密，它也是一台机器，这上面跑的软件也没有任何的魔法，一样是适用于三轴分析的。</p>
+<p>所谓像工人行为模式的人，其实就是指关注操作轴的知识，而对下面的系统轴和因果轴关心较少造成的。我曾经在面试的时候，让一个人讲他用到的一个框架的原理，结果他在白板上一顿乱画，我始终没看到组件有哪些，互相又是怎么配合的，最后发现，他是按照界面在描述那个框架的（很多框架都提供跟eclipse集成的GUI操作界面），他说的全都是在哪界面上填什么信息，然后就会有什么效果。只能用操作轴的信息来描述一款框架，这种行为也就是我们所谓的没有深度。</p>
+<p>这样的例子在行业里比比皆是，我们在培训中就曾经碰到过一件哭笑不得的事情，比如在进行一些代码操练的工作坊的时候，让学员使用intellij来进行编程，一些有多年工作经验的学员写的代码出了编译错误，说这一定是你这个IDE的问题，我用eclipse这么写就没问题。当面用eclipse打开，依然是编译错误，就没话说了。还有远程就不会断点调试、配了log4j就抱怨e.printStackTrace()不打印了等等奇葩的例子就不展开聊了（但不写出来吐槽一下是真难受，我的一个朋友经常吐槽，为什么这个行业里这么多“业余”的人。说实话，我也是有点绝望的……），其实这些都是一个问题，就是只关注操作轴，关注的久了，所有的技能都只用操作轴的信息来编码，换个界面就武功全废，也是很多人觉得编程只能是青春饭的原因。</p>
+<p>而工程师行为模式的人，一定不会只关注操作轴维度的信息，他们会打开系统，看到系统内部构造和系统到底是怎么运转的。由于对这些东西非常了解了，才能盯着屏幕上的日志，在脑子里模拟代码的运行，推理自己可能哪里出错了。</p>
+<p>要想做到这一点，其实并没有什么魔法。我们用到的绝大多数框架、库、工具都是开源软件。开源软件都是很慷慨的把自己的机制、代码都放在了网上，完全没有信息壁垒。如果我们在读完入门案例后，还去读读Manual或Reference（有余力也可以读读源代码）我们不但会对系统的组件和系统的运转机制有更深入的了解，而且会在操作层面多一些新技能，当我们施展出来，还会有人惊呼“还有这种操作”。唯一需要做的就是认认真真读文档，照着文档写几个demo，编程初学者的话，把API doc都读读是最好的。然而这一件简单的事，竟然都成了少有人走的路。</p>
+<p>所以对于开发人员来说，想要成为一名合格的工程师，只关注操作轴肯定是不行的，在学习的过程中要刻意的逼迫自己去关注系统轴和因果轴。不过这确实不是一件容易的事，不同于普通机器，软件的复杂度要高得多。咱们软件业有一句话说，没有什么问题是不能通过添加一个中间层来解决的（如果有就再添加一层），所以学习过程中会不断的发现，自己被一个抽象层挡住了。需要重新用三轴分析工具分析一下，抽象层的下面又是什么。学无止境，无尽的三轴。</p>
+<p>本次讲的刻意练习其实是最简单的：阅读，写demo，这些都是优秀程序员的基本功。也是最难的一个，因为实在是太枯燥了，以刻苦的学习击穿认知的次元壁从来也是少数人才能达成的成就，但其实你仔细去观察那些少数人的时候，你会发现他们有些小技巧，能把苦变得有趣，这里就介绍几个小技巧。</p>
+<h2 id="Demo法"><a href="#Demo法" class="headerlink" title="Demo法"></a>Demo法</h2><p>写一些小demo其实非常有助于建立起从操作到系统的映射，并可以通过下载开源代码及单步调试来理清中间到底发生了什么。由于demo都很小，很容易快速的建立收获感，你不会觉得做了很久没有任何收获，从而放弃。也不需要很大块的时间来做，导致每次学习都死于起手式。</p>
+<p>我的前同事李鹏是此中高手，他有一篇文章《<a href="https://www.jianshu.com/p/e4a8a48ee69c" target="_blank" rel="noopener">当我拿到一个前后端实现todolist的学习任务时，我应该怎么做？</a>》中，把任务分解（我们下一篇就讲这个）和demo法结合在一起，大家感兴趣可以看看。受他影响，我也做了一个小github组织，来放自己的demo：<a href="https://github.com/jtong-demos" target="_blank" rel="noopener">https://github.com/jtong-demos</a> 可惜最近几个月太忙就没时间更新了，不过也看出了另外一个优点，等我忙过这阵，想要捡起来的时候，这些demo会比网上的什么资料都快。</p>
+<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><p>为了深入到另外两个轴去，阅读当然很重要，但是对于大多数人来说枯燥是最大的退却原因。所以我在之前带学生的时候，都要求他们输出，写博客。有输出，枯燥感就会下降一些。但是写文章本身也很累，而且很容易变成抄书，所以我们后来又找到了另外一个工具：概念图。</p>
+<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/two-behavior-pattern-and-three-axis/pic-02.png" alt="概念图工具的概念图"></p>
+<p>可以用节点来表达组件，用线上的关系来表达组件之间的关系，非常适合表达系统和因果轴，可以更轻量的进行输出（具体怎么用，简书上一搜一大堆，我就不写了）。其实我之前介绍的<a href="https://jtong.github.io/2020/01/30/something-about-software-development/visualize-arch-design-introduce-c4/">C4</a>，就可以看作是一种特殊的概念图。</p>
+<h2 id="小节"><a href="#小节" class="headerlink" title="小节"></a>小节</h2><p>如前所述，我们学习软件相关的知识，可以借用三轴分析法，从操作、系统和因果三个角度扩展自己的认知。只有这样才能成为专业人士，刻意的阅读、输出、写demo，这简单的几件事，能做到的人却很稀有，这也是为什么优秀的工程师非常稀有的缘故，我们公司的数据，一个业务分析师或者QA，只要聪明，进入公司，差不多1年就可以比较独当一面，而开发人员，大都需要三年。大多数人都喜欢走易走的路，而难走的路反而是人少的捷径，坚持做好这几个动作，就是提升自己的捷径。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://jtong.github.io/2018/12/12/deliberate-practice-for-digital-talent/presepective-of-requirement/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -232,7 +316,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-25 17:02:28" itemprop="dateModified" datetime="2020-06-25T17:02:28+08:00">2020-06-25</time>
+                <time title="修改时间：2020-07-20 23:35:49" itemprop="dateModified" datetime="2020-07-20T23:35:49+08:00">2020-07-20</time>
               </span>
 
           
@@ -318,7 +402,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-25 17:02:28" itemprop="dateModified" datetime="2020-06-25T17:02:28+08:00">2020-06-25</time>
+                <time title="修改时间：2020-07-20 23:35:49" itemprop="dateModified" datetime="2020-07-20T23:35:49+08:00">2020-07-20</time>
               </span>
 
           
@@ -406,7 +490,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-25 17:02:28" itemprop="dateModified" datetime="2020-06-25T17:02:28+08:00">2020-06-25</time>
+                <time title="修改时间：2020-07-20 23:35:49" itemprop="dateModified" datetime="2020-07-20T23:35:49+08:00">2020-07-20</time>
               </span>
 
           
@@ -488,7 +572,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-25 17:02:28" itemprop="dateModified" datetime="2020-06-25T17:02:28+08:00">2020-06-25</time>
+                <time title="修改时间：2020-07-20 23:35:49" itemprop="dateModified" datetime="2020-07-20T23:35:49+08:00">2020-07-20</time>
               </span>
 
           
@@ -574,7 +658,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-25 17:02:28" itemprop="dateModified" datetime="2020-06-25T17:02:28+08:00">2020-06-25</time>
+                <time title="修改时间：2020-07-20 23:35:49" itemprop="dateModified" datetime="2020-07-20T23:35:49+08:00">2020-07-20</time>
               </span>
 
           
@@ -675,7 +759,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-25 17:02:28" itemprop="dateModified" datetime="2020-06-25T17:02:28+08:00">2020-06-25</time>
+                <time title="修改时间：2020-07-20 23:35:49" itemprop="dateModified" datetime="2020-07-20T23:35:49+08:00">2020-07-20</time>
               </span>
 
           
@@ -746,7 +830,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-25 17:02:28" itemprop="dateModified" datetime="2020-06-25T17:02:28+08:00">2020-06-25</time>
+                <time title="修改时间：2020-07-20 23:35:49" itemprop="dateModified" datetime="2020-07-20T23:35:49+08:00">2020-07-20</time>
               </span>
 
           
@@ -835,7 +919,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-25 17:02:28" itemprop="dateModified" datetime="2020-06-25T17:02:28+08:00">2020-06-25</time>
+                <time title="修改时间：2020-07-20 23:35:49" itemprop="dateModified" datetime="2020-07-20T23:35:49+08:00">2020-07-20</time>
               </span>
 
           
@@ -944,7 +1028,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-25 17:02:28" itemprop="dateModified" datetime="2020-06-25T17:02:28+08:00">2020-06-25</time>
+                <time title="修改时间：2020-07-20 23:35:49" itemprop="dateModified" datetime="2020-07-20T23:35:49+08:00">2020-07-20</time>
               </span>
 
           
@@ -972,124 +1056,6 @@
 <p>比如以上一篇文章《软件开发的精进之法》讲到的方法为例。一个人要划任务，然后估时间，然后做的时候计时，根据实际结果进行反思。我们可以把这个方法做成非常邪恶的，仿佛流水线上工人的强制要求。我不关心你为什么超时，就通过这种方法来控制程序员，要求每个人都严格按照一个死板而僵化的步骤做一些简单重复的机械动作。也可以用这个方法来锻炼一个人的自我认知和发现知识漏洞等能力，促使他以最快的速度成长，等他成长起来马上给他更重要的任务，比如评估技术、评估项目、带新人、做架构等等。这两种结果的差异，背后就是领导者认识的差异，团队成员认识的差异。从这个认识的不同我们早在很多年前，就被一些大牛们观察到，作为敏捷宣言里的一句话表达了出来：“个体与交互 胜过 流程和工具”。</p>
 <p>团队里的流程和工具，是为了成就个体，促进交互，还是为了抹杀个体，消除交互，这个微小而关键的差异，是一切的本质。有多少团队学了ThoughtWorks的一些实践，搞了看板、开放工作空间、TDD、CI，团队氛围依然压抑，成员之间交流不畅，个体成长不受尊重，领导与员工玩“猫和老鼠”。这样只学了形没有学到神的做法，最后的结果不会太好。</p>
 <p>与之相反的做法呢？在上一篇文章《软件开发的精进之法》的开篇曾经简单的提到，新时代的管理者比起老板，更像老师。师者，传道，授业，解惑。各位老师，你们准备好了么？</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://jtong.github.io/2016/09/17/deliberate-practice-for-digital-talent/growth-method-of-programming/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="仝键">
-      <meta itemprop="description" content="写写心得，写写教程，希望能帮助更多人成为优秀的软件开发人员">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="铜剑技校">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2016/09/17/deliberate-practice-for-digital-talent/growth-method-of-programming/" class="post-title-link" itemprop="url">编程的精进之法</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2016-09-18 02:34:00" itemprop="dateCreated datePublished" datetime="2016-09-18T02:34:00+08:00">2016-09-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-25 17:02:28" itemprop="dateModified" datetime="2020-06-25T17:02:28+08:00">2020-06-25</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>【旧文搬家】<br>（作者注：阅读本文需要一定的编程经验和对一些敏捷实践，如TDD，有一定的了解）</p>
-<p>编程，众所周知被定义为知识工作，所有的知识工作，从业者和门外汉都喜欢把它神秘化，将整个过程以不可知论的风格来解释。理由往往只是简单粗暴的讲诉一些体力工作时代形成的方法照搬到知识工作中来失败的故事，也毫无理论依据。偶有几个人写理论理由，写出来的理由跟癔症者的呓语也无甚差别。我个人是反对将知识工作神秘化的，我是科学管理原理的忠实粉丝，我觉得尽管科学管理原理的具体案例都过时了，但泰勒的研究方法依然是工作的，只是研究者和被研究者发生了一些微妙的变化。</p>
-<p>彼得德鲁克在《21世纪的管理挑战》中提到，知识工作者需要自我管理，那么很明显不是体力工作时代形成的方法不能用在知识工作中，而是不能指望个体之外的人对个体进行简单的粗暴的分析和命令就可以形成很高的生产效率了。这个分析和下命令的人必须是知识工作者自己，我们需要自己纪录自己的行为，然后分析、优化，才能得到生产力的提升，任何向外诉求都会很快的撞上一个“天花板”而无法提升。如果非要寻求外部控制，那么我们只能说，对于新时代的管理者的定位，比起老板，更像老师，以引导和帮助训练为主，每个人真正的效率提升主要还是要靠自己。</p>
-<p>那么如文章标题所述，追求知识工作的一种——编程的效率，是本文关注的重点。但我们首先要声明，本文不是给一个可以直接产生高生产效率的方法，而是给一个可以可视化自己生产效率以找到瓶颈的方法。至少在不改变质量的前提下，可以极大的提升你的效率，如果使用得当，可能会质量和效率双提升。</p>
-<p>本文引入的方法也并不新鲜，简单说来，就是任务列表法＋PDCA的一套组合使用而已。大道至简，坚持者寡，而坚持下来的人往往都可以获得数倍的效率提升。</p>
-<h2 id="任务列表法"><a href="#任务列表法" class="headerlink" title="任务列表法"></a>任务列表法</h2><p>我们做任何事情都应该划出任务列表，按照任务列表一项项去完成，这不是什么特别少见的工作方式。然而，很多人的问题在于，列出的问题列表不能达到完全穷尽，各自独立。</p>
-<p>完全穷尽是什么意思呢？<br>当我开始做事情的时候，我不能把所有的事情穷尽，我列出的列表跟我做的事情是不完全等价的，这说明我们的工作行为是非常混沌不可视的，哪怕是对自己。<br>有时事情看起来在大面上是穷尽了，但是做的时候，发现又出现了新的任务。那说明每一项任务的输入和输出没有想清楚，所以当发现输入输出有欠缺的时候（主要是输入，输出欠缺的结果也是要补输入），就需要新的任务来准备输入，于是任务列表就增加了，这也是一种没有穷尽。</p>
-<p>各自独立是什么意思呢？</p>
-<p>意味着，每一项任务都可以单独做完，而不需要先做完其中一项任务，才能做完另一项。<br>假如我有三项任务</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 任务1</span><br><span class="line"># 任务2</span><br><span class="line"># 任务3</span><br></pre></td></tr></table></figure>
-
-<p>我做的时候，必须把任务2做完，任务1才能做完。任务3做完，任务2才能做完。结果我就从任务1开始一路做到任务3，最后再逐步回到任务1，整个过程非常混乱，那就不是各自独立的。</p>
-<p>在现实生活中想做到各项任务都独立挑战还是比较大，但是在编程的世界里，挑战没有那么大，程序世界做到这一点真的太轻松了。优秀的设计都是要求解耦的，如果做不到，基本等于活儿比较烂。</p>
-<p>当我们做到任务的完全穷尽与各自独立之后，我们任务列表法才算达标，这之后才能高效的工作，然而达到这一点并不是一蹴而就的，没有谁可以一上来就做到任务划分可以完全穷尽、各自独立，需要不停的刻意练习。所以我们称之为编程的精进之法。</p>
-<h2 id="PDCA"><a href="#PDCA" class="headerlink" title="PDCA"></a>PDCA</h2><p>PDCA是Plan-Do-Check-Action四个词的组合。这是著名的戴明环。讲究从计划开始，经过实践，再反思，产生的改进行动再纳入下一轮计划的持续改进过程。</p>
-<p>当我们把这一套从工业领域搬过来的时候，我们对计划的理解还是工业领域那一套。如果用在个人提升方面，我们应该把PDCA微观化，这之后就有两个问题需要被解答，一个是Plan是什么？一个是Check什么？</p>
-<p>第一个问题的答案是很显然的，我们前面讲的任务列表法就是在形成这个Plan。</p>
-<p>第二个问题本身是一个母问题，每当我们对这个问题的回答，都要回答一个衍生出来的子问题：我们要做点什么才能在需要Check的时候能够Check。常用的套路有两个：</p>
-<ol>
-<li>Plan的时候估计一个时间，然后开始做，做的时候计时，做完就要Check这个时间是否达标，无论快了还是慢了（通常是比较明显的差距才反思，比如20%以上的差距），Check都要反思并产生Action，纳入到未来的Plan中去。</li>
-<li>估计的任务列表和实际做的任务列表是否是一样多的？往往是会多出来，这时就要反思，自己在哪里有不足导致了这个差别。</li>
-</ol>
-<p>这些反思往往是发现自己的问题，比如自己不熟悉的知识点，不熟悉的方法，甚至不熟悉的业务知识，最后的Action也往往都是进行刻意练习来提升生产效率，比如反复练类似题目。有时也会是通过一些效率工具的使用来提升效率，比如抽取live template，使用快捷键，只是效率工具的使用往往也需要刻意练习就是了。有时也可以通过复用技术（其实live template已经是复用技术了）来提升生产效率，然而可复用模式的识别与抽取本身也是需要练习的，否则在那里纠结浪费的时间更长。</p>
-<p>有些同学会感觉到，记录了时间却不知道哪里有问题，这个时候可以跟TDD相结合，把时间划分为写测试的时间，写实现的时间和测试通过的时间。其实除去这几种时间，还有其他时间消耗，比如调研的时间。不管怎么划分，将时间消耗结构化掉，一部分一部分的追求最高效率是一种可行的办法。</p>
-<h2 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h2><p>我们做一个简单的修改用户信息功能的API。那么我们在某一个Java技术栈上可能的任务列表是长这样的：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. 写UserController （10分钟）</span><br><span class="line">2. 写UserDAO （15分钟）</span><br></pre></td></tr></table></figure>
-
-<p>当你真正开始做的时候，会碰到两种主要的意外：</p>
-<ol>
-<li>任务列表扩张</li>
-<li>时间估计不准</li>
-</ol>
-<p>我们下面就这个例子，讲一讲遇到这两种意外，我们应该怎么反思和处理。</p>
-<h3 id="任务列表扩张"><a href="#任务列表扩张" class="headerlink" title="任务列表扩张"></a>任务列表扩张</h3><p>任务列表扩张，顾名思义，就是指我们一开始估计的任务的数量随着我们开始工作变的比预想的多，可能有两种主要原因：</p>
-<ol>
-<li>技术原因</li>
-<li>业务原因</li>
-</ol>
-<p>技术原因，比如在这个案例里面，第二项任务：写UserDAO，就是一个没想清楚的事情。我们还需要建数据库表，我们在一个有migration脚本支持的技术栈设计上工作，我们还需要写初始化脚本和回滚脚本，也许这是我的第一个表，所以我还得配置数据库，搞不好还要把ORM的基础代码都写完，所以这些导致了我可能任务估少了。再比如，我们的项目规范要求我们Controller不能直接调DAO，要在中间加一个Service，尽管我个人觉得这是一件很二的规范，然而规范就是规范，我对项目技术规范不熟悉结果导致我画出来的任务缺少了一些必要的任务。再比如，我们的项目采用的是Jersey，根本没有Controller这么一个东西，那么不了解技术框架导致我的任务根本就划错了。</p>
-<p>这种情况属于我对技术了解不足，通过对任务列表扩张原因的Check，我会得出一些Action：去了解技术规范，去深入了解项目的技术架构，现有的代码，以防止以后的任务画错。</p>
-<p>业务原因，也比如在这个例子里，我们的系统需要在更新用户信息的API里不能更新密码，所以我们还需要一个专门的修改密码的API。再比如，这是一个遗留系统，用户信息的修改会触发数据库里的一系列触发器，从而修改系统的其他数据，然而有些修改是有前提的，那么我就需要更多的任务去处理这些前提条件；或者当数据变化时，要求我去修改系统里的其他数据，那么我就需要更多的任务去完成这些工作。</p>
-<p>这种情况属于我对整个系统的业务了解不足，通过对任务列表扩张原因的Check，我会得出一些Action：通读数据库表，通读代码，更全面的阅读需求，或者跟需求方更多的沟通，以了解业务。</p>
-<h3 id="时间估计不准"><a href="#时间估计不准" class="headerlink" title="时间估计不准"></a>时间估计不准</h3><p>时间估计不准就简单了很多，在这个例子里，就是这两个任务我估计的时间与我做的时间不相匹配。可能的主要原因也有三个：</p>
-<ol>
-<li>任务列表扩张了，但是我没意识到，比如UserDAO写起来没有我想的那么简单，所以多花了时间；</li>
-<li>单纯的技术不熟练；</li>
-<li>花了太多时间在纠结上；</li>
-</ol>
-<p>对于隐藏的任务列表扩张，时间估计不准给了我们一个很好的线索去发现。一旦发现了，可以前文所述去处理，也就不再赘述</p>
-<p>对于单纯的技术不熟练，就如前文所述，要去设计刻意练习。比如我就曾设计过对数据库的增删改查的一组训练以提升自己的速度，使得我即便使用TDD依然保持一个极高的速度。我们自己没有意识到，基础能力的不熟练对于我们的高级能力的限制有多严重，这种体验也只有基础能力已经熟练的人去教基础能力不熟练的人一些高级技能的时候才会发现。这种视而不见的收益，使得大多数人都会轻视基本功的练习。哪怕已经获得收益的人，也容易鼓吹要更多的启发而忽略了基本功的价值。</p>
-<p>对于花了太多时间在纠结上，这其实也是一种不熟练，是对设计知识和能力的不熟练。之前看的设计知识只能有一个大概的感觉，对于每个知识的边界、使用之后的发展、如何从一种设计过渡为另一种设计了解不清，从而害怕在那一刻犯错。实际上真正值得纠结的部分没有那么多，大多是自己吓自己，或者引入了过度设计。当然也有一种情况是暴露出了架构级的问题，比如我们对于应该提出的原则性规范没有提出，所以导致我们每个地方都要现想，大家可以想象没有RESTful之前设计Web API，我们可能真的是每一个API都现想的，有了它之后，我们的纠结时间就变少了。这种情况下，通过本方法，架构师也算是有了相应的数据支持，那么架构师也就有了发现问题的一种工具。</p>
-<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>总的来说，任务列表法＋PDCA式工作法形成的组合方法，是一个通过逐渐提升个人能力以达到高效工作的方法。这两种方法单独拿出来用，都会由于各自的局限而有各自的天花板，只有有机的结合才能真正突破这个天花板。刚开始使用起来，对于很多人来说会有一些痛苦，这一点上我只能说，提升就是痛苦的，而新的习惯一旦养成，痛苦也就不翼而飞，所以美国心理学之父威廉詹姆士说，“我们需要在尽可能早的时候，让尽可能多的有用的动作变成自动的和习惯的……一段痛苦的艰难时期之后就是自由的时光”。当我们基础能力达到一个极高的效率之后，我们会发现我们争取自由的筹码会变得更多。</p>
-<h2 id="广告时间"><a href="#广告时间" class="headerlink" title="广告时间"></a>广告时间</h2><p>有人可能会觉得列出符合上文所述标准的任务列表比较难，欢迎阅读拙作《像机器一样思考》系列文章：</p>
-<p><a href="https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-01/">像机器一样思考（一）—— 宏观的基础</a><br><a href="https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-02/">像机器一样思考（二）—— 数据的细节</a><br><a href="https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-03/">像机器一样思考（三）—— 穷尽就是力量</a><br><a href="https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-04/">像机器一样思考（四）—— 一图抵千言</a><br><a href="https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-05/">像机器一样思考（五）—— 第一个应用</a><br><a href="https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-06/">像机器一样思考（六） —— 脑中的重构</a><br><a href="https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-07/">像机器一样思考（七） —— 跨应用思考</a></p>
 
       
     </div>
@@ -1175,7 +1141,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

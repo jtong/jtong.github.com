@@ -201,6 +201,83 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://jtong.github.io/2020/07/20/something-about-software-development/developing-process-management/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="仝键">
+      <meta itemprop="description" content="写写心得，写写教程，希望能帮助更多人成为优秀的软件开发人员">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="铜剑技校">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/20/something-about-software-development/developing-process-management/" class="post-title-link" itemprop="url">开发工序管理</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-07-20 23:33:00 / 修改时间：23:35:49" itemprop="dateCreated datePublished" datetime="2020-07-20T23:33:00+08:00">2020-07-20</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="什么是开发工序管理"><a href="#什么是开发工序管理" class="headerlink" title="什么是开发工序管理"></a>什么是开发工序管理</h2><p>所谓的开发工序管理，就是把开发人员的工作步骤管理起来，以期其产出的代码达成组织期望的代码质量。</p>
+<h2 id="为什么需要工序管理"><a href="#为什么需要工序管理" class="headerlink" title="为什么需要工序管理"></a>为什么需要工序管理</h2><p>DevOps的理想和现实面前，有一个开发工序管理的鸿沟。<br>很多组织落地DevOps时，只把工具链、平台都搭好了，但并没有项目在这个平台上按照DevOps期望的节奏运转，也就是不能快速发布，价值并不能持续的流动，基本上都是卡壳的。<br>这是由于开发人员不能生产出可以快速回归的软件，自然不能快速发布，就算是快速发布了，也是可能有质量问题隐藏在其中。</p>
+<p>这个问题持续不能解决的原因是因为开发人员缺乏开发者自测试的能力，需要规模化写测试的能力，否则我们无法形成可快速回归验证的软件。如果不能规模化写测试的能力的话，DevOps的落地最后就是开着敞篷跑车上太空，就算你飞上过去一次，也不应该有第二次。</p>
+<p>规模化之前，我们先看一个胜任的个体是什么样，我们横向比较一个开发者自测试能力强的和一个这方面弱的程序员的工作就会发现他们的工作步骤完全不同。</p>
+<p>强的开发人员能够按照架构设计把需求分解为可测试步骤组成的工序，并能按照工序高效得写出有测试保护的代码。弱的人则只能拆解为写代码的步骤，至于能不能测试，就不再考虑范围之内了。尽管他们后续的工作时间都差不多，但是产出的代码一个有测试，一个没有，而且也很难加。</p>
+<p>而在我们过去的过程改进经验中，能够按照架构设计把需求分解为可测试步骤这件事，并不容易，需要特定的胜任力——分析型思考和少量的概念性思考，而这两者在软件开发人员当中是很稀缺的。于是导致前一种工序很难被推广开来，而不解决这个问题，我们产出的软件始终是一个难以快速回归的软件，所以我们需要工序管理，可以帮助我们规范开发人员的行为，规模化的使开发人员可以高效的产出有测试保护的代码。</p>
+<h2 id="怎么做工序管理"><a href="#怎么做工序管理" class="headerlink" title="怎么做工序管理"></a>怎么做工序管理</h2><p>在讲解怎么做工序管理之前，首先要讲一个概念：杠杆率。</p>
+<p>杠杆率就是我们认为胜任的高级人员（后面称之为Sr.)和不完全胜任的初级人员（后面称之为Jr.）之间的比率，比如一个Sr.带着5个Jr.杠杆率就是5，称之为杠杆率高，反之，如果2个Sr.带1个Jr.杠杆率是0.5，称之为杠杆率低。</p>
+<p>那么介绍这个概念的目的自然是，在杠杆率不同的情况下，工序管理的手段是不同的。</p>
+<p>如果杠杆率比较低，也就是初级人员是宝贝，高级人员团队里到处都是，那么就不用费劲了，给初级人员设置个导师，一个不过瘾还可以多设置几个。一副江南七怪教郭靖的架势（这个比喻应该还不算过时吧……），一群老师盯着你输出的代码耳提面命，我就不信你学不会。<br>这也是为什么早期的工程实践方法论里，较少提到这个概念的原因，因为在当时的西方社会里，低杠杆率是普遍现象。</p>
+<p>然而在中国，这个现象则完全不成立。我们这个行业以25%的增长率暴增了这么多年，现在的情况是，不但杠杆率高，而且Sr也未必胜任。这个时候我们就需要针对目前的现象进行更适合中国特色的工序管理。</p>
+<p>首先我们要聊一聊架构，因为架构是指导如何进行工序分解的，对于我们怎么做日常编码工作是有强烈的指导意义的。如果架构本身就不是容易测试的，那么对应的工序也就很难形成，或者其中某些步骤的测试成本过高。由于我们这个行业发展过快，我不确定我们现在的架构师们，是否在这件事上是普遍胜任的，从现状来看，普遍不胜任可能更接近事实。可能工序管理的第一步还是先帮助架构师搞出可测试性比较高的架构才行，起码别跑个测试还要上硬件或者部署到UAT环境，那就不太合适了。</p>
+<p>接着，我们需要给我们的Sr人员进行培训，让他们的可以做到“按照架构设计把需求分解为可测试步骤组成的工序，并能按照工序高效得写出有测试保护的代码”。然后由初级的人员，按照工序编写代码。</p>
+<p>接着，就是工时管理，我们拆分出的每个任务，都应该在一个固定的时间内完成，如果没有在固定的时间内完成，我们则视为是一个事故，需要针对该事故做分析并提出改进计划。通常就可以发现要么是工序拆解的有问题，要么是初级人员的能力有问题，都可以针对性的进行能力建设。</p>
+<h2 id="落地的细节"><a href="#落地的细节" class="headerlink" title="落地的细节"></a>落地的细节</h2><h3 id="架构师是否拆解工序"><a href="#架构师是否拆解工序" class="headerlink" title="架构师是否拆解工序"></a>架构师是否拆解工序</h3><p>架构师首先应该学会这件事，毕竟他要能解决工序如何拆分的问题。所以还要打个样，看看工序怎么拆分，是不是可以拆为生产可测试代码的工序。然后他自己也要写一下代码，看看工序映射为代码的过程是否会遇到障碍，有时候自己写一下会发现之前很多关键细节没有想清楚，这对于架构师也是有好处的。</p>
+<h3 id="Sr首先自己要胜任"><a href="#Sr首先自己要胜任" class="headerlink" title="Sr首先自己要胜任"></a>Sr首先自己要胜任</h3><p>这点其实也不是很常见的一件事，毕竟不胜任在我们这个行业太普遍了。Sr首先自己要能拆出来可以测试的步骤，而这一点其实并不容易。首先是对于很多人来说，能够分解为可测试的每一步就已经很挑战了，而当把这些步骤映射为代码时候，我们会发现更多的人根本不能按照自己所划分的任务进行正确的映射。写代码的步骤可能和划分的步骤完全对不上，更不要说每一步都可测试了。这里是能力建设的一个关键点。</p>
+<h3 id="优化无止境"><a href="#优化无止境" class="headerlink" title="优化无止境"></a>优化无止境</h3><p>通过对工序的完成时间进行追踪，我们不但可以得到高效的个人，还可以发现效率的瓶颈，进一步的改进工序，比如开发一些工具。</p>
+<h3 id="工序管理是否复辟了软件蓝领的概念"><a href="#工序管理是否复辟了软件蓝领的概念" class="headerlink" title="工序管理是否复辟了软件蓝领的概念"></a>工序管理是否复辟了软件蓝领的概念</h3><p>先说结论，并不是。因为软件蓝领是只写代码，把程序员压缩在编码在一个小环节里面，不端到端考虑问题，不管需求，不考虑怎么测试。<br>而工序管理只是压缩在了一个更小的问题域里，但是这个问题仍然是需要理解、需要思考、需要测试的。<br>我们要承认普通开发人员可能在当前阶段的认知水平不高，所以我们的工序管理是一个生手和熟手配合的工作方式，是追求一种更大杠杆率的生手和熟手配合的场景。<br>通过高级别人的人一种更高效的传帮带的方式教会普通开发在当前业务下、当前架构下进行工序分解的能力。当生手的认知能力变得提高之后，他可以自然的去解决更大的问题，而不是把开发人员从高级工作中隔离出来，异化为一个可以随时被替换的螺丝钉。</p>
+<p>比起软件白领与软件蓝领的关系，高级开发人员和初级开发人员更像师傅带徒弟的关系或者是教练和运动员的关系。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://jtong.github.io/2020/01/29/deliberate-practice-for-digital-talent/what-worth-to-be-learn/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -232,7 +309,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-25 17:02:28" itemprop="dateModified" datetime="2020-06-25T17:02:28+08:00">2020-06-25</time>
+                <time title="修改时间：2020-07-20 23:35:49" itemprop="dateModified" datetime="2020-07-20T23:35:49+08:00">2020-07-20</time>
               </span>
 
           
@@ -365,7 +442,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-25 17:02:28" itemprop="dateModified" datetime="2020-06-25T17:02:28+08:00">2020-06-25</time>
+                <time title="修改时间：2020-07-20 23:35:49" itemprop="dateModified" datetime="2020-07-20T23:35:49+08:00">2020-07-20</time>
               </span>
 
           
@@ -522,7 +599,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-25 17:02:28" itemprop="dateModified" datetime="2020-06-25T17:02:28+08:00">2020-06-25</time>
+                <time title="修改时间：2020-07-20 23:35:49" itemprop="dateModified" datetime="2020-07-20T23:35:49+08:00">2020-07-20</time>
               </span>
 
           
@@ -617,7 +694,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-25 17:02:28" itemprop="dateModified" datetime="2020-06-25T17:02:28+08:00">2020-06-25</time>
+                <time title="修改时间：2020-07-20 23:35:49" itemprop="dateModified" datetime="2020-07-20T23:35:49+08:00">2020-07-20</time>
               </span>
 
           
@@ -866,7 +943,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-25 17:02:28" itemprop="dateModified" datetime="2020-06-25T17:02:28+08:00">2020-06-25</time>
+                <time title="修改时间：2020-07-20 23:35:49" itemprop="dateModified" datetime="2020-07-20T23:35:49+08:00">2020-07-20</time>
               </span>
 
           
@@ -957,7 +1034,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-25 17:02:28" itemprop="dateModified" datetime="2020-06-25T17:02:28+08:00">2020-06-25</time>
+                <time title="修改时间：2020-07-20 23:35:49" itemprop="dateModified" datetime="2020-07-20T23:35:49+08:00">2020-07-20</time>
               </span>
 
           
@@ -1040,7 +1117,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-25 17:02:28" itemprop="dateModified" datetime="2020-06-25T17:02:28+08:00">2020-06-25</time>
+                <time title="修改时间：2020-07-20 23:35:49" itemprop="dateModified" datetime="2020-07-20T23:35:49+08:00">2020-07-20</time>
               </span>
 
           
@@ -1126,7 +1203,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-25 17:02:28" itemprop="dateModified" datetime="2020-06-25T17:02:28+08:00">2020-06-25</time>
+                <time title="修改时间：2020-07-20 23:35:49" itemprop="dateModified" datetime="2020-07-20T23:35:49+08:00">2020-07-20</time>
               </span>
 
           
@@ -1209,7 +1286,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-25 17:02:28" itemprop="dateModified" datetime="2020-06-25T17:02:28+08:00">2020-06-25</time>
+                <time title="修改时间：2020-07-20 23:35:49" itemprop="dateModified" datetime="2020-07-20T23:35:49+08:00">2020-07-20</time>
               </span>
 
           
@@ -1236,90 +1313,6 @@
 <h3 id="成才三要素之三——降低废品率"><a href="#成才三要素之三——降低废品率" class="headerlink" title="成才三要素之三——降低废品率"></a>成才三要素之三——降低废品率</h3><p>解决了闭环、频率问题之后，还有一个不得不面对的因素：废品率。<br>在练习过程当中，并不是所有的练习都是有价值的，大量的练习都是无效的，甚至有些是错误的，在反思阶段会产生反模式。<br>随着闭环次数的增多，熟练度就会提升，不但正确的做法的熟练度会上升，错误做法的熟练度也会上升，如果反思阶段思考的不足，还会得到一些既不是正确做法也不是错误做法的纯粹的无效做法的熟练度。<br>这些熟练度都是问题，都是成长过程中的废品，而如何降低废品率，是高段位竞争者之间的胜负手。<br>这个的获得可以靠反思的时候总结，也可以靠阅读实践者的文章书籍。<br>比如如果纯自己摸索可能最后总会获得大泥球的架构，但是如果阅读了DDD之类的文章书籍就能知道可以靠上下文和聚合的方式进行解耦。<br>但是这种实践者写的书籍不像具体的知识那样好懂，通常都是非常抽象的。没有懂行的人指导或研讨，跟看天书也差不多。有时跨过了理解这个坎，又会发现现实环境不允许你进行试验。不管工作流程还是协作方式，从根本上限制了问题的根本解决。（不然问题早就解决了）</p>
 <h2 id="道场建设的窘境"><a href="#道场建设的窘境" class="headerlink" title="道场建设的窘境"></a>道场建设的窘境</h2><p>在分析了刻意练习的原模型之后，我们会发现，在今天这个时代，能力建设最大的瓶颈是道场，如何将道场建设起来，比学习知识重要的多，好的练习、好的环境、好的同学比其他的都要重要。</p>
 <p>而现实中，最大的道场就是实际工作环境。所以不管能力建设在开始看起来多么人畜无害，由于涉及到工作环境的改造，最终都会影响到组织的改造和调整。想想也是合理的，按照康威定律，什么样的组织架构需要什么样的软件架构匹配，什么样的软件架构需要什么样的能力匹配，如果旧的环境能够提供足够的练习场，那么能力建设根本就不是个问题，既然能力建设是个问题了，那么在能力建设的需求下，现有组织架构必然是要进行改进的。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://jtong.github.io/2018/12/17/deliberate-practice-for-digital-talent/two-behavior-pattern-and-three-axis/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="仝键">
-      <meta itemprop="description" content="写写心得，写写教程，希望能帮助更多人成为优秀的软件开发人员">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="铜剑技校">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2018/12/17/deliberate-practice-for-digital-talent/two-behavior-pattern-and-three-axis/" class="post-title-link" itemprop="url">两种行为模式与三根轴</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2018-12-17 19:59:00" itemprop="dateCreated datePublished" datetime="2018-12-17T19:59:00+08:00">2018-12-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-25 17:02:28" itemprop="dateModified" datetime="2020-06-25T17:02:28+08:00">2020-06-25</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="絮絮叨叨的开场"><a href="#絮絮叨叨的开场" class="headerlink" title="絮絮叨叨的开场"></a>絮絮叨叨的开场</h2><p>上一篇<a href="https://jtong.github.io/2020/01/30/deliberate-practice-for-digital-talent/presepective-of-requirement/">需求的视角</a>，我们介绍了一种可以让人回归场景的的小工具，避免在实现功能时的需求理解问题。但是在我们很好地理解了需求之后，在实现过程中，就会一帆风顺么？也不是的。</p>
-<p>我们工作久了，就会发现有些人资质很好，有些人资质就很差。你会发现，有些人会考虑的比较有深度，有些人就不行。到底什么是深度呢？我不太能理解这个词，于是我继续观察。从外在看呢，我们会发现他们的行为表现有差别。我称之为工人的行为模式和工程师的行为模式。这两种行为模式在面对问题的时候差别尤为明显。</p>
-<p>一个工人行为模式的人，遇到问题的时候，采取的方式就是直接把做过的行为再做一遍，期望能有所不同。比如装个环境，遇到问题了，就把执行的命令再执行一遍。</p>
-<p>而工程师行为模式的人，遇到问题的时候，却什么都不着急做，往往是盯着出错的屏幕若有所思，片刻之后，突然说“哦，我知道了”，然后一下就把问题解决了，仿佛是在脑子里Debug。</p>
-<p>我们打开看呢，你会发现他们的思考问题的维度是有差别的。我一直找不到一个好的模型来解释这种思维模式的差别，直到我在一本叫《创新算法》的书里面看到有个三轴分析的模型，可以较好的描述这个维度差别：</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/two-behavior-pattern-and-three-axis/pic-01.png" alt="三轴分析"></p>
-<p>按照三轴分析的模型，我们思考一个机器，要从三个维度去思考，一是操作，就是人是怎么操作这个机器的；一是系统，就是这个系统都有哪些组件，这些组件都有什么关系；三就是因果，就是当人进行某种操作，到看到结果之间，一步步是怎么发生的，哪些组件起了作用，出了问题又是哪些组件没搭配对或者那个组件出故障了，或者操作本身是不是做错了。简单讲因果轴就是前两轴的动态关系。</p>
-<p>计算机虽然精密，它也是一台机器，这上面跑的软件也没有任何的魔法，一样是适用于三轴分析的。</p>
-<p>所谓像工人行为模式的人，其实就是指关注操作轴的知识，而对下面的系统轴和因果轴关心较少造成的。我曾经在面试的时候，让一个人讲他用到的一个框架的原理，结果他在白板上一顿乱画，我始终没看到组件有哪些，互相又是怎么配合的，最后发现，他是按照界面在描述那个框架的（很多框架都提供跟eclipse集成的GUI操作界面），他说的全都是在哪界面上填什么信息，然后就会有什么效果。只能用操作轴的信息来描述一款框架，这种行为也就是我们所谓的没有深度。</p>
-<p>这样的例子在行业里比比皆是，我们在培训中就曾经碰到过一件哭笑不得的事情，比如在进行一些代码操练的工作坊的时候，让学员使用intellij来进行编程，一些有多年工作经验的学员写的代码出了编译错误，说这一定是你这个IDE的问题，我用eclipse这么写就没问题。当面用eclipse打开，依然是编译错误，就没话说了。还有远程就不会断点调试、配了log4j就抱怨e.printStackTrace()不打印了等等奇葩的例子就不展开聊了（但不写出来吐槽一下是真难受，我的一个朋友经常吐槽，为什么这个行业里这么多“业余”的人。说实话，我也是有点绝望的……），其实这些都是一个问题，就是只关注操作轴，关注的久了，所有的技能都只用操作轴的信息来编码，换个界面就武功全废，也是很多人觉得编程只能是青春饭的原因。</p>
-<p>而工程师行为模式的人，一定不会只关注操作轴维度的信息，他们会打开系统，看到系统内部构造和系统到底是怎么运转的。由于对这些东西非常了解了，才能盯着屏幕上的日志，在脑子里模拟代码的运行，推理自己可能哪里出错了。</p>
-<p>要想做到这一点，其实并没有什么魔法。我们用到的绝大多数框架、库、工具都是开源软件。开源软件都是很慷慨的把自己的机制、代码都放在了网上，完全没有信息壁垒。如果我们在读完入门案例后，还去读读Manual或Reference（有余力也可以读读源代码）我们不但会对系统的组件和系统的运转机制有更深入的了解，而且会在操作层面多一些新技能，当我们施展出来，还会有人惊呼“还有这种操作”。唯一需要做的就是认认真真读文档，照着文档写几个demo，编程初学者的话，把API doc都读读是最好的。然而这一件简单的事，竟然都成了少有人走的路。</p>
-<p>所以对于开发人员来说，想要成为一名合格的工程师，只关注操作轴肯定是不行的，在学习的过程中要刻意的逼迫自己去关注系统轴和因果轴。不过这确实不是一件容易的事，不同于普通机器，软件的复杂度要高得多。咱们软件业有一句话说，没有什么问题是不能通过添加一个中间层来解决的（如果有就再添加一层），所以学习过程中会不断的发现，自己被一个抽象层挡住了。需要重新用三轴分析工具分析一下，抽象层的下面又是什么。学无止境，无尽的三轴。</p>
-<p>本次讲的刻意练习其实是最简单的：阅读，写demo，这些都是优秀程序员的基本功。也是最难的一个，因为实在是太枯燥了，以刻苦的学习击穿认知的次元壁从来也是少数人才能达成的成就，但其实你仔细去观察那些少数人的时候，你会发现他们有些小技巧，能把苦变得有趣，这里就介绍几个小技巧。</p>
-<h2 id="Demo法"><a href="#Demo法" class="headerlink" title="Demo法"></a>Demo法</h2><p>写一些小demo其实非常有助于建立起从操作到系统的映射，并可以通过下载开源代码及单步调试来理清中间到底发生了什么。由于demo都很小，很容易快速的建立收获感，你不会觉得做了很久没有任何收获，从而放弃。也不需要很大块的时间来做，导致每次学习都死于起手式。</p>
-<p>我的前同事李鹏是此中高手，他有一篇文章《<a href="https://www.jianshu.com/p/e4a8a48ee69c" target="_blank" rel="noopener">当我拿到一个前后端实现todolist的学习任务时，我应该怎么做？</a>》中，把任务分解（我们下一篇就讲这个）和demo法结合在一起，大家感兴趣可以看看。受他影响，我也做了一个小github组织，来放自己的demo：<a href="https://github.com/jtong-demos" target="_blank" rel="noopener">https://github.com/jtong-demos</a> 可惜最近几个月太忙就没时间更新了，不过也看出了另外一个优点，等我忙过这阵，想要捡起来的时候，这些demo会比网上的什么资料都快。</p>
-<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><p>为了深入到另外两个轴去，阅读当然很重要，但是对于大多数人来说枯燥是最大的退却原因。所以我在之前带学生的时候，都要求他们输出，写博客。有输出，枯燥感就会下降一些。但是写文章本身也很累，而且很容易变成抄书，所以我们后来又找到了另外一个工具：概念图。</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/two-behavior-pattern-and-three-axis/pic-02.png" alt="概念图工具的概念图"></p>
-<p>可以用节点来表达组件，用线上的关系来表达组件之间的关系，非常适合表达系统和因果轴，可以更轻量的进行输出（具体怎么用，简书上一搜一大堆，我就不写了）。其实我之前介绍的<a href="https://jtong.github.io/2020/01/30/something-about-software-development/visualize-arch-design-introduce-c4/">C4</a>，就可以看作是一种特殊的概念图。</p>
-<h2 id="小节"><a href="#小节" class="headerlink" title="小节"></a>小节</h2><p>如前所述，我们学习软件相关的知识，可以借用三轴分析法，从操作、系统和因果三个角度扩展自己的认知。只有这样才能成为专业人士，刻意的阅读、输出、写demo，这简单的几件事，能做到的人却很稀有，这也是为什么优秀的工程师非常稀有的缘故，我们公司的数据，一个业务分析师或者QA，只要聪明，进入公司，差不多1年就可以比较独当一面，而开发人员，大都需要三年。大多数人都喜欢走易走的路，而难走的路反而是人少的捷径，坚持做好这几个动作，就是提升自己的捷径。</p>
 
       
     </div>
@@ -1405,7 +1398,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
