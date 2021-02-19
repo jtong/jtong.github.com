@@ -232,7 +232,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-10 19:18:45" itemprop="dateModified" datetime="2020-09-10T19:18:45+08:00">2020-09-10</time>
+                <time title="修改时间：2021-02-19 15:37:10" itemprop="dateModified" datetime="2021-02-19T15:37:10+08:00">2021-02-19</time>
               </span>
 
           
@@ -251,7 +251,7 @@
 <p>一个工人行为模式的人，遇到问题的时候，采取的方式就是直接把做过的行为再做一遍，期望能有所不同。比如装个环境，遇到问题了，就把执行的命令再执行一遍。</p>
 <p>而工程师行为模式的人，遇到问题的时候，却什么都不着急做，往往是盯着出错的屏幕若有所思，片刻之后，突然说“哦，我知道了”，然后一下就把问题解决了，仿佛是在脑子里Debug。</p>
 <p>我们打开看呢，你会发现他们的思考问题的维度是有差别的。我一直找不到一个好的模型来解释这种思维模式的差别，直到我在一本叫《创新算法》的书里面看到有个三轴分析的模型，可以较好的描述这个维度差别：</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/two-behavior-pattern-and-three-axis/pic-01.png" alt="三轴分析"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/two-behavior-pattern-and-three-axis/pic-01.png" alt="三轴分析"></p>
 <p>按照三轴分析的模型，我们思考一个机器，要从三个维度去思考，一是操作，就是人是怎么操作这个机器的；一是系统，就是这个系统都有哪些组件，这些组件都有什么关系；三就是因果，就是当人进行某种操作，到看到结果之间，一步步是怎么发生的，哪些组件起了作用，出了问题又是哪些组件没搭配对或者那个组件出故障了，或者操作本身是不是做错了。简单讲因果轴就是前两轴的动态关系。</p>
 <p>计算机虽然精密，它也是一台机器，这上面跑的软件也没有任何的魔法，一样是适用于三轴分析的。</p>
 <p>所谓像工人行为模式的人，其实就是指关注操作轴的知识，而对下面的系统轴和因果轴关心较少造成的。我曾经在面试的时候，让一个人讲他用到的一个框架的原理，结果他在白板上一顿乱画，我始终没看到组件有哪些，互相又是怎么配合的，最后发现，他是按照界面在描述那个框架的（很多框架都提供跟eclipse集成的GUI操作界面），他说的全都是在哪界面上填什么信息，然后就会有什么效果。只能用操作轴的信息来描述一款框架，这种行为也就是我们所谓的没有深度。</p>
@@ -263,7 +263,7 @@
 <h2 id="Demo法"><a href="#Demo法" class="headerlink" title="Demo法"></a>Demo法</h2><p>写一些小demo其实非常有助于建立起从操作到系统的映射，并可以通过下载开源代码及单步调试来理清中间到底发生了什么。由于demo都很小，很容易快速的建立收获感，你不会觉得做了很久没有任何收获，从而放弃。也不需要很大块的时间来做，导致每次学习都死于起手式。</p>
 <p>我的前同事李鹏是此中高手，他有一篇文章《<a href="https://www.jianshu.com/p/e4a8a48ee69c" target="_blank" rel="noopener">当我拿到一个前后端实现todolist的学习任务时，我应该怎么做？</a>》中，把任务分解（我们下一篇就讲这个）和demo法结合在一起，大家感兴趣可以看看。受他影响，我也做了一个小github组织，来放自己的demo：<a href="https://github.com/jtong-demos" target="_blank" rel="noopener">https://github.com/jtong-demos</a> 可惜最近几个月太忙就没时间更新了，不过也看出了另外一个优点，等我忙过这阵，想要捡起来的时候，这些demo会比网上的什么资料都快。</p>
 <h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><p>为了深入到另外两个轴去，阅读当然很重要，但是对于大多数人来说枯燥是最大的退却原因。所以我在之前带学生的时候，都要求他们输出，写博客。有输出，枯燥感就会下降一些。但是写文章本身也很累，而且很容易变成抄书，所以我们后来又找到了另外一个工具：概念图。</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/two-behavior-pattern-and-three-axis/pic-02.png" alt="概念图工具的概念图"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/two-behavior-pattern-and-three-axis/pic-02.png" alt="概念图工具的概念图"></p>
 <p>可以用节点来表达组件，用线上的关系来表达组件之间的关系，非常适合表达系统和因果轴，可以更轻量的进行输出（具体怎么用，简书上一搜一大堆，我就不写了）。其实我之前介绍的<a href="https://jtong.github.io/2020/01/30/something-about-software-development/visualize-arch-design-introduce-c4/" target="_blank" rel="noopener">C4</a>，就可以看作是一种特殊的概念图。</p>
 <h2 id="小节"><a href="#小节" class="headerlink" title="小节"></a>小节</h2><p>如前所述，我们学习软件相关的知识，可以借用三轴分析法，从操作、系统和因果三个角度扩展自己的认知。只有这样才能成为专业人士，刻意的阅读、输出、写demo，这简单的几件事，能做到的人却很稀有，这也是为什么优秀的工程师非常稀有的缘故，我们公司的数据，一个业务分析师或者QA，只要聪明，进入公司，差不多1年就可以比较独当一面，而开发人员，大都需要三年。大多数人都喜欢走易走的路，而难走的路反而是人少的捷径，坚持做好这几个动作，就是提升自己的捷径。</p>
 
@@ -316,7 +316,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-10 19:18:45" itemprop="dateModified" datetime="2020-09-10T19:18:45+08:00">2020-09-10</time>
+                <time title="修改时间：2021-02-19 15:37:10" itemprop="dateModified" datetime="2021-02-19T15:37:10+08:00">2021-02-19</time>
               </span>
 
           
@@ -335,21 +335,21 @@
 <p>吐槽虽然可以让人很爽，但不能解决问题，只是享受了优越感。作为以能力建设为己任的培养者，这种优越感反而是一种打脸，毕竟学员能做到才是我的成功，他做不到我能做到有啥好优越的呢，让他做到才是我应该追求的优越感。所以我就陷入了深深的思索，到底怎么能让学员把需求理解清楚呢？看着他们，我开始反观内视我自己，我是如何做到的呢？</p>
 <p>首先我想到，这个是个场景思考的问题，虽说思考用户场景，很多公司是PO、BA或产品经理的工作，但所谓好的程序员要能顶上半个产品经理，既然我们说是数字人才，每个人都要能理解软件的使用场景才行。我自己就是会拿到需求后，在脑子里重新构建场景。然而道理说起来简单，做起来并不简单，不管我强调多少次，要关注场景，结果也不会好，会的立刻恍然大悟（那种恍然大悟是一种原来我这种做法还有名字的感觉……），大部分不会的人还是那样……</p>
 <h2 id="跳出盒子外"><a href="#跳出盒子外" class="headerlink" title="跳出盒子外"></a>跳出盒子外</h2><p>进过长期的观察，我发现他们是在盒子内思考，而跳不出盒子外。</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/presepective-of-requirement/pic-01.png" alt="跳到盒子的外面，才能发现场景"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/presepective-of-requirement/pic-01.png" alt="跳到盒子的外面，才能发现场景"></p>
 <p>什么是盒子内思考呢？比如一支白板笔。</p>
 <p>如果我在白板笔的盒子内看的话。我就会看到笔帽，笔芯和笔管。我可能会关注，笔芯是海绵的，笔帽和笔管是塑料的，不是金属的。这样思考就有一个问题等我考虑到颜料的时候，我就不知道应该采用什么样的原料。就必须要问一个问题，这个白板笔是用来干嘛用？因为如果我在盒子里看白板这个东西，对我是没有任何含义的。</p>
 <p>那盒子外就很好理解了，同样是描述一支白板笔，我要考虑他，写出来的东西好不好擦。写出来的字迹是否清晰可见？粗细是否适中？能用多长时间？成本是多少是，买一个新的还是加墨水儿更合适？一旦跳到盒子外，我还要考虑多角色比如制造商，分销商，销售终端，买家不同角色看他的视角。小小一支笔，也不是那么简单的。</p>
 <p>回归软件开发的上下文，盒子内就是功能视角，比如：学习平台要有写成长日志的功能。盒子外则是业务视角，比如：学员参加了学习后，每天要写成长日志，总结当日所学，练习总结能力，助教要给他们进行检查和反馈。比起前者，后者很容易想到，既然是练习总结能力，是不是应该有模板和范文？</p>
 <p>我常试好多的方法，试图让初学者可以跳出盒子外，大部分都没啥效果，不要说初学者不会，很多工作过多年的人也有这类问题，也学不会。也曾一度让我怀疑，这是一种天赋，好在不想对天赋低头的心，最终还是找到了一种实操性很好的方法。</p>
 <h2 id="故事线"><a href="#故事线" class="headerlink" title="故事线"></a>故事线</h2><p>我会要求学生画一种图。我们管它叫故事线，是一种场景思维的辅助工具。</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/presepective-of-requirement/pic-02.png" alt="故事线"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/presepective-of-requirement/pic-02.png" alt="故事线"></p>
 <p>这个工具是这样的用的，每当你要做一个功能，就画一条故事线，在故事线里面，首先你要定义故事起点。这个故事的起点是一个业务动机。比如说一个系统可以创建用户，那么这个创建用户的业务动机是什么呢？我问出去的时候，学生们就会开始思考，想到了说创建用户的业务动机是有一个新人入职了。</p>
 <p>有了业务动机，别人才会使用你的系统，否则你的系统只是你的自嗨而已。不要说学生了，很多工作多年的人在设计系统的时候，依然不思考这个问题。有了动机，你也可以去对比各种不同的解决方案，去想有没有更好的解决方案？比如在我们这个例子里，动机就是有人入职了要创建用户，但那么有人入职了之后，谁会来这个系统里面创建用户呢？这就涉及到方案的不同。可能我们定义的角色是hr。也可能我们这是一家小公司，反正就是那么几个人，最后就跟一个系统管理员说一声，他登上来录进去就好了，对于一家小公司来说，这也可以接受，所以你就会发现，这两个都是可行的方案。</p>
 <p>我们在实践中发现，有了业务动机这个概念之后，大家就会对场景有更多的思考，也能协作着来对比方案而不是瞎吵架了。</p>
 <p>故事线的后面就比较好画了。我们就画他在这个系统里面为了满足他的业务动机，他需要一步一步怎么做的。注意只画成功路径，过程中遇到的异常，先不要考虑。这对很多人来说，也是一个很难做到的事情。</p>
 <p>在故事线的最后，需要画出来说，这个故事结束了之后，那么最终，业务的下一个起点是什么？</p>
 <p>还是以创建用户为例，当我们为用户创建完了之后，我们的下一步是什么呢？下一步可以试试，发个邮件给用户，也可以是，把用户名密码拷给，我们的新员工本人或者他的经理。</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/presepective-of-requirement/pic-03.png" alt="学生做的一个案例"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/presepective-of-requirement/pic-03.png" alt="学生做的一个案例"></p>
 <h2 id="小节"><a href="#小节" class="headerlink" title="小节"></a>小节</h2><p>如前所述，很多人是没有场景思维的，他想问题只能想到这个盒子内，而跳不到盒子外去关注使用它的场景。对于这种情况，我们就算明确的指出，他没有场景化思维，大部分情况下是不会有任何的作用的，大部分人依然没有场景化思维。他就像我《数字人才的刻“意”练习——开篇》里讲到的画画需要关注线条一样，我们需要告诉大家，应该关注在什么地方才会具有场景化思维。那么在这种情况下，我们只需要给他一个非常好的辅助工具，他就真的可以做到跳到盒子外。故事线就是这样一个工具。实践中发现，哪怕是毕业生，几次练习之后也可以快速掌握这种思维方式，更不要说有多年工作经验的程序员。</p>
 <p>虽然在我们项目中是有所谓的业务分析师的，但是优秀的程序员一定会在脑子里重建这些场景。如果程序员不能以这样的方式画出来的话，那么程序员做开发的时候也会出现一些问题，比如没有想全，做出来的程序有问题的情况。所以教给程序员自己这么思考问题是非常重要的，在理解完业务分析师传达的需求之后，可以在脑子里把这条线画出来，非常有价值。</p>
 
@@ -402,7 +402,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-10 19:18:45" itemprop="dateModified" datetime="2020-09-10T19:18:45+08:00">2020-09-10</time>
+                <time title="修改时间：2021-02-19 15:37:10" itemprop="dateModified" datetime="2021-02-19T15:37:10+08:00">2021-02-19</time>
               </span>
 
           
@@ -432,13 +432,13 @@
 </li>
 </ol>
 <p>第一点说的是什么呢？在体力工作者的上下文里，我们是拆成流程来工作的，每个环节的人不需要懂上个环节的知识，做好自己这个环节就好了，你想象一下流水线上的工人，彼此其实只要做好自己的事情就好了，不懂上下游的知识和技能也无所谓。这就是所谓的正交，彼此不需要了解，不了解也互不干扰工作。但知识工作不一样，知识工作固然也是拆成流程来做的，但是知识工作里有个极为重要的动作叫反馈，就是下游接收到上游信息的时候，要告诉上游自己理解了没有、上游的信息哪里是落不了地的等等，尤其在复杂知识工作上下文里，反馈可以说是最重要的事情，没有之一。你想要反馈，你就必须至少需要懂得上游的一个环节的人的部分心智模型，否则反馈也反馈不到点子上。注意，是至少，通常你需要懂得要超过一个环节，因为反馈往往不只跨一个环节，如下图所示：</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/talk-about-digital-talent/pic-01.png" alt="知识工作者协作信息流"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/talk-about-digital-talent/pic-01.png" alt="知识工作者协作信息流"></p>
 <p>如果仅仅是第一点，还不是什么大不了的事情，毕竟大家一起工作，时间久了总能了解自己的上游环节的心智模型，互联网行业里都有好的程序员相当于半个产品经理的说法，问题在于第二点。我们做工作如果只追求按部就班，那就慢慢被竞争对手干掉了，每个企业都是要追求效率提升的。要提升效率就得回答一个问题，到底知识工作者的效率是怎么提升的，所以才有这个第二点，也是彼得德鲁克的观点：知识工作者的效率提升在于对what回答，而不是对how的回答。</p>
 <p>什么是对how的回答呢？也就是说在每个环节提问怎么做才能提升效率，每个环节的输入和输出都是固定的，也就是待完成的事情的定义是确定的，只要在这个限制下改变做事的方法，而不用改变事情本身的定义。</p>
 <p>而知识工作者的效率提升是一个纵观全局后的颠覆性优化，也就是所谓的颠覆性创新。这个颠覆性往是通过跨环节跨角色来产生的，比如最早敏捷里的技术实践，把测试引入了开发环节，把构建也引入了开发环节，而管理实践也是把验收提前，改变了对交付的定义，后来的DevOps则强调打破Dev和Ops的壁垒，都带来了极大的效率提升。一旦跨了环节跨了角色，那么输入输出都会变，事情本身的定义也就变了，我们需要经常拷问自己到底解决的问题是什么，改变了要解决的问题的定义，所以称之为对what的回答。</p>
 <p>一旦问题的定义发生了变化，进而我们甚至要反复拷问自己到底什么是效率，比如，我们的效率到底指的是有100个需求，我们以最短的时间做完了，还是说用户或客户当有一个需求出现，我们可以用最短的时间满足它呢？一旦效率的定义发生变化，整个生产体系都会产生颠覆性变化，也就是我前面提到的颠覆性优化，而且因为这些颠覆性优化往往是局部劣化却达到了整体优化，有时连旧的评价体系都给颠覆掉了，导致按照旧的评价体系来看，新的方法可能还是很糟糕的，在看不到全局的人眼中看来，只会看到颠覆性看不到优化从而产生抵触，这都是正常的。可以说，如果没有抵触发生，都算不上颠覆性优化。</p>
 <p>由于知识工作自身的这些特点，软件开发又比一般的知识工作还要复杂，我们觉得数字人才必须是一种多视角人才，这其中至少有三大类视角：商业视角、技术视角和用户视角：</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/talk-about-digital-talent/pic-02.jpg" alt="描绘软件的三个视角"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/talk-about-digital-talent/pic-02.jpg" alt="描绘软件的三个视角"></p>
 <p>所以这个系列文章不会只讲某一种角色的视角，我希望通过这系列文章培养出多视角的人才，所以在标题中淡化了某一种角色的强调，尽管出于我的技术出身，难免技术部分会重一些，最后写出来的数字人才的技术部分的刻意练习会多一些，不过我想也是对读者有价值的。</p>
 
       
@@ -490,7 +490,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-10 19:18:45" itemprop="dateModified" datetime="2020-09-10T19:18:45+08:00">2020-09-10</time>
+                <time title="修改时间：2021-02-19 15:37:10" itemprop="dateModified" datetime="2021-02-19T15:37:10+08:00">2021-02-19</time>
               </span>
 
           
@@ -505,7 +505,7 @@
 
       
           <h2 id="系列背后的故事"><a href="#系列背后的故事" class="headerlink" title="系列背后的故事"></a>系列背后的故事</h2><p>不知道你有没有灵魂画手的体验。所谓灵魂画手，又叫手残党，当它们想画一个东西的时候，画出来的图大都是这样的：</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/deliberate-practice-for-digital-talent/pic-01.png" alt="灵魂画作"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/deliberate-practice-for-digital-talent/pic-01.png" alt="灵魂画作"></p>
 <p>反正我从小就有这种体验，非常不爽。我特别想能通过画画来表达东西，然而作为一名灵魂画手，一次次拿起画笔就是一次次的挑战不可能，直到最后让我意识到，确实不可能……</p>
 <p>那些图画仿佛有魔力，让我完全没办法画出来。我想有些事情还真是有天赋这种东西存在的。</p>
 <p>这个想法并没有让我更舒服，表面上让我对天赋这个词更加敬畏，但内心深处其实对它的厌恶也是与日俱增。然而不管我多么厌恶，我还是一名灵魂画手，一个手残党。我也只能继续认为有些事情还真的是有天赋这种东西存在的。</p>
@@ -572,7 +572,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-10 19:18:45" itemprop="dateModified" datetime="2020-09-10T19:18:45+08:00">2020-09-10</time>
+                <time title="修改时间：2021-02-19 15:37:10" itemprop="dateModified" datetime="2021-02-19T15:37:10+08:00">2021-02-19</time>
               </span>
 
           
@@ -592,18 +592,18 @@
 <p>回答不了这些问题，不管输赢都是有点不明不白的。这些问题的核心问题就是价值的单位应该是什么？怎么算一个价值？一直没想清楚这些问题，直到我看了我们公司设计团队的一个框架MERLIN，又在《创新的窘境》作者的新书《与运气竞争》里看到了理论依据，这个问题在我这里才算是告一段落。我明白了，以用户为中心的软件开发大概应该怎么做。</p>
 <h2 id="方法核心"><a href="#方法核心" class="headerlink" title="方法核心"></a>方法核心</h2><p>如果我们想以用户为中心进行软件开发。那么我们的分析方法应该是围绕着用户展开的。</p>
 <p>这个方向倒是不新鲜，一直以来我们在inception的时候做用需求分析时我们的方法就是围绕着用户展开的，一个典型的分析过程，如下图所示。</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/user-centered-software-development/pic-01.jpg" alt="用户旅途"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/user-centered-software-development/pic-01.jpg" alt="用户旅途"></p>
 <p>我们会在上面画一条轴，标示出用户旅途。这是用户在使用软件的时候的，他的一个全过程。然后在对应的时间点上，标记出我们的功能。这样我们的功能就不是平白出来的。每一个都联系了用户价值。相对于一般人会更容易理解功能，在ThoughtWorks，我们更多标记的是用户故事。比起功能，用户故事增加了有关价值的线索，因为用户故事首先就是要写出价值。</p>
 <p>一直以来我觉得这个图还是不够给力。首先，从用户旅途上的点，到功能的映射这一步，简直是个magic move。对未来的读者来说，并不能很好的传递为什么是这样的一个功能，而不是别的功能？毕竟实现一个用户的价值方法有很多。于是后续在执行的过程当中，难免会僵化行事。</p>
 <p>其次，上面的旅途，还可以再抽象和封装。简言之，旅途本身也应该是有抽象层次的。一个旅途上的一个点，可能也是一段新的旅途。</p>
 <p>所以现在我觉得，一个更系统的做法应该是这样的，首先做服务设计：</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/user-centered-software-development/pic-02.jpg" alt="更宏观的用户旅途"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/user-centered-software-development/pic-02.jpg" alt="更宏观的用户旅途"></p>
 <p>系统化的分析用户的行为，过程中与企业有哪些触点，在这些触点上，借用《与运气竞争》里的思维框架来讲，用户“雇佣”企业的产品到底是来做什么的，也就是动机有哪些。</p>
-<p>然后将这些点再进一步细化，采用故事的模式：<br><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/user-centered-software-development/pic-03.jpg" alt="故事板"></p>
+<p>然后将这些点再进一步细化，采用故事的模式：<br><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/user-centered-software-development/pic-03.jpg" alt="故事板"></p>
 <p>图上的一行会讲一个故事，就像电影分镜或者漫画一样，来表达用户使用的故事，真正的故事，而不是用户故事那种东西，我们叫这个东西故事板。<br>在故事板上，我们描绘了一个故事，这个故事里，用户获得了一种体验。一个故事对应一个体验。在基本需求都已经得到满足的今天，体验是新的最有价值的事情，以体验为中心才是以用户为中心。故事板恰好给了我们一个非常符合人类认知习惯的方式来描述什么是一个体验。也就回答了开头的问题，什么是价值的单位。</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/user-centered-software-development/pic-04.jpg" alt="故事板与用户故事的关系"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/user-centered-software-development/pic-04.jpg" alt="故事板与用户故事的关系"></p>
 <p>当我们定义出了价值的单位，就可以从这一单位的价值里面映射出故事卡，来进行开发过程的管理：</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/user-centered-software-development/pic-05.jpg" alt="故事板是MVP的细分"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/user-centered-software-development/pic-05.jpg" alt="故事板是MVP的细分"></p>
 <p>这里就是我们的重点，我们将来交付的软件、交付的服务、我们交付的一个MVP本质上是交付给了用户一组体验。MVP的迭代则应该是更多的体验或某些旧体验的升级（也就是同一个动机，换了一个不同的故事来满足）。</p>
 <p>最终我们把用户的价值很好的表达了出来，并且找到了用户体验的基本单位——故事板，由于故事板也可以转化为用户故事，结合早已经存在的各种敏捷开发方法，也就可以对体验的交付进行度量和管理，达到以用户为中心进行软件开发。</p>
 <h2 id="尾声"><a href="#尾声" class="headerlink" title="尾声"></a>尾声</h2><p>很早之前我就觉得MVP是TDD思想在产品策略上的延伸，TDD一个很重要的价值就是避免自嗨从而消除浪费。程序员有时候会因为自嗨写出来好多用不到的功能和设计，这些都是浪费。但是程序员能减少的浪费很有限，最终的最终还是要从需求的源头——用户层面来减少浪费才能真的做好。所谓顾客就是上帝，软件开发中用户就是上帝，这句话的意思不是说用户说什么你就做什么，而是说你只有贴近用户，才能得到上帝的启示，现场有神明，就是这么个道理。</p>
@@ -658,7 +658,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-10 19:18:45" itemprop="dateModified" datetime="2020-09-10T19:18:45+08:00">2020-09-10</time>
+                <time title="修改时间：2021-02-19 15:37:10" itemprop="dateModified" datetime="2021-02-19T15:37:10+08:00">2021-02-19</time>
               </span>
 
           
@@ -690,20 +690,20 @@
 <p>紧接着会面临下一个问题：怎么合成一个更大的系统，Container是明确的，所以Component合成Container不是问题，问题是Container怎么合成一个系统，为什么是这些Container合成这个系统，而不是另外几个？或者多加几个、减几个？</p>
 <p>这个问题没有标准答案，但是有一些其他的框架可以提供一些思考的维度。</p>
 <p>比如可以结合akf扩展立方来思考</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/bad-smell-of-visualize-arch-design/pic-01.png" alt="akf扩展立方"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/bad-smell-of-visualize-arch-design/pic-01.png" alt="akf扩展立方"></p>
 <p>X轴就比较容易，一方面看你的容器本身的描述来发现设计上是不是支持横向复制的，另一方面则是看你的部署图。<br>Z轴相对难一些，只是比较偏技术。比如当技术上有性能瓶颈，则需要注意这一个维度，有时不得不搞出一些特殊的容器出来，有时已经存在这些容器了，他们可能单独属于一个系统（类似于大数据分析的系统），或者一个系统的某一个局部（这就是我说的虚线框的表达力被限制的地方）。</p>
 <p>Y轴给人的感觉是最容易操作的，但实际上却是最难的做好的，Y轴的背后是业务，往往我们觉得就按业务切成多张图就好了么。这种想法就表现出我们其实很看轻理解业务的难度，于是也总是出问题的地方。如果你能跨过这个心理障碍，决定去认真做一下，那么也有一些工具可以帮助我们做好。</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/bad-smell-of-visualize-arch-design/pic-02.jpg" alt="领域模型与架构设计"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/bad-smell-of-visualize-arch-design/pic-02.jpg" alt="领域模型与架构设计"></p>
 <p>最经典的工具组合就是求助于DDD，结合康威定律和步速，考虑维护的团队、使用的角色、变化的节奏，这块展开就复杂了，有机会再聊。</p>
 <p>这里说一个最简单的做法。按照用户角色分。同一种角色，由于它的，公司里的职能，他的职责都是已经被定好的。天然在系统上就有一种隔离性。比如招聘专员、会计、出纳。他们使用的系统肯定是不一样。</p>
 <p>但说简单，其实也不简单。我见过一些图，上面的角色只有两个，内部用户和外部用户。而另一些图，细化到了persona的级别，或者把职级都放上去了。所以无论再简单的原则，最后都会掉进抽象的坑。</p>
 <h2 id="画一些共识图来忽略掉一些通用的元素"><a href="#画一些共识图来忽略掉一些通用的元素" class="headerlink" title="画一些共识图来忽略掉一些通用的元素"></a>画一些共识图来忽略掉一些通用的元素</h2><p>有时候合成了更大的元素，元素依然很多，线条依然很密。画多张图也不够切分的。这个时候我们可以求助于共识。</p>
 <p>人与人交流，彼此之间如果已经有一些共识存在就可以少废很多话，共识多到一定程度只需要确认一个眼神就完成交流了。所以毫无疑问做好共识管理，就可以大幅简化我们的架构图。</p>
 <p>所以在我们做架构可视化的时候，经常会先画一个技术共识图，比如以一个我们的能力建设的数字平台为例，我们就画了一个下面这样的技术共识图。：</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/bad-smell-of-visualize-arch-design/pic-03.png" alt="技术共识图"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/bad-smell-of-visualize-arch-design/pic-03.png" alt="技术共识图"></p>
 <p>然后在后面画具体的图的时候，我就可以省略掉一些共识的元素，像nginx和数据库就没有了，可以更关注在业务上，而不是技术上来画图。</p>
 <h2 id="通过制定主题，限制文字的抽象层次"><a href="#通过制定主题，限制文字的抽象层次" class="headerlink" title="通过制定主题，限制文字的抽象层次"></a>通过制定主题，限制文字的抽象层次</h2><p>其实上面的技术共识图就是类似的做法，只是用于技术方面，如果用于业务方面，我们可以用一些抽象的名词或动词来代替一类业务，比如下图：</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/bad-smell-of-visualize-arch-design/pic-04.jpg" alt="数字平台系统景观图"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/bad-smell-of-visualize-arch-design/pic-04.jpg" alt="数字平台系统景观图"></p>
 <p>上图是一个系统景观图。当前这个主题是希望，人们一眼看清楚这个系统里面的相关角色都在使用什么系统，并且他们关注什么，职责是什么。所以具体学什么，怎么学的，都不是那么重要。所以我们就用学习一词代表了一系列的业务。</p>
 <p>当主题确定的时候，很多纷杂的信息就没有了。一定要克制住自己，试图在一张图上，表达足够多信息的冲动。</p>
 <h2 id="只画重要的图，剩下的交流的时候再画。"><a href="#只画重要的图，剩下的交流的时候再画。" class="headerlink" title="只画重要的图，剩下的交流的时候再画。"></a>只画重要的图，剩下的交流的时候再画。</h2><p>除了像上面说的，不要试图在一张图上给他足够的信息。同时也，不要试图把所有的信息都表达出来。</p>
@@ -759,7 +759,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-10 19:18:45" itemprop="dateModified" datetime="2020-09-10T19:18:45+08:00">2020-09-10</time>
+                <time title="修改时间：2021-02-19 15:37:10" itemprop="dateModified" datetime="2021-02-19T15:37:10+08:00">2021-02-19</time>
               </span>
 
           
@@ -830,7 +830,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-10 19:18:45" itemprop="dateModified" datetime="2020-09-10T19:18:45+08:00">2020-09-10</time>
+                <time title="修改时间：2021-02-19 15:37:10" itemprop="dateModified" datetime="2021-02-19T15:37:10+08:00">2021-02-19</time>
               </span>
 
           
@@ -846,7 +846,7 @@
       
           <p>（本文不适合初学者阅读，目前只是为了方便培训的时候预习而写，也不适合无后续服务的人阅读）<br>现在，我们把上一篇的应用变成网络版。这个时候，你至少有了两个应用，一个客户端应用，一个服务端应用。到这一刻，我们就算具有了一个系统。</p>
 <p>当我们有一个系统的时候，我们需要一种框架来简化思考我们的应用。这里又需要我们再次展示我们的概念性思考能力，这时我会采用Linux的模型来思考这个问题，所以应用程序一般我会分为三层：</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-07/pic-01.png" alt="layer-of-application"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-07/pic-01.png" alt="layer-of-application"></p>
 <p>core层是我的核心逻辑，核心的计算部分放在这里。（Linux里是Kernel，不过Kernel这词比较偏门，咱们这教程的目标是为了尽量降低门槛，还是用core吧）<br>shell层是我链接核心层和用户的地方，你可以简单理解为解析用户输入，包装核心层的计算结果，变成用户看到的输出。Shell层还有一个作用，当我们有多个应用的时候，彼此之间的shell层是互相交互的，Core层是互相不知道彼此的存在的。<br>config层比较难理解，从工程的角度，我们的Core层和Shell层，都不应该控制彼此的生命周期，它们所有的依赖都应该是外部配置的，它们只依赖抽象的接口而不是具体实现。config层就是这一层配置，在Linux的Shell里对应的就是环境变量这个概念。</p>
 <p>引入这些概念有什么好处呢？如果用这些概念来解释我们的应用，可以支撑非常大的架构的思考。</p>
 <p>我们想象一下，系统随着演进而变大，出现原本的小东西也会变的非常庞大。比如上一篇main函数里的几行代码，随着系统变大，相应的Router也不可能自己写了，Router和Command的关系自然也是在文件里配置的，慢慢的我们就开始需要一个IOC容器。Service本身会变得很复杂，彼此之间可能会有关系，而且甚至可能是别的应用提供的Service。如果我们再使用应用框架里的概念，那么思考也好，交流也好，都会变得很低效。所以我们才引出了config，shell，core这三个概念来简化应用的内部，这样就可以思考大量的应用之间的关系是应该是一个什么样的架构了，不过这个方向是一个更复杂的问题，这里就不展开了。</p>
@@ -860,7 +860,7 @@
 <p>所谓的MVC就是Model-View-Controller。一个常见系统，往往Model层负责核心基本元素和基本算法，View层负责展示和表达数据，Controller层负责调度和组合，把Model层和View层连接在一起。</p>
 <p>一般来讲，Model层通常是我们的Core，Controller层往往就是我们的shell，View层就是shell返回的数据。这个时候边界的思考就清楚了，谁是我们的model和model相关的核心计算，谁就是我们的core。谁是我们的Controller负责调度组合和内外相连，谁就是我们的shell。而我们的计算结果，也就是我们的View层，是会离开我们的应用供别人使用的，那它是我们的最外面的边界。我们思考边界只需要关注在View层，思考清楚我们的View是否在一个抽象层次上就可以了。</p>
 <p>但是，世界不是这么简单的分三层就可以结束了，世界是往复循环以致无穷的。所以我们的MVC也是循环迭代的，也就是说MVC中的某一层还可能再分MVC。那么是哪一层呢？View层。还记得我们第一篇讲得，数据和过程是不严格区分的，所以我们返回的数据，可以被解析为新的过程，新的过程再产生新的数据，从而往复循环以致无穷。</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-07/pic-02.png" alt="MVC"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-07/pic-02.png" alt="MVC"></p>
 <p>所以可以认为服务端是原应用的Core层进化出来的。</p>
 <p>如果我们把View层进化下去，我们前面提到的客户端的Shell返回的数据，还会再划分，就会有新的组件层(Component)，模版层(Layout)，页面层(Page，也有人爱用Container)等等。</p>
 <p>随着出现了MVC，再进一步思考就会逐渐发现，其实core层不应该关心后端代码，它应该关心前端的领域对象，以用户眼中的模型为基础计算，而不是后端业务人员眼中的模型为基础来计算。所以他会把弥合后端和前端的工作交给shell层，而shell层会夹在三方面很难受，他一方面要对接后端，一方面要对接core，还有一方面要适配真正的前端模型。前端和后端的拉锯战就会出现，在这股力量的挤压之下，我们的BFF就会自然而然的出现，所谓的前后端分离也就是自然而然的事情了。</p>
@@ -919,7 +919,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-10 19:18:45" itemprop="dateModified" datetime="2020-09-10T19:18:45+08:00">2020-09-10</time>
+                <time title="修改时间：2021-02-19 15:37:10" itemprop="dateModified" datetime="2021-02-19T15:37:10+08:00">2021-02-19</time>
               </span>
 
           
@@ -936,11 +936,11 @@
           <p>上一篇里，我们实现了一个小应用，而且用两种设计。本文将给出更多的设计实现以继续探讨设计问题。</p>
 <p>我们会看到，即便是纸上的图，也可以进行重构。由于纸是我们大脑的延伸，也可以称之为脑中的重构。而这种重构的结果由于并不是真正的代码，所以即便重构错了方向，设计不合理，抛弃也非常简单，相对于改代码而言，几乎没有成本。</p>
 <h2 id="简单的改进"><a href="#简单的改进" class="headerlink" title="简单的改进"></a>简单的改进</h2><p>第一步我们先做得简单一点，上一节我们停在这张图上：</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-01.png" alt="image1"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-01.png" alt="image1"></p>
 <p>我们可能会觉得上一节的图有点啰嗦，比如buildStudentInfoPromptString和buildStudentSeqencePromptString两个函数，甚至generateReport都啰嗦了。那我就可以重构一下，去掉这些啰嗦的内容，变成下图：</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-02.png" alt="image2"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-02.png" alt="image2"></p>
 <p>上面的改进可能我们不太满意，我们试着走另一个方向，从整个程序的角度来减少输入输出。我们前面说了，每个函数的输入输出种类越少越好，那么在我们这个题目里，推到极致就是每个函数不自己处理打印和读取，所有的打印和读取都放到一处。不但不打印和读取，还不调用其他函数，那么就会变得像下面这张图：</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-03.png" alt="image3"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-03.png" alt="image3"></p>
 <h2 id="概念性思考"><a href="#概念性思考" class="headerlink" title="概念性思考"></a>概念性思考</h2><p>上面这个实现在过程层面已经实现了只在一个函数中打印和读取用户输入。然而这个最大的函数却很臃肿，除了不干具体的活，这个系统中所有的逻辑它都知道。这种全知全能的函数，如果有更多层级，更多菜单的应用，这个函数很容易就臃肿到不能维护的地步。</p>
 <p>那么我们就来想一下，有没有一种设计，在层级更多的时候表现的更好。这个时候我们需要一种思考能力，我们称之为概念性思考。<br>概念性思考一般分为四步：</p>
 <ol>
@@ -964,12 +964,12 @@
 <p>所以综上，我们可以开始画图了，但是这个画图呢比较难画在一张图上，所以我们就把一次“请求”和一次“响应”画成一张图，这也是一种可视化的技巧，当我们把一件事画成多张图的时候，我们的大脑会自己把这些图联系到一起，并不需要我们在图上表示出，他们是有关系的。</p>
 <p>总之，这个应用可以画成的图如下所示：</p>
 <p>应用启动：</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-04.png" alt="application-example-home"></p>
-<p>去界面1：<br><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-05.png" alt="application-example-goto-add"></p>
-<p>添加学生成绩：<br><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-06.png" alt="application-example-add"></p>
-<p>去界面2：<br><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-07.png" alt="application-example-goto-print"></p>
-<p>打印学生成绩：<br><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-08.png" alt="application-example-print"></p>
-<p>退出：<br><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-09.png" alt="application-example"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-04.png" alt="application-example-home"></p>
+<p>去界面1：<br><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-05.png" alt="application-example-goto-add"></p>
+<p>添加学生成绩：<br><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-06.png" alt="application-example-add"></p>
+<p>去界面2：<br><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-07.png" alt="application-example-goto-print"></p>
+<p>打印学生成绩：<br><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-08.png" alt="application-example-print"></p>
+<p>退出：<br><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-09.png" alt="application-example"></p>
 <p>将上述图片翻译成Task的时候，就会用到Response和View。</p>
 <h2 id="课后练习"><a href="#课后练习" class="headerlink" title="课后练习"></a>课后练习</h2><ol>
 <li>列出所有的任务</li>
@@ -1028,7 +1028,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-10 19:18:45" itemprop="dateModified" datetime="2020-09-10T19:18:45+08:00">2020-09-10</time>
+                <time title="修改时间：2021-02-19 15:37:10" itemprop="dateModified" datetime="2021-02-19T15:37:10+08:00">2021-02-19</time>
               </span>
 
           
@@ -1170,7 +1170,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

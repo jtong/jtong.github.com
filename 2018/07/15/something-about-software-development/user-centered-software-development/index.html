@@ -53,13 +53,13 @@
 <meta property="og:site_name" content="铜剑技校">
 <meta property="og:description" content="问题今天这个时代迭代开发已经成为常识，甚至政治正确，随便谁就能给你扯两句mvp。敏捷也从一个开发的名词变成了管理名词，迭代、测试、反馈这类名词满天飞。 人人都在说这些术语，仿佛他们真的就懂怎么做软件了。起码，觉得自己真的懂怎么创新了。然而经不起细聊，一旦深入下去聊一个mvp，聊聊他的迭代计划。就会发现露馅了，张嘴闭嘴谈的都是功能。这个迭代要交付几个功能，这个mvp多了什么功能？他的竞争对手都有哪些">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/user-centered-software-development/pic-01.jpg">
-<meta property="og:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/user-centered-software-development/pic-02.jpg">
-<meta property="og:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/user-centered-software-development/pic-03.jpg">
-<meta property="og:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/user-centered-software-development/pic-04.jpg">
-<meta property="og:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/user-centered-software-development/pic-05.jpg">
+<meta property="og:image" content="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/user-centered-software-development/pic-01.jpg">
+<meta property="og:image" content="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/user-centered-software-development/pic-02.jpg">
+<meta property="og:image" content="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/user-centered-software-development/pic-03.jpg">
+<meta property="og:image" content="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/user-centered-software-development/pic-04.jpg">
+<meta property="og:image" content="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/user-centered-software-development/pic-05.jpg">
 <meta property="article:published_time" content="2018-07-15T10:45:00.000Z">
-<meta property="article:modified_time" content="2020-09-10T11:18:45.176Z">
+<meta property="article:modified_time" content="2021-02-19T07:37:10.893Z">
 <meta property="article:author" content="仝键">
 <meta property="article:tag" content="programming">
 <meta property="article:tag" content=" training">
@@ -80,7 +80,7 @@
 <meta property="article:tag" content=" refactoring">
 <meta property="article:tag" content=" lean">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/user-centered-software-development/pic-01.jpg">
+<meta name="twitter:image" content="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/user-centered-software-development/pic-01.jpg">
 
 <link rel="canonical" href="https://jtong.dev/2018/07/15/something-about-software-development/user-centered-software-development/">
 
@@ -239,7 +239,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-10 19:18:45" itemprop="dateModified" datetime="2020-09-10T19:18:45+08:00">2020-09-10</time>
+                <time title="修改时间：2021-02-19 15:37:10" itemprop="dateModified" datetime="2021-02-19T15:37:10+08:00">2021-02-19</time>
               </span>
 
           
@@ -259,18 +259,18 @@
 <p>回答不了这些问题，不管输赢都是有点不明不白的。这些问题的核心问题就是价值的单位应该是什么？怎么算一个价值？一直没想清楚这些问题，直到我看了我们公司设计团队的一个框架MERLIN，又在《创新的窘境》作者的新书《与运气竞争》里看到了理论依据，这个问题在我这里才算是告一段落。我明白了，以用户为中心的软件开发大概应该怎么做。</p>
 <h2 id="方法核心"><a href="#方法核心" class="headerlink" title="方法核心"></a>方法核心</h2><p>如果我们想以用户为中心进行软件开发。那么我们的分析方法应该是围绕着用户展开的。</p>
 <p>这个方向倒是不新鲜，一直以来我们在inception的时候做用需求分析时我们的方法就是围绕着用户展开的，一个典型的分析过程，如下图所示。</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/user-centered-software-development/pic-01.jpg" alt="用户旅途"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/user-centered-software-development/pic-01.jpg" alt="用户旅途"></p>
 <p>我们会在上面画一条轴，标示出用户旅途。这是用户在使用软件的时候的，他的一个全过程。然后在对应的时间点上，标记出我们的功能。这样我们的功能就不是平白出来的。每一个都联系了用户价值。相对于一般人会更容易理解功能，在ThoughtWorks，我们更多标记的是用户故事。比起功能，用户故事增加了有关价值的线索，因为用户故事首先就是要写出价值。</p>
 <p>一直以来我觉得这个图还是不够给力。首先，从用户旅途上的点，到功能的映射这一步，简直是个magic move。对未来的读者来说，并不能很好的传递为什么是这样的一个功能，而不是别的功能？毕竟实现一个用户的价值方法有很多。于是后续在执行的过程当中，难免会僵化行事。</p>
 <p>其次，上面的旅途，还可以再抽象和封装。简言之，旅途本身也应该是有抽象层次的。一个旅途上的一个点，可能也是一段新的旅途。</p>
 <p>所以现在我觉得，一个更系统的做法应该是这样的，首先做服务设计：</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/user-centered-software-development/pic-02.jpg" alt="更宏观的用户旅途"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/user-centered-software-development/pic-02.jpg" alt="更宏观的用户旅途"></p>
 <p>系统化的分析用户的行为，过程中与企业有哪些触点，在这些触点上，借用《与运气竞争》里的思维框架来讲，用户“雇佣”企业的产品到底是来做什么的，也就是动机有哪些。</p>
-<p>然后将这些点再进一步细化，采用故事的模式：<br><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/user-centered-software-development/pic-03.jpg" alt="故事板"></p>
+<p>然后将这些点再进一步细化，采用故事的模式：<br><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/user-centered-software-development/pic-03.jpg" alt="故事板"></p>
 <p>图上的一行会讲一个故事，就像电影分镜或者漫画一样，来表达用户使用的故事，真正的故事，而不是用户故事那种东西，我们叫这个东西故事板。<br>在故事板上，我们描绘了一个故事，这个故事里，用户获得了一种体验。一个故事对应一个体验。在基本需求都已经得到满足的今天，体验是新的最有价值的事情，以体验为中心才是以用户为中心。故事板恰好给了我们一个非常符合人类认知习惯的方式来描述什么是一个体验。也就回答了开头的问题，什么是价值的单位。</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/user-centered-software-development/pic-04.jpg" alt="故事板与用户故事的关系"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/user-centered-software-development/pic-04.jpg" alt="故事板与用户故事的关系"></p>
 <p>当我们定义出了价值的单位，就可以从这一单位的价值里面映射出故事卡，来进行开发过程的管理：</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/user-centered-software-development/pic-05.jpg" alt="故事板是MVP的细分"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/user-centered-software-development/pic-05.jpg" alt="故事板是MVP的细分"></p>
 <p>这里就是我们的重点，我们将来交付的软件、交付的服务、我们交付的一个MVP本质上是交付给了用户一组体验。MVP的迭代则应该是更多的体验或某些旧体验的升级（也就是同一个动机，换了一个不同的故事来满足）。</p>
 <p>最终我们把用户的价值很好的表达了出来，并且找到了用户体验的基本单位——故事板，由于故事板也可以转化为用户故事，结合早已经存在的各种敏捷开发方法，也就可以对体验的交付进行度量和管理，达到以用户为中心进行软件开发。</p>
 <h2 id="尾声"><a href="#尾声" class="headerlink" title="尾声"></a>尾声</h2><p>很早之前我就觉得MVP是TDD思想在产品策略上的延伸，TDD一个很重要的价值就是避免自嗨从而消除浪费。程序员有时候会因为自嗨写出来好多用不到的功能和设计，这些都是浪费。但是程序员能减少的浪费很有限，最终的最终还是要从需求的源头——用户层面来减少浪费才能真的做好。所谓顾客就是上帝，软件开发中用户就是上帝，这句话的意思不是说用户说什么你就做什么，而是说你只有贴近用户，才能得到上帝的启示，现场有神明，就是这么个道理。</p>
@@ -416,7 +416,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

@@ -232,7 +232,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-10 19:18:45" itemprop="dateModified" datetime="2020-09-10T19:18:45+08:00">2020-09-10</time>
+                <time title="修改时间：2021-02-19 15:37:10" itemprop="dateModified" datetime="2021-02-19T15:37:10+08:00">2021-02-19</time>
               </span>
 
           
@@ -315,7 +315,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-10 19:18:45" itemprop="dateModified" datetime="2020-09-10T19:18:45+08:00">2020-09-10</time>
+                <time title="修改时间：2021-02-19 15:37:10" itemprop="dateModified" datetime="2021-02-19T15:37:10+08:00">2021-02-19</time>
               </span>
 
           
@@ -448,7 +448,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-10 19:18:45" itemprop="dateModified" datetime="2020-09-10T19:18:45+08:00">2020-09-10</time>
+                <time title="修改时间：2021-02-19 15:37:10" itemprop="dateModified" datetime="2021-02-19T15:37:10+08:00">2021-02-19</time>
               </span>
 
           
@@ -469,7 +469,7 @@
 <h2 id="新的架构"><a href="#新的架构" class="headerlink" title="新的架构"></a>新的架构</h2><p>在上面的问题章节里，我们聊到的问题基本都可以用边界不清来表述，如果用更精炼的词就是耦合。耦合大家都知道是不好的，然而却还是写出很多耦合的代码，到底是为什么呢？主要还是因为没有相应的概念帮我们区分代码都分为哪些类别，都有哪些更具体的概念来识别职责，这种概念越少，越模糊，越容易写出耦合的代码。</p>
 <p>新的架构就要提供一些更细节的概念来帮助我们解耦。所以这里我们介绍一个基于clean arch的改版架构，它的主要思想都是源自于Clean Arch，但是有些地方也使用了六边形架构和洋葱头架构的名词，毕竟很多人都说，这三个架构本质上是一回事。</p>
 <p>首先了解一下adapter、usecase和domain这三个大层，如下图（domain指的是最内核写着entities的部分，往外依次是use case，adapter，蓝色的部分就是实际的外部世界了）</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/ddd-clean-arch/pic-01.png" alt="image.png"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/ddd-clean-arch/pic-01.png" alt="image.png"></p>
 <p>在最外面的controller那些属于adapter，它们主要负责表现层的渲染，跟外部程序的交互，比如响应HTTP请求。adapter自己也是分组的，有时候不同的协议接口都会算作不同的adapter，比如HTTP的API和RPC的API，通常用于一个服务以不同的方式对外提供服务；有时候场景不一样也算不同的，比如web api和web page会被我归成两个adapter，通常用于遗留系统里部分页面还是后端渲染的时候；有时候不同的技术也是不同的adapter，比如spring mvc和Jersey，通常用于技术迁移过程中；</p>
 <p>有一种建议是adapter也要与具体的框架分离，这个我觉得大部分情况下adapter这层不是很复杂，全部重写可能更合适点，这么做最大的好处就是迁移adapter技术实现时更方便。这么做我觉得会适得其反，毕竟这种做法需要的设计要求太精细了，对于绝大多数团队来说做框架分离这种事把自己埋了的可能性远大于在将来技术迁移时成本降低的可能性。对于绝大多数团队，只要能做一个api一个api的替换，已经是不错了。要想做到这个，使用一般的开源框架，比如spring mvc或jersey并不难，但是要是使用公司内自己做的就不一定了，很可能它不支持运行时两种adapter同时对外提供服务，直接从根本上把你用其他框架对外提供服务的可能性就给掐死了，这样的内部框架使用前请三思。</p>
 <p>不同于ddd里的分层架构，clean arch里面，负责做数据库存储的持久层也是一种adapter。 当我们做了这样的设计后，就可以把框架相关的annotation彻底清除出domain层，于是整个domain就真的变得干净了，配合上ddd里的一些概念解耦后，技术迁移也会变得容易。具体的内容我们后面聊。</p>
@@ -605,7 +605,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-10 19:18:45" itemprop="dateModified" datetime="2020-09-10T19:18:45+08:00">2020-09-10</time>
+                <time title="修改时间：2021-02-19 15:37:10" itemprop="dateModified" datetime="2021-02-19T15:37:10+08:00">2021-02-19</time>
               </span>
 
           
@@ -632,14 +632,14 @@
 <p>不但测试简单了，扩展其实也会简单，这样我们将来如果命令发生变化比如，开始这么写命令 “M2 L R”也就是移动的时候加入了数字控制移动多少格，为了好解析，我们加入了空格来分隔。这种变化对于执行的来说，并无感知，因为这个变化悲伤层负责解析的部分已经隔离掉了。</p>
 <h2 id="聊聊设计"><a href="#聊聊设计" class="headerlink" title="聊聊设计"></a>聊聊设计</h2><p>这个题一开始，很多人肯定是一大串if来解决3个command的if和四个方向的if。</p>
 <p>写完之后呢，就会开始重构，重构成什么样子的就都有了，比如下面这个：</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/marsrover-tdd/pic-01.jpg" alt="image.jpeg"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/marsrover-tdd/pic-01.jpg" alt="image.jpeg"></p>
 <p>这个重构完，通常if就没有了。</p>
 <p>但是有很明显的循环依赖，所有人都能改MarsRover，这封装性也太差了。那我们提取一个数据传输对象来提升一下封装性吧，像下面这样：</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/marsrover-tdd/pic-02.jpg" alt="image.jpeg"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/marsrover-tdd/pic-02.jpg" alt="image.jpeg"></p>
 <p>这么做循环依赖貌似少了，封装性也提高了，但Direction和RoverStatus还是有个循环依赖，进一步消除一下试试：</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/marsrover-tdd/pic-03.jpg" alt="image.jpeg"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/marsrover-tdd/pic-03.jpg" alt="image.jpeg"></p>
 <p>终于，所有的循环依赖都干掉了，但这图看着好复杂啊而且有个问题，那就是Command和DIrection严重耦合，Direction的三个方法明显是Command的延伸，每加一个Command，Direction脱不了也要加个方法。这个设计肯定是不好的。我们可以发现DirectionValue实际上是可以不知道Move的相关概念的，方向之间自然的有左右关系，所以可以改造成这样的设计：</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/marsrover-tdd/pic-04.jpg" alt="image.jpeg"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/marsrover-tdd/pic-04.jpg" alt="image.jpeg"></p>
 <p>每个DirectionValue都有一个index，左转可以通过+3然后%4的方式完成，右转可以通过+1然后%4的方式完成，不需要外面的其他概念，实现也很简单。</p>
 <p>这下貌似清静了，但实际上Move这个Command里面有四个if还是不好消掉，如果因此搞四个新的子类，会有点啰嗦。这个时候如果采用函数式的方式，把DirectionValue的四个值和对应的移动算法用一个Map封装起来，其实就比较简单了。</p>
 <p>这个题做到这，可以加入一些新需求，比如：</p>
@@ -700,7 +700,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-10 19:18:45" itemprop="dateModified" datetime="2020-09-10T19:18:45+08:00">2020-09-10</time>
+                <time title="修改时间：2021-02-19 15:37:10" itemprop="dateModified" datetime="2021-02-19T15:37:10+08:00">2021-02-19</time>
               </span>
 
           
@@ -756,17 +756,17 @@
 <p><a href="https://jtong.github.io/2020/01/30/programmer-dojo/thinking-as-a-machine-04/" target="_blank" rel="noopener">像机器一样思考（四）—— 一图抵千言</a></p>
 <p>第四篇文章画的就是上下文图了，这个是我们在简单题目当中常要求学生做的。（通过画这种图的方式，标记出你的程序，如果写完了，应该有多少块？每一块的输入是什么？输出是什么？）</p>
 <p>上下文图表达的是代码的静态关系。比如，如果我的代码要这么写：</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-01.png" alt="image.png"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-01.png" alt="image.png"></p>
 <p>那图就是这么画的</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-02.png" alt="image.png"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-02.png" alt="image.png"></p>
 <p>如果代码要这么写：</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-03.png" alt="image.png"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-03.png" alt="image.png"></p>
 <p>那么图就是这么画的</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-04.png" alt="image.png"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-04.png" alt="image.png"></p>
 <p>（按照我文章里的讲法，其实我不应该写输入为无，还有个200呢，不过这算起来，1也算，3，5，7都要算，所以我们在标输入输出的时候，还是要做一些过滤的，过滤的原则就是为了测试的相关性是否强，为什么测试这么重要？我们后面会聊到）</p>
 <p>整个这个画图的过程，是对程序的一个拆解，这个拆解的过程实际上也是伴随着设计的。这个图的主要目的就是画出一个一个只有数据依赖，没有过程依赖的小型的上下文。</p>
 <p>什么叫过程依赖 如下图所示</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-05.png" alt="image.jpeg"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-05.png" alt="image.jpeg"></p>
 <p>上面的代码每一段if的逻辑执行完都调用了一个continue（类似的还有break和return），这使得每一个if的block都是与外面的for block耦合的，我无法单独把其抽取成一个函数。也就没法单独测试，它的可测试性是一点都不高。</p>
 <p>如果我不把程序拆成只有数据依赖没有过程依赖的小型上下文，那么无论是从调试还是测试的角度都会变得很复杂，因而维护也会变得困难。</p>
 <p>这段程序另一个可测试性差的地方在于直接输出到了标准输出流里，如果标准库没有给我们提供打桩的方法，那么这个程序就只能人肉测。即便提供了，测试成本也提升了，远不如直接测一个字符串来的容易。所以我们在考虑输入输出的时候，也要考虑输入是否容易准备？输出是否容易获得？</p>
@@ -786,7 +786,7 @@
 <p>而每一块的编码实现我们还是会再分任务，以本问题单个数的转换为例，接口是非常清楚的，就是输入是个整数，输出是个字符串。</p>
 <p>但是你实现的过程要分几步。</p>
 <p>我要先实现可以被三整除的。再实现可以被5整除的。最后实现可以被3和5整除的。这算是一个驱动的意思。从简单的入手，然后再往复杂的去写。很多人可能会觉得比较无聊。但如果你测试的人足够多，你会发现很多人哪怕是在这样一个无聊的题上，也会把自己坑进去。举个例子我们第3步：可以被3和5整除。当我们实现的时候，我们if里那个表达式模3模5在上还是在下。每次我都会故意写在下面问有没有问题，如下图所示：</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-06.png" alt="image.png"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-06.png" alt="image.png"></p>
 <p>每次都会有人意识不到上面的实现是有问题的。这么简单的题目都会被绕晕，到底要多有自信，才会觉得复杂的需求不会出错呢？所以还是老老实实的给自己加测试防护网吧，不要对自己的头脑过分自信。测试一个很重要的原则，是防止低级错误，而不是恶意欺骗。前半句是对上面这个情况的描述，而后半句则是针对有的同学在做测试的时候，总是在想，万一有人用”黑魔法“欺骗了我的测试怎么办？这个是没办法的，也不该花精力去思考这个问题，毕竟写测试的和写实现的都是你，你为什么要这么难为自己？</p>
 <p>先确认需求，再实现，需求以测试的形式写出来，然后再去实现，这就是tdd了。如果实现的时候只需要关注其中一种可能性，这样思维负担比较轻。如果你脑力强劲，觉得步子大一点没事，你就步子大一点，我是没有此等自信。有些人问我，TDD时候测试有没有阶段性，测试是否有要分批写？我大概会分三批：</p>
 <p>第一批测试只有一个测试，这第一个测试的意义：定义输入输出，确定函数在哪</p>
@@ -794,7 +794,7 @@
 <p>然后再写第三批测试，把各种分支和异常都考虑到。这样写出来的程序就是一个比较健壮的程序。</p>
 <p>反过来看，当你时间不够的时候。你要减的测试是谁？肯定是第3批测试。不是整组干掉，而是在这组当中减少量。有很多人会说自己没有时间写测试，或者说测试很浪费时间。直到你打开他的代码的时候，你发现你前两组测试都不存在，就很说不过去了，因为前两组几乎不花什么时间。而且如果做得好的话，还会提高效率，减少时间花费。一个最简单的道理：当我有一天出了bug的时候。我能以多快的速度建立一个可运行的程序现场，以多短的周期反复重现这个bug，并且进行新解决方案的尝试，决定了修bug的速度。而前两组测试完全可以为这个场景服务。而这个场景不完全发生在测试测出来bug，在我们日常写代码的时候，我们不能保证我们写的代码是一次就能写对的，那么在没有写对之前就等于代码中存在了bug，也是要反复调试的，那这个对实验的周期时间的要求是一样的。有那个调试的功夫，直接看测试不是一样吗？</p>
 <h3 id="过度设计"><a href="#过度设计" class="headerlink" title="过度设计"></a>过度设计</h3><p>到此为止，我们写出来带的代码如下所示：</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-07.png" alt="image.png"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-07.png" alt="image.png"></p>
 <p>实现并不复杂，仔细看看这代码还可以，够用，不难懂，那就行了，我们就先不请重构登场了。天下设计都讲究一个不要过度设计，软件设计也不例外，做到这里是很好懂的，那我们也不要画蛇添足。</p>
 <p>很多人一看到可能的扩展点，就想了一大堆可能的需求，再有个9呢？或者是所有的素数，比如11啊，13啊……</p>
 <p>这方面我们要有耐心一点，比起可能降临的扩展给我们带来的困扰，我们自己乱添加的扩展机制可能会坑死自己的概率也不低。</p>
@@ -811,7 +811,7 @@
 </ol>
 </blockquote>
 <p>迭代2的需求改动不多，这个需求对我们的业务域造成的变化是加入了一个新的特殊数字7。如果我们还是按照迭代一的方式去实现，我们写出来的代码可能很可能如下所示。</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-08.png" alt="image.png"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-08.png" alt="image.png"></p>
 <p>代码有什么问题吗？它最大的问题叫做圈复杂度太高。</p>
 <h2 id="圈复杂度"><a href="#圈复杂度" class="headerlink" title="圈复杂度"></a>圈复杂度</h2><p>圈复杂度的计算方式是这样的，每当你看到一个for或者if或者while，总之，每看到一个判断分支或者是一个循环分支，圈复杂度就加1。每当看到continue和break也加1（有的版本是这么认为的，有的不这么认为），return也加1。加完了就是这一部分代码的圈复杂度了。</p>
 <p>圈复杂度高了会怎么样呢？圈复杂度高低与bug率高低有强相关性。在各种测试指标当中，很少有像圈复杂度这样与千行代码bug率强相关的指标，相关度高达百分之九十几。也就是每千行代码，圈复杂度越高BUG率就越高。虽然不是因果性，但是对于一个工程学科来说，相关性也有足够多的指导意义了。所以当我们看到圈复杂度比较高的代码的时候，我们就要考虑重构掉。</p>
@@ -822,15 +822,15 @@
 <p>什么意思呢？首先不要着急改掉旧的代码，先让旧的保持不变，不过因为intelliJ这种利器的存在，使得抽取函数本身不再是一件危险的事（起码在Java里是这样），所以我们通常会先把要重构的旧的代码抽个函数，让重构的目标显性化。做这一步的时候，你会发现可能已经要改变代码结构了，起码要改造成我前面所说消除过程依赖，让代码之间只有数据依赖，这样才好提取嘛。提取之后写个新实现，然后在调用点调用新实现，旧的调用点先注释掉，测试通过了，在把旧的调用点代码删掉，打扫战场把旧的实现也删掉。</p>
 <p>具体到这个题呢，我的做法会是如下：</p>
 <p>先消除过程依赖。</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-09.png" alt="image.png"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-09.png" alt="image.png"></p>
 <p>然后抽取函数，把要重构的代码块先通过函数封起来，划定重构的边界，把输入输出浮现出来。</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-10.png" alt="image.png"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-10.png" alt="image.png"></p>
 <p>接着写一个新函数。</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-11.png" alt="image.png"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-11.png" alt="image.png"></p>
 <p>然后把函数调用点换掉。</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-12.png" alt="image.png"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-12.png" alt="image.png"></p>
 <p>然后把旧的函数删掉，打扫现场，该改名改名，该去注释去注释。</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-13.png" alt="image.png"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-13.png" alt="image.png"></p>
 <p>上面的每一步结束的时候都要保证测试是通过的。软件工程当中有一句很重要的理念就是：一个问题发现的越晚修正它的成本就越高。本着这个思想，我们重构的时候也要是这个样子，每做一次修改都要看一看有没有问题，如果有问题就立刻修正。如此小步前进，才是我们所谓的重构。</p>
 <p>整个过程，不说每一步都提交吧，一步切换或起码旧的再见之前也要提交一下。因为一旦你重构掉之后，有一天你想看看原始实现是什么样子，或者干脆你就想切换回原始实现。这个时候这一步切换可以最大限度的保留当时的代码的全景，让你很容易的看清当时的实现，也让你的回滚也会变得容易。毕竟谁也不敢保证自己能一次性做对，改着改着发现低估了这个复杂性，还不如以前的设计方便，也是常有的事儿。</p>
 <h1 id="迭代3"><a href="#迭代3" class="headerlink" title="迭代3"></a>迭代3</h1><blockquote>
@@ -849,25 +849,25 @@
 <p>我们当然也可以说，是你需求没有讲清楚，里面的重点没有标记清楚，没有用一种更容易理解的方式来呈现。是现实中真的存在完全清楚的需求描述吗？由于人类的语言存在强烈的上下文相关性，同一个词语换了上下文都会有不同的含义，换句话说，两个上下文不同的人听到同一个词的理解也是不一样的。我们的工作就是在这样的一种场景下，澄清需求本就是程序员的工作之一，因此沟通表达能力也是程序员需要去关注的能力之一。不然的话就会发生业务域的问题没搞清楚然后试图通过方案域和实现域办法来解决不属于这两个问题域的问题，这是很多难题得不到解决的关键所在，也是很多乱相的根因，具体比例咱不好说，读者可以自行对号入座。</p>
 <h2 id="测试景深"><a href="#测试景深" class="headerlink" title="测试景深"></a>测试景深</h2><p>到了这个版本的需求里，我们需要处理包含3，这里面有个测试就不太好了，那是什么呢？</p>
 <p>输入3得到Fizz这个，如下图所示：</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-14.png" alt="image.png"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-14.png" alt="image.png"></p>
 <p>这个测试我们测试了什么呢？是测试的被357整除还是测试的包含3？很明显，我们测试的是包含3。</p>
 <p>一个场景告诉我们，即便是一个测试用例，从入口进去，从出口出来，也不表示他测的是整个逻辑，是更多的关注了其中的一部分逻辑。</p>
 <p>这就好像照相的时候一样。即便整个景色都被我照了下来，但是我的一张照片总有一个聚焦的焦点，这个地方会特别的清楚。测试也是一样。如下图所示：</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-15.png" alt="image.png"></p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-16.png" alt="image.png"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-15.png" alt="image.png"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-16.png" alt="image.png"></p>
 <p>所以我们看待测试用例的时候不能一视同仁。这种虽然是个端到端的测试数据，但实际上只关注部分逻辑的思路，在系统重构的时候有更多的使用场景。等我们有机会讲深入聊重构的时候再聊。（不过出现这种场景的时候，专门针对不同的逻辑部分加单元测试，这也是测试景深的提出者追求的。）</p>
 <h2 id="一般等价类"><a href="#一般等价类" class="headerlink" title="一般等价类"></a>一般等价类</h2><p>从这个场景下我们也可以发现，如果仅写一个输入的值在测试用例的名字上，我们是不知道这个测试用例在测什么的。</p>
 <p>测试代码也是代码，也要追求可读性。</p>
 <p>所以比起之前写3或者现在写6。用一个更具有表义性的词来称呼会更好，比如像下面这样：</p>
 <p>这种更具有表义性的词，我们称之为一般等价类。我们写测试的时候会发现，测试数据经常是无穷无尽的，难道我无穷无尽的测下去吗？肯定是不行的。但是我还是希望能够测的尽量全一点。我测了哪些东西之后，就可以认为我测的比较全了呢，如何来得到一个性价比较高的测试用例集合呢。这时候我们要做一般等价类的分析，在我们这个题里面大概有下面几个等价类：被3整除，被5整除，被7整除，包含3，包含5，包含7。只要是一类的数据，我们只需要一个数据就算是覆盖了这一类的情况。这一类就叫一般等价类。，所以我们改完后的代码应该是下面这样的：</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-17.png" alt="image.png"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-17.png" alt="image.png"></p>
 <p>执行了之后就能看到这个：</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-18.png" alt="image.png"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-18.png" alt="image.png"></p>
 <p>我们经常讲敏捷是对工作的软件胜过面面俱到的文档。这并不是说我们不写文档，而是说我们的文档也是一种可以工作的软件。就像这个测试一样。我们称之为测试即文档，也叫活的文档。代码同样，也叫代码即文档。所以我们前面讲测试也要追求可读性。实际上测试的可能性比实现代码的可能性可能要求还要高一些。不过通常来讲也是有一些套路可循的。</p>
 <p>首先我们看名字,should开头，表示输出，given表示输入，有时候也写个when表示被测函数</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-19.png" alt="image.png"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-19.png" alt="image.png"></p>
 <p>对应的，我们的名字的结构搬到我们的代码上，三段式表达，given部分还是输入，when部分就是被测函数，然后then部分写各种assertion来校验</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-20.png" alt="image.png"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-20.png" alt="image.png"></p>
 <p>然后就是粒度问题，通常一个测试只测一个case，这样一旦报错了，我们就可以立刻知道是哪里的问题，从而减少寻错时间。</p>
 <p>迭代4</p>
 <blockquote>
@@ -883,16 +883,16 @@
 </ol>
 </blockquote>
 <p>有很多人看到业务复杂到这个程度，总算该设计个机制了吧。我见过很多人在这个环节把代码写得特别复杂。然而我写的代码非常简单，如下所示：</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-21.png" alt="image.png"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-21.png" alt="image.png"></p>
 <p>这种代码有什么好处呢？就是它的逻辑跟我们需求描述的逻辑几乎一模一样。我没有新增什么额外的机制。这看起来不是很高大上的样子。很多人就想加个设计。我们要明白，所谓的设计就是加入一些约束，使得做一系列事的方便程度高于了做另外一系列事。我们经常性的想约束想的都是代码，但实际上对代码的约束，本质上还是对人的约束。Rails的架构师DHH曾经说过约束是你的朋友，什么意思呢？就是说很多时候你对自己加了约束，那么你做事的效率可能比胡乱做、凭本能做更高。从这个角度出发，我们加约束一定要提高我们的整体效率，所以我给自己加了一个约束，叫做让我们的代码逻辑和业务逻辑最大可能性的保持一致。虽然不是一种代码的设计，但是是一种行为的设计。</p>
 <p>我们刻意要求自己按照这样的行为行事，会带来一个非常大的好处，那就是我们的业务逻辑的修改的难度和我们代码的修改难度保持一致。业务上如果改起来逻辑很复杂的话，你跟他多要一点时间来改我们的代码也比较容易要到，反之则不容易要到。如果我们刻意做了一些设计。使得局面变成了，有时候业务上改起来很简单的事情，我们这边特别麻烦，而有时候业务上改起来特别麻烦的事情，我们改起来特别简单。因此他们会觉得我们设计在一定程度上提高了他们的效率吗？不会。他们会觉得你今天心情好，所以你说简单，你哪天心情不好了就跟我说做不了。所以你没有办法形成业务与技术的协同效应，全局上来看，它是降低了效率的。</p>
 <p>所以要记得我们前面说过的这个原则：让我们的代码逻辑和业务逻辑最大可能性的保持一致。细节上也要注意，要尽量采用业务名词，业务概念。不要写那种写时候只有我和上帝懂，三个月之后只有上帝懂的代码。我们想象一个场景啊，当项目上来了一个新人，他首先会学习业务知识，完了之后开始维护代码，我们尽量使用业务名词业务概念，对于这个新人来说，他的上手成本是最低的，如果业务逻辑又保持一致，那上手成本就更低了。而新人这个概念不一定是新招了一个人，没有维护过你这块代码的，来维护过你这个代码，三个月后的你，可能都是这个新人。所以善待新人就是善待自己。</p>
 <p>也有人觉得到这个程度的 FizzBuzz 扩展需要已经非常迫切了，实际上确实是可以看出有一些扩展的迹象了，但是需要做的事应该是进一步探索需求，先去了解业务，而在不确定会怎么扩展的情况下，只能更多的抽取小原子操作，也就是包含3，被5整除这种函数或表达式，而不能过早的预判他们的组合机制，因为我们不知道谁能跳过谁这事到底会怎么演化，到底策略是在哪切那一刀更合理。</p>
 <p>我们这些代码也是测试驱动出来的，下面是我新加的测试：</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-22.png" alt="image.png"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-22.png" alt="image.png"></p>
 <p>这些测试通过之后，由于实现的改变，会导致我们前面的测试用例会有很多的改变。无形中制造了测试的麻烦。这个时候我们可以采用测试替身技术。把3，5，7的部分再摘出来测试，这样你就不需要关心3，5，7部分的输入了。这块我们就先不展开了，后续在另一道题里在深入讲。</p>
 <p>不管我们是否使用了测试替身技术。我们可能还是不太放心。我想写一个测试用例很全的测试，也就是所谓的细粒度的测试，于是我就写了一个。</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-23.png" alt="image.png"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-23.png" alt="image.png"></p>
 <p>上面就是我用代码生成的数据，这个时候你会发现测试用例一点都不好准备。测试成本很高。这个其实是正常的。测试代码也是需要花心思去写，花心思去维护的。</p>
 <p>但是这里面会延伸出一个问题。我写测试来保证实现的正确性，我拿什么来保证测试的正确性呢？</p>
 <p>这事情要分两头看。你写的一种测试代码是一种类库的形式，用于辅助测试的编写。这种代码本身跟一般的程序没什么区别，所以你可以针对他单独测试。在这个题里面，我根据不同的条件生成输入数据，就是一个这样的类库一样的程序。另一种测试代码就是我们平常的测试用例了，这种测试用例，它和实现是互相验证的。所以我们在写这个的时候有一个对自己的约束，那就是写测试的时候绝对不写实现，写实现的时候也绝对不写测试，两者之间有一个非常明确的边界：执行测试。也就是说我如果写测试，执行完了测试之后，确保是我预期的结果，我再去改实现。反之我写了实现，如果执行完测试是我预期的结果，我再考虑去改测试。这样你写测试的时候实现就是你的验证。写实现的时候测试就是你的验证。主要在修改的时候作用更大一些。</p>
@@ -949,7 +949,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-10 19:18:45" itemprop="dateModified" datetime="2020-09-10T19:18:45+08:00">2020-09-10</time>
+                <time title="修改时间：2021-02-19 15:37:10" itemprop="dateModified" datetime="2021-02-19T15:37:10+08:00">2021-02-19</time>
               </span>
 
           
@@ -1040,7 +1040,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-10 19:18:45" itemprop="dateModified" datetime="2020-09-10T19:18:45+08:00">2020-09-10</time>
+                <time title="修改时间：2021-02-19 15:37:10" itemprop="dateModified" datetime="2021-02-19T15:37:10+08:00">2021-02-19</time>
               </span>
 
           
@@ -1123,7 +1123,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-10 19:18:45" itemprop="dateModified" datetime="2020-09-10T19:18:45+08:00">2020-09-10</time>
+                <time title="修改时间：2021-02-19 15:37:10" itemprop="dateModified" datetime="2021-02-19T15:37:10+08:00">2021-02-19</time>
               </span>
 
           
@@ -1140,7 +1140,7 @@
           <p>标题耸动吗？可能你会奇怪，我们不都是人吗？什么叫像人一样工作？</p>
 <p>这个问题啊，你还别不认，我们不像人一样工作已经有个把世纪了。这一切都是从工业时代开始的。</p>
 <p>工业时代带来的一个问题就是劳动异化，劳动异化说的是，资本家从劳动者手里买走了劳动力，从而使得劳动者的劳动性质产生了某种变化，这种变化叫做被异化。异化会产生什么问题呢？问题在于劳动力被买走了，劳动的意义也被买走了，所以劳动者在劳动中除了定时领工资没有任何意义，在生活中才有意义。没有意义感之后，人就不是人了，所以劳动者在劳动的时候不是人，是个机器，参考摩登时代：</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/working-as-a-human-being/pic-01-moden-times.gif" alt="image.gif"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/working-as-a-human-being/pic-01-moden-times.gif" alt="image.gif"></p>
 <p>资本家非常清楚这个道理，比如福特就曾经有句名言：我就想雇两只手，怎么来了个人呢？</p>
 <p>这个问题一直延续到了现在，对程序员也是一样的。不然也不会有前一阵的996.ICU运动，这就是数字时代的工人运动。马云说，他自己超时工作如何如何，这个话说的就没文化，您是资本家，您劳动充满了意义感，而其他人是被异化的劳动者，劳动过程中没有意义感，它能一样吗？</p>
 <p>我之前有几篇文章，讲了像机器一样思考的方式来思考软件和任务。而我们毕竟不是机器，理解机器并不是为了变成机器，何况我们也变不成机器。所以我们可以像机器一样思考，最终还是要像人一样工作。机器和人的差别在哪呢？回想一下当柯洁和李世石代表人类坐在机器面前，看着绝对不会犯错的机器，说出绝望的言论时，有没有让你觉察到我们跟机器的本质区别是我们会犯错这个关键约束条件？有些人可能不喜欢这个本质区别，但我觉得这没什么不好，这就好像苹果和梨，没有好坏之分，只是不同，工业时代把人变成机器，数字时代让人重新做人这是个好事。（尽管转变的过程中会有阵痛，但最终的结果也只能是这样，我坚信着。）</p>
@@ -1148,10 +1148,10 @@
 <p>机器工作的方式是什么样的呢？我们来看个动画：</p>
 <p><a href="https://www.bilibili.com/video/av51228411" target="_blank" rel="noopener">https://www.bilibili.com/video/av51228411</a></p>
 <p>这个问题在哪呢？在敏捷社区里有一副很有名的画，可以很好的说明人和机器的区别：</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/working-as-a-human-being/pic-02.png" alt="image.png"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/working-as-a-human-being/pic-02.png" alt="image.png"></p>
 <p>看这个过程像不像前面机器公敌里的机器人作画的场面？</p>
 <p>如果我们按照像机器一样思考教的里面画好了任务后，按照上图的方式去实现，就叫像机器一样工作，实际上这个行业里大量的项目都是这么干的，真是悲哀。每个人领一个模块，最后拼成一个功能，绝大多数人都不知道端到端什么样给客户提供了价值没有。这种工业时代的做事方法最大的问题就是把人当成了机器，像上面那组图一样工作，然而人做事是从粗略到丰富的画面一点点变过来的，就像下面这张图：</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/working-as-a-human-being/pic-03.png" alt="image.png"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/working-as-a-human-being/pic-03.png" alt="image.png"></p>
 <p>图片来源： <a href="https://acejoy.com/2018/04/20/438/" target="_blank" rel="noopener">https://acejoy.com/2018/04/20/438/</a></p>
 <p>可以看到第一张图里，每一步都做得很完美，但是不到最后一步，它不是一个完成的成品。观察一下打印机，就是这么工作的，哪怕过程中出了状况，中断了工作，已经完成的部分每一个细节都是完美的。</p>
 <p>而我们人是会犯错的，并不能做到像第一张图那样工作，反而是会采用第二张图那种方式。除了避免犯错，还有一个核心差异促使我们这么这么干，那就是机器是不知道疲劳和厌倦的，而人会，所以人在一个漫长的造物过程中，需要一种东西帮助自己持续获得前进的动力，那就是文章开头所说的意义感。</p>
@@ -1209,7 +1209,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-10 19:18:45" itemprop="dateModified" datetime="2020-09-10T19:18:45+08:00">2020-09-10</time>
+                <time title="修改时间：2021-02-19 15:37:10" itemprop="dateModified" datetime="2021-02-19T15:37:10+08:00">2021-02-19</time>
               </span>
 
           
@@ -1239,7 +1239,7 @@
 <p>举个例子，工程实践中，tdd是最难学的一个，tdd就是高手的做事方式。最近在参与熊节的tdd练功房，有位同学就第一道最简单的题写了自己的解法：<br><a href="https://www.jianshu.com/p/13d7a0a0e5be" target="_blank" rel="noopener">https://www.jianshu.com/p/13d7a0a0e5be</a></p>
 <p>这个解法到了后面有点过度设计，但本题练的是编程的手艺，所以重点在过程中的细节，那一个个细小的步骤，我敢说是很多程序员会忽略的。</p>
 <p>再举个例子，面向对象封装继承多态，最难的就是封装。我们最近出了一道重构的题目给某公司，在重构的过程中要把分散的基本数据类型的数据封装成对象。分散的数据如下所示：</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/what-worth-to-be-recited/pic-01.png" alt="充满坏味道的代码"> </p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/what-worth-to-be-recited/pic-01.png" alt="充满坏味道的代码"> </p>
 <p>这个能力其实是最难锻炼的，上面这些数据谁跟谁应该封装在一起，谁跟谁不应该。这也属于没有标准答案的问题。作业结果也证明了这一点。怎么办呢？同样，可以试着背一下高手的解题思路。（想知道这个题的思路吗？等我后面的文章，没错这里是广告）</p>
 <p>综上，对于一些实践类的内容，总是会出现不管怎么练也不开窍的情况，比如如何高效的TDD，比如软件设计。这个时候，大家可以试试让被教授的人背诵一下解题思路，说不定会有效果。</p>
 
@@ -1292,7 +1292,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-10 19:18:45" itemprop="dateModified" datetime="2020-09-10T19:18:45+08:00">2020-09-10</time>
+                <time title="修改时间：2021-02-19 15:37:10" itemprop="dateModified" datetime="2021-02-19T15:37:10+08:00">2021-02-19</time>
               </span>
 
           
@@ -1307,7 +1307,7 @@
 
       
           <h2 id="能力建设的鬼打墙"><a href="#能力建设的鬼打墙" class="headerlink" title="能力建设的鬼打墙"></a>能力建设的鬼打墙</h2><p>我们为了变强，会订阅很多公众号，牛人博客，收藏很多视频，看很多文章。做了很多松鼠的行为，然而最终大多数人并没有变强。<br>我去看了很多学校，大多数学生面临的成长问题与十几年前并无太大区别。<br>我去看了很多家公司，大多数公司面临的能力问题跟十几年前并无太大区别。<br>十几年前，我们买一台电脑都贵得要死，现在跟一台手机差不多钱了。<br>十几年前，我们想学编程连个像样的教程都没有，现在互联网上的教程不要太多。<br>为什么会这样呢？<br>因为信息的多少，并不是学成才的关键。很多人可能知道我又要说刻意练习了，可是按照刻意练习理论，要练一万小时才能成才。但我们从业者练了不止一万小时了吧，每天996，3年就该1万小时了吧，为啥能力还是个问题呢？<br>因为工作的关系，我不得不思考这个问题，思考的久了，我自己有个理论。我在想，刻意练习把问题过分简化了，学习过程可不是那么简单的，大面上讲，我觉得刻意练习理论是工作的，只是过于粗糙，需要精细化的考虑一下，仔细思考一下刻意练习的背后到底是一个怎样的过程。</p>
-<h2 id="刻意练习的元模型"><a href="#刻意练习的元模型" class="headerlink" title="刻意练习的元模型"></a>刻意练习的元模型</h2><p>经过对自己的学习过程进行反观内视，加上跟很多人的交流，我大概抽取了一个闭环的元模型。<br><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/dojo-is-more-important-than-method/pic-01.png" alt="image.png"></p>
+<h2 id="刻意练习的元模型"><a href="#刻意练习的元模型" class="headerlink" title="刻意练习的元模型"></a>刻意练习的元模型</h2><p>经过对自己的学习过程进行反观内视，加上跟很多人的交流，我大概抽取了一个闭环的元模型。<br><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/dojo-is-more-important-than-method/pic-01.png" alt="image.png"></p>
 <p>我发现首先要有问题供学习者思考，我称之为我思，有些问题比较简单，直接可以思考，有些问题比较难，需要先学习一些基础知识才能理解问题本身，后者就是读书的原因之一。</p>
 <p>理解问题之后，就要开始解决问题，毕竟企业里的能力建设都是要解决问题的，必须学以致用。为了能学以致用，那自然就需要练习，但练习不一定是非要专门的练习题，只要将所学知识应用，也算是练习了。练习需要有反馈，知道你做的对还是不对。</p>
 <p>经过练习之后，需要对整个过程进行反思、总结，产出经验和洞见。有数据供反思时分析和有反思的习惯是很重要的，我发现傻做的人很多，反思的人很少，真的是大家都在泥坑里，只有少数人会仰望星空。</p>
@@ -1433,7 +1433,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

@@ -53,10 +53,10 @@
 <meta property="og:site_name" content="铜剑技校">
 <meta property="og:description" content="（本文不适合初学者阅读，目前只是为了方便培训的时候预习而写，也不适合无后续服务的人阅读）现在，我们把上一篇的应用变成网络版。这个时候，你至少有了两个应用，一个客户端应用，一个服务端应用。到这一刻，我们就算具有了一个系统。 当我们有一个系统的时候，我们需要一种框架来简化思考我们的应用。这里又需要我们再次展示我们的概念性思考能力，这时我会采用Linux的模型来思考这个问题，所以应用程序一般我会分为三层">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-07/pic-01.png">
-<meta property="og:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-07/pic-02.png">
+<meta property="og:image" content="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-07/pic-01.png">
+<meta property="og:image" content="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-07/pic-02.png">
 <meta property="article:published_time" content="2017-02-06T09:18:00.000Z">
-<meta property="article:modified_time" content="2020-09-10T11:18:45.176Z">
+<meta property="article:modified_time" content="2021-02-19T07:37:10.893Z">
 <meta property="article:author" content="仝键">
 <meta property="article:tag" content="programming">
 <meta property="article:tag" content=" training">
@@ -77,7 +77,7 @@
 <meta property="article:tag" content=" refactoring">
 <meta property="article:tag" content=" lean">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-07/pic-01.png">
+<meta name="twitter:image" content="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-07/pic-01.png">
 
 <link rel="canonical" href="https://jtong.dev/2017/02/06/programmer-dojo/thinking-as-a-machine-07/">
 
@@ -236,7 +236,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-10 19:18:45" itemprop="dateModified" datetime="2020-09-10T19:18:45+08:00">2020-09-10</time>
+                <time title="修改时间：2021-02-19 15:37:10" itemprop="dateModified" datetime="2021-02-19T15:37:10+08:00">2021-02-19</time>
               </span>
 
           
@@ -252,7 +252,7 @@
       
         <p>（本文不适合初学者阅读，目前只是为了方便培训的时候预习而写，也不适合无后续服务的人阅读）<br>现在，我们把上一篇的应用变成网络版。这个时候，你至少有了两个应用，一个客户端应用，一个服务端应用。到这一刻，我们就算具有了一个系统。</p>
 <p>当我们有一个系统的时候，我们需要一种框架来简化思考我们的应用。这里又需要我们再次展示我们的概念性思考能力，这时我会采用Linux的模型来思考这个问题，所以应用程序一般我会分为三层：</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-07/pic-01.png" alt="layer-of-application"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-07/pic-01.png" alt="layer-of-application"></p>
 <p>core层是我的核心逻辑，核心的计算部分放在这里。（Linux里是Kernel，不过Kernel这词比较偏门，咱们这教程的目标是为了尽量降低门槛，还是用core吧）<br>shell层是我链接核心层和用户的地方，你可以简单理解为解析用户输入，包装核心层的计算结果，变成用户看到的输出。Shell层还有一个作用，当我们有多个应用的时候，彼此之间的shell层是互相交互的，Core层是互相不知道彼此的存在的。<br>config层比较难理解，从工程的角度，我们的Core层和Shell层，都不应该控制彼此的生命周期，它们所有的依赖都应该是外部配置的，它们只依赖抽象的接口而不是具体实现。config层就是这一层配置，在Linux的Shell里对应的就是环境变量这个概念。</p>
 <p>引入这些概念有什么好处呢？如果用这些概念来解释我们的应用，可以支撑非常大的架构的思考。</p>
 <p>我们想象一下，系统随着演进而变大，出现原本的小东西也会变的非常庞大。比如上一篇main函数里的几行代码，随着系统变大，相应的Router也不可能自己写了，Router和Command的关系自然也是在文件里配置的，慢慢的我们就开始需要一个IOC容器。Service本身会变得很复杂，彼此之间可能会有关系，而且甚至可能是别的应用提供的Service。如果我们再使用应用框架里的概念，那么思考也好，交流也好，都会变得很低效。所以我们才引出了config，shell，core这三个概念来简化应用的内部，这样就可以思考大量的应用之间的关系是应该是一个什么样的架构了，不过这个方向是一个更复杂的问题，这里就不展开了。</p>
@@ -266,7 +266,7 @@
 <p>所谓的MVC就是Model-View-Controller。一个常见系统，往往Model层负责核心基本元素和基本算法，View层负责展示和表达数据，Controller层负责调度和组合，把Model层和View层连接在一起。</p>
 <p>一般来讲，Model层通常是我们的Core，Controller层往往就是我们的shell，View层就是shell返回的数据。这个时候边界的思考就清楚了，谁是我们的model和model相关的核心计算，谁就是我们的core。谁是我们的Controller负责调度组合和内外相连，谁就是我们的shell。而我们的计算结果，也就是我们的View层，是会离开我们的应用供别人使用的，那它是我们的最外面的边界。我们思考边界只需要关注在View层，思考清楚我们的View是否在一个抽象层次上就可以了。</p>
 <p>但是，世界不是这么简单的分三层就可以结束了，世界是往复循环以致无穷的。所以我们的MVC也是循环迭代的，也就是说MVC中的某一层还可能再分MVC。那么是哪一层呢？View层。还记得我们第一篇讲得，数据和过程是不严格区分的，所以我们返回的数据，可以被解析为新的过程，新的过程再产生新的数据，从而往复循环以致无穷。</p>
-<p><img src="https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-07/pic-02.png" alt="MVC"></p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-07/pic-02.png" alt="MVC"></p>
 <p>所以可以认为服务端是原应用的Core层进化出来的。</p>
 <p>如果我们把View层进化下去，我们前面提到的客户端的Shell返回的数据，还会再划分，就会有新的组件层(Component)，模版层(Layout)，页面层(Page，也有人爱用Container)等等。</p>
 <p>随着出现了MVC，再进一步思考就会逐渐发现，其实core层不应该关心后端代码，它应该关心前端的领域对象，以用户眼中的模型为基础计算，而不是后端业务人员眼中的模型为基础来计算。所以他会把弥合后端和前端的工作交给shell层，而shell层会夹在三方面很难受，他一方面要对接后端，一方面要对接core，还有一方面要适配真正的前端模型。前端和后端的拉锯战就会出现，在这股力量的挤压之下，我们的BFF就会自然而然的出现，所谓的前后端分离也就是自然而然的事情了。</p>
@@ -416,7 +416,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
