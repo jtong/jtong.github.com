@@ -33,21 +33,21 @@ happy path完了，再考虑一下异常分支，没发送命令是一个case，
 
 写完之后呢，就会开始重构，重构成什么样子的就都有了，比如下面这个：
 
-![image.jpeg](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/marsrover-tdd/pic-01.jpg)
+![image.jpeg](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/marsrover-tdd/pic-01.jpg)
 
 这个重构完，通常if就没有了。
 
 但是有很明显的循环依赖，所有人都能改MarsRover，这封装性也太差了。那我们提取一个数据传输对象来提升一下封装性吧，像下面这样：
 
-![image.jpeg](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/marsrover-tdd/pic-02.jpg)
+![image.jpeg](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/marsrover-tdd/pic-02.jpg)
 
 这么做循环依赖貌似少了，封装性也提高了，但Direction和RoverStatus还是有个循环依赖，进一步消除一下试试：
 
-![image.jpeg](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/marsrover-tdd/pic-03.jpg)
+![image.jpeg](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/marsrover-tdd/pic-03.jpg)
 
 终于，所有的循环依赖都干掉了，但这图看着好复杂啊而且有个问题，那就是Command和DIrection严重耦合，Direction的三个方法明显是Command的延伸，每加一个Command，Direction脱不了也要加个方法。这个设计肯定是不好的。我们可以发现DirectionValue实际上是可以不知道Move的相关概念的，方向之间自然的有左右关系，所以可以改造成这样的设计：
 
-![image.jpeg](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/marsrover-tdd/pic-04.jpg)
+![image.jpeg](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/marsrover-tdd/pic-04.jpg)
 
 每个DirectionValue都有一个index，左转可以通过+3然后%4的方式完成，右转可以通过+1然后%4的方式完成，不需要外面的其他概念，实现也很简单。
 

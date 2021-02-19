@@ -68,6 +68,6 @@ config层比较难理解，从工程的角度，我们的Core层和Shell层，�
 你这个是不是六边形架构？
 其实可以看作是六边形架构的一种变种，我只是比较讨厌六边形这个词，它太容易让人纠结为啥是六个边，不是八个？比如我叫八卦可不可以？所以我们也不要太纠结他叫什么，领会精神就好。
   
-  [0]: https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-07/pic-01.png
+  [0]: https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-07/pic-01.png
 
-  [1]: https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-07/pic-02.png
+  [1]: https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-07/pic-02.png

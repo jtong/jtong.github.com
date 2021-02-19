@@ -19,7 +19,7 @@ date: 2018-07-15 18:45
 
 这个方向倒是不新鲜，一直以来我们在inception的时候做用需求分析时我们的方法就是围绕着用户展开的，一个典型的分析过程，如下图所示。
 
-![用户旅途](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/user-centered-software-development/pic-01.jpg)
+![用户旅途](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/user-centered-software-development/pic-01.jpg)
 
 
 我们会在上面画一条轴，标示出用户旅途。这是用户在使用软件的时候的，他的一个全过程。然后在对应的时间点上，标记出我们的功能。这样我们的功能就不是平白出来的。每一个都联系了用户价值。相对于一般人会更容易理解功能，在ThoughtWorks，我们更多标记的是用户故事。比起功能，用户故事增加了有关价值的线索，因为用户故事首先就是要写出价值。
@@ -30,22 +30,22 @@ date: 2018-07-15 18:45
 
 所以现在我觉得，一个更系统的做法应该是这样的，首先做服务设计：
 
-![更宏观的用户旅途](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/user-centered-software-development/pic-02.jpg)
+![更宏观的用户旅途](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/user-centered-software-development/pic-02.jpg)
 
 系统化的分析用户的行为，过程中与企业有哪些触点，在这些触点上，借用《与运气竞争》里的思维框架来讲，用户“雇佣”企业的产品到底是来做什么的，也就是动机有哪些。
 
 然后将这些点再进一步细化，采用故事的模式：
-![故事板](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/user-centered-software-development/pic-03.jpg)
+![故事板](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/user-centered-software-development/pic-03.jpg)
 
 图上的一行会讲一个故事，就像电影分镜或者漫画一样，来表达用户使用的故事，真正的故事，而不是用户故事那种东西，我们叫这个东西故事板。
 在故事板上，我们描绘了一个故事，这个故事里，用户获得了一种体验。一个故事对应一个体验。在基本需求都已经得到满足的今天，体验是新的最有价值的事情，以体验为中心才是以用户为中心。故事板恰好给了我们一个非常符合人类认知习惯的方式来描述什么是一个体验。也就回答了开头的问题，什么是价值的单位。
 
-![故事板与用户故事的关系](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/user-centered-software-development/pic-04.jpg)
+![故事板与用户故事的关系](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/user-centered-software-development/pic-04.jpg)
 
 
 当我们定义出了价值的单位，就可以从这一单位的价值里面映射出故事卡，来进行开发过程的管理：
 
-![故事板是MVP的细分](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/user-centered-software-development/pic-05.jpg)
+![故事板是MVP的细分](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/user-centered-software-development/pic-05.jpg)
 
 
 这里就是我们的重点，我们将来交付的软件、交付的服务、我们交付的一个MVP本质上是交付给了用户一组体验。MVP的迭代则应该是更多的体验或某些旧体验的升级（也就是同一个动机，换了一个不同的故事来满足）。

@@ -216,6 +216,6 @@ it("test case 1 for function b", () =>{
 
 
 
-[1]: https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-04/pic-01.png
-[2]: https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-04/pic-02.png
-[3]: https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-04/pic-03.png
+[1]: https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-04/pic-01.png
+[2]: https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-04/pic-02.png
+[3]: https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-04/pic-03.png

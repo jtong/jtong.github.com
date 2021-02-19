@@ -39,7 +39,7 @@ date: 2018-07-07 15:51
 
 
 
-![akf扩展立方](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/bad-smell-of-visualize-arch-design/pic-01.png)
+![akf扩展立方](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/bad-smell-of-visualize-arch-design/pic-01.png)
 
 
 
@@ -50,7 +50,7 @@ Y轴给人的感觉是最容易操作的，但实际上却是最难的做好的�
 
 
 
-![领域模型与架构设计](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/bad-smell-of-visualize-arch-design/pic-02.jpg)
+![领域模型与架构设计](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/bad-smell-of-visualize-arch-design/pic-02.jpg)
 
 
 最经典的工具组合就是求助于DDD，结合康威定律和步速，考虑维护的团队、使用的角色、变化的节奏，这块展开就复杂了，有机会再聊。
@@ -68,7 +68,7 @@ Y轴给人的感觉是最容易操作的，但实际上却是最难的做好的�
 
 所以在我们做架构可视化的时候，经常会先画一个技术共识图，比如以一个我们的能力建设的数字平台为例，我们就画了一个下面这样的技术共识图。：
 
-![技术共识图](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/bad-smell-of-visualize-arch-design/pic-03.png)
+![技术共识图](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/bad-smell-of-visualize-arch-design/pic-03.png)
  
 然后在后面画具体的图的时候，我就可以省略掉一些共识的元素，像nginx和数据库就没有了，可以更关注在业务上，而不是技术上来画图。
 
@@ -76,7 +76,7 @@ Y轴给人的感觉是最容易操作的，但实际上却是最难的做好的�
 
 其实上面的技术共识图就是类似的做法，只是用于技术方面，如果用于业务方面，我们可以用一些抽象的名词或动词来代替一类业务，比如下图：
 
-![数字平台系统景观图](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/bad-smell-of-visualize-arch-design/pic-04.jpg)
+![数字平台系统景观图](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/bad-smell-of-visualize-arch-design/pic-04.jpg)
 
 
 上图是一个系统景观图。当前这个主题是希望，人们一眼看清楚这个系统里面的相关角色都在使用什么系统，并且他们关注什么，职责是什么。所以具体学什么，怎么学的，都不是那么重要。所以我们就用学习一词代表了一系列的业务。

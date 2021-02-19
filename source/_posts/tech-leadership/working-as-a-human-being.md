@@ -9,7 +9,7 @@ date: 2019-06-23 00:07
 
 工业时代带来的一个问题就是劳动异化，劳动异化说的是，资本家从劳动者手里买走了劳动力，从而使得劳动者的劳动性质产生了某种变化，这种变化叫做被异化。异化会产生什么问题呢？问题在于劳动力被买走了，劳动的意义也被买走了，所以劳动者在劳动中除了定时领工资没有任何意义，在生活中才有意义。没有意义感之后，人就不是人了，所以劳动者在劳动的时候不是人，是个机器，参考摩登时代：
 
-![image.gif](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/working-as-a-human-being/pic-01-moden-times.gif)
+![image.gif](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/working-as-a-human-being/pic-01-moden-times.gif)
 
 资本家非常清楚这个道理，比如福特就曾经有句名言：我就想雇两只手，怎么来了个人呢？
 
@@ -25,13 +25,13 @@ https://www.bilibili.com/video/av51228411
 
 这个问题在哪呢？在敏捷社区里有一副很有名的画，可以很好的说明人和机器的区别：
 
-![image.png](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/working-as-a-human-being/pic-02.png)
+![image.png](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/working-as-a-human-being/pic-02.png)
 
 看这个过程像不像前面机器公敌里的机器人作画的场面？
 
 如果我们按照像机器一样思考教的里面画好了任务后，按照上图的方式去实现，就叫像机器一样工作，实际上这个行业里大量的项目都是这么干的，真是悲哀。每个人领一个模块，最后拼成一个功能，绝大多数人都不知道端到端什么样给客户提供了价值没有。这种工业时代的做事方法最大的问题就是把人当成了机器，像上面那组图一样工作，然而人做事是从粗略到丰富的画面一点点变过来的，就像下面这张图：
 
-![image.png](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/working-as-a-human-being/pic-03.png)
+![image.png](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/working-as-a-human-being/pic-03.png)
 
 图片来源： [https://acejoy.com/2018/04/20/438/](https://acejoy.com/2018/04/20/438/)
 

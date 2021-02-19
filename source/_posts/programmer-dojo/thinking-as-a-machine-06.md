@@ -110,13 +110,13 @@ Router通过简单的输入解析，找到具体的Command，Command负责处理
 
 
 
-  [0]: https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-01.png
-  [1]: https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-02.png
-  [2]: https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-03.png
-  [4]: https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-04.png
-  [5]: https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-05.png
-  [6]: https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-06.png
-  [7]: https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-07.png
-  [8]: https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-08.png
-  [9]: https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-09.png
+  [0]: https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-01.png
+  [1]: https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-02.png
+  [2]: https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-03.png
+  [4]: https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-04.png
+  [5]: https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-05.png
+  [6]: https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-06.png
+  [7]: https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-07.png
+  [8]: https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-08.png
+  [9]: https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-09.png
 

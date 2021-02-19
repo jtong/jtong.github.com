@@ -11,10 +11,10 @@ date: 2016-06-14 14:31
 那么计算机这台机器是怎么思考的呢？这里是我的答案：
 
 我们所有的计算机，都是下面这个模型，江湖人称“冯・诺伊曼体系”
-![冯・诺伊曼体系](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-01/pic-01.png)
+![冯・诺伊曼体系](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-01/pic-01.png)
 
 从这个模型上我们看到了什么吗？嗯，可能太多噪音了，看的不够清楚，我给你们再抽象一层：
-![输入、处理、输出](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-01/pic-02.png)
+![输入、处理、输出](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-01/pic-02.png)
 
 现在清楚了吧，计算机在中间，两边是输出输出。所有的问题都从输入和输出的角度去思考，这就是计算机这台机器的思考方式。也就是说你能做到这样思考，你就会像机器一样思考了。
 

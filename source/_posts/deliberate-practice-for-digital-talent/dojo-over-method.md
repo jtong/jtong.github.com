@@ -17,7 +17,7 @@ date: 2019-02-11 01:11
 
 ## 刻意练习的元模型
 经过对自己的学习过程进行反观内视，加上跟很多人的交流，我大概抽取了一个闭环的元模型。
-![image.png](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/dojo-is-more-important-than-method/pic-01.png)
+![image.png](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/dojo-is-more-important-than-method/pic-01.png)
 
 我发现首先要有问题供学习者思考，我称之为我思，有些问题比较简单，直接可以思考，有些问题比较难，需要先学习一些基础知识才能理解问题本身，后者就是读书的原因之一。
 

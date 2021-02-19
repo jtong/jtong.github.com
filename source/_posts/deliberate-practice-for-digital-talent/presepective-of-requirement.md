@@ -18,7 +18,7 @@ date: 2018-12-12 22:51
 进过长期的观察，我发现他们是在盒子内思考，而跳不出盒子外。
 
 
-![跳到盒子的外面，才能发现场景](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/presepective-of-requirement/pic-01.png)
+![跳到盒子的外面，才能发现场景](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/presepective-of-requirement/pic-01.png)
 
 
 什么是盒子内思考呢？比如一支白板笔。
@@ -35,7 +35,7 @@ date: 2018-12-12 22:51
 
 我会要求学生画一种图。我们管它叫故事线，是一种场景思维的辅助工具。
 
-![故事线](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/presepective-of-requirement/pic-02.png)
+![故事线](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/presepective-of-requirement/pic-02.png)
 
 这个工具是这样的用的，每当你要做一个功能，就画一条故事线，在故事线里面，首先你要定义故事起点。这个故事的起点是一个业务动机。比如说一个系统可以创建用户，那么这个创建用户的业务动机是什么呢？我问出去的时候，学生们就会开始思考，想到了说创建用户的业务动机是有一个新人入职了。
 
@@ -50,7 +50,7 @@ date: 2018-12-12 22:51
 还是以创建用户为例，当我们为用户创建完了之后，我们的下一步是什么呢？下一步可以试试，发个邮件给用户，也可以是，把用户名密码拷给，我们的新员工本人或者他的经理。
 
 
-![学生做的一个案例](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/presepective-of-requirement/pic-03.png)
+![学生做的一个案例](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/presepective-of-requirement/pic-03.png)
 
 ## 小节
 

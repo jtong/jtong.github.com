@@ -7,7 +7,7 @@ date: 2018-10-17 18:45
 
 不知道你有没有灵魂画手的体验。所谓灵魂画手，又叫手残党，当它们想画一个东西的时候，画出来的图大都是这样的：
 
-![灵魂画作](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/deliberate-practice-for-digital-talent/pic-01.png)
+![灵魂画作](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/deliberate-practice-for-digital-talent/pic-01.png)
 
 
 

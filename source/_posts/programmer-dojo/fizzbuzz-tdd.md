@@ -72,19 +72,19 @@ FizzBuzz，是一个经典的TDD入门题目，麻雀虽小，五脏……勉强
 
 上下文图表达的是代码的静态关系。比如，如果我的代码要这么写：
 
-![image.png](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-01.png)
+![image.png](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-01.png)
 
 那图就是这么画的
 
-![image.png](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-02.png)
+![image.png](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-02.png)
 
 如果代码要这么写：
 
-![image.png](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-03.png)
+![image.png](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-03.png)
 
 那么图就是这么画的
 
-![image.png](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-04.png)
+![image.png](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-04.png)
 
 （按照我文章里的讲法，其实我不应该写输入为无，还有个200呢，不过这算起来，1也算，3，5，7都要算，所以我们在标输入输出的时候，还是要做一些过滤的，过滤的原则就是为了测试的相关性是否强，为什么测试这么重要？我们后面会聊到）
 
@@ -92,7 +92,7 @@ FizzBuzz，是一个经典的TDD入门题目，麻雀虽小，五脏……勉强
 
 什么叫过程依赖 如下图所示
 
-![image.jpeg](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-05.png)
+![image.jpeg](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-05.png)
 
 上面的代码每一段if的逻辑执行完都调用了一个continue（类似的还有break和return），这使得每一个if的block都是与外面的for block耦合的，我无法单独把其抽取成一个函数。也就没法单独测试，它的可测试性是一点都不高。
 
@@ -138,7 +138,7 @@ FizzBuzz，是一个经典的TDD入门题目，麻雀虽小，五脏……勉强
 
 我要先实现可以被三整除的。再实现可以被5整除的。最后实现可以被3和5整除的。这算是一个驱动的意思。从简单的入手，然后再往复杂的去写。很多人可能会觉得比较无聊。但如果你测试的人足够多，你会发现很多人哪怕是在这样一个无聊的题上，也会把自己坑进去。举个例子我们第3步：可以被3和5整除。当我们实现的时候，我们if里那个表达式模3模5在上还是在下。每次我都会故意写在下面问有没有问题，如下图所示：
 
-![image.png](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-06.png)
+![image.png](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-06.png)
 
 每次都会有人意识不到上面的实现是有问题的。这么简单的题目都会被绕晕，到底要多有自信，才会觉得复杂的需求不会出错呢？所以还是老老实实的给自己加测试防护网吧，不要对自己的头脑过分自信。测试一个很重要的原则，是防止低级错误，而不是恶意欺骗。前半句是对上面这个情况的描述，而后半句则是针对有的同学在做测试的时候，总是在想，万一有人用”黑魔法“欺骗了我的测试怎么办？这个是没办法的，也不该花精力去思考这个问题，毕竟写测试的和写实现的都是你，你为什么要这么难为自己？
 
@@ -156,7 +156,7 @@ FizzBuzz，是一个经典的TDD入门题目，麻雀虽小，五脏……勉强
 
 到此为止，我们写出来带的代码如下所示：
 
-![image.png](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-07.png)
+![image.png](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-07.png)
 
 实现并不复杂，仔细看看这代码还可以，够用，不难懂，那就行了，我们就先不请重构登场了。天下设计都讲究一个不要过度设计，软件设计也不例外，做到这里是很好懂的，那我们也不要画蛇添足。
 
@@ -181,7 +181,7 @@ FizzBuzz，是一个经典的TDD入门题目，麻雀虽小，五脏……勉强
 
 迭代2的需求改动不多，这个需求对我们的业务域造成的变化是加入了一个新的特殊数字7。如果我们还是按照迭代一的方式去实现，我们写出来的代码可能很可能如下所示。
 
-![image.png](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-08.png)
+![image.png](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-08.png)
 
 代码有什么问题吗？它最大的问题叫做圈复杂度太高。
 
@@ -206,23 +206,23 @@ FizzBuzz，是一个经典的TDD入门题目，麻雀虽小，五脏……勉强
 
 先消除过程依赖。
 
-![image.png](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-09.png)
+![image.png](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-09.png)
 
 然后抽取函数，把要重构的代码块先通过函数封起来，划定重构的边界，把输入输出浮现出来。
 
-![image.png](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-10.png)
+![image.png](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-10.png)
 
 接着写一个新函数。
 
-![image.png](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-11.png)
+![image.png](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-11.png)
 
 然后把函数调用点换掉。
 
-![image.png](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-12.png)
+![image.png](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-12.png)
 
 然后把旧的函数删掉，打扫现场，该改名改名，该去注释去注释。
 
-![image.png](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-13.png)
+![image.png](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-13.png)
 
 上面的每一步结束的时候都要保证测试是通过的。软件工程当中有一句很重要的理念就是：一个问题发现的越晚修正它的成本就越高。本着这个思想，我们重构的时候也要是这个样子，每做一次修改都要看一看有没有问题，如果有问题就立刻修正。如此小步前进，才是我们所谓的重构。
 
@@ -251,7 +251,7 @@ FizzBuzz，是一个经典的TDD入门题目，麻雀虽小，五脏……勉强
 
 输入3得到Fizz这个，如下图所示：
 
-![image.png](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-14.png)
+![image.png](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-14.png)
 
 这个测试我们测试了什么呢？是测试的被357整除还是测试的包含3？很明显，我们测试的是包含3。
 
@@ -259,9 +259,9 @@ FizzBuzz，是一个经典的TDD入门题目，麻雀虽小，五脏……勉强
 
 这就好像照相的时候一样。即便整个景色都被我照了下来，但是我的一张照片总有一个聚焦的焦点，这个地方会特别的清楚。测试也是一样。如下图所示：
 
-![image.png](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-15.png)
+![image.png](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-15.png)
 
-![image.png](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-16.png)
+![image.png](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-16.png)
 
 所以我们看待测试用例的时候不能一视同仁。这种虽然是个端到端的测试数据，但实际上只关注部分逻辑的思路，在系统重构的时候有更多的使用场景。等我们有机会讲深入聊重构的时候再聊。（不过出现这种场景的时候，专门针对不同的逻辑部分加单元测试，这也是测试景深的提出者追求的。）
 
@@ -275,21 +275,21 @@ FizzBuzz，是一个经典的TDD入门题目，麻雀虽小，五脏……勉强
 
 这种更具有表义性的词，我们称之为一般等价类。我们写测试的时候会发现，测试数据经常是无穷无尽的，难道我无穷无尽的测下去吗？肯定是不行的。但是我还是希望能够测的尽量全一点。我测了哪些东西之后，就可以认为我测的比较全了呢，如何来得到一个性价比较高的测试用例集合呢。这时候我们要做一般等价类的分析，在我们这个题里面大概有下面几个等价类：被3整除，被5整除，被7整除，包含3，包含5，包含7。只要是一类的数据，我们只需要一个数据就算是覆盖了这一类的情况。这一类就叫一般等价类。，所以我们改完后的代码应该是下面这样的：
 
-![image.png](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-17.png)
+![image.png](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-17.png)
 
 执行了之后就能看到这个：
 
-![image.png](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-18.png)
+![image.png](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-18.png)
 
 我们经常讲敏捷是对工作的软件胜过面面俱到的文档。这并不是说我们不写文档，而是说我们的文档也是一种可以工作的软件。就像这个测试一样。我们称之为测试即文档，也叫活的文档。代码同样，也叫代码即文档。所以我们前面讲测试也要追求可读性。实际上测试的可能性比实现代码的可能性可能要求还要高一些。不过通常来讲也是有一些套路可循的。
 
 首先我们看名字,should开头，表示输出，given表示输入，有时候也写个when表示被测函数
 
-![image.png](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-19.png)
+![image.png](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-19.png)
 
 对应的，我们的名字的结构搬到我们的代码上，三段式表达，given部分还是输入，when部分就是被测函数，然后then部分写各种assertion来校验
 
-![image.png](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-20.png)
+![image.png](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-20.png)
 
 然后就是粒度问题，通常一个测试只测一个case，这样一旦报错了，我们就可以立刻知道是哪里的问题，从而减少寻错时间。
 
@@ -306,7 +306,7 @@ FizzBuzz，是一个经典的TDD入门题目，麻雀虽小，五脏……勉强
 
 有很多人看到业务复杂到这个程度，总算该设计个机制了吧。我见过很多人在这个环节把代码写得特别复杂。然而我写的代码非常简单，如下所示：
 
-![image.png](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-21.png)
+![image.png](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-21.png)
 
 这种代码有什么好处呢？就是它的逻辑跟我们需求描述的逻辑几乎一模一样。我没有新增什么额外的机制。这看起来不是很高大上的样子。很多人就想加个设计。我们要明白，所谓的设计就是加入一些约束，使得做一系列事的方便程度高于了做另外一系列事。我们经常性的想约束想的都是代码，但实际上对代码的约束，本质上还是对人的约束。Rails的架构师DHH曾经说过约束是你的朋友，什么意思呢？就是说很多时候你对自己加了约束，那么你做事的效率可能比胡乱做、凭本能做更高。从这个角度出发，我们加约束一定要提高我们的整体效率，所以我给自己加了一个约束，叫做让我们的代码逻辑和业务逻辑最大可能性的保持一致。虽然不是一种代码的设计，但是是一种行为的设计。
 
@@ -318,13 +318,13 @@ FizzBuzz，是一个经典的TDD入门题目，麻雀虽小，五脏……勉强
 
 我们这些代码也是测试驱动出来的，下面是我新加的测试：
 
-![image.png](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-22.png)
+![image.png](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-22.png)
 
 这些测试通过之后，由于实现的改变，会导致我们前面的测试用例会有很多的改变。无形中制造了测试的麻烦。这个时候我们可以采用测试替身技术。把3，5，7的部分再摘出来测试，这样你就不需要关心3，5，7部分的输入了。这块我们就先不展开了，后续在另一道题里在深入讲。
 
 不管我们是否使用了测试替身技术。我们可能还是不太放心。我想写一个测试用例很全的测试，也就是所谓的细粒度的测试，于是我就写了一个。
 
-![image.png](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-23.png)
+![image.png](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/fizzbuzz-tdd/pic-23.png)
 
 上面就是我用代码生成的数据，这个时候你会发现测试用例一点都不好准备。测试成本很高。这个其实是正常的。测试代码也是需要花心思去写，花心思去维护的。
 

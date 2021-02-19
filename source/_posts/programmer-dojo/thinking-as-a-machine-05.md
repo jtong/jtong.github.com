@@ -108,7 +108,7 @@ date: 2016-08-30 12:06
 3. 每个函数之间互相不知道对方的内在实现（各自独立）
 能做好这三点，代码就能完胜行业里的大多数人：）
 
-  [1]: https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-05/pic-01.png
+  [1]: https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-05/pic-01.png
 
 
-  [2]:  https://personal-blog.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-05/pic-02.png
+  [2]:  https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-05/pic-02.png

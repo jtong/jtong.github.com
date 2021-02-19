@@ -42,7 +42,7 @@ date: 2019-06-22 23:23
 
 再举个例子，面向对象封装继承多态，最难的就是封装。我们最近出了一道重构的题目给某公司，在重构的过程中要把分散的基本数据类型的数据封装成对象。分散的数据如下所示：
 
-![充满坏味道的代码](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/what-worth-to-be-recited/pic-01.png) 
+![充满坏味道的代码](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/what-worth-to-be-recited/pic-01.png) 
 
 这个能力其实是最难锻炼的，上面这些数据谁跟谁应该封装在一起，谁跟谁不应该。这也属于没有标准答案的问题。作业结果也证明了这一点。怎么办呢？同样，可以试着背一下高手的解题思路。（想知道这个题的思路吗？等我后面的文章，没错这里是广告）
 

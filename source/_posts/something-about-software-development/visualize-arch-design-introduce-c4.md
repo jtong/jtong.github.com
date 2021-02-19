@@ -15,18 +15,18 @@ date: 2016-06-25 00:33
 
 该工具的作者在多年的咨询中经常发现，很多个人画出来的架构图都是不一样的，但也不是说他们谁画错了，而是每个人的抽象层次不一样。抽象层次这种东西，说起来好像存在，但真要说清楚还挺难，于是作者类比地图，提出了缩放的概念。（两年前我在教学生的时候提过同样的概念）如下图：
 
-![国家级](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-01.png)
+![国家级](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-01.png)
 
-![省级](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-02.png)
+![省级](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-02.png)
 
-![市级](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-03.png)
+![市级](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-03.png)
 
-![道路级](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-04.png)
+![道路级](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-04.png)
 
 上面的四张地图就是想说明，当我们看待真实世界的“架构图”的时候，也是要不停的缩放，在每一个层次刻意忽略一些细节才能表达好当前抽象层次的信息。所以他类比着把架构也提出了四个抽象层次：
 
 
-![image.png](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-05.png)
+![image.png](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-05.png)
 
 从上到下依次是系统System、容器Container、组件Component和代码Code。（咦，那为什么叫C4呢，因为系统的图叫System Context，系统上下文图。为了凑四个C也是够拼的。）
 
@@ -36,10 +36,10 @@ date: 2016-06-25 00:33
 
 ### 系统上下文图
 
-![image.png](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-06.png)
+![image.png](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-06.png)
 如上图所示，这个图表达的是你所开发的系统和它的用户以及它所依赖的系统之间的关系。从这个图上我们已经看出来C4图形的几个关键图形：
 
-![image.png](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-07.png)
+![image.png](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-07.png)
 
 C4说穿了就是几个要素：关系——带箭头的线、元素——方块和角色、关系描述——线上的文字、元素的描述——方块和角色里的文字、元素的标记——方块和角色的颜色、虚线框（在C4里面虚线框的表达力被极大的限制了，我觉得可以给虚线框更大的扩展空间）
 
@@ -49,18 +49,18 @@ C4说穿了就是几个要素：关系——带箭头的线、元素——方块
 
 ### 容器图
 
-![image.png](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-08.png)
+![image.png](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-08.png)
 
 当我们放大一个系统，就会看到容器，如上图所示，C4模型认为系统是由容器组成的。容器是我个人认为，C4模型最大的创举，尤其是在这个单体架构快速崩塌的时代。所谓容器，既不是Docker的容器，也不是JavaEE里的容器，是借用了进程模型，每一个容器都是指有自己独立的进程空间的一种存在。不管是在服务器上的单独进程空间，还是在浏览器里的单独进程空间，只要是单独的进程空间就可以看作一个容器。当然如果你容器化做得好，Docker的Container和这个Container可以一一对应。有了这个概念的存在我们就可以更清晰的去表达我们的架构，而不是总是用一些模糊的东西。
 
 
 ### 组件图
 
-![image.png](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-09.png)
+![image.png](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-09.png)
 
 当我们放大一个容器，我们就会看到组件，如上图所示。组件在这里面很好的把接口和它的实现类打包成一个概念来表达关系。我个人觉得有时候一些存在于代码中，但又不是接口的某些东西，比如Service、Controller、Repository之类也可以用组件图来表达，如果你学了一些没有明确抽象层次的架构知识或者一些单体时代的遗留经验的时候，你可以画出来一些组件图，来印证自己的理解，如下图，我画的我对DDD战术设计里面的一些概念的理解：
 
-![image.png](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-10.png)
+![image.png](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-10.png)
 
 比起模糊的，堆砌在一起文字，这种表达要清晰的很多，哪怕我的理解是不对的，也容易指出和讨论。
 
@@ -77,7 +77,7 @@ C4说穿了就是几个要素：关系——带箭头的线、元素——方块
 
 ### 系统景观图
 
-![image.png](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-11.png)
+![image.png](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-11.png)
 
 看得出来，系统景观图是比上下文图更丰富的系统级别的表达。不像上下文图只关注聚焦系统和它的直接关系，连一些间接相关的系统都会标示出来，那些系统的用户以及用户之间的关系也会标示出来，只是内部的用户会用灰色标记。
 
@@ -86,7 +86,7 @@ C4说穿了就是几个要素：关系——带箭头的线、元素——方块
 
 ### 动态图
 
-![image.png](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-12.png)
+![image.png](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-12.png)
 
 动态图不同于其他图都是表达静态关系的，它是用来表达动态关系的，也就是不同的元素之间是如何调用来完成一个业务的。所以动态图不仅仅在一个层面上可以工作，它在系统级、容器级和组件级都可以画，表达的目标是不一样的。
 
@@ -98,7 +98,7 @@ C4说穿了就是几个要素：关系——带箭头的线、元素——方块
 ### 部署图
 
 
-![image.png](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-13.png)
+![image.png](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/visualize-arch-design-introduce-c4/pic-13.png)
 
 前面的几张图都是站在开发的角度思考，但是一个没有充分思考过部署的架构很容易变成一个运维的灾难。所以作者提供了一个部署图。考虑到DevOps运动如火如荼，这个图可以变成很好的Dev和Ops之间沟通的桥梁。我们在实操中发现，Dev和Ops关注点的不同、语言的不一致，在这张图上表现得非常清楚。
 

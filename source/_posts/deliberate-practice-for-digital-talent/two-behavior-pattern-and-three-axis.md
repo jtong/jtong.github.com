@@ -15,7 +15,7 @@ date: 2018-12-17 19:59
 
 我们打开看呢，你会发现他们的思考问题的维度是有差别的。我一直找不到一个好的模型来解释这种思维模式的差别，直到我在一本叫《创新算法》的书里面看到有个三轴分析的模型，可以较好的描述这个维度差别：
 
-![三轴分析](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/two-behavior-pattern-and-three-axis/pic-01.png)
+![三轴分析](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/two-behavior-pattern-and-three-axis/pic-01.png)
 
 按照三轴分析的模型，我们思考一个机器，要从三个维度去思考，一是操作，就是人是怎么操作这个机器的；一是系统，就是这个系统都有哪些组件，这些组件都有什么关系；三就是因果，就是当人进行某种操作，到看到结果之间，一步步是怎么发生的，哪些组件起了作用，出了问题又是哪些组件没搭配对或者那个组件出故障了，或者操作本身是不是做错了。简单讲因果轴就是前两轴的动态关系。
 
@@ -43,7 +43,7 @@ date: 2018-12-17 19:59
 
 为了深入到另外两个轴去，阅读当然很重要，但是对于大多数人来说枯燥是最大的退却原因。所以我在之前带学生的时候，都要求他们输出，写博客。有输出，枯燥感就会下降一些。但是写文章本身也很累，而且很容易变成抄书，所以我们后来又找到了另外一个工具：概念图。
 
-![概念图工具的概念图](https://personal-blog.obs.cn-north-4.myhuaweicloud.com/two-behavior-pattern-and-three-axis/pic-02.png)
+![概念图工具的概念图](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/two-behavior-pattern-and-three-axis/pic-02.png)
 
 可以用节点来表达组件，用线上的关系来表达组件之间的关系，非常适合表达系统和因果轴，可以更轻量的进行输出（具体怎么用，简书上一搜一大堆，我就不写了）。其实我之前介绍的[C4](https://jtong.github.io/2020/01/30/something-about-software-development/visualize-arch-design-introduce-c4/)，就可以看作是一种特殊的概念图。
 
