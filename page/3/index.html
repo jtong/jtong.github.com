@@ -13,38 +13,12 @@
 <link rel="stylesheet" href="/css/main.css">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
-
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
 <script id="hexo-configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    hostname: new URL('https://jtong.dev').hostname,
-    root: '/',
-    scheme: 'Gemini',
-    version: '7.7.0',
-    exturl: false,
-    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
-    copycode: {"enable":false,"show_result":false,"style":null},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
-    bookmark: {"enable":false,"color":"#222","save":"auto"},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
-    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
-    algolia: {
-      appID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: '',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
-  };
-</script>
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"jtong.dev","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
   <meta name="description" content="写写心得，写写教程，希望能帮助更多人成为优秀的软件开发人员">
 <meta property="og:type" content="website">
@@ -81,8 +55,9 @@
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
   };
 </script>
 
@@ -125,18 +100,6 @@
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
-  <div class="site-meta">
-
-    <div>
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">铜剑技校</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-        <p class="site-subtitle">仝键的个人技术博客</p>
-  </div>
-
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏">
       <span class="toggle-line toggle-line-first"></span>
@@ -144,40 +107,59 @@
       <span class="toggle-line toggle-line-last"></span>
     </div>
   </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">铜剑技校</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">仝键的个人技术博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
 </div>
 
 
+
+
 <nav class="site-nav">
-  
-  <ul id="menu" class="menu">
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+    <a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a>
 
   </li>
   </ul>
-
 </nav>
+
+
+
+
 </div>
     </header>
 
@@ -193,14 +175,199 @@
         <div class="content-wrap">
           
 
-          <div class="content">
+          <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://jtong.dev/2017/02/06/programmer-dojo/thinking-as-a-machine-06/">
 
-  <div class="posts-expand">
-        
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="仝键">
+      <meta itemprop="description" content="写写心得，写写教程，希望能帮助更多人成为优秀的软件开发人员">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="铜剑技校">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/02/06/programmer-dojo/thinking-as-a-machine-06/" class="post-title-link" itemprop="url">像机器一样思考（六）—— 脑中的重构</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017-02-06 11:35:00" itemprop="dateCreated datePublished" datetime="2017-02-06T11:35:00+08:00">2017-02-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-09-05 18:13:30" itemprop="dateModified" datetime="2022-09-05T18:13:30+08:00">2022-09-05</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>上一篇里，我们实现了一个小应用，而且用两种设计。本文将给出更多的设计实现以继续探讨设计问题。</p>
+<p>我们会看到，即便是纸上的图，也可以进行重构。由于纸是我们大脑的延伸，也可以称之为脑中的重构。而这种重构的结果由于并不是真正的代码，所以即便重构错了方向，设计不合理，抛弃也非常简单，相对于改代码而言，几乎没有成本。</p>
+<h2 id="简单的改进"><a href="#简单的改进" class="headerlink" title="简单的改进"></a>简单的改进</h2><p>第一步我们先做得简单一点，上一节我们停在这张图上：</p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-01.png" alt="image1"></p>
+<p>我们可能会觉得上一节的图有点啰嗦，比如buildStudentInfoPromptString和buildStudentSeqencePromptString两个函数，甚至generateReport都啰嗦了。那我就可以重构一下，去掉这些啰嗦的内容，变成下图：</p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-02.png" alt="image2"></p>
+<p>上面的改进可能我们不太满意，我们试着走另一个方向，从整个程序的角度来减少输入输出。我们前面说了，每个函数的输入输出种类越少越好，那么在我们这个题目里，推到极致就是每个函数不自己处理打印和读取，所有的打印和读取都放到一处。不但不打印和读取，还不调用其他函数，那么就会变得像下面这张图：</p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-03.png" alt="image3"></p>
+<h2 id="概念性思考"><a href="#概念性思考" class="headerlink" title="概念性思考"></a>概念性思考</h2><p>上面这个实现在过程层面已经实现了只在一个函数中打印和读取用户输入。然而这个最大的函数却很臃肿，除了不干具体的活，这个系统中所有的逻辑它都知道。这种全知全能的函数，如果有更多层级，更多菜单的应用，这个函数很容易就臃肿到不能维护的地步。</p>
+<p>那么我们就来想一下，有没有一种设计，在层级更多的时候表现的更好。这个时候我们需要一种思考能力，我们称之为概念性思考。<br>概念性思考一般分为四步：</p>
+<ol>
+<li>看到复杂场景背后的核心本质</li>
+<li>识别到两个不相关的情景的相似之处</li>
+<li>用比喻或类比来解释场景</li>
+<li>用一个框架去解决问题</li>
+</ol>
+<p>那么我们按照这四步走，当前的复杂场景就是这个应用，看起来每次输出之后，还会有下一次输出之前的提示，好像每次的提示，输入，输入后的打印三个是一组的，其实完全可以把输入后的打印和下一步的提示看作一次处理，也就变成了根据用户一次输入进行一种计算，将计算的结果转化为一次输出。这也就是它背后的核心本质。</p>
+<p>简化成这种核心本质后，有没有一种已经存在的类似情景呢？我们通过观察很容易可以看出，一个简单的Web应用和一个命令行应用没什么区别，当然是没有ajax的传统web应用。用户每做一次请求，然后得到一个响应，这个响应会渲染成一个页面。</p>
+<p>如果这两个东西有些相似性的话，那么什么是一次请求到一次响应的结束呢？在这个应用里，输入完字符串之后，敲击回车就是一次请求。当敲击回车后到下一次看到要求输入时为止就是一次响应。</p>
+<p>在我们这个应用里举一个具体的例子来类比一下，在主界面输入1，并敲击回车，为一次请求；从敲击回车后，经历诸如下列的文字被打印出来的阶段：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">请输入学生信息（格式：姓名, 学号, 民族, 班级, 学科: 成绩, ...），按回车提交：</span><br></pre></td></tr></table></figure>
+
+<p>一直到变成可以进行下一次输入的状态为止，为一次响应。其余的情况以此类推都可以类似的理解为请求和响应。</p>
+<p>那么有没有现成的一个web开发的框架可以照搬来处理这个命令行应用呢？那可以选择的就多了，各种经典的WebMVC框架都可以。当然照搬任何一个WebMVC框架的话的话可能会比较啰嗦，反而降低效率，我们可以在理解它们的概念的前提之下仿造一个，这就是下一节的内容了。</p>
+<p>至此，我把我在这件事情上进行概念性思考的过程展示给了大家。做一个优秀的程序员，分析性思考和概念性思考是两大关键思考能力，希望每个读者都可以通过这一系列教程理解这两种能力，从而在工作中进行刻意练习直到掌握这两种能力。</p>
+<h2 id="我们的框架"><a href="#我们的框架" class="headerlink" title="我们的框架"></a>我们的框架</h2><p>有些话要说在前面，这个题目比较简单，但我给出的解决方案是可以处理更多层级，更多菜单的，只是如果我给出的题目太过复杂的话，大家可能连读完需求的耐心都没有，更不要提理解解决方案了。所以我们算是用了一个复杂的方案来解决一个简单的题目，中间的差距请大家自行想象，这个方案在更多层级和更多菜单时，才会真正显现威力。</p>
+<p>言归正传，在我们的这个框架里，我们的过程方面有三个概念：Router，Command和Service。<br>Router负责当每一个用户输入进来的时候，它知道去找哪一个具体的响应者，这个响应者就是我们的Command。<br>Router通过简单的输入解析，找到具体的Command，Command负责处理各种具体的用户输入解析，但是有一些核心的计算，比如说添加学生信息，我们定义为Service。Command会调用Service函数和将Service计算结果翻译为用户友好的输出。当Command处理完一切，就会返回结果，结果就会统一的输出。Command一般不直接输出到用户接口，这样就会便于测试，就像我们所有的WebMVC框架一样。管理这些输入输出的是我们的main函数，它还会负责把我们的Router，Command配置在一起，像极了WebMVC里的配置文件。</p>
+<p>过程方面分析完了，在数据方面，我们只需要把Service和Command之间的通讯，Command和最外层之间的通讯抽象出一些概念就可以了，比如Service和Command之间的数据可以叫Response，Command和最外层之间的数据可以叫View。</p>
+<p>所以综上，我们可以开始画图了，但是这个画图呢比较难画在一张图上，所以我们就把一次“请求”和一次“响应”画成一张图，这也是一种可视化的技巧，当我们把一件事画成多张图的时候，我们的大脑会自己把这些图联系到一起，并不需要我们在图上表示出，他们是有关系的。</p>
+<p>总之，这个应用可以画成的图如下所示：</p>
+<p>应用启动：</p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-04.png" alt="application-example-home"></p>
+<p>去界面1：<br><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-05.png" alt="application-example-goto-add"></p>
+<p>添加学生成绩：<br><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-06.png" alt="application-example-add"></p>
+<p>去界面2：<br><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-07.png" alt="application-example-goto-print"></p>
+<p>打印学生成绩：<br><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-08.png" alt="application-example-print"></p>
+<p>退出：<br><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/thinking-as-a-machine-06/pic-09.png" alt="application-example"></p>
+<p>将上述图片翻译成Task的时候，就会用到Response和View。</p>
+<h2 id="课后练习"><a href="#课后练习" class="headerlink" title="课后练习"></a>课后练习</h2><ol>
+<li>列出所有的任务</li>
+<li>改进需求1: 请引入加分策略，参照第二篇</li>
+<li>改进需求2: 请把每次添加学生信息输出到文件，每次打印成绩单时，从文件读取。画出图和任务列表。</li>
+</ol>
+<h2 id="题外话－1"><a href="#题外话－1" class="headerlink" title="题外话－1"></a>题外话－1</h2><p>问：一个用户输入到一个用户输出算一张图的话，这个命令行程序还好说，正常应用里的拖拽怎么办呢？<br>答： 首先，拖拽的时间是可以切分成时间片的。对于每一类时间片，其实我们可以画一张图。（当然，你会嫌烦，有这功夫不如做出来了）其次，如果我们拖拽的话，整个过程其实只在前面出现效果而已，没有任何数据往后发送，只有拖拽结束那一刻，才会有严肃的数据产生。所以我们一般不关注效果部分，因为他不触达核心，所以即便想的不全，改起来也不困难。所以完全可以先做再改。</p>
+<h2 id="题外话－2"><a href="#题外话－2" class="headerlink" title="题外话－2"></a>题外话－2</h2><p>为什么这么划分图？<br>除了像request和response之外，之所以这么划分，还因为这是一个个的业务场景。我们在前面的几节里，使用的思维主要是结构化思维，就是把一个整体的分解为多个模块的思路。而在这里面，我们使用的是场景化思维，每一张图实际上都是一个业务场景。需求的场景化是非常重要的一种思维，这会有助于我们把业务、组织和软件进行有机的设计。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://jtong.dev/2016/12/18/tech-leadership/growth-method-of-team/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="仝键">
+      <meta itemprop="description" content="写写心得，写写教程，希望能帮助更多人成为优秀的软件开发人员">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="铜剑技校">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2016/12/18/tech-leadership/growth-method-of-team/" class="post-title-link" itemprop="url">团队的精进之道</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2016-12-18 18:45:00" itemprop="dateCreated datePublished" datetime="2016-12-18T18:45:00+08:00">2016-12-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-09-05 18:13:30" itemprop="dateModified" datetime="2022-09-05T18:13:30+08:00">2022-09-05</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>【旧文搬家】</p>
+<p>之前写过一篇文章《编程的精进之法》，总结了ThoughtWorks中一点工作方法。现在看来，那篇文章其实应该叫个人精进之法。然而现在不是个人英雄的年代了，我们需要再深想一步，一个团队应该怎么办？</p>
+<p>当我们在带领一个团队的时候，我们想的总是，如何做好任务分配，平衡团队战斗能力，交付最好的结果。于是做的时候就会下意识的去简单、被动的因材分工，那么随着项目的进展，人员的流动，各种意外的发生使得我们在项目后期感到处处掣肘，于是只能加班以示诚意。</p>
+<p>我刚入行的时候，经历的各个项目都是如此，一直觉得这种事情就是天经地义的，直到认识了一个项目经理。该项目经理是个高人，他在项目开始的时候，问清楚每个人擅长的部分，然后让每个人去做自己不擅长的部分，不会？去找擅长的人帮忙。比如，张三说我以前做过用户权限管理，李四说我以前做过单据管理，王五说我以前做过工作流。（交代一下例子的上下文，那家公司主要就做一个大的领域，那个时候也不像现在前后端分这么清楚，项目经理有时候还要身兼Tech Lead）他就会说，好，张三去做工作流，王五去做单据管理，李四去做用户权限管理，遇到不会的，谁擅长什么你们都知道了啊，去问。</p>
+<p>虽然看起来有点乱来，但是他负责的项目从来没出过问题。后来我加入了ThoughtWorks才知道，听到一个口号：“把项目成功交付看作能力建设的副产品”，才知道这是这口号的一种朴素实现。<br>很多团队能力不强，团队的领导者就总是在向外寻找方法的帮助。寻找方法帮助其实没有错，但是寻找方法帮助的人，心态往往都是错的。当我们在向外诉求方法的时候，很多人的潜意识，是假设我们团队成员能力不变的情况下，通过一种魔法般的方法，就可以改变团队的绩效，这种思路在真实世界里是走不远的。</p>
+<p>在ThoughtWorks，我们认为，软件开发中的一切问题，根本上都是人的能力问题。如何发展每个成员才是问题的关键，因为成员如果没有进步，始终是治标不治本的。所以我们采用的一切实践，不管是以前曾采用的还是以后会采用的，核心目的都只有一个：发展人的能力。因此才有了那个听起来很耸动的口号：“把项目成功交付当成能力建设副产品”。</p>
+<p>如何发展人的能力？讲东西吗？不太靠谱，信息仅靠分享是没用的，我经常把刚讲过一遍的知识，让人复述；把结对时刚写完的代码全删掉让同伴重写一遍，能做到的人不多。记也记不住，做也做不到。</p>
+<p>就像我之前《然而培训并没有什么用》里说的，做练习？没时间，项目太忙了。而且，就算你有时间，我们拿出时间来做练习，你能保证到了跟练习不一样的场景下，团队成员们都能用好吗？把学会的知识在新场景下用好这件事，还是挺看天赋的。</p>
+<p>讲东西不靠谱，做练习没时间，那难怪大家不考虑能力建设了。不过，如果我们反过来想，这个问题就变得没那么难办了，既然没有时间做能力建设，那么也许一切活动都可以看作是能力建设。所以那个项目经理的招数虽然看起来比较乱来，但却是这个思路，我在项目开始的时候，不是着急去以最快的速度交付结果，而是通过任务分配，发展团队成员的能力。在一个较长的时期里平均来看，我们就是在以最快的速度交付结果。</p>
+<p>所以，回到我们的主题，就是团队的精进之道就是把交付过程中的一切活动都看作能力建设，把整个团队构造成促进每个成员成长的生态系统。</p>
+<p>说起来好像挺简单，我只要换个角度看就好了，然而如果想要做到并没有那么简单。这里面差异微妙而关键。</p>
+<p>比如以上一篇文章《软件开发的精进之法》讲到的方法为例。一个人要划任务，然后估时间，然后做的时候计时，根据实际结果进行反思。我们可以把这个方法做成非常邪恶的，仿佛流水线上工人的强制要求。我不关心你为什么超时，就通过这种方法来控制程序员，要求每个人都严格按照一个死板而僵化的步骤做一些简单重复的机械动作。也可以用这个方法来锻炼一个人的自我认知和发现知识漏洞等能力，促使他以最快的速度成长，等他成长起来马上给他更重要的任务，比如评估技术、评估项目、带新人、做架构等等。这两种结果的差异，背后就是领导者认识的差异，团队成员认识的差异。从这个认识的不同我们早在很多年前，就被一些大牛们观察到，作为敏捷宣言里的一句话表达了出来：“个体与交互 胜过 流程和工具”。</p>
+<p>团队里的流程和工具，是为了成就个体，促进交互，还是为了抹杀个体，消除交互，这个微小而关键的差异，是一切的本质。有多少团队学了ThoughtWorks的一些实践，搞了看板、开放工作空间、TDD、CI，团队氛围依然压抑，成员之间交流不畅，个体成长不受尊重，领导与员工玩“猫和老鼠”。这样只学了形没有学到神的做法，最后的结果不会太好。</p>
+<p>与之相反的做法呢？在上一篇文章《软件开发的精进之法》的开篇曾经简单的提到，新时代的管理者比起老板，更像老师。师者，传道，授业，解惑。各位老师，你们准备好了么？</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://jtong.dev/2016/09/17/deliberate-practice-for-digital-talent/growth-method-of-programming/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -213,15 +380,15 @@
       <meta itemprop="name" content="铜剑技校">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
             <a href="/2016/09/17/deliberate-practice-for-digital-talent/growth-method-of-programming/" class="post-title-link" itemprop="url">编程的精进之法</a>
-        </h1>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
@@ -229,10 +396,10 @@
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-19 15:37:10" itemprop="dateModified" datetime="2021-02-19T15:37:10+08:00">2021-02-19</time>
+                <time title="修改时间：2022-09-05 18:13:30" itemprop="dateModified" datetime="2022-09-05T18:13:30+08:00">2022-09-05</time>
               </span>
 
           
@@ -315,10 +482,10 @@
   
   
 
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://jtong.dev/2016/08/30/programmer-dojo/thinking-as-a-machine-05/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -331,15 +498,15 @@
       <meta itemprop="name" content="铜剑技校">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
             <a href="/2016/08/30/programmer-dojo/thinking-as-a-machine-05/" class="post-title-link" itemprop="url">像机器一样思考（五）—— 第一个应用</a>
-        </h1>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
@@ -347,10 +514,10 @@
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-19 15:37:10" itemprop="dateModified" datetime="2021-02-19T15:37:10+08:00">2021-02-19</time>
+                <time title="修改时间：2022-09-05 18:13:30" itemprop="dateModified" datetime="2022-09-05T18:13:30+08:00">2022-09-05</time>
               </span>
 
           
@@ -423,10 +590,10 @@
   
   
 
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://jtong.dev/2016/08/29/programmer-dojo/thinking-as-a-machine-04/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -439,15 +606,15 @@
       <meta itemprop="name" content="铜剑技校">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
             <a href="/2016/08/29/programmer-dojo/thinking-as-a-machine-04/" class="post-title-link" itemprop="url">像机器一样思考（四）—— 一图抵千言</a>
-        </h1>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
@@ -455,10 +622,10 @@
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-19 15:37:10" itemprop="dateModified" datetime="2021-02-19T15:37:10+08:00">2021-02-19</time>
+                <time title="修改时间：2022-09-05 18:13:30" itemprop="dateModified" datetime="2022-09-05T18:13:30+08:00">2022-09-05</time>
               </span>
 
           
@@ -543,10 +710,10 @@
   
   
 
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://jtong.dev/2016/08/25/programmer-dojo/thinking-as-a-machine-03/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -559,15 +726,15 @@
       <meta itemprop="name" content="铜剑技校">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
             <a href="/2016/08/25/programmer-dojo/thinking-as-a-machine-03/" class="post-title-link" itemprop="url">像机器一样思考（三）—— 穷尽就是力量</a>
-        </h1>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
@@ -575,10 +742,10 @@
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-19 15:37:10" itemprop="dateModified" datetime="2021-02-19T15:37:10+08:00">2021-02-19</time>
+                <time title="修改时间：2022-09-05 18:13:30" itemprop="dateModified" datetime="2022-09-05T18:13:30+08:00">2022-09-05</time>
               </span>
 
           
@@ -661,10 +828,10 @@
   
   
 
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://jtong.dev/2016/08/18/programmer-dojo/thinking-as-a-machine-02/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -677,15 +844,15 @@
       <meta itemprop="name" content="铜剑技校">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
             <a href="/2016/08/18/programmer-dojo/thinking-as-a-machine-02/" class="post-title-link" itemprop="url">像机器一样思考（二）—— 数据的细节</a>
-        </h1>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
@@ -693,10 +860,10 @@
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-19 15:37:10" itemprop="dateModified" datetime="2021-02-19T15:37:10+08:00">2021-02-19</time>
+                <time title="修改时间：2022-09-05 18:13:30" itemprop="dateModified" datetime="2022-09-05T18:13:30+08:00">2022-09-05</time>
               </span>
 
           
@@ -789,10 +956,10 @@
   
   
 
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://jtong.dev/2016/06/24/something-about-software-development/visualize-arch-design-introduce-c4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -805,15 +972,15 @@
       <meta itemprop="name" content="铜剑技校">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
             <a href="/2016/06/24/something-about-software-development/visualize-arch-design-introduce-c4/" class="post-title-link" itemprop="url">可视化架构设计——C4介绍</a>
-        </h1>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
@@ -821,10 +988,10 @@
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-19 15:37:10" itemprop="dateModified" datetime="2021-02-19T15:37:10+08:00">2021-02-19</time>
+                <time title="修改时间：2022-09-05 18:13:30" itemprop="dateModified" datetime="2022-09-05T18:13:30+08:00">2022-09-05</time>
               </span>
 
           
@@ -895,10 +1062,10 @@
   
   
 
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://jtong.dev/2016/06/14/programmer-dojo/thinking-as-a-machine-01/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -911,15 +1078,15 @@
       <meta itemprop="name" content="铜剑技校">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
             <a href="/2016/06/14/programmer-dojo/thinking-as-a-machine-01/" class="post-title-link" itemprop="url">像机器一样思考（一）—— 宏观的基础</a>
-        </h1>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
@@ -927,10 +1094,10 @@
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-19 15:37:10" itemprop="dateModified" datetime="2021-02-19T15:37:10+08:00">2021-02-19</time>
+                <time title="修改时间：2022-09-05 18:13:30" itemprop="dateModified" datetime="2022-09-05T18:13:30+08:00">2022-09-05</time>
               </span>
 
           
@@ -1002,7 +1169,6 @@
   
   
 
-  </div>
 
   
   <nav class="pagination">
@@ -1016,7 +1182,7 @@
 
 <script>
   window.addEventListener('tabs:register', () => {
-    let activeClass = CONFIG.comments.activeClass;
+    let { activeClass } = CONFIG.comments;
     if (CONFIG.comments.storage) {
       activeClass = localStorage.getItem('comments_active') || activeClass;
     }
@@ -1072,7 +1238,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-count">29</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1098,19 +1264,18 @@
       <div class="footer-inner">
         
 
+        
+
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
-    <i class="fa fa-user"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">仝键</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.0
-  </div>
-  <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.0
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
 
         

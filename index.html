@@ -13,38 +13,12 @@
 <link rel="stylesheet" href="/css/main.css">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
-
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
 <script id="hexo-configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    hostname: new URL('https://jtong.dev').hostname,
-    root: '/',
-    scheme: 'Gemini',
-    version: '7.7.0',
-    exturl: false,
-    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
-    copycode: {"enable":false,"show_result":false,"style":null},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
-    bookmark: {"enable":false,"color":"#222","save":"auto"},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
-    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
-    algolia: {
-      appID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: '',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
-  };
-</script>
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"jtong.dev","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
   <meta name="description" content="写写心得，写写教程，希望能帮助更多人成为优秀的软件开发人员">
 <meta property="og:type" content="website">
@@ -81,8 +55,9 @@
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
   };
 </script>
 
@@ -125,18 +100,6 @@
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
-  <div class="site-meta">
-
-    <div>
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">铜剑技校</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-        <p class="site-subtitle">仝键的个人技术博客</p>
-  </div>
-
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏">
       <span class="toggle-line toggle-line-first"></span>
@@ -144,40 +107,59 @@
       <span class="toggle-line toggle-line-last"></span>
     </div>
   </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">铜剑技校</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">仝键的个人技术博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
 </div>
 
 
+
+
 <nav class="site-nav">
-  
-  <ul id="menu" class="menu">
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+    <a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a>
 
   </li>
   </ul>
-
 </nav>
+
+
+
+
 </div>
     </header>
 
@@ -193,14 +175,232 @@
         <div class="content-wrap">
           
 
-          <div class="content">
+          <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://jtong.dev/2022/09/05/model-code-aligned-implement-pattern/02-collection-object/">
 
-  <div class="posts-expand">
-        
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="仝键">
+      <meta itemprop="description" content="写写心得，写写教程，希望能帮助更多人成为优秀的软件开发人员">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="铜剑技校">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/09/05/model-code-aligned-implement-pattern/02-collection-object/" class="post-title-link" itemprop="url">模型代码一致的实现模式（二）—— 集合对象（上）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-09-05 17:17:00 / 修改时间：18:13:30" itemprop="dateCreated datePublished" datetime="2022-09-05T17:17:00+08:00">2022-09-05</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="集合值得单独抽取对象"><a href="#集合值得单独抽取对象" class="headerlink" title="集合值得单独抽取对象"></a>集合值得单独抽取对象</h2><p>大部分的现代语言，都提供了集合的类型，list、vector、set、tree、map等，并围绕这些集合的类型，有一整套方便的api工具库，这导致大家不爱对集合进行抽象。</p>
+<p>比如一个用户（ User ）有多个订单（ Order ）之类。那么实现的时候我们会怎么样呢？往往是一个User有一个叫orders的属性，类型是个List，当然不同语言有不同的列表类型，比如C++可能用的就是vector。代码类似：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> List&lt;Order&gt; orders;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其实仔细想想，我们给Order要定个Order类，不会用Map或者Json这种类型，为啥集合就用List而不是单独抽象一个Orders呢？比如类似这样：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Orders order;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//当然，User也可以有自己的集合对象Users。</span></span><br></pre></td></tr></table></figure>
+
+<p>实际上，我们在领域概念当中，某个类型的集合其实是一种隐藏概念，其实经常会出现在业务人员或者领域专家的口中，很多需求都是围绕着这种集合概念展开的，我们需要把这种隐藏的概念显示的表达出来以达成模型与代码的一致。否则以List来承载集合概念这样的实现模式，对于简单系统还是能胜任的，但是对于复杂系统，通常是不能胜任的。这么做具体有什么好处呢？我们后面展开聊聊。</p>
+<p>注：为了表达方便，我下面将像Order这种表达单个个体的类称之为单体类；将Orders这种表达个体集合的类，称之为集合类。</p>
+<h2 id="集合对象的好处"><a href="#集合对象的好处" class="headerlink" title="集合对象的好处"></a>集合对象的好处</h2><h2 id="承载集合逻辑"><a href="#承载集合逻辑" class="headerlink" title="承载集合逻辑"></a>承载集合逻辑</h2><p>首先它可以承载围绕着集合进行的扩展需求，不至于把这部分需求散到系统的各个地方。举个例子，假设我们有一个需求场景，里面有两种指令，一种是上层指令，我们就叫它Command，一种是下层指令，我们就叫它Action，一个上层指令需要被转换为多个下层指令来执行，也就是一个Command需要根据条件转换为多个Action，这个转换逻辑非常复杂，受各种自身状态和外部环境影响，所以有很多的分支。</p>
+<p>那么在这种场景下，我们转换出的Action，到底是一个的List，比如如下代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Action</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">exec</span><span class="params">(ExecContext context)</span></span>&#123;</span><br><span class="line">        <span class="comment">//...</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//标准库承载集合</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Command_1</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Action&gt; <span class="title">transform</span><span class="params">(TransformContext context)</span></span>&#123;</span><br><span class="line">         <span class="comment">//...</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>还是抽象成一个集合对象Actions呢? 比如如下代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//集合对象承载集合</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Command_2</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Actions <span class="title">transform</span><span class="params">(TransformContext context)</span></span>&#123;</span><br><span class="line">         <span class="comment">//...</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Actions</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> List&lt;Action&gt; actions;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>那么我们可以分析一下，如果集合对象Actions不被建模，当出现了对整组产生影响的新需求，比如对整组的action进行统筹优化，或者一组action执行完要发个通知这种新需求。这个新需求的代码放在哪实现呢？要么放在持有List的地方，可能就是执行的地方：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//标准库承载集合情况下，执行代码：</span></span><br><span class="line">exec(Command_1 command)&#123;</span><br><span class="line">    List&lt;Action&gt; actions = command.transform(transformContext);</span><br><span class="line">    <span class="keyword">for</span>(Action action : actions)&#123;</span><br><span class="line">        action.exec(execContext);<span class="comment">//在这里扩展</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果放在持有List的地方，那么那里的职责就不单一了，本来只是一个简单调度的职责，现在还要考虑每一组Action的特定逻辑。</p>
+<p>再要么入侵到每个Action中去：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Action</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">exec</span><span class="params">(ExecContext context)</span></span>&#123;</span><br><span class="line">        <span class="comment">//...</span></span><br><span class="line">        <span class="comment">//在这里扩展</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果入侵到每个Action中去，那么Action就会变得越来越臃肿，这也会让他变得越来越不稳定，理论上应该是越下层的越稳定，越上层的越频繁修改，这么一搞，作为下层的Action变成了最不稳定的，反而上层或者中层更稳定了，这个是不合理的。</p>
+<p>那么抽象了集合对象，就可以直接在Actions里面扩展：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//集合对象承载集合情况下，执行代码：</span></span><br><span class="line">exec(Command_1 command)&#123;</span><br><span class="line">    Actions actions = command.transform(transformContext);</span><br><span class="line">    actions.exec(execContext);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Actions</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> List&lt;Action&gt; actions;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">exec</span><span class="params">(ExecContext execContext)</span></span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(Action action : actions)&#123;</span><br><span class="line">            action.exec(execContext);<span class="comment">//在这里扩展</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们可以看到执行部分的代码因为逻辑没有变化，所以不需要改动代码，Action自身的逻辑没有什么变化，也不需要改动代码。而集合相关的逻辑因为需求发生了变化，在集合相关的类里进行扩展，这是非常合理的事情。我们常说，要建立统一语言，让业务人员与技术人员的认知模型保持一致，从而提高协同效率，那么在提取集合对象这个点上，如果我们做了这件事，那么一定程度上，我们就提升了它们的一致性。</p>
+<h2 id="屏蔽物理边界"><a href="#屏蔽物理边界" class="headerlink" title="屏蔽物理边界"></a>屏蔽物理边界</h2><p>其次，它可以屏蔽掉内存与物理存储的边界。当单体类之间有一对多关系的时候，如果我们使用语言自带的集合类库来定义类型，如之前的代码里：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> List&lt;Order&gt; orders;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>这是非常常见的操作，但是这样的话，这个list里边的内容必须都存在于内存当中。实际中一个用户有多少订单呢？被经年累月使用的电商系统，哪怕是个人的订单，通常订单数量都大的可怕，你总不能都加载进来吧。类似的情况可以说在企业级的应用里非常常见。</p>
+<p>因为这个非常非常现实的问题，很多orm提供了一些延迟加载的机制，你用的还是List，只是数据没有加载，直到List真的被访问的时候再加载数据，但是吧，延迟加载最终要么是全加载，要么是一条条加载，后者还因为性能有缺陷产生了专门的问题名词：n+1问题。如果我只关心部分呢？因为现实中数据大都是分页的，或者根据某个条件重新排序、过滤、分组然后再分页，这都很常见。所以这种情况，我们就只能专门为这个数据类型搞个dao或repository之类，像什么OrderRepository这种。代码就会变成下面这个样子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String id;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Order</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String userId;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">OrderRepository</span> </span>&#123;</span><br><span class="line">    <span class="function">List&lt;Order&gt; <span class="title">findAllByUserId</span><span class="params">(String userId)</span></span>;</span><br><span class="line">    </span><br><span class="line">    <span class="function">List&lt;Order&gt; <span class="title">findByUserId</span><span class="params">(String userId, <span class="keyword">int</span> size, <span class="keyword">int</span> offset)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//....</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>但是这么一搞的话，所有的这种领域内的数据类就都有了自己的Repository，凡是数据大一点的，都会变成这个样子，一切都变得很碎片化，面向对象范式的价值被削弱了。</p>
+<p>另外，类之间的关系就变得不清楚了，起码不能自动识别。这样在全局层面分析出的实体关系与实际的代码无法自动映射。知识传递过程中就出现了大量的隐性知识，在这里就是这个 String 类型的userId是User这个类的id这件事，这种隐性知识使得想要判断模型与代码是否一致就变得困难了，自然会增大维护成本，。</p>
+<p>这种情况下，我们让user持有的不是list，而是orders，这个orders可能只是一个接口，我们可以给它加上各种具体的查询方法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Orders order;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Orders</span> </span>&#123;</span><br><span class="line">    <span class="function">List&lt;Order&gt; <span class="title">findAll</span><span class="params">()</span></span>;</span><br><span class="line">    </span><br><span class="line">    <span class="function">List&lt;Order&gt; <span class="title">findAll</span><span class="params">(<span class="keyword">int</span> size, <span class="keyword">int</span> offset)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//....</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>于是不再是user持有order，而是user持有orders， orders 持有order。我们让这种集合对象承载了实体间的关系。这也就是所谓的associate object模式。</p>
+<p>不过这个做法在技术实现上会比较的难一点，用MyBatis会比较容易一点，用JPA就会比较麻烦。集合对象的API的设计也有点反直觉，我们后续再写文章详细讲讲这个写法怎么落地。</p>
+<h2 id="可以根据状态切分上下文"><a href="#可以根据状态切分上下文" class="headerlink" title="可以根据状态切分上下文"></a>可以根据状态切分上下文</h2><p>第三，它可以按照状态进行归类，从而划分上下文。当我们抽象集合类的时候，不会傻乎乎的一个单体类就只抽象一个集合类， 比如order就抽象一个orders类。这样的话其实完全没有必要抽象，因为类本身就代表了全集这个概念，配上list等语言原生的集合类库自然就能搞定一切，绕了一圈又绕回去了。而我们需要做的是要把这个全集进行再切分，具体的手法往往是给集合类加上前缀。比如前面提到的user的orders，它的查询范围一定是这个用户的order，而不是所有的order，所以我们可以抽象一个UserOrders，于是前面的代码就变成了：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> UserOrders order;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">UserOrders</span> </span>&#123;</span><br><span class="line">    <span class="function">List&lt;Order&gt; <span class="title">findAll</span><span class="params">()</span></span>;</span><br><span class="line">    </span><br><span class="line">    <span class="function">List&lt;Order&gt; <span class="title">findAll</span><span class="params">(<span class="keyword">int</span> size, <span class="keyword">int</span> offset)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//....</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserOrdersImpl</span> <span class="keyword">implements</span> <span class="title">UserOrders</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String userId;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//.....</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这个UserOrders查询order的时候会自然的加上用户id这个过滤条件，就实现了查询范围一定是这个用户的order这个能力，而且用起来也很方便：user.getOrders().findxxx。这只是简单应用，更有价值的的是我们可以用状态来切割漫长的业务逻辑。</p>
+<p>比如有一个电商系统，用户需要下订单，订单就是我们的单体类。那么围绕订单往往是有一个很长的业务流程，在这个漫长的业务流程当中，订单有很多的状态。比如订单下达后，付款前，叫做待付款订单，付完款之后变成了待发货订单，发货之后变成了待收货订单。在每一个状态下，订单又有很多的分支业务逻辑。比如待付款订单可能有无数种付款方式，付完款之后相应的也可能有无数种确认方式。更不要说后面的待发货，待收货这些状态。每一种状态必然伴随着一大堆的业务逻辑代码，那么我们如何建模呢？一种方式就是建子类，待付款订单、待发货订单，待收货订单各是order的一个子类。这种方式不是不行，抛掉继承本身一些不太好的副作用问题不谈，这种建模的问题是只考虑了单体逻辑。也就是单个订单的逻辑。在业务当中还有一种情况，就是集合逻辑，尤其是这个集合被其他的单体类持有的时候，这种逻辑就完全没地方放。只能随意的对别人get出来，然后在用的地方自己编写，逻辑就是这么泄露的。这个时候呢，我们可以抽出他的集合类。比如叫PendingOrders。一个用户有很多order的时候，比如简单说有四种：全部order（UserOrders），待付款order(UserUnpaidOrders)，待发货order(UserUnsendOrders)，待收货order(UserUndeliveredOrder)，待评价order(UserUncommentedOrders)，各自建一组集合类。然后把围绕着他们的集合概念全都放到这些类里面去。你就会发现很多找不到地方放的逻辑突然有地方放了。</p>
+<p>这个情况很常见，不只适用于电商领域，漫长的业务逻辑，与之伴生的状态，多种多样的分支，这很明显就会产生复杂的代码，这代码很容易腐化。</p>
+<p>当我们按照状态为集合对象建模以后，对于建立统一语言也很有帮助，如果你经常去跟需求方去聊需求。你会发现需求方嘴中的类型和集合是不分的，他可能跟你说待付款订单，这个时候指的不是订单的子类，而是处于待付款这种状态的订单集合，很多人都会苦于如何在这种情况下跟需求方建立统一语言。如果你的建模工具箱里有封装集合对象这个工具，这一切都会就变得容易处理了。</p>
+<h2 id="收尾的话"><a href="#收尾的话" class="headerlink" title="收尾的话"></a>收尾的话</h2><p>最后，我们必须告诉大家，在面对复杂逻辑的时候，集合对象的抽取会带来很多好处，当然不是说语言自带的集合库就不能直接使用，抽取领域特定的集合类这种建模方式必须是在处理复杂逻辑、面对大量变化点的时候才会有好处，在简单逻辑的场景下就是自己人为的增加复杂度。如何判断是复杂逻辑的场景，则需要我们深入领域，充分理解领域知识，结合设计者丰富的经验，才能做出正确的判断。</p>
+<p>参考资料</p>
+<p>[1] 《OO Parterns》/（美）Peter Coad<br>[2] 《如何落地业务建模》/ 徐昊</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://jtong.dev/2021/05/22/model-code-aligned-implement-pattern/01-meaningful-interface/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="仝键">
+      <meta itemprop="description" content="写写心得，写写教程，希望能帮助更多人成为优秀的软件开发人员">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="铜剑技校">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/05/22/model-code-aligned-implement-pattern/01-meaningful-interface/" class="post-title-link" itemprop="url">模型代码一致的实现模式（一）—— 导语&有意义的接口</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-05-22 22:26:00" itemprop="dateCreated datePublished" datetime="2021-05-22T22:26:00+08:00">2021-05-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-09-05 18:13:30" itemprop="dateModified" datetime="2022-09-05T18:13:30+08:00">2022-09-05</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="导语"><a href="#导语" class="headerlink" title="导语"></a>导语</h1><p>最近想明白一个道理，设计模式这种东西，在技术维度已经基本穷举了，不管是23种GoF设计模式里的工厂、策略、命令、状态什么的还是23种之外的空对象模式、全局对象模式，仔细看看，描述这些个模式解决的问题，就是业务领域无关的通用问题。即便我们算上函数式和并发设计模式，也是一样，还是业务领域无关的通用问题。也就是说这些模式解决的问题，大都是技术维度的语言就可以描述的问题。</p>
+<p>而后续很多发展并不是在技术维度，是在如何将代码与领域模型写的更一致方向上发展了很多模式。当我去跟人交流的时候，他们经常会说，这属于实现吧。很多人总觉得相对于传统设计模式，这种专注于如何把代码写的跟领域模型一致的模式不够高大上，好吧实现就实现吧，纠正人们的偏见太累了，正好Kent Beck写过一本书叫《实现模式》，在这本书前言上他就写到:</p>
+<blockquote>
+<p> 这是一本关于编程的书，更具体一点，是关于“如何编写别人能懂的代码”的书。编写出别人能读懂的代码没有任何神奇之处，这就与任何其他形式的写作一样：了解你的阅读者，在脑子里构想一个清晰的整体结构，让每个细节为故事的整体作出贡献。<br>……<br> 也可以把实现模式看作思考“关于这段代码，我想要告诉阅读者什么？”的一种方式。程序员大部分的时间都在自己的世界里绞尽脑汁，以至于用别人的视角来看待世界对他们来说是一次重大的转变。他们不仅要考虑“计算机会用这段代码做什么”，还要考虑“如何用这段代码与别人沟通我的想法”。这种视角上的转换有利于你的健康，也很可能有利于你的钱包，因为在软件开发中有大量的开销都被用在理解现有代码上了。</p>
+</blockquote>
+<p>正好，那我们就可以遵循着大师的思路，把如何把代码写的与模型一致的这一系列模式，都叫做实现模式。一个程序员，他一定是先获得领域知识输入，然后开始看代码，在领域知识的框架指导下试图理解代码，所以将代码写的与模型一致，就是为了让程序员更好的读懂代码。</p>
+<p>那么设计模式高大上，实现模式就不高大上吗？我看未必。这很可能是个屁股问题，而我的屁股，坐在双手沾泥的程序员一边。我觉得实现模式跟设计模式一样高大上，一样值得花很多精力去写，被很多人关注。</p>
+<h1 id="有意义的接口"><a href="#有意义的接口" class="headerlink" title="有意义的接口"></a>有意义的接口</h1><p>有意义的接口，这个名字我是取自DDD中柔性设计里的第一个模式INTENTION-REVEALING INTERFACES（揭示意图的接口）。里面提到：</p>
+<blockquote>
+<p>如果开发人员为了使用一个组件而必须要去研究它的实现，那么就失去了封装的价值。</p>
+</blockquote>
+<p>这个点非常重要，但是我在实际工作中，看到的更多是对这个点的无视。很多人理解的可读性，只考虑你能读懂我的代码就可以了，但实际上，我们的软件蕴含的信息几乎是可以无限增加的，所以代码的复杂度自然也是无限提升的。毕竟任何问题都可以加一个中间层解决嘛，但是你有没有想过中间层这种东西加多了那本身就是问题。</p>
+<p>很多权威的文献也是这么认为的，在《中国学科发展战略·软件科学与工程》中就提到：</p>
+<blockquote>
+<p>软件是人类制造的最复杂的一类制品。高度灵活性使得软件不仅仅是系统中的信息处理工具，也是管理各类资源融合人机物的“万能集成器”。这就使得整个人工系统的复杂性向软件集中，驾驭复杂性的能力（复杂性的种类程度的提升），体现了软件发展的水平。</p>
+</blockquote>
+<p>因为复杂性的可以无限叠加，一个长期存在的软件，其代码的复杂性最终都会膨胀到难以驾驭。简单粗暴地讲，相对于人脑的算力，软件的复杂度可以将看做是无限的。所以在IEEE的《软件工程知识体系指南》里在讲道软件构造的时候，也把“复杂性最小化”排在了第一位。书中写道：</p>
+<blockquote>
+<p>大多数人在工作记忆中保持复杂结构和信息的能力是很有限的，特别是长时间保持记忆。这导致了软件构造的一个最强烈的驱动因素：将复杂性最小化。降低复杂性的要求几乎存在于软件构造的每个方面，特别是软件构造的验证和测试过程。在软件构造中，通过创建简单、可读的代码，而不是“聪明”的代码，可以达到降低复杂性的目标。</p>
+</blockquote>
+<p>我经常说，<code>可读性的意义，在于不读。</code> 我们应该经常对着自己的代码审视，思考哪些代码别人不需要读也能理解自己代码的意图，让自己的代码有层次起来。其中最简单的方法就是像前面说的，把实现封装起来，在接口上把意图揭示。</p>
+<p>书里举了一个例子：</p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/model-code-aligned-implement-pattern/01-meaningful-interface/Paint-class.png" alt="Paint类"></p>
+<p>这是一个Paint类，其要解决的领域问题是调色。按照书上原话就是，<code>一家油漆商店的程序能够为客户显示出标准调漆的结果。</code> 从业务领域的角度说，它的需求是调色，那这里面哪哪都不合理。</p>
+<p>首先，属性采用了缩写。r、y、b这三个应该是red、yellow和blue的意思，这还能猜一猜，那v是什么？但是不管能不能猜出来，用缩写其实都是有问题的。缩写从让别人听懂的角度就没有帮助还有害。很多学习材料里，一方面是历史遗留的习惯造成的，一方面是作者自己偷懒，造成了很多人学到了不好的习惯，然后写代码的时候又出于懒惰的心理，干脆就少些几个字母，这不由让我想起了，齐普夫教授的最省力原则：</p>
+<blockquote>
+<p>说话的人希望使用最少的词汇来表现最多的含义，让自己最省力。 但对于听的人来，则希望说话者用简单易懂的词汇来表达，以帮助自己理解。</p>
+</blockquote>
+<p>大家有这样的矛盾，要考虑到代码的生命周期里，阅读的时间要远远大于编写的时间，所以业界还是更推荐为了阅读省力，而不是为了写省力。</p>
+<p>当然这对于很多管理不是很正规的团队，就比较难做到，而对于管理比较正规的团队，有Committer机制的，一个Committer的设置就解决了这个问题，因为毕竟Committer的身份就是读而不是写，你写起来费劲关我什么事，我读起来费劲就不让你合入主干。没有Committer机制的，也可以靠Daily Code Reivew、结对编程、代码集体所有制等手段也可以很好的做到这一点。</p>
+<p>其次，这个paint也很有问题，paint是干啥的？你这个领域是解决调色问题的，那在调色领域里paint什么意思？</p>
+<p>在书中，作者打开了paint的实现代码和对应的测试代码，得出结论，paint干的是调色的功能，就是把两种颜色调成一种。既然如此，你叫paint干什么，直接叫调色不就好了，所以后来就把paint改成了mixin。</p>
+<p>整个重构如下：</p>
+<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/model-code-aligned-implement-pattern/01-meaningful-interface/paint-class-refactor.png" alt="Paint类重构"></p>
+<h2 id="面向过程也需要有意义的接口"><a href="#面向过程也需要有意义的接口" class="headerlink" title="面向过程也需要有意义的接口"></a>面向过程也需要有意义的接口</h2><p>当然很多人会说，这是面向对象，如果我们写很多过程式的代码，比如C、js，也要注意这些么？其实这个跟你写什么范式的语言并没有关系，我们可以看看SICP第一章里的一个例子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">(define (square-iter guess x)</span><br><span class="line">  (if (good-enough? guess x)</span><br><span class="line">      guess</span><br><span class="line">      (square-iter (improve guess x) x)))</span><br><span class="line"></span><br><span class="line">(define (improve guess x)</span><br><span class="line">  (average guess (&#x2F; x guess)))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">(define (square x)</span><br><span class="line">  (* x x))</span><br><span class="line"></span><br><span class="line">(define (good-enough? guess x)</span><br><span class="line">  (&lt; (abs (- (square guess) x)) 0.001))</span><br><span class="line"></span><br><span class="line">(define (sqrt x)</span><br><span class="line">  (square-iter 1.0 x))</span><br></pre></td></tr></table></figure>
+
+<p>上面的代码阐述的是牛顿法解平方根，看不懂没关系，我用js再写一遍给你看：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 嗯，好像用缩写了……</span></span><br><span class="line"><span class="comment"> * 这不重要，毕竟作者会懒嘛，领会精神……</span></span><br><span class="line"><span class="comment"> * 而且即便这么懒的作者（对不起了，Harold和二位Sussman老师），他们在觉得你可能看不懂的地方还是没用缩写不是吗？</span></span><br><span class="line"><span class="comment"> **/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sqrt</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> squre_iter(<span class="number">1.0</span>, x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">square_iter</span>(<span class="params">guess, x</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(good_enough(guess, x))&#123;</span><br><span class="line">        <span class="keyword">return</span> guess;</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> square_iter(improve(guess, x), x);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">improve</span>(<span class="params">guess,x</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> average(guess, (x/guess));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">square</span>(<span class="params">x</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x*x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">good_enough</span>(<span class="params">guess, x</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> abs(x-square(guess)) &lt; <span class="number">0.001</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//average和abs没有定义，但是看名字也知道什么意思了，前者是求平均值，后者是求绝对值</span></span><br></pre></td></tr></table></figure>
+
+<p>这样写的代码，每一个函数都看做是一个接口，在读的时候不需要深入往下打开就可以连接代码，比如我们读square_iter的实现的时候，就可以看懂，他的逻辑是，猜的数字也就是 guess，如果 good enough 了，就返回猜的数字，否则继续迭代，迭代的之前，把猜的数字根据x提升（improve）一下，作为新的猜的数字传进去。至于怎么算 good enough ，怎么进行的提升，我们不需要了解就能看懂这个主干逻辑。我们看到接口就知道每一步具体做了什么事（也就是do what），至于怎么做的（也就是how），当我们需要了解的时候，再打开看。这种不需要了解就能理解主干逻辑，需要了解下层实现逻辑时再打开看的效果，又被称之为抽象屏障。即便是在面向过程的场景下，我们也可以靠函数的名字就完成了一层抽象屏障，使得我们不需要关注下面的实现，也就屏蔽了复杂度。所以有意义的接口不仅仅在面向对象的场景下有用，在面向过程的场景下，依然是有价值的，而且即便是面向对象的场景下，这种对函数名做抽象的实践也是很常用的，毕竟面向对象也都是要给“方法”起名字的。</p>
+<h2 id="最后的话"><a href="#最后的话" class="headerlink" title="最后的话"></a>最后的话</h2><p>这个做法看起来简单，但是行业里这么做的人其实并不多，到处的文章都在说要写好文档，但其实，任何一个长期存在的系统（也不用太长，三年就很长了），我们最终都是要通过代码来了解领域逻辑的，因为文档都过时了，人员也流失的差不多了。相对于文档的过时，代码其实是存在一个契机持续提升可读性的：即每次修改的时候。每次修改的时候都需要先读懂代码，那么每次读代码的时候，发现不好理解其实都是修改的良好契机，维护的越多，代码应该变得更好读。所以抛弃代码本身的可读性去追求文档的面面俱到是不可持续的，只有提升代码的可读性从而提升软件的可维护性是一条正路，为了这个目的，有意义的接口是我们应该追求的一种实现模式。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>[1] 实现模式/（美）贝克（Beck,K.）著；李剑，熊节，郭晓刚译.修订本.北京：人民邮电出版社，2012.12<br>[2] 领域驱动设计：软件核心复杂性应对之道/（美）埃文斯（Evans,E.）著；赵俐等译.2版（修订本）.北京：人民邮电出版社，2016.6<br>[3] 《中国学科发展战略·软件科学与工程》<br>[4] 《软件工程知识体系指南》<br>[5] 《计算机的构造与解释》</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://jtong.dev/2020/07/20/something-about-software-development/developing-process-management/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -213,15 +413,15 @@
       <meta itemprop="name" content="铜剑技校">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
             <a href="/2020/07/20/something-about-software-development/developing-process-management/" class="post-title-link" itemprop="url">开发工序管理</a>
-        </h1>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
@@ -229,10 +429,10 @@
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-19 15:37:10" itemprop="dateModified" datetime="2021-02-19T15:37:10+08:00">2021-02-19</time>
+                <time title="修改时间：2022-09-05 18:13:30" itemprop="dateModified" datetime="2022-09-05T18:13:30+08:00">2022-09-05</time>
               </span>
 
           
@@ -280,10 +480,10 @@
   
   
 
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://jtong.dev/2020/01/29/deliberate-practice-for-digital-talent/what-worth-to-be-learn/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -296,15 +496,15 @@
       <meta itemprop="name" content="铜剑技校">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
             <a href="/2020/01/29/deliberate-practice-for-digital-talent/what-worth-to-be-learn/" class="post-title-link" itemprop="url">什么值得学</a>
-        </h1>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
@@ -312,10 +512,10 @@
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-19 15:37:10" itemprop="dateModified" datetime="2021-02-19T15:37:10+08:00">2021-02-19</time>
+                <time title="修改时间：2022-09-05 18:13:30" itemprop="dateModified" datetime="2022-09-05T18:13:30+08:00">2022-09-05</time>
               </span>
 
           
@@ -413,10 +613,10 @@
   
   
 
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://jtong.dev/2020/01/22/programmer-dojo/ddd-clean-arch/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -429,15 +629,15 @@
       <meta itemprop="name" content="铜剑技校">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
             <a href="/2020/01/22/programmer-dojo/ddd-clean-arch/" class="post-title-link" itemprop="url">在DDD中采用Clean Arch的经验分享</a>
-        </h1>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
@@ -445,10 +645,10 @@
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-19 15:37:10" itemprop="dateModified" datetime="2021-02-19T15:37:10+08:00">2021-02-19</time>
+                <time title="修改时间：2022-09-05 18:13:30" itemprop="dateModified" datetime="2022-09-05T18:13:30+08:00">2022-09-05</time>
               </span>
 
           
@@ -570,10 +770,10 @@
   
   
 
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://jtong.dev/2020/01/13/programmer-dojo/marsrover-tdd/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -586,15 +786,15 @@
       <meta itemprop="name" content="铜剑技校">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
             <a href="/2020/01/13/programmer-dojo/marsrover-tdd/" class="post-title-link" itemprop="url">练功房MarsRover讲解（初稿）</a>
-        </h1>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
@@ -602,10 +802,10 @@
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-19 15:37:10" itemprop="dateModified" datetime="2021-02-19T15:37:10+08:00">2021-02-19</time>
+                <time title="修改时间：2022-09-05 18:13:30" itemprop="dateModified" datetime="2022-09-05T18:13:30+08:00">2022-09-05</time>
               </span>
 
           
@@ -665,10 +865,10 @@
   
   
 
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://jtong.dev/2020/01/02/programmer-dojo/fizzbuzz-tdd/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -681,15 +881,15 @@
       <meta itemprop="name" content="铜剑技校">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
             <a href="/2020/01/02/programmer-dojo/fizzbuzz-tdd/" class="post-title-link" itemprop="url">我倒要看看一个FizzBuzz能讲多少道理</a>
-        </h1>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
@@ -697,10 +897,10 @@
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-19 15:37:10" itemprop="dateModified" datetime="2021-02-19T15:37:10+08:00">2021-02-19</time>
+                <time title="修改时间：2022-09-05 18:13:30" itemprop="dateModified" datetime="2022-09-05T18:13:30+08:00">2022-09-05</time>
               </span>
 
           
@@ -914,10 +1114,10 @@
   
   
 
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://jtong.dev/2019/12/07/deliberate-practice-for-digital-talent/challenge-of-cultivating-programmer/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -930,15 +1130,15 @@
       <meta itemprop="name" content="铜剑技校">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
             <a href="/2019/12/07/deliberate-practice-for-digital-talent/challenge-of-cultivating-programmer/" class="post-title-link" itemprop="url">软件开发人员培养的挑战</a>
-        </h1>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
@@ -946,10 +1146,10 @@
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-19 15:37:10" itemprop="dateModified" datetime="2021-02-19T15:37:10+08:00">2021-02-19</time>
+                <time title="修改时间：2022-09-05 18:13:30" itemprop="dateModified" datetime="2022-09-05T18:13:30+08:00">2022-09-05</time>
               </span>
 
           
@@ -1005,10 +1205,10 @@
   
   
 
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://jtong.dev/2019/07/10/tech-leadership/first-scene-of-software-development/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1021,15 +1221,15 @@
       <meta itemprop="name" content="铜剑技校">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
             <a href="/2019/07/10/tech-leadership/first-scene-of-software-development/" class="post-title-link" itemprop="url">软件开发工作的第一现场</a>
-        </h1>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
@@ -1037,10 +1237,10 @@
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-19 15:37:10" itemprop="dateModified" datetime="2021-02-19T15:37:10+08:00">2021-02-19</time>
+                <time title="修改时间：2022-09-05 18:13:30" itemprop="dateModified" datetime="2022-09-05T18:13:30+08:00">2022-09-05</time>
               </span>
 
           
@@ -1088,10 +1288,10 @@
   
   
 
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://jtong.dev/2019/06/22/tech-leadership/working-as-a-human-being/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1104,15 +1304,15 @@
       <meta itemprop="name" content="铜剑技校">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
             <a href="/2019/06/22/tech-leadership/working-as-a-human-being/" class="post-title-link" itemprop="url">像人一样工作</a>
-        </h1>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
@@ -1120,10 +1320,10 @@
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-19 15:37:10" itemprop="dateModified" datetime="2021-02-19T15:37:10+08:00">2021-02-19</time>
+                <time title="修改时间：2022-09-05 18:13:30" itemprop="dateModified" datetime="2022-09-05T18:13:30+08:00">2022-09-05</time>
               </span>
 
           
@@ -1174,167 +1374,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://jtong.dev/2019/06/22/deliberate-practice-for-digital-talent/what-worth-to-be-recited/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="仝键">
-      <meta itemprop="description" content="写写心得，写写教程，希望能帮助更多人成为优秀的软件开发人员">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="铜剑技校">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/22/deliberate-practice-for-digital-talent/what-worth-to-be-recited/" class="post-title-link" itemprop="url">什么值得背</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-06-22 23:23:00" itemprop="dateCreated datePublished" datetime="2019-06-22T23:23:00+08:00">2019-06-22</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-19 15:37:10" itemprop="dateModified" datetime="2021-02-19T15:37:10+08:00">2021-02-19</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="一个蹒跚学步场景的启发"><a href="#一个蹒跚学步场景的启发" class="headerlink" title="一个蹒跚学步场景的启发"></a>一个蹒跚学步场景的启发</h2><p>我们家娃最近在学钱的加减，几元几角减去几元几角等于多少这种问题。在这之前，她已经学会了加减法借位等基本数学知识，但做钱的加减还是不行。</p>
-<p>个位的元角减去个位的元角没问题，比如7元8角减去5元9角这种没问题。但是这个10元5角减去8元6角这种题目，他就不会借位了，因为她理解的借位只会像一位数借位，10元这个不是个位数，所以总是算错。</p>
-<p>我给她讲道理呢，她就说：听不懂……</p>
-<p>这就尴尬了，怎么讲他都不会，那就用我的老招数呗，刻意练习，我自己出了几道类似新题，让她练，还是经常算错。有趣的是，也不是每次都不对，有点六脉神剑时灵时不灵的感觉。仔细观察了一下发现呢，竟然是做过的她背过了一部分表象，比如10元减8元要借位怎么借她背过了，但出的新题里，有的题借位有的题不借位，所以就时而对时而错，不过这道理给小孩子讲了没用……</p>
-<p>这种场景我在教毕业生学写程序时候也遇到过，有些学员多做几道题自己就悟出来了，好像开窍了一样；有些学员就背过一些表象，于是就六脉神剑时灵时不灵了。因为编程比元角计算可复杂多了，所以一直也不知道怎么破这个局。</p>
-<p>如今这个场景又出现我眼前，以一种噪音更少的方式出现了，我依然不能通过多做同类题目的方式解决，这说明这个方向是彻头彻尾错误的。</p>
-<p>最后我没招了，我说，来，我把我怎么解题的说一遍，你背下来。我其实也不知道为啥我要这样干，就是个脑子里突然闪过的想法，纯粹死马当活马医吧。</p>
-<p>于是我就说，10元5角减8元6角这个题我是怎么解的呢，我们的计算规则是元减元，角减角，但因为5角减不了6角，所以要跟10元借一位，借完之后呢，10元就变成了9元，5角就变成了15角，然后15角减6角得到9角，9元减8元得到了1元，所以最后答案是1元9角。</p>
-<p>我就让她背，背的时候，她就在借位环节问问题了，我也解答了问题，全部过程能背下来之后，她就好像突然开窍了一样，换几个题都会了。</p>
-<h2 id="背后的“原因”"><a href="#背后的“原因”" class="headerlink" title="背后的“原因”"></a>背后的“原因”</h2><p>这神奇结果让我很意外，赶紧分析了一下，为什么给这个实践会起作用。我感觉，大约的原因是，初学者由于领域知识的缺乏，他对于自己为什么不会这事是缺乏语言描述的。甚至于她到底哪个点不会都说不出来。说不出来就是在瞎做，算不得刻意练习，刻意练习非常强调针对性的专项训练，知识工作者真正需要锻炼的是大脑里思考问题的方式，只是做题，如果思路不对的话（比如中间某几步是蒙的），那真正欠缺乏锻炼的部分根本没锻炼到。但找到这个点很难，因为问题往往是隐藏在思考过程中的。</p>
-<p>之前的实践恰恰可以针对这个问题产生影响，我给这个实践起了一个名字，叫背诵解题思路。这两个词拆开正好就是我们这个实践的两个关键点，一就是背诵，如果我们只是听一遍解题思路，会出现听起来很有道理觉得自己学到了东西但实际什么都没带走的情况，跟不明觉厉也没差多少。大家都可以自己测试一下，听起来很清楚的道理自己背一遍总会在某个地方卡壳，那个地方可能就是我们需要锻炼的点。</p>
-<p>另一个关键点就是解题思路，这就贴合了我们的标题，什么值得背。我们在谈到教学总会比较迷信所谓循循善诱，觉得死记硬背是不好的（都市传说，背诵会扼杀创造力）。但其实记忆是一切的基础，只是要明确，我们记忆的目的是为了什么？最终的最终是为了应用，为了改造世界。我们经常背一些知识点，定理定律规则，这些东西都是死的，不能改造世界，而较少被人关注的解题思路，尤其是高手的解题思路才是改造世界的出路。人跟人思考的过程差异之大是令人乍舌的，有时即使看起来很简单的题，你看一下高手的解题思路，都会发现很大差别。各行各业的高手都是类似的，之前看过科比的一档节目，叫细节，看完之后才知道，运动员在运动场上处理的信息量有多大。</p>
-<h2 id="对程序员的价值"><a href="#对程序员的价值" class="headerlink" title="对程序员的价值"></a>对程序员的价值</h2><p>这个实践对于我们程序员有什么价值呢？在编程中，有很多问题是没有标准答案的，比如任务分解、比如软件设计等，前面说的需要学生开窍的场景其实都属此类。虽然没有标准答案，但是我们又想提高自己，就只能去学习高手的解题思路。其实，很多工程实践已经是把高手的做事方式讲给我们听了，但做的时候他们脑子里是怎么想的呢？这只有在自己做的时候自己摸索。而这个自己摸索的过程通常效率是很低的，会有很多只得其形不得其神的情况。这对团队中带人的人，像我这样需要教人工程实践的人都要面临的一个困境，很难大规模的培养出优秀的程序员。究其原因可能有很多，但魔鬼一定是隐藏在细节里，现在我觉得背诵解题思路可能是一个解。怎么解呢？</p>
-<p>举个例子，工程实践中，tdd是最难学的一个，tdd就是高手的做事方式。最近在参与熊节的tdd练功房，有位同学就第一道最简单的题写了自己的解法：<br><a href="https://www.jianshu.com/p/13d7a0a0e5be" target="_blank" rel="noopener">https://www.jianshu.com/p/13d7a0a0e5be</a></p>
-<p>这个解法到了后面有点过度设计，但本题练的是编程的手艺，所以重点在过程中的细节，那一个个细小的步骤，我敢说是很多程序员会忽略的。</p>
-<p>再举个例子，面向对象封装继承多态，最难的就是封装。我们最近出了一道重构的题目给某公司，在重构的过程中要把分散的基本数据类型的数据封装成对象。分散的数据如下所示：</p>
-<p><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/what-worth-to-be-recited/pic-01.png" alt="充满坏味道的代码"> </p>
-<p>这个能力其实是最难锻炼的，上面这些数据谁跟谁应该封装在一起，谁跟谁不应该。这也属于没有标准答案的问题。作业结果也证明了这一点。怎么办呢？同样，可以试着背一下高手的解题思路。（想知道这个题的思路吗？等我后面的文章，没错这里是广告）</p>
-<p>综上，对于一些实践类的内容，总是会出现不管怎么练也不开窍的情况，比如如何高效的TDD，比如软件设计。这个时候，大家可以试试让被教授的人背诵一下解题思路，说不定会有效果。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://jtong.dev/2019/02/10/deliberate-practice-for-digital-talent/dojo-over-method/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="仝键">
-      <meta itemprop="description" content="写写心得，写写教程，希望能帮助更多人成为优秀的软件开发人员">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="铜剑技校">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/02/10/deliberate-practice-for-digital-talent/dojo-over-method/" class="post-title-link" itemprop="url">道场胜于道法</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-02-11 01:11:00" itemprop="dateCreated datePublished" datetime="2019-02-11T01:11:00+08:00">2019-02-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-19 15:37:10" itemprop="dateModified" datetime="2021-02-19T15:37:10+08:00">2021-02-19</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="能力建设的鬼打墙"><a href="#能力建设的鬼打墙" class="headerlink" title="能力建设的鬼打墙"></a>能力建设的鬼打墙</h2><p>我们为了变强，会订阅很多公众号，牛人博客，收藏很多视频，看很多文章。做了很多松鼠的行为，然而最终大多数人并没有变强。<br>我去看了很多学校，大多数学生面临的成长问题与十几年前并无太大区别。<br>我去看了很多家公司，大多数公司面临的能力问题跟十几年前并无太大区别。<br>十几年前，我们买一台电脑都贵得要死，现在跟一台手机差不多钱了。<br>十几年前，我们想学编程连个像样的教程都没有，现在互联网上的教程不要太多。<br>为什么会这样呢？<br>因为信息的多少，并不是学成才的关键。很多人可能知道我又要说刻意练习了，可是按照刻意练习理论，要练一万小时才能成才。但我们从业者练了不止一万小时了吧，每天996，3年就该1万小时了吧，为啥能力还是个问题呢？<br>因为工作的关系，我不得不思考这个问题，思考的久了，我自己有个理论。我在想，刻意练习把问题过分简化了，学习过程可不是那么简单的，大面上讲，我觉得刻意练习理论是工作的，只是过于粗糙，需要精细化的考虑一下，仔细思考一下刻意练习的背后到底是一个怎样的过程。</p>
-<h2 id="刻意练习的元模型"><a href="#刻意练习的元模型" class="headerlink" title="刻意练习的元模型"></a>刻意练习的元模型</h2><p>经过对自己的学习过程进行反观内视，加上跟很多人的交流，我大概抽取了一个闭环的元模型。<br><img src="https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/dojo-is-more-important-than-method/pic-01.png" alt="image.png"></p>
-<p>我发现首先要有问题供学习者思考，我称之为我思，有些问题比较简单，直接可以思考，有些问题比较难，需要先学习一些基础知识才能理解问题本身，后者就是读书的原因之一。</p>
-<p>理解问题之后，就要开始解决问题，毕竟企业里的能力建设都是要解决问题的，必须学以致用。为了能学以致用，那自然就需要练习，但练习不一定是非要专门的练习题，只要将所学知识应用，也算是练习了。练习需要有反馈，知道你做的对还是不对。</p>
-<p>经过练习之后，需要对整个过程进行反思、总结，产出经验和洞见。有数据供反思时分析和有反思的习惯是很重要的，我发现傻做的人很多，反思的人很少，真的是大家都在泥坑里，只有少数人会仰望星空。</p>
-<h3 id="成才三要素之一——环走通"><a href="#成才三要素之一——环走通" class="headerlink" title="成才三要素之一——环走通"></a>成才三要素之一——环走通</h3><p>按这个环来分析，如果想要成才，首先环要走通。<br>我思的瓶颈在于认知障，所以还是比较简单的，扩大知识面就好了。<br>我做的瓶颈才是最麻烦的，要走通这个环，最难以达成的瓶颈的其实是我做的环节，在互联网时代，你想获得知识已经很容易了，只要你想，你总能找到可以用的知识。<br>但是学到了知识能不能实践其实是关键，你学了大量高并发的知识，但是你工作环境下没有高并发的环境供你练习，你也学不会。你想学软件开发的方法学，却在一个简单机械重复的环境下天天垒那种过些日子就没用处的代码，并不会有所提升。<br>这就是我为什么开始说，道场胜于道法，你没有一个练习场，你学到的知识都卡在第一环节了。<br>然而一个合格的道场本身并不是那么容易具备的，这个我们在后面慢慢讲。</p>
-<p>那么在我反思这个环节上，首先你要有反思的习惯，这个是比较反人性的，所以具备的人本就不多。即便你具备了，一个人的认知又容易受自己的偏见蒙蔽，容易看不清事物的全貌。需要老师的启发式引导，同学的研讨印证。一个具备好的老师同学的环境其实是道场的一部分，你所处的环境里根本没人跟你聊这些，你很容易陷到自己的认知瓶颈里很久都不得突破。</p>
-<p>其次要有数据供自己反思，不过只要有了这个习惯和意识，数据什么的好搞，比如编程的话，可以参考我的《编程的精进之法》。</p>
-<h3 id="成才三要素之二——提高频率"><a href="#成才三要素之二——提高频率" class="headerlink" title="成才三要素之二——提高频率"></a>成才三要素之二——提高频率</h3><p>一旦环走通之后，频率就是我们接下来要面临的问题。<br>一些简单的内容可以通过设计针对性的练习来提升<br>能进行针对性练习的环境就是我们最好的道场，而现实并不是这样的。<br>我当年练习投篮的时候，就发现，如果是自己一个人练的话，不但要投还要捡球。这单位时间内能练习投篮的频率就降低了。<br>等你把投篮练的差不多了，发现在比赛中能投进和练习时能投进又不一样。<br>针对这两种，你要建立两个环境，互相不能偏废，我称之为专项训练的环境和综合训练的环境。<br>在我们教学生编程的时候，就采用了这两种不同的环境，我们会设置一些非常小的练习，针对性的练习结构化编程、集合的处理、数据结构的设计和数据的转换。<br>然后会设计大作业进行这些技能的组合使用，这个时候需求到具体技术的映射是模糊的。<br>最后会设计项目，团队协作做项目，这个时候需求本身也是模糊的，团队成员之间的配合也需要锻炼。<br>前两种都属于专项训练，分别练习的是单个专项技术的使用和多个专项技术的组合，最后一个属于综合训练，锻炼在模糊不确定性下使用确定性的技术来完成需求的能力。</p>
-<p>这些良好设计的环境都是为我们和我们的客户的校招新员工设计的，普通员工的日常工作中难以具备这样的环境。<br>那么只需要考虑一件事就好了，我们的日常工作中有多少机会来进行练习。如何改造我们的工作环境来，使之成为个体提升的环境是关键。传说中，少林寺的和尚吃饭睡觉都在练功其实就是在讲这个简单的道理：提高频率必须从环境改造下手。</p>
-<h3 id="成才三要素之三——降低废品率"><a href="#成才三要素之三——降低废品率" class="headerlink" title="成才三要素之三——降低废品率"></a>成才三要素之三——降低废品率</h3><p>解决了闭环、频率问题之后，还有一个不得不面对的因素：废品率。<br>在练习过程当中，并不是所有的练习都是有价值的，大量的练习都是无效的，甚至有些是错误的，在反思阶段会产生反模式。<br>随着闭环次数的增多，熟练度就会提升，不但正确的做法的熟练度会上升，错误做法的熟练度也会上升，如果反思阶段思考的不足，还会得到一些既不是正确做法也不是错误做法的纯粹的无效做法的熟练度。<br>这些熟练度都是问题，都是成长过程中的废品，而如何降低废品率，是高段位竞争者之间的胜负手。<br>这个的获得可以靠反思的时候总结，也可以靠阅读实践者的文章书籍。<br>比如如果纯自己摸索可能最后总会获得大泥球的架构，但是如果阅读了DDD之类的文章书籍就能知道可以靠上下文和聚合的方式进行解耦。<br>但是这种实践者写的书籍不像具体的知识那样好懂，通常都是非常抽象的。没有懂行的人指导或研讨，跟看天书也差不多。有时跨过了理解这个坎，又会发现现实环境不允许你进行试验。不管工作流程还是协作方式，从根本上限制了问题的根本解决。（不然问题早就解决了）</p>
-<h2 id="道场建设的窘境"><a href="#道场建设的窘境" class="headerlink" title="道场建设的窘境"></a>道场建设的窘境</h2><p>在分析了刻意练习的原模型之后，我们会发现，在今天这个时代，能力建设最大的瓶颈是道场，如何将道场建设起来，比学习知识重要的多，好的练习、好的环境、好的同学比其他的都要重要。</p>
-<p>而现实中，最大的道场就是实际工作环境。所以不管能力建设在开始看起来多么人畜无害，由于涉及到工作环境的改造，最终都会影响到组织的改造和调整。想想也是合理的，按照康威定律，什么样的组织架构需要什么样的软件架构匹配，什么样的软件架构需要什么样的能力匹配，如果旧的环境能够提供足够的练习场，那么能力建设根本就不是个问题，既然能力建设是个问题了，那么在能力建设的需求下，现有组织架构必然是要进行改进的。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-  </div>
 
   
   <nav class="pagination">
@@ -1348,7 +1387,7 @@
 
 <script>
   window.addEventListener('tabs:register', () => {
-    let activeClass = CONFIG.comments.activeClass;
+    let { activeClass } = CONFIG.comments;
     if (CONFIG.comments.storage) {
       activeClass = localStorage.getItem('comments_active') || activeClass;
     }
@@ -1404,7 +1443,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-count">29</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1430,19 +1469,18 @@
       <div class="footer-inner">
         
 
+        
+
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
-    <i class="fa fa-user"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">仝键</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.0
-  </div>
-  <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.0
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
 
         
