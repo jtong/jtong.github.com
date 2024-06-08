@@ -1,4 +1,4 @@
-看完上文之后，估计有人想知道长上下文怎么操作，本文就讲讲这个，其实也就是我们prompt context builder插件的新功能介绍。
+看完上文之后，估计有人想知道长上下文怎么构造，本文就讲讲这个，其实也就是我们prompt context builder插件的新功能介绍。
 
 ## folder to context
 
@@ -34,7 +34,7 @@ output:
 
 可以看到，我们的base_path指向的就是我们的目标文件夹，然后ignore里面依然是我们准备过滤的文件或文件夹。而我们的任务直接放到了我们的instruction里。然后执行我们的新命令：Generate All Code Context：
 
-![Screenshot 2024-04-21 at 23.00.47.png](../assets/Screenshot_2024-04-21_at_23.00.47_1713711668513_0.png)
+![generate-all-code-context-command](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/wish-driven-development/07-build-lang-context/01-generate-all-code-context-command.png)
 
 就得到了我们的Context文件，输出在 output/prompt/path 下的 context.txt 文件。之所以这么做是我发现拷文件的时候找哪个文件也挺累的，干脆就一个文件名，直接覆盖就好了。
 
@@ -44,9 +44,9 @@ output:
 
 同时，我们还把内容拷贝到了剪切板里，如果不喜欢呢，也可以关掉，开关在设置里：
 
-![Screenshot 2024-04-21 at 23.11.58.png](../assets/Screenshot_2024-04-21_at_23.11.58_1713712330542_0.png)
+![02-output-what-to-clipboard](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/wish-driven-development/07-build-lang-context/02-output-what-to-clipboard.png)
 
-设置为none就关掉了。默认是生成的时候把文本放入剪切板，如果需要也可以指定 path 存进去，如果你需要在命令行或是什么地方用的话。
+设置为none就关掉了。默认是text，表示生成的时候把文本放入剪切板，如果需要也可以指定 path 存进去，如果你需要在命令行或是什么地方用的话。
 
 如果我们打开那个context.txt呢，我们就会发现，它里面的结构大概是这样的：
 ```xml
@@ -62,7 +62,7 @@ output:
 ```
 你会发现我们现在输出的内容都是xml了，其实我们输出的格式有两种xml和markdown，一般我都是用xml，因为markdown里嵌markdown容易混乱掉格式，所以我一般用xml。这个格式也可以在设置里配置：
 
-![Screenshot 2024-04-21 at 22.52.05.png](../assets/Screenshot_2024-04-21_at_22.52.05_1713711180174_0.png)
+![03-generate-all-tempalte](https://jtong-pic.obs.cn-north-4.myhuaweicloud.com/wish-driven-development/07-build-lang-context/03-generate-all-tempalte.png)
 
 ## git repo to context
 
@@ -117,3 +117,5 @@ project:
 设置完这些之后还是可以使用instruction来设置我们的任务描述，然后继续用Generate All Code Context来得到这个上下文。
 
 有了这个之后，我们就可以轻松的制造长上下文了，希望对大家有所帮助。
+
+
